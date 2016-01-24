@@ -419,6 +419,9 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
+on property:sys.boot_completed=1
+    setprop sys.io.scheduler "bfq"
+
 on charger
     load_system_props
     start qcom-post-boot
