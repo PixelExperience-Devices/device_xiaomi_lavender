@@ -41,6 +41,9 @@
 #define LOG_TAG "QTI PowerHAL"
 #include <log/log.h>
 
+#define USINSEC 1000000L
+#define NSINUS 1000L
+
 #define PERF_HAL_PATH "libqti-perfd-client.so"
 static void* qcopt_handle;
 static int (*perf_lock_acq)(unsigned long handle, int duration, int list[], int numArgs);
@@ -192,4 +195,11 @@ int perf_hint_enable_with_type(int hint_id, int duration, int type) {
 
 void release_request(int lock_handle) {
     if (qcopt_handle && perf_lock_rel) perf_lock_rel(lock_handle);
+}
+
+long long calc_timespan_us(struct timespec start, struct timespec end) {
+    long long diff_in_us = 0;
+    diff_in_us += (end.tv_sec - start.tv_sec) * USINSEC;
+    diff_in_us += (end.tv_nsec - start.tv_nsec) / NSINUS;
+    return diff_in_us;
 }
