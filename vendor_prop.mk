@@ -46,6 +46,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.multiple.enabled=false \
     vendor.audio.offload.passthrough=false \
     ro.vendor.audio.sdk.ssr=false \
+    ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7 \
     vendor.audio.offload.gapless.enabled=true \
     vendor.audio.safx.pbe.enabled=true \
