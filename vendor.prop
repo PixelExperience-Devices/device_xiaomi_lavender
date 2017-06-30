@@ -262,6 +262,7 @@ vendor.vidc.enc.disable.pq=false
 
 #system props for time-services
 persist.timed.enable=true
+persist.delta_time.enable=true
 
 #force disable Bluetooth AAC by default
 persist.bt.a2dp.aac_disable=true
