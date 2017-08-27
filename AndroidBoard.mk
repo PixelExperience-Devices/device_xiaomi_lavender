@@ -79,7 +79,7 @@ LOCAL_MODULE       := wpa_supplicant_overlay.conf
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := $(LOCAL_MODULE)
-LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)/wifi
+LOCAL_MODULE_PATH  := $(PRODUCT_OUT)/vendor/etc/wifi
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -87,7 +87,7 @@ LOCAL_MODULE       := p2p_supplicant_overlay.conf
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := $(LOCAL_MODULE)
-LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)/wifi
+LOCAL_MODULE_PATH  := $(PRODUCT_OUT)/vendor/etc/wifi
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -127,6 +127,9 @@ $(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld; \
 ln -sf /vendor/etc/wifi/WCNSS_qcom_cfg.ini \
 $(TARGET_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini)
 endif
+
+#Create dsp directory
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/lib/dsp)
 
 # Create symbolic links for msadp
 $(shell  mkdir -p $(TARGET_OUT_VENDOR)/firmware; \

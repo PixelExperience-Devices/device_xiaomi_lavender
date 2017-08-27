@@ -54,7 +54,6 @@ persist.mm.enable.prefetch=true
 vidc.enc.target_support_bframe=1
 vendor.vidc.enc.disable_bframes=1
 vendor.vidc.dec.enable.downscalar=1
-video.disable.ubwc=1
 
 # enable PQ feature by default
 vendor.vidc.enc.disable.pq=false
@@ -72,12 +71,6 @@ persist.data.mode=concurrent
 #system props for time-services
 persist.timed.enable=true
 
-#
-# system prop for opengles version
-#
-# 196610 is decimal for 0x30002 to report major/minor versions as 3/2
-ro.opengles.version=196610
-
 # system property for maximum number of HFP client connections
 bt.max.hfpclient.connections=1
 #force disable Bluetooth AAC by default
@@ -94,9 +87,6 @@ telephony.lteOnCdmaDevice=1
 #Simulate sdcard on /data/media
 #
 persist.fuse_sdcard=true
-
-#system prop for Bluetooth SOC type
-qcom.bluetooth.soc=cherokee
 
 #system prop for wipower support
 ro.bluetooth.emb_wp_mode=true
@@ -154,9 +144,6 @@ ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=1024
 
-# enable navigation bar
-qemu.hw.mainkeys=0
-
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
@@ -196,3 +183,8 @@ persist.charger.max_voltage_mv=9000
 
 #Property to enable display default color mode
 vendor.display.enable_default_color_mode=true
+
+# Property for backup NTP Server
+persist.backup.ntpServer="0.pool.ntp.org"
+# enable IZat OptInApp overlay
+persist.vendor.overlay.izat.optin=rro

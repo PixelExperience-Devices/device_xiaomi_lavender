@@ -1,8 +1,6 @@
 TARGET_USES_AOSP := true
 
-ifneq ($(TARGET_USES_AOSP),true)
-  DEVICE_PACKAGE_OVERLAYS := device/qcom/sdm660_64/overlay
-endif
+DEVICE_PACKAGE_OVERLAYS := device/qcom/sdm660_64/overlay
 
 # Default vendor configuration.
 ifeq ($(ENABLE_VENDOR_IMAGE),)
@@ -38,6 +36,10 @@ TARGET_USE_UI_SVA := true
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
 
+# Add soft home, back and multitask keys
+PRODUCT_PROPERTY_OVERRIDES += \
+    qemu.hw.mainkeys=0
+
 # Video codec configuration files
 ifeq ($(TARGET_ENABLE_QC_AV_ENHANCEMENTS), true)
 PRODUCT_COPY_FILES += \
@@ -55,6 +57,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += device/qcom/sdm660_64/whitelistedapps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/whitelistedapps.xml \
                       device/qcom/sdm660_64/gamedwhitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gamedwhitelist.xml \
                       device/qcom/sdm660_64/appboosts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/appboosts.xml
+
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    video.disable.ubwc=1
 
 ifneq ($(TARGET_DISABLE_DASH), true)
     PRODUCT_BOOT_JARS += qcmediaplayer
@@ -93,6 +99,13 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 # WLAN chipset
 WLAN_CHIPSET := qca_cld3
 
+#
+# system prop for opengles version
+#
+# 196610 is decimal for 0x30002 to report major/minor versions as 3/2
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opengles.version=196610
+
 #Android EGL implementation
 PRODUCT_PACKAGES += libGLES_android
 PRODUCT_BOOT_JARS += tcmiface
@@ -105,6 +118,10 @@ PRODUCT_BOOT_JARS += WfdCommon
 #Android oem shutdown hook
 PRODUCT_BOOT_JARS += oem-services
 endif
+
+# system prop for Bluetooth SOC type
+PRODUCT_PROPERTY_OVERRIDES += \
+    qcom.bluetooth.soc=cherokee
 
 ifeq ($(strip $(BOARD_HAVE_QCOM_FM)),true)
 PRODUCT_BOOT_JARS += qcom.fmradio
@@ -135,6 +152,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf \
     p2p_supplicant_overlay.conf
+
+# Fingerprint feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
 
 #ANT+ stack
 PRODUCT_PACKAGES += \
@@ -201,8 +222,11 @@ PRODUCT_COPY_FILES += \
 # MIDI feature
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml
 
-# MSM IRQ Balancer configuration file
+# MSM IRQ Balancer configuration file for SDM660
 PRODUCT_COPY_FILES += device/qcom/sdm660_64/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+
+# MSM IRQ Balancer configuration file for SDM630
+PRODUCT_COPY_FILES += device/qcom/sdm660_64/msm_irqbalance_sdm630.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance_sdm630.conf
 
 # dm-verity configuration
 PRODUCT_SUPPORTS_VERITY := true
