@@ -128,8 +128,8 @@ ro.nfc.port=I2C
 ro.vendor.at_library=libqti-at.so
 
 #min/max cpu in core control
-ro.core_ctl_min_cpu=2
-ro.core_ctl_max_cpu=4
+ro.vendor.qti.core_ctl_min_cpu=2
+ro.vendor.qti.core_ctl_max_cpu=4
 
 #hwui properties
 ro.hwui.texture_cache_size=72
@@ -142,13 +142,13 @@ ro.hwui.texture_cache_flushrate=0.4
 ro.hwui.text_small_cache_width=1024
 ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
-ro.hwui.text_large_cache_height=1024
+ro.hwui.text_large_cache_height=2048
 
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
 #Increase cached app limit
-ro.sys.fw.bg_apps_limit=60
+ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 #Settings to enable sensors
 #Device Orientation sensor
@@ -166,9 +166,6 @@ ro.vendor.sensors.cmc=false
 #Gesture
 ro.vendor.sdk.sensors.gestures=false
 
-#low power mode for camera
-camera.lowpower.record.enable=1
-
 #Expose aux camera for below packages
 camera.aux.packagelist=org.codeaurora.snapcam
 
@@ -182,7 +179,7 @@ ro.config.zram=true
 persist.charger.max_voltage_mv=9000
 
 #Property to enable display default color mode
-vendor.display.enable_default_color_mode=true
+vendor.display.enable_default_color_mode=1
 
 # Property for backup NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
