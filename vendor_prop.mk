@@ -85,6 +85,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.enable_fb_ubwc=1 \
     dev.pm.dyn_samplingrate=1
 
+#Set AudioFlinger client heap size
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.af.client_heap_size_kbyte=7168
+
 #
 # system props for the cne module
 #
