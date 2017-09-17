@@ -471,7 +471,7 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.0-service.lavender
 
 # VNDK
 # Update this list with what each blob is actually for
