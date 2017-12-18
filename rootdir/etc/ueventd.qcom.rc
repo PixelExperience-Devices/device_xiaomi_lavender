@@ -143,6 +143,9 @@
 /sys/devices/soc/soc:fpc1020*   wakeup_enable 0660 system system
 /sys/devices/soc/soc:fpc1020*    fingerdown_wait 0220 system system
 
+# QDSS
+/dev/byte-cntr            0660   system    oem_2902
+
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
