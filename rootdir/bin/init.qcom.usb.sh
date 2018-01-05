@@ -157,8 +157,15 @@ case "$usb_config" in
 				    ;;
 			    esac
 		      ;;
-	              "msm8952" | "msm8953")
+	              "msm8952")
 		          setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
+		      ;;
+	              "msm8953")
+			      if [ -d /config/usb_gadget ]; then
+				      setprop persist.sys.usb.config diag,serial_cdev,rmnet,dpl,adb
+			      else
+				      setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
+			      fi
 		      ;;
 	              "msm8998" | "sdm660" | "apq8098_latv")
 		          setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb
@@ -184,35 +191,40 @@ case "$usb_config" in
   * ) ;; #USB persist config exists, do nothing
 esac
 
-# set USB controller's device node
-case "$target" in
-    "msm8996")
-        setprop sys.usb.controller "6a00000.dwc3"
-        setprop sys.usb.rndis.func.name "rndis_bam"
-	setprop sys.usb.rmnet.func.name "rmnet_bam"
-	;;
-    "msm8998" | "apq8098_latv")
-        setprop sys.usb.controller "a800000.dwc3"
-        setprop sys.usb.rndis.func.name "gsi"
-	setprop sys.usb.rmnet.func.name "gsi"
-	;;
-    "sdm660")
-        setprop sys.usb.controller "a800000.dwc3"
-        setprop sys.usb.rndis.func.name "rndis_bam"
-	setprop sys.usb.rmnet.func.name "rmnet_bam"
-	echo 15916 > /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size
-        ;;
-    "sdm845" | "sdm710" | "msmnile")
-        setprop sys.usb.controller "a600000.dwc3"
-        setprop sys.usb.rndis.func.name "gsi"
-        setprop sys.usb.rmnet.func.name "gsi"
-        ;;
-    *)
-	;;
-esac
-
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
+	setprop sys.usb.rndis.func.name "rndis_bam"
+	setprop sys.usb.rmnet.func.name "rmnet_bam"
+	# set USB controller's device node
+	case "$target" in
+	"msm8953")
+		setprop sys.usb.controller "7000000.dwc3"
+		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_tx_req_len
+		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_rx_req_len
+		;;
+	"msm8996")
+		setprop sys.usb.controller "6a00000.dwc3"
+		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_tx_req_len
+		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_rx_req_len
+		;;
+	"msm8998" | "apq8098_latv")
+		setprop sys.usb.controller "a800000.dwc3"
+		setprop sys.usb.rndis.func.name "gsi"
+		setprop sys.usb.rmnet.func.name "gsi"
+		;;
+	"sdm660")
+		setprop sys.usb.controller "a800000.dwc3"
+		echo 15916 > /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size
+		;;
+	"sdm845")
+		setprop sys.usb.controller "a600000.dwc3"
+		setprop sys.usb.rndis.func.name "gsi"
+		setprop sys.usb.rmnet.func.name "gsi"
+		;;
+	*)
+		;;
+	esac
+
 	product_string=`cat /config/usb_gadget/g1/strings/0x409/product` 2> /dev/null
 	if [ "product_string" == "" ]; then
 		# Chip-serial is used for unique MSM identification in Product string
@@ -249,41 +261,40 @@ else
 		echo "setting sys.usb.config"
 		setprop sys.usb.config $persist_comp
 	fi
+        #
+        # Do target specific things
+        #
+        case "$target" in
+             "msm8974")
+                # Select USB BAM - 2.0 or 3.0
+                echo ssusb > /sys/bus/platform/devices/usb_bam/enable
+             ;;
+             "apq8084")
+                if [ "$baseband" == "apq" ]; then
+                      echo "msm_hsic_host" > /sys/bus/platform/drivers/xhci_msm_hsic/unbind
+                fi
+             ;;
+             "msm8226")
+                if [ -e /sys/bus/platform/drivers/msm_hsic_host ]; then
+                      if [ ! -L /sys/bus/usb/devices/1-1 ]; then
+                          echo msm_hsic_host > /sys/bus/platform/drivers/msm_hsic_host/unbind
+                      fi
+                fi
+             ;;
+             "msm8994" | "msm8992" | "msm8996" | "msm8953")
+                echo BAM2BAM_IPA > /sys/class/android_usb/android0/f_rndis_qc/rndis_transports
+                echo 131072 > /sys/module/g_android/parameters/mtp_tx_req_len
+                echo 131072 > /sys/module/g_android/parameters/mtp_rx_req_len
+             ;;
+             "msm8937")
+                case "$soc_id" in
+                      "313" | "320")
+                         echo BAM2BAM_IPA > /sys/class/android_usb/android0/f_rndis_qc/rndis_transports
+                      ;;
+                esac
+             ;;
+        esac
 fi
-
-#
-# Do target specific things
-#
-case "$target" in
-    "msm8974")
-# Select USB BAM - 2.0 or 3.0
-        echo ssusb > /sys/bus/platform/devices/usb_bam/enable
-    ;;
-    "apq8084")
-	if [ "$baseband" == "apq" ]; then
-		echo "msm_hsic_host" > /sys/bus/platform/drivers/xhci_msm_hsic/unbind
-	fi
-    ;;
-    "msm8226")
-         if [ -e /sys/bus/platform/drivers/msm_hsic_host ]; then
-             if [ ! -L /sys/bus/usb/devices/1-1 ]; then
-                 echo msm_hsic_host > /sys/bus/platform/drivers/msm_hsic_host/unbind
-             fi
-         fi
-    ;;
-    "msm8994" | "msm8992" | "msm8996" | "msm8953")
-        echo BAM2BAM_IPA > /sys/class/android_usb/android0/f_rndis_qc/rndis_transports
-        echo 131072 > /sys/module/g_android/parameters/mtp_tx_req_len
-        echo 131072 > /sys/module/g_android/parameters/mtp_rx_req_len
-    ;;
-    "msm8937")
-	case "$soc_id" in
-		"313" | "320")
-		   echo BAM2BAM_IPA > /sys/class/android_usb/android0/f_rndis_qc/rndis_transports
-		;;
-	esac
-   ;;
-esac
 
 #
 # set module params for embedded rmnet devices
