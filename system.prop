@@ -33,6 +33,9 @@ persist.demo.hdmirotationlock=false
 #Disable Skip Validate
 sdm.debug.disable_skip_validate=1
 
+# Make data selection stick in dual SIM devices
+persist.radio.aosp_usr_pref_sel=true
+
 #Property to enable display default color mode
 vendor.display.enable_default_color_mode=1
 
