@@ -106,7 +106,6 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 QCOM_BT_USE_BTNV := true
 TARGET_USE_QTI_BT_STACK := true
 
-
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -116,6 +115,9 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # CNE and DPM
 BOARD_USES_QCNE := true
+
+# Compile libhwui in performance mode
+HWUI_COMPILE_FOR_PERF := true
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
