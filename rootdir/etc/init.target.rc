@@ -210,11 +210,6 @@ service adsprpcd /vendor/bin/adsprpcd audiopd
    user media
    group media
 
-service audiod /system/vendor/bin/audiod
-   class late_start
-   user system
-   group system
-
 service vendor.cdsprpcd /vendor/bin/cdsprpcd
    class main
    user system
