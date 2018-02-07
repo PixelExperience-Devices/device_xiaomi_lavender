@@ -238,6 +238,7 @@ on charger
     start vendor.qcom-post-boot
     start vendor.hvdcp_opti
     setprop sys.usb.configfs 1
+    start vendor.thermal-engine
 
 service vendor.qfp-daemon /vendor/bin/qfp-daemon
     class late_start
