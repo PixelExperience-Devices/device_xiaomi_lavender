@@ -148,14 +148,18 @@ case "$usb_config" in
 		          setprop persist.sys.usb.config diag,serial_smd,rmnet_qti_bam,adb
 		      ;;
 	              "msm8937")
-			    case "$soc_id" in
-				    "313" | "320")
-				       setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
-				    ;;
-				    *)
-				       setprop persist.sys.usb.config diag,serial_smd,rmnet_qti_bam,adb
-				    ;;
-			    esac
+			    if [ -d /config/usb_gadget ]; then
+				       setprop persist.sys.usb.config diag,adb
+			    else
+			               case "$soc_id" in
+				               "313" | "320")
+				                  setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
+				               ;;
+				               *)
+				                  setprop persist.sys.usb.config diag,serial_smd,rmnet_qti_bam,adb
+				               ;;
+			               esac
+			    fi
 		      ;;
 	              "msm8952")
 		          setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
@@ -197,6 +201,9 @@ if [ -d /config/usb_gadget ]; then
 	setprop sys.usb.rmnet.func.name "rmnet_bam"
 	# set USB controller's device node
 	case "$target" in
+	"msm8937")
+		setprop sys.usb.controller "msm_hsusb"
+		;;
 	"msm8953")
 		setprop sys.usb.controller "7000000.dwc3"
 		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_tx_req_len
