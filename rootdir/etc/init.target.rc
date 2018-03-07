@@ -155,17 +155,20 @@ service vendor.time_daemon /system/vendor/bin/time_daemon
    class late_start
    user root
    group root
+   writepid /dev/cpuset/system-background/tasks
 
 service vendor.adsprpcd /system/vendor/bin/adsprpcd audiopd
    class main
    user media
    group media
+   writepid /dev/cpuset/system-background/tasks
 
 service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
@@ -173,12 +176,14 @@ service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
     socket ims_datad stream 0660 system radio
     group system wifi radio inet log diag
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.energy-awareness /system/vendor/bin/energy-awareness
     class main
     user system
     group system
     oneshot
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.pd_mapper /system/vendor/bin/pd-mapper
      class core
@@ -191,12 +196,14 @@ service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    user system
    group radio diag inet log
    disabled
+   writepid /dev/cpuset/system-background/tasks
 
 service vendor.imsrcsservice /system/vendor/bin/imsrcsd
    class main
    user system
    group radio diag inet log
    disabled
+   writepid /dev/cpuset/system-background/tasks
 
 # add for HMI_L8866_A01-502: begin
 on property:vendor.ims.DATA_DAEMON_STATUS=1
@@ -249,6 +256,7 @@ service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
      class main
      user root
      group system wakelock
+     writepid /dev/cpuset/system-background/tasks
 	
 on property:persist.sys.display_srgb=1
     write /sys/class/graphics/fb0/msm_fb_srgb 1
