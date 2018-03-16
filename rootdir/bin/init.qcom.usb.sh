@@ -163,7 +163,7 @@ case "$usb_config" in
 	              "msm8998" | "sdm660" | "apq8098_latv")
 		          setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb
 		      ;;
-	              "sdm845" | "sdm670")
+	              "sdm845" | "sdm710")
 		          setprop persist.sys.usb.config diag,serial_cdev,rmnet,dpl,adb
 		      ;;
 	              "msmnile")
@@ -202,7 +202,7 @@ case "$target" in
 	setprop sys.usb.rmnet.func.name "rmnet_bam"
 	echo 15916 > /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size
         ;;
-    "sdm845" | "sdm670" | "msmnile")
+    "sdm845" | "sdm710" | "msmnile")
         setprop sys.usb.controller "a600000.dwc3"
         setprop sys.usb.rndis.func.name "gsi"
         setprop sys.usb.rmnet.func.name "gsi"
