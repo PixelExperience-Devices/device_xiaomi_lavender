@@ -98,11 +98,6 @@ PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/whitelistedapps.xml:$(TARGET_COPY_OU
 PRODUCT_PROPERTY_OVERRIDES += \
     video.disable.ubwc=1
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service \
-    android.hardware.power@1.0-impl
-
 # Override heap growth limit due to high display density on device
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapgrowthlimit=256m
@@ -289,6 +284,14 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
+
+# Power
+PRODUCT_PACKAGES += \
+    power.sdm660
+
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl
 
 # WLAN driver configuration file
 PRODUCT_COPY_FILES += \
