@@ -23,7 +23,8 @@
 
 $(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Default vendor configuration.
 ifeq ($(ENABLE_VENDOR_IMAGE),)
