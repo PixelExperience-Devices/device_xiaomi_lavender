@@ -323,7 +323,20 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    init.class_main.sh \
+    init.msm.usb.configfs.rc \
+    init.qcom.bt.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.rc \
+    init.qcom.sensors.sh \
+    init.qcom.sh \
+    init.qcom.ssr.sh \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.qti.ims.sh \
     init.target.rc \
+    ueventd.qcom.rc \
     fstab.qcom
 
 # Wifi
