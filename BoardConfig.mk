@@ -65,6 +65,9 @@ TARGET_KERNEL_CONFIG := sdm660-perf_defconfig
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
+# ANT+
+BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
+
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
