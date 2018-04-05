@@ -87,7 +87,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
-TARGET_USES_QCOM_DISPLAY_BSP := true
 
 #Gralloc h/w specif flags
 TARGET_USES_HWC2 := true
@@ -112,7 +111,6 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_USES_UNCOMPRESSED_KERNEL := false
 
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
@@ -120,20 +118,14 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096
 
-BOARD_USES_GENERIC_AUDIO := true
 USE_CAMERA_STUB := false
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_NO_RPC := true
 
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_INIT_VENDOR_LIB := libinit_msm
 
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 TARGET_KERNEL_APPEND_DTB := true
-TARGET_COMPILE_WITH_MSM_KERNEL := true
-
-#Enable PD locater/notifier
-TARGET_PD_SERVICE_ENABLED := true
 
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
@@ -152,21 +144,12 @@ ifeq ($(HOST_OS),linux)
     endif
 endif
 
-#Enable peripheral manager
-TARGET_PER_MGR_ENABLED := true
-
-#Enable SSC Feature
-TARGET_USES_SSC := true
-
 # Enable sensor multi HAL
 USE_SENSOR_MULTI_HAL := true
 
 #Enable CPUSets
 ENABLE_CPUSETS := true
 ENABLE_SCHEDBOOST := true
-
-#Enabling IMS Feature
-TARGET_USES_IMS := true
 
 # inherit from the proprietary version
 -include vendor/xiaomi/whyred/BoardConfigVendor.mk
