@@ -21,6 +21,8 @@
 # definition file).
 #
 
+$(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
+
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # Default vendor configuration.
