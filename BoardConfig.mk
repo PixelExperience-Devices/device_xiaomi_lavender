@@ -61,6 +61,7 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
 TARGET_KERNEL_CONFIG := sdm660-perf_defconfig
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
