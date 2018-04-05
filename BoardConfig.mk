@@ -144,6 +144,9 @@ TARGET_RIL_VARIANT := caf
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
+# Seccomp
+BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
+
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
@@ -157,8 +160,6 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 
 # Enable dex pre-opt to speed up initial boot
 ifeq ($(HOST_OS),linux)
