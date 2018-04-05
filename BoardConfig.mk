@@ -126,6 +126,9 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 # RIL
 TARGET_RIL_VARIANT := caf
 
+# Sensors
+USE_SENSOR_MULTI_HAL := true
+
 ifeq ($(BOARD_KERNEL_CMDLINE),)
 ifeq ($(TARGET_KERNEL_VERSION),4.4)
      BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 earlycon=msm_serial_dm,0xc170000
@@ -159,9 +162,6 @@ ifeq ($(HOST_OS),linux)
       endif
     endif
 endif
-
-# Enable sensor multi HAL
-USE_SENSOR_MULTI_HAL := true
 
 # inherit from the proprietary version
 -include vendor/xiaomi/whyred/BoardConfigVendor.mk
