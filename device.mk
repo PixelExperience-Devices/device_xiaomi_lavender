@@ -338,6 +338,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.sdm660
 
+# VNDK
+PRODUCT_PACKAGES += vndk-sp
+
 # Wifi
 PRODUCT_PACKAGES += \
     ipacm \
