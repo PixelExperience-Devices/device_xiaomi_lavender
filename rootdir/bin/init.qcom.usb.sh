@@ -151,50 +151,12 @@ esac
 
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then
-	setprop vendor.usb.rndis.func.name "rndis_bam"
-	setprop vendor.usb.rmnet.func.name "rmnet_bam"
-	# set USB controller's device node
-	case "$target" in
-	"msm8937")
-		setprop sys.usb.controller "msm_hsusb"
-		;;
-	"msm8953")
-		setprop sys.usb.controller "7000000.dwc3"
-		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_tx_req_len
-		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_rx_req_len
-		;;
-	"msm8996")
-		setprop sys.usb.controller "6a00000.dwc3"
-		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_tx_req_len
-		echo 131072 > /sys/module/usb_f_mtp/parameters/mtp_rx_req_len
-		;;
-	"msm8998" | "apq8098_latv")
-		setprop sys.usb.controller "a800000.dwc3"
-		setprop vendor.usb.rndis.func.name "gsi"
-		setprop vendor.usb.rmnet.func.name "gsi"
-		;;
-	"sdm660")
-		setprop sys.usb.controller "a800000.dwc3"
-		echo 15916 > /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size
-		;;
-	"sdm845")
-		setprop sys.usb.controller "a600000.dwc3"
-		setprop vendor.usb.rndis.func.name "gsi"
-		setprop vendor.usb.rmnet.func.name "gsi"
-		;;
-	*)
-		;;
-	esac
-
-	product_string=`cat /config/usb_gadget/g1/strings/0x409/product` 2> /dev/null
-	if [ "product_string" == "" ]; then
-		# Chip-serial is used for unique MSM identification in Product string
-		msm_serial=`cat /sys/devices/soc0/serial_number`;
-		msm_serial_hex=`printf %08X $msm_serial`
-		machine_type=`cat /sys/devices/soc0/machine`
-		product_string="$machine_type-$soc_hwplatform _SN:$msm_serial_hex"
-		echo "$product_string" > /config/usb_gadget/g1/strings/0x409/product
-	fi
+	# Chip-serial is used for unique MSM identification in Product string
+	# msm_serial=`cat /sys/devices/soc0/serial_number`;
+	# msm_serial_hex=`printf %08X $msm_serial`
+	# machine_type=`cat /sys/devices/soc0/machine`
+	# product_string="$machine_type-$soc_hwplatform _SN:$msm_serial_hex"
+	# echo "$product_string" > /config/usb_gadget/g1/strings/0x409/product
 
 	# ADB requires valid iSerialNumber; if ro.serialno is missing, use dummy
 	serialnumber=`cat /config/usb_gadget/g1/strings/0x409/serialnumber` 2> /dev/null
@@ -202,26 +164,15 @@ if [ -d /config/usb_gadget ]; then
 		serialno=1234567
 		echo $serialno > /config/usb_gadget/g1/strings/0x409/serialnumber
 	fi
-
-	persist_comp=`getprop persist.sys.usb.config`
+	persist_comp=`getprop persist.vendor.usb.config`
 	comp=`getprop sys.usb.config`
 	echo $persist_comp
 	echo $comp
 	if [ "$comp" != "$persist_comp" ]; then
-		echo "setting sys.usb.config"
-		setprop sys.usb.config $persist_comp
+	    echo "setting sys.usb.config"
+	    setprop sys.usb.config $persist_comp
 	fi
-
 	setprop sys.usb.configfs 1
-else
-	persist_comp=`getprop persist.sys.usb.config`
-	comp=`getprop sys.usb.config`
-	echo $persist_comp
-	echo $comp
-	if [ "$comp" != "$persist_comp" ]; then
-		echo "setting sys.usb.config"
-		setprop sys.usb.config $persist_comp
-	fi
         #
         # Do target specific things
         #
@@ -312,38 +263,3 @@ if [ -d /config/usb_gadget/g1/functions/uvc.0 ]; then
 	ln -s streaming/header/h streaming/class/hs/
 	ln -s streaming/header/h streaming/class/ss/
 fi
-
-product_name=`getprop ro.product.name`
-miui_release=`getprop ro.miui.ui.version.name`
-miui_debuggable=`getprop ro.debuggable`
-case "$miui_release" in
-	"")
-		case "$miui_debuggable" in
-			"1")
-				setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb
-			;;
-			*)
-				setprop persist.sys.usb.config diag,serial_cdev,rmnet
-			;;
-		esac
-	;;
-	*)
-		case "$miui_debuggable" in
-			"1")
-				case "$product_name" in
-					"whyred" | "wayne")
-						setprop persist.sys.usb.config adb
-					;;
-				esac
-			;;
-			*)
-				case "$product_name" in
-					"whyred" | "wayne")
-						setprop persist.sys.usb.config none
-					;;
-				esac
-	  		;;
-		esac
-  	;;
-esac
-
