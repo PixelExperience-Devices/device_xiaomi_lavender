@@ -1,4 +1,4 @@
-# Copyright (c) 2011-2016, The Linux Foundation. All rights reserved.
+# Copyright (c) 2011-2016, 2018 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -52,8 +52,8 @@ on charger
     setprop sys.usb.state ${sys.usb.config}
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
     write /sys/class/android_usb/android0/f_ffs/aliases adb
-    enable qcom-usb-sh
-    start qcom-usb-sh
+    enable vendor.qcom-usb-sh
+    start vendor.qcom-usb-sh
     setprop sys.usb.config mass_storage
 
 
@@ -102,9 +102,9 @@ on boot
     write /sys/class/android_usb/android0/f_ffs/aliases adb
 
 on load_persist_props_action
-    enable qcom-usb-sh
+    enable vendor.qcom-usb-sh
 
-service qcom-usb-sh /vendor/bin/init.qcom.usb.sh
+service vendor.qcom-usb-sh /vendor/bin/init.qcom.usb.sh
     class core
     user root
     oneshot
@@ -814,11 +814,11 @@ on property:sys.usb.config=diag,diag_qsc,serial_smd,serial_tty,serial_hsuart,rmn
     write /sys/class/android_usb/android0/enable 1
     setprop sys.usb.state ${sys.usb.config}
 
-on property:sys.usb.tethering=true
-    write /sys/class/net/rndis0/queues/rx-0/rps_cpus ${sys.usb.rps_mask}
+on property:vendor.usb.tethering=true
+    write /sys/class/net/rndis0/queues/rx-0/rps_cpus ${vendor.usb.rps_mask}
 
 on property:sys.usb.config=rndis
-    setprop sys.usb.config rndis,${persist.sys.usb.config.extra}
+    setprop sys.usb.config rndis,${persist.vendor.usb.config.extra}
 
 on property:sys.usb.config=rndis,none && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
@@ -831,7 +831,7 @@ on property:sys.usb.config=rndis,none && property:sys.usb.configfs=0
     setprop sys.usb.state rndis
 
 on property:sys.usb.config=rndis,adb && property:sys.usb.configfs=0
-    setprop sys.usb.config rndis,${persist.sys.usb.config.extra},adb
+    setprop sys.usb.config rndis,${persist.vendor.usb.config.extra},adb
 
 on property:sys.usb.config=rndis,none,adb && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 0
