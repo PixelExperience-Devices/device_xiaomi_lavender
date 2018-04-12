@@ -59,19 +59,19 @@ static int hw_buttons;
 #define LCD_BRIGHTNESS_FILE "/sys/class/leds/lcd-backlight/brightness"
 #define LCD_MAX_BRIGHTNESS_FILE "/sys/class/leds/lcd-backlight/max_brightness"
 
-#define WHITE_LED_BRIGHTNESS_FILE "/sys/class/leds/white/brightness"
+#define RED_LED_BRIGHTNESS_FILE "/sys/class/leds/red/brightness"
 
-#define WHITE_DUTY_PCTS_FILE "/sys/class/leds/white/duty_pcts"
+#define RED_DUTY_PCTS_FILE "/sys/class/leds/red/duty_pcts"
 
-#define WHITE_START_IDX_FILE "/sys/class/leds/white/start_idx"
+#define RED_START_IDX_FILE "/sys/class/leds/red/start_idx"
 
-#define WHITE_PAUSE_LO_FILE "/sys/class/leds/white/pause_lo"
+#define RED_PAUSE_LO_FILE "/sys/class/leds/red/pause_lo"
 
-#define WHITE_PAUSE_HI_FILE "/sys/class/leds/white/pause_hi"
+#define RED_PAUSE_HI_FILE "/sys/class/leds/red/pause_hi"
 
-#define WHITE_RAMP_STEP_MS_FILE "/sys/class/leds/white/ramp_step_ms"
+#define RED_RAMP_STEP_MS_FILE "/sys/class/leds/red/ramp_step_ms"
 
-#define WHITE_BLINK_FILE "/sys/class/leds/white/blink"
+#define RED_BLINK_FILE "/sys/class/leds/red/blink"
 
 char const*const PERSISTENCE_FILE
         = "/sys/class/graphics/fb0/msm_fb_persist_mode";
@@ -270,7 +270,7 @@ static char* get_scaled_duty_pcts(int brightness)
 static int set_speaker_light_locked(struct light_device_t* dev,
         struct light_state_t const* state)
 {
-    int white, blink;
+    int red, blink;
     int onMS, offMS, stepDuration, pauseHi;
     char *duty;
 
@@ -292,10 +292,10 @@ static int set_speaker_light_locked(struct light_device_t* dev,
     ALOGV("%s: mode %d, colorRGB=%08X, onMS=%d, offMS=%d\n",
             __func__, state->flashMode, state->color, onMS, offMS);
 
-    white = rgb_to_brightness(state);
+    red = rgb_to_brightness(state);
     blink = onMS > 0 && offMS > 0;
 
-    write_int(WHITE_BLINK_FILE, 0);
+    write_int(RED_BLINK_FILE, 0);
 
     if (blink) {
         stepDuration = RAMP_STEP_DURATION;
@@ -305,24 +305,23 @@ static int set_speaker_light_locked(struct light_device_t* dev,
             pauseHi = 0;
         }
 
-        // white
-        write_int(WHITE_START_IDX_FILE, 0);
-        duty = get_scaled_duty_pcts(white);
-        write_str(WHITE_DUTY_PCTS_FILE, duty);
-        write_int(WHITE_PAUSE_LO_FILE, offMS);
+        write_int(RED_START_IDX_FILE, 0);
+        duty = get_scaled_duty_pcts(red);
+        write_str(RED_DUTY_PCTS_FILE, duty);
+        write_int(RED_PAUSE_LO_FILE, offMS);
         // The led driver is configured to ramp up then ramp
         // down the lut. This effectively doubles the ramp duration.
-        write_int(WHITE_PAUSE_HI_FILE, pauseHi);
-        write_int(WHITE_RAMP_STEP_MS_FILE, stepDuration);
+        write_int(RED_PAUSE_HI_FILE, pauseHi);
+        write_int(RED_RAMP_STEP_MS_FILE, stepDuration);
         free(duty);
 
-	write_int(WHITE_BLINK_FILE, 1);
+	write_int(RED_BLINK_FILE, 1);
 
     } else {
-        if (white == 0 ) {
-            write_int(WHITE_BLINK_FILE, 0);
+        if (red == 0 ) {
+            write_int(RED_BLINK_FILE, 0);
         }
-        write_int(WHITE_LED_BRIGHTNESS_FILE, white);
+        write_int(RED_LED_BRIGHTNESS_FILE, red);
     }
 
     return 0;
@@ -468,7 +467,7 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     .version_major = 1,
     .version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
-    .name = "Mi 6 Lights Module",
+    .name = "Redmi Note 5 Lights Module",
     .author = "The CyanogenMod Project",
     .methods = &lights_module_methods,
 };
