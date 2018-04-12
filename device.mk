@@ -378,7 +378,8 @@ PRODUCT_COPY_FILES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.sdm660
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
 
 # Telephony
 PRODUCT_PACKAGES += \
