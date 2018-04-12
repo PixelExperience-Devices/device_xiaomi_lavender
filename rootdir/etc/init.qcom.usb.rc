@@ -101,7 +101,7 @@ on boot
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
     write /sys/class/android_usb/android0/f_ffs/aliases adb
 
-on property:sys.boot_completed=1
+on load_persist_props_action
     enable qcom-usb-sh
 
 service qcom-usb-sh /vendor/bin/init.qcom.usb.sh
