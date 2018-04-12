@@ -257,6 +257,11 @@ PRODUCT_PACKAGES += \
     libgnss \
     libgnsspps
 
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@1.0-impl \
+    android.hardware.health@1.0-service
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
@@ -429,11 +434,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 PRODUCT_VENDOR_MOVE_ENABLED := true
-
-#Healthd packages
-PRODUCT_PACKAGES += android.hardware.health@1.0-impl \
-                    android.hardware.health@1.0-convert \
-                    android.hardware.health@1.0-service \
-                    libhealthd.msm
 
 PRODUCT_PROPERTY_OVERRIDES += rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
