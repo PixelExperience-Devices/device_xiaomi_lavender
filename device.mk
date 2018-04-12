@@ -24,7 +24,9 @@
 $(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-mokee
 
 # Permissions
 PRODUCT_COPY_FILES += \
