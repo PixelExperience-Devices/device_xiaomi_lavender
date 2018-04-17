@@ -151,13 +151,6 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     libbt-vendor
 
-#
-# system prop for opengles version
-#
-# 196610 is decimal for 0x30002 to report major/minor versions as 3/2
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196610
-
 PRODUCT_BOOT_JARS += tcmiface
 
 DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/manifest.xml
@@ -442,5 +435,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/wifi_concurrency_cfg.txt:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wifi_concurrency_cfg.txt \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
-
-PRODUCT_PROPERTY_OVERRIDES += rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
