@@ -155,6 +155,10 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
+
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
