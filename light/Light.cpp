@@ -179,13 +179,13 @@ static std::vector<std::pair<Type, LightState>> notificationStates = {
 };
 
 static void handleNotification(Type type, const LightState& state) {
-    for(auto it = notificationStates.begin(); it != notificationStates.end(); it++) {
-        if (it->first == type) {
-            it->second = state;
+    for(auto it : notificationStates) {
+        if (it.first == type) {
+            it.second = state;
         }
 
-        if  (isLit(it->second)) {
-            setNotification(it->second);
+        if  (isLit(it.second)) {
+            setNotification(it.second);
             return;
         }
     }
