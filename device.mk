@@ -273,7 +273,7 @@ PRODUCT_COPY_FILES += \
     
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/sdm630-snd-card_Button_Jack.kl:system/usr/synaptics_dsx/sdm630-snd-card_Button_Jack.kl \
+    $(LOCAL_PATH)/keylayout/sdm630-snd-card_Button_Jack.kl:system/usr/keylayout/sdm630-snd-card_Button_Jack.kl \
     $(LOCAL_PATH)/keylayout/uinput-fpc.kl:system/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/keylayout/uinput-goodix.kl:system/usr/keylayout/uinput-goodix.kl
 
