@@ -220,3 +220,6 @@ persist.device.type=omt
 # flag for activating mbn or not,default is true.
 persist.activate_mbn.enabled=false
 ro.regionalization.support=true
+
+# Maintainer
+ro.mk.maintainer=guaiyihu
