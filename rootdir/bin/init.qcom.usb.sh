@@ -89,7 +89,7 @@ esac
 if [ -d /sys/bus/esoc/devices ]; then
 for f in /sys/bus/esoc/devices/*; do
     if [ -d $f ]; then
-        if [ `grep "^MDM" $f/esoc_name` ]; then
+    if [ `grep -e "^MDM" -e "^SDX" $f/esoc_name` ]; then
             esoc_link=`cat $f/esoc_link`
             break
         fi
