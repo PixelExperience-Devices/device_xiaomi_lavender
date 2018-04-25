@@ -72,70 +72,69 @@ fi
 baseband=`getprop ro.baseband`
 
 echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
-usb_config=`getprop persist.sys.usb.config`
-case "$usb_config" in
-    "" | "adb") #USB persist config not set, select default configuration
+usb_config=`getprop persist.vendor.usb.config`
+if [ "$usb_config" == "" ]; then #USB persist config not set, select default configuration
       if [ "$esoc_link" != "" ]; then
-	  setprop persist.sys.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
+	  setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
       else
 	  case "$baseband" in
 	      "apq")
-	          setprop persist.sys.usb.config diag,adb
+	          setprop persist.vendor.usb.config diag,adb
 	      ;;
 	      *)
 	      case "$soc_hwplatform" in
 	          "Dragon" | "SBC")
-	              setprop persist.sys.usb.config diag,adb
+	              setprop persist.vendor.usb.config diag,adb
 	          ;;
                   *)
 		  soc_machine=${soc_machine:0:3}
 		  case "$soc_machine" in
 		    "SDA")
-	              setprop persist.sys.usb.config diag,adb
+	              setprop persist.vendor.usb.config diag,adb
 		    ;;
 		    *)
 	            case "$target" in
 	              "msm8996")
-	                  setprop persist.sys.usb.config diag,serial_cdev,serial_tty,rmnet_ipa,mass_storage,adb
+	                  setprop persist.vendor.usb.config diag,serial_cdev,serial_tty,rmnet_ipa,mass_storage,adb
 		      ;;
 	              "msm8909")
-		          setprop persist.sys.usb.config diag,serial_smd,rmnet_qti_bam,adb
+		          setprop persist.vendor.usb.config diag,serial_smd,rmnet_qti_bam,adb
 		      ;;
 	              "msm8937")
 			    if [ -d /config/usb_gadget ]; then
-				       setprop persist.sys.usb.config diag,adb
+				       setprop persist.vendor.usb.config diag,adb
 			    else
 			               case "$soc_id" in
 				               "313" | "320")
-				                  setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
+				                  setprop persist.vendor.usb.config diag,serial_smd,rmnet_ipa,adb
 				               ;;
 				               *)
-				                  setprop persist.sys.usb.config diag,serial_smd,rmnet_qti_bam,adb
+				                  setprop persist.vendor.usb.config diag,serial_smd,rmnet_qti_bam,adb
 				               ;;
 			               esac
 			    fi
 		      ;;
 	              "msm8952")
-		          setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
+		          setprop persist.vendor.usb.config diag,serial_smd,rmnet_ipa,adb
 		      ;;
 	              "msm8953")
 			      if [ -d /config/usb_gadget ]; then
-				      setprop persist.sys.usb.config diag,serial_cdev,rmnet,dpl,adb
+				      setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
 			      else
-				      setprop persist.sys.usb.config diag,serial_smd,rmnet_ipa,adb
+				      setprop persist.vendor.usb.config diag,serial_smd,rmnet_ipa,adb
 			      fi
 		      ;;
 	              "msm8998" | "sdm660" | "apq8098_latv")
-		          setprop persist.sys.usb.config diag,serial_cdev,rmnet,adb
+		          setprop persist.vendor.usb.config diag,serial_cdev,rmnet,adb
 		      ;;
 	              "sdm845" | "sdm710")
-		          setprop persist.sys.usb.config diag,serial_cdev,rmnet,dpl,adb
+		          setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
 		      ;;
 	              "msmnile")
-			  setprop persist.sys.usb.config diag,serial_cdev,rmnet,dpl,qdss,adb
+			  setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,qdss,adb
 		      ;;
 	              *)
-		          setprop persist.sys.usb.config diag,adb
+		          setprop persist.vendor.usb.config diag,adb
 		      ;;
                     esac
 		    ;;
@@ -145,9 +144,7 @@ case "$usb_config" in
 	      ;;
 	  esac
       fi
-  ;;
-  * ) ;; #USB persist config exists, do nothing
-esac
+fi
 
 # check configfs is mounted or not
 if [ -d /config/usb_gadget ]; then

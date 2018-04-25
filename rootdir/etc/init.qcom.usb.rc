@@ -114,6 +114,9 @@ service vendor.qcom-usb-sh /vendor/bin/init.qcom.usb.sh
     oneshot
     disabled
 
+on property:persist.vendor.usb.config=*
+    setprop persist.sys.usb.config ${persist.vendor.usb.config}
+
 # Following are the parameters required for usb functionality. They provide configurable options like
 # product_id/vendor id and allows specifying required functions:
 #
