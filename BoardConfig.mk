@@ -63,8 +63,9 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 
-# QCOM hardware
+# QCOM
 BOARD_USES_QCOM_HARDWARE := true
+TARGET_USE_SDCLANG := true
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
