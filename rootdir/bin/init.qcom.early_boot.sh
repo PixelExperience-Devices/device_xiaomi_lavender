@@ -313,8 +313,8 @@ esac
 # In mpss AT version is greater than 3.1, need 
 # to use the new vendor-ril which supports L+L feature 
 # otherwise use the existing old one. 
-if [ -f /firmware/verinfo/ver_info.txt ]; then 
-  modem=`cat /firmware/verinfo/ver_info.txt | 
+if [ -f /vendor/firmware_mnt/verinfo/ver_info.txt ]; then 
+  modem=`cat /vendor/firmware_mnt/verinfo/ver_info.txt | 
   sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' | 
   sed 's/.*AT.\(.*\)/\1/g' | cut -d \- -f 1` 
   zygote=`getprop ro.zygote` 
@@ -336,15 +336,15 @@ if [ -f /firmware/verinfo/ver_info.txt ]; then
    esac 
 fi
 
-if [ -f /firmware/verinfo/ver_info.txt ]; then
+if [ -f /vendor/firmware_mnt/verinfo/ver_info.txt ]; then
     # In mpss AT version is greater than 3.1, need
     # to use the new vendor-ril which supports L+L feature
     # otherwise use the existing old one.
-    modem=`cat /firmware/verinfo/ver_info.txt |
+    modem=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
             sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
             sed 's/.*MPSS.\(.*\)/\1/g' | cut -d \. -f 1`
     if [ "$modem" = "AT" ]; then
-        version=`cat /firmware/verinfo/ver_info.txt |
+        version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
                 sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
                 sed 's/.*AT.\(.*\)/\1/g' | cut -d \- -f 1`
         if [ ! -z $version ]; then
@@ -371,7 +371,7 @@ if [ -f /firmware/verinfo/ver_info.txt ]; then
     # to use the new vendor-ril which supports L+L feature
     # otherwise use the existing old one.
     elif [ "$modem" = "TA" ]; then
-        version=`cat /firmware/verinfo/ver_info.txt |
+        version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
                 sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
                 sed 's/.*TA.\(.*\)/\1/g' | cut -d \- -f 1`
         if [ ! -z $version ]; then
