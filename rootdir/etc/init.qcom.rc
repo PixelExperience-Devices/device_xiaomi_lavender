@@ -207,7 +207,7 @@ on boot
     chown system system /sys/class/sensors/ap3426-proximity/poll_delay
 
     # Create vpp directory
-    mkdir /persist/vpp 0770 media media
+    mkdir /mnt/vendor/persist/vpp 0770 media media
 
 # msm specific files that need to be created on /data
 on post-fs-data
