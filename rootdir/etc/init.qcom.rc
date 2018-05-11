@@ -36,8 +36,7 @@ on early-init
     chmod 0620 /dev/kmsg
 
 on init
-    # Set permissions for persist partition
-    mkdir /persist 0771 root system
+    # Set permissions for persistbak partition
     mkdir /persistbak 0771 root system
 
     # Support legacy paths
