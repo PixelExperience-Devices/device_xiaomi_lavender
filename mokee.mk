@@ -1,5 +1,5 @@
 # 
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2018 The Mokee Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="whyred" \
     PRODUCT_NAME="whyred" \
-    BUILD_FINGERPRINT="xiaomi/whyred/whyred:8.1.0/OPM1.171019.011/V9.5.12.0.OEICNFA:user/release-keys" \
-    PRIVATE_BUILD_DESC="whyred-user 8.1.0 OPM1.171019.011 V9.5.12.0.OEICNFA release-keys"
+    BUILD_FINGERPRINT="xiaomi/whyred/whyred:8.1.0/OPM1.171019.011/8.5.31:user/release-keys" \
+    PRIVATE_BUILD_DESC="whyred-user 8.1.0 OPM1.171019.011 8.5.31 release-keys"
 
 TARGET_VENDOR := Xiaomi
