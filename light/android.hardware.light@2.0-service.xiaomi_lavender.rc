@@ -1,7 +1,5 @@
 on boot
-    # White light
     chown system system /sys/class/leds/red/brightness
-
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/red/duty_pcts
     chown system system /sys/class/leds/red/pause_hi
