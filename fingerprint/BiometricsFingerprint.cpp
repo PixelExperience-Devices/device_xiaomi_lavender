@@ -15,6 +15,7 @@
  * limitations under the License.
  */
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660"
+#define FP_SENSOR_PROP "ro.boot.fpsensor"
 
 #include <hardware/hw_auth_token.h>
 
@@ -24,6 +25,7 @@
 
 #include <inttypes.h>
 #include <unistd.h>
+#include <cutils/properties.h>
 
 namespace android {
 namespace hardware {
@@ -215,8 +217,17 @@ fingerprint_device_t* getDeviceForVendor(const char *class_name)
 {
     const hw_module_t *hw_module = nullptr;
     int err;
+    char fp_vendor[PROPERTY_VALUE_MAX];
 
-    err = hw_get_module_by_class(FINGERPRINT_HARDWARE_MODULE_ID, class_name, &hw_module);
+    property_get(FP_SENSOR_PROP, fp_vendor, "fpc");
+    ALOGE("Fp vendor is %s",fp_vendor);
+
+    if (!strcmp(fp_vendor, "fpc")) {
+        err = hw_get_module_by_class(FINGERPRINT_HARDWARE_MODULE_ID, "fpc", &hw_module);
+    } else {
+        err = hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_module);
+    }
+
     if (err) {
         ALOGE("Failed to get fingerprint module: class %s, error %d", class_name, err);
         return nullptr;
@@ -262,13 +273,6 @@ fingerprint_device_t* getFingerprintDevice()
     fp_device = getDeviceForVendor("fpc");
     if (fp_device == nullptr) {
         ALOGE("Failed to load fpc fingerprint module");
-    } else {
-        return fp_device;
-    }
-
-    fp_device = getDeviceForVendor("goodix");
-    if (fp_device == nullptr) {
-        ALOGE("Failed to load goodix fingerprint module");
     } else {
         return fp_device;
     }
