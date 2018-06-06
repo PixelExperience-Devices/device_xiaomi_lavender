@@ -230,6 +230,11 @@ PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 PRODUCT_VENDOR_MOVE_ENABLED := true
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
+# TWRP Support
+ifeq ($(WITH_TWRP),true)
+-include $(DEVICE_PATH)/twrp.mk
+endif
+
 # Vendor init
 TARGET_INIT_VENDOR_LIB := libinit_whyred
 TARGET_RECOVERY_DEVICE_MODULES := libinit_whyred
