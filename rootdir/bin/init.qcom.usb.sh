@@ -66,18 +66,20 @@ else
 	soc_id=`cat /sys/devices/system/soc/soc0/id`
 fi
 
-#
-# Allow USB enumeration with default PID/VID
-#
-baseband=`getprop ro.baseband`
+if [ -f /sys/class/android_usb/f_mass_storage/lun/nofua ]; then
+	echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
+fi
 
-echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
-usb_config=`getprop persist.vendor.usb.config`
-if [ "$usb_config" == "" ]; then #USB persist config not set, select default configuration
+#
+# Override USB default composition
+#
+# If USB persist config not set, set default configuration
+if [ "$(getprop persist.vendor.usb.config)" == "" -a \
+	"$(getprop init.svc.vendor.usb-gadget-hal-1-0)" != "running" ]; then
       if [ "$esoc_link" != "" ]; then
 	  setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
       else
-	  case "$baseband" in
+	  case "$(getprop ro.baseband)" in
 	      "apq")
 	          setprop persist.vendor.usb.config diag,adb
 	      ;;
