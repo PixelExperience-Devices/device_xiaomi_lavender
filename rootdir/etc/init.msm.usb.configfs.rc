@@ -1204,3 +1204,15 @@ on property:sys.usb.config=midi && property:sys.usb.configfs=1
 on property:sys.usb.config=midi,adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x18d1
     write /config/usb_gadget/g1/idProduct 0x4ee9
+
+on property:vendor.usb.eud=1
+    write /config/usb_gadget/g1/configs/b.1/MaxPower 1
+    write /sys/module/eud/parameters/enable 1
+    write /sys/kernel/debug/pmic-votable/USB_ICL/force_active 1
+    write /sys/kernel/debug/pmic-votable/USB_ICL/force_val 500
+
+on property:vendor.usb.eud=0
+    write /sys/kernel/debug/pmic-votable/USB_ICL/force_active 0
+    write /sys/kernel/debug/pmic-votable/USB_ICL/force_val 0
+    write /config/usb_gadget/g1/configs/b.1/MaxPower 0
+    write /sys/module/eud/parameters/enable 0
