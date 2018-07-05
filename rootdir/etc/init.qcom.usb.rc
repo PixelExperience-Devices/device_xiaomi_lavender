@@ -25,9 +25,9 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-# controller name can be overridden from boot command line
-on init && on property:ro.boot.usbcontroller=*
-    setprop sys.usb.controller ${ro.boot.usbcontroller}
+# override controller name passed from init.target.rc
+on property:vendor.usb.controller=*
+    setprop sys.usb.controller ${vendor.usb.controller}
 
 on charger
     mkdir /dev/usb-ffs 0770 shell shell
