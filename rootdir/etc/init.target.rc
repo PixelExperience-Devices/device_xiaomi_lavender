@@ -71,6 +71,9 @@ on fs
     chown system system /dev/goodix_fp
     #chmod 0644 /dev/goodix_fp
 
+    chmod 0664 /sys/class/thermal/thermal_message/sconfig
+    chown system system /sys/class/thermal/thermal_message/sconfig
+
 on post-fs
     start qseecomd
     exec - system system -- /vendor/bin/init.qti.qseecomd.sh

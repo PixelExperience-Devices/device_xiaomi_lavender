@@ -307,6 +307,7 @@ on post-fs-data
     # Create the directories used by LctDiagSendData
     mkdir /data/lct_diag 0771 system system
     chown system system /data/lct_diag
+    rm /data/lct_diag/client_*
 
     mkdir /data/dpm/nsrm 0771 system system
     chown system system /data/dpm/nsrm
@@ -1054,7 +1055,7 @@ on property:sys.qbcharger.enable=true
 on property:sys.qbcharger.enable=false
     stop qbcharger
 
-service diag_mdlog_start /system/vendor/bin/diag_mdlog
+service diag_mdlog_start /system/vendor/bin/diag_mdlog -n 40
     class late_start
     user shell
     group system diag oem_2901 sdcard_rw sdcard_r media_rw
