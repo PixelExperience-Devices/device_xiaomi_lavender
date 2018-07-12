@@ -318,7 +318,7 @@ persist.vendor.radio.snapshot_timer=5
 persist.sys.ssr.restart_level=ALL_ENABLE
 
 # Security patch level
-ro.vendor.build.security_patch=2018-05-01
+ro.vendor.build.security_patch=2018-06-01
 
 # Maintainer
 ro.mk.maintainer=guaiyihu
