@@ -290,9 +290,7 @@ PRODUCT_COPY_FILES += \
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
-    IPACM_cfg.xml \
-    libipanat \
-    liboffloadhal
+    IPACM_cfg.xml
 
 # Ion
 PRODUCT_PACKAGES += \
@@ -409,7 +407,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0 \
     librmnetctl \
-    libxml2 \
     libprotobuf-cpp-full \
     rild
 
