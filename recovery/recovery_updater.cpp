@@ -30,6 +30,7 @@
 #include <vector>
 
 #include "edify/expr.h"
+#include "otautil/error_code.h"
 
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
