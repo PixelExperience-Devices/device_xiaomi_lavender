@@ -93,8 +93,6 @@ persist.timed.enable=true
 
 # system property for maximum number of HFP client connections
 bt.max.hfpclient.connections=1
-#force disable Bluetooth AAC by default
-persist.bt.a2dp.aac_disable=true
 
 # System property for cabl
 ro.qualcomm.cabl=0
