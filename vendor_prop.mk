@@ -332,10 +332,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.ssr.restart_level=ALL_ENABLE
 
-# Security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2018-07-01
-
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.mk.maintainer=guaiyihu
