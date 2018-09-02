@@ -448,7 +448,6 @@ PRODUCT_PACKAGES += \
     libicuuc.vendor \
     libstdc++.vendor \
     libgui_vendor \
-    vndk_package \
     vndk-ext
 
 PRODUCT_COPY_FILES += \
