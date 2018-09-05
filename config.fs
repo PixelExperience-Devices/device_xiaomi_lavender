@@ -16,6 +16,9 @@ value:2952
 [AID_VENDOR_ADPL_ODL]
 value:2905
 
+[AID_VENDOR_QRTR]
+value:2906
+
 [vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti]
 mode: 0755
 user: AID_BLUETOOTH
