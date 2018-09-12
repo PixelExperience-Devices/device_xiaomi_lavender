@@ -167,14 +167,11 @@ vendor/etc/qvr/qvrservice_6dof_config_stereo.xml
 vendor/etc/qvr/ov9282_stereo_1280x400_cam_config.xml
 vendor/lib/hw/camera.sdm660.so
 vendor/lib/libMiCameraHal.so
-vendor/lib/libmicamera.ic.so
 vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmjpeg_interface.so
 vendor/lib/libqomx_core.so
 vendor/lib/lib_lowlight.so
-vendor/lib/libarcsoft_portrait_editing.so
 vendor/lib/libarcsoft_beautyshot_exin.so
-vendor/lib/libarcsoft_beauty_shot.so
 vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_dualcam_refocus.so
 vendor/lib/libarcsoft_high_dynamic_range.so
@@ -184,7 +181,6 @@ vendor/lib/libchromaflash.so
 vendor/lib/libdepthmapwrapper.so
 vendor/lib/libdualcameraddm.so
 vendor/lib/libFaceGrade.so
-vendor/lib/libfit_face_beauty.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libgnustl_shared.so
 vendor/lib/libhal_dbg.so
@@ -314,7 +310,6 @@ vendor/lib64/libvideobokeh.so
 vendor/lib64/libvideoutils.so
 
 # Camera actuators
-vendor/lib/libactuator_rohm_bu64243gwz.so
 vendor/lib/libactuator_whyred_s5k2l7_ofilm_cn_i_ak7374.so
 vendor/lib/libactuator_whyred_s5k2l7_qtech_cn_ii_ak7374.so
 
@@ -755,7 +750,6 @@ vendor/firmware/cpp_firmware_v1_8_0.fw
 
 # Camera OIS
 vendor/lib/libois_bu63165.so
-vendor/lib/libois_lc898122.so
 
 # Camera sensors
 vendor/lib/libmmcamera_arcsoftbokeh_lib.so
@@ -1006,6 +1000,8 @@ vendor/lib64/vendor.qti.hardware.qteeconnector@1.0_vendor.so
 # DSP
 vendor/etc/scve/facereco/gModel.dat
 vendor/lib/libsdsprpc.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
+vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 vendor/lib/rfsa/adsp/dirac_resource.dar
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
 vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
@@ -1658,6 +1654,8 @@ vendor/bin/ssr_setup
 
 # Thermal
 vendor/etc/thermal-engine.conf
+vendor/etc/thermal-engine-china.conf
+vendor/etc/thermal-engine-india.conf
 vendor/etc/thermal-engine-map.conf
 vendor/etc/thermal-engine-sgame.conf
 vendor/bin/thermal-engine

@@ -50,7 +50,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.parser.ip.buffer.size=262144 \
     vendor.audio.flac.sw.decoder.24bit=true \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aac \
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
     vendor.audio.hw.aac.encoder=true \
@@ -331,6 +331,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #enable all system restart_level to relative
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.ssr.restart_level=ALL_ENABLE
+
+#Ignore the wrong IWLAN report when UE in W/G mode.
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.data_con_rprt=1
 
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
