@@ -110,7 +110,6 @@ on boot
     mkdir /persist/bluetooth 0770 bluetooth bluetooth
     mkdir /persist/misc 0770 system system
     mkdir /persist/alarm 0770 system system
-    mkdir /persist/time 0770 system system
     mkdir /persist/secnvm 0770 system system
 
     #Create NETMGR daemon socket area
