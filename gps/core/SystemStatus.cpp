@@ -34,8 +34,8 @@
 #include <string.h>
 #include <sys/time.h>
 #include <pthread.h>
-#include <platform_lib_log_util.h>
-#include <MsgTask.h>
+#include <loc_pla.h>
+#include <log_util.h>
 #include <loc_nmea.h>
 #include <DataItemsFactoryProxy.h>
 #include <SystemStatus.h>
@@ -120,6 +120,12 @@ public:
     double   mAgcGal;     // x16
     int32_t  mLeapSeconds;// x17
     int32_t  mLeapSecUnc; // x18
+    uint32_t mGloBpAmpI;  // x19
+    uint32_t mGloBpAmpQ;  // x1A
+    uint32_t mBdsBpAmpI;  // x1B
+    uint32_t mBdsBpAmpQ;  // x1C
+    uint32_t mGalBpAmpI;  // x1D
+    uint32_t mGalBpAmpQ;  // x1E
 };
 
 // parser
@@ -154,6 +160,12 @@ private:
         eMax0 = eAgcGal,
         eLeapSeconds = 23,
         eLeapSecUnc = 24,
+        eGloBpAmpI = 25,
+        eGloBpAmpQ = 26,
+        eBdsBpAmpI = 27,
+        eBdsBpAmpQ = 28,
+        eGalBpAmpI = 29,
+        eGalBpAmpQ = 30,
         eMax
     };
     SystemStatusPQWM1 mM1;
@@ -183,6 +195,12 @@ public:
     inline uint32_t   getRecErrorRecovery() { return mM1.mRecErrorRecovery; }
     inline int32_t    getLeapSeconds(){ return mM1.mLeapSeconds; }
     inline int32_t    getLeapSecUnc() { return mM1.mLeapSecUnc; }
+    inline uint32_t   getGloBpAmpI()  { return mM1.mGloBpAmpI; }
+    inline uint32_t   getGloBpAmpQ()  { return mM1.mGloBpAmpQ; }
+    inline uint32_t   getBdsBpAmpI()  { return mM1.mBdsBpAmpI; }
+    inline uint32_t   getBdsBpAmpQ()  { return mM1.mBdsBpAmpQ; }
+    inline uint32_t   getGalBpAmpI()  { return mM1.mGalBpAmpI; }
+    inline uint32_t   getGalBpAmpQ()  { return mM1.mGalBpAmpQ; }
 
     SystemStatusPQWM1parser(const char *str_in, uint32_t len_in)
         : SystemStatusNmeaBase(str_in, len_in)
@@ -218,6 +236,14 @@ public:
         if (mField.size() > eLeapSecUnc) {
             mM1.mLeapSeconds = atoi(mField[eLeapSeconds].c_str());
             mM1.mLeapSecUnc = atoi(mField[eLeapSecUnc].c_str());
+        }
+        if (mField.size() > eGalBpAmpQ) {
+            mM1.mGloBpAmpI = atoi(mField[eGloBpAmpI].c_str());
+            mM1.mGloBpAmpQ = atoi(mField[eGloBpAmpQ].c_str());
+            mM1.mBdsBpAmpI = atoi(mField[eBdsBpAmpI].c_str());
+            mM1.mBdsBpAmpQ = atoi(mField[eBdsBpAmpQ].c_str());
+            mM1.mGalBpAmpI = atoi(mField[eGalBpAmpI].c_str());
+            mM1.mGalBpAmpQ = atoi(mField[eGalBpAmpQ].c_str());
         }
     }
 
@@ -765,7 +791,13 @@ SystemStatusRfAndParams::SystemStatusRfAndParams(const SystemStatusPQWM1& nmea) 
     mAgcGps(nmea.mAgcGps),
     mAgcGlo(nmea.mAgcGlo),
     mAgcBds(nmea.mAgcBds),
-    mAgcGal(nmea.mAgcGal)
+    mAgcGal(nmea.mAgcGal),
+    mGloBpAmpI(nmea.mGloBpAmpI),
+    mGloBpAmpQ(nmea.mGloBpAmpQ),
+    mBdsBpAmpI(nmea.mBdsBpAmpI),
+    mBdsBpAmpQ(nmea.mBdsBpAmpQ),
+    mGalBpAmpI(nmea.mGalBpAmpI),
+    mGalBpAmpQ(nmea.mGalBpAmpQ)
 {
 }
 
@@ -783,7 +815,13 @@ bool SystemStatusRfAndParams::equals(const SystemStatusRfAndParams& peer)
         (mAgcGps != peer.mAgcGps) ||
         (mAgcGlo != peer.mAgcGlo) ||
         (mAgcBds != peer.mAgcBds) ||
-        (mAgcGal != peer.mAgcGal)) {
+        (mAgcGal != peer.mAgcGal) ||
+        (mGloBpAmpI != peer.mGloBpAmpI) ||
+        (mGloBpAmpQ != peer.mGloBpAmpQ) ||
+        (mBdsBpAmpI != peer.mBdsBpAmpI) ||
+        (mBdsBpAmpQ != peer.mBdsBpAmpQ) ||
+        (mGalBpAmpI != peer.mGalBpAmpI) ||
+        (mGalBpAmpQ != peer.mGalBpAmpQ)) {
         return false;
     }
     return true;
@@ -1309,11 +1347,10 @@ void SystemStatus::getIteminReport(TYPE_REPORT& reportout, const TYPE_ITEM& c) c
 @param[In]  data pointer to the NMEA string
 @param[In]  len  length of the NMEA string
 
-@return     true when successfully done
+@return     true when the NMEA is consumed by the method.
 ******************************************************************************/
 bool SystemStatus::setNmeaString(const char *data, uint32_t len)
 {
-    bool ret = false;
     if (!loc_nmea_is_debug(data, len)) {
         return false;
     }
@@ -1324,43 +1361,43 @@ bool SystemStatus::setNmeaString(const char *data, uint32_t len)
     pthread_mutex_lock(&mMutexSystemStatus);
 
     // parse the received nmea strings here
-    if      (0 == strncmp(data, "$PQWM1", SystemStatusNmeaBase::NMEA_MINSIZE)) {
+    if (0 == strncmp(data, "$PQWM1", SystemStatusNmeaBase::NMEA_MINSIZE)) {
         SystemStatusPQWM1 s = SystemStatusPQWM1parser(buf, len).get();
-        ret |= setIteminReport(mCache.mTimeAndClock, SystemStatusTimeAndClock(s));
-        ret |= setIteminReport(mCache.mXoState, SystemStatusXoState(s));
-        ret |= setIteminReport(mCache.mRfAndParams, SystemStatusRfAndParams(s));
-        ret |= setIteminReport(mCache.mErrRecovery, SystemStatusErrRecovery(s));
+        setIteminReport(mCache.mTimeAndClock, SystemStatusTimeAndClock(s));
+        setIteminReport(mCache.mXoState, SystemStatusXoState(s));
+        setIteminReport(mCache.mRfAndParams, SystemStatusRfAndParams(s));
+        setIteminReport(mCache.mErrRecovery, SystemStatusErrRecovery(s));
     }
     else if (0 == strncmp(data, "$PQWP1", SystemStatusNmeaBase::NMEA_MINSIZE)) {
-        ret = setIteminReport(mCache.mInjectedPosition,
+        setIteminReport(mCache.mInjectedPosition,
                 SystemStatusInjectedPosition(SystemStatusPQWP1parser(buf, len).get()));
     }
     else if (0 == strncmp(data, "$PQWP2", SystemStatusNmeaBase::NMEA_MINSIZE)) {
-        ret = setIteminReport(mCache.mBestPosition,
+        setIteminReport(mCache.mBestPosition,
                 SystemStatusBestPosition(SystemStatusPQWP2parser(buf, len).get()));
     }
     else if (0 == strncmp(data, "$PQWP3", SystemStatusNmeaBase::NMEA_MINSIZE)) {
-        ret = setIteminReport(mCache.mXtra,
+        setIteminReport(mCache.mXtra,
                 SystemStatusXtra(SystemStatusPQWP3parser(buf, len).get()));
     }
     else if (0 == strncmp(data, "$PQWP4", SystemStatusNmeaBase::NMEA_MINSIZE)) {
-        ret = setIteminReport(mCache.mEphemeris,
+        setIteminReport(mCache.mEphemeris,
                 SystemStatusEphemeris(SystemStatusPQWP4parser(buf, len).get()));
     }
     else if (0 == strncmp(data, "$PQWP5", SystemStatusNmeaBase::NMEA_MINSIZE)) {
-        ret = setIteminReport(mCache.mSvHealth,
+        setIteminReport(mCache.mSvHealth,
                 SystemStatusSvHealth(SystemStatusPQWP5parser(buf, len).get()));
     }
     else if (0 == strncmp(data, "$PQWP6", SystemStatusNmeaBase::NMEA_MINSIZE)) {
-        ret = setIteminReport(mCache.mPdr,
+        setIteminReport(mCache.mPdr,
                 SystemStatusPdr(SystemStatusPQWP6parser(buf, len).get()));
     }
     else if (0 == strncmp(data, "$PQWP7", SystemStatusNmeaBase::NMEA_MINSIZE)) {
-        ret = setIteminReport(mCache.mNavData,
+        setIteminReport(mCache.mNavData,
                 SystemStatusNavData(SystemStatusPQWP7parser(buf, len).get()));
     }
     else if (0 == strncmp(data, "$PQWS1", SystemStatusNmeaBase::NMEA_MINSIZE)) {
-        ret = setIteminReport(mCache.mPositionFailure,
+        setIteminReport(mCache.mPositionFailure,
                 SystemStatusPositionFailure(SystemStatusPQWS1parser(buf, len).get()));
     }
     else {
@@ -1368,7 +1405,7 @@ bool SystemStatus::setNmeaString(const char *data, uint32_t len)
     }
 
     pthread_mutex_unlock(&mMutexSystemStatus);
-    return ret;
+    return true;
 }
 
 /******************************************************************************
@@ -1613,7 +1650,7 @@ bool SystemStatus::getReport(SystemStatusReports& report, bool isLatestOnly) con
 
 @return     true when successfully done
 ******************************************************************************/
-bool SystemStatus::setDefaultReport(void)
+bool SystemStatus::setDefaultGnssEngineStates(void)
 {
     pthread_mutex_lock(&mMutexSystemStatus);
 
@@ -1634,29 +1671,6 @@ bool SystemStatus::setDefaultReport(void)
 
     setDefaultIteminReport(mCache.mPositionFailure, SystemStatusPositionFailure());
 
-    setDefaultIteminReport(mCache.mAirplaneMode, SystemStatusAirplaneMode());
-    setDefaultIteminReport(mCache.mENH, SystemStatusENH());
-    setDefaultIteminReport(mCache.mGPSState, SystemStatusGpsState());
-    setDefaultIteminReport(mCache.mNLPStatus, SystemStatusNLPStatus());
-    setDefaultIteminReport(mCache.mWifiHardwareState, SystemStatusWifiHardwareState());
-    setDefaultIteminReport(mCache.mNetworkInfo, SystemStatusNetworkInfo());
-    setDefaultIteminReport(mCache.mRilServiceInfo, SystemStatusServiceInfo());
-    setDefaultIteminReport(mCache.mRilCellInfo, SystemStatusRilCellInfo());
-    setDefaultIteminReport(mCache.mServiceStatus, SystemStatusServiceStatus());
-    setDefaultIteminReport(mCache.mModel, SystemStatusModel());
-    setDefaultIteminReport(mCache.mManufacturer, SystemStatusManufacturer());
-    setDefaultIteminReport(mCache.mAssistedGps, SystemStatusAssistedGps());
-    setDefaultIteminReport(mCache.mScreenState, SystemStatusScreenState());
-    setDefaultIteminReport(mCache.mPowerConnectState, SystemStatusPowerConnectState());
-    setDefaultIteminReport(mCache.mTimeZoneChange, SystemStatusTimeZoneChange());
-    setDefaultIteminReport(mCache.mTimeChange, SystemStatusTimeChange());
-    setDefaultIteminReport(mCache.mWifiSupplicantStatus, SystemStatusWifiSupplicantStatus());
-    setDefaultIteminReport(mCache.mShutdownState, SystemStatusShutdownState());
-    setDefaultIteminReport(mCache.mTac, SystemStatusTac());
-    setDefaultIteminReport(mCache.mMccMnc, SystemStatusMccMnc());
-    setDefaultIteminReport(mCache.mBtDeviceScanDetail, SystemStatusBtDeviceScanDetail());
-    setDefaultIteminReport(mCache.mBtLeDeviceScanDetail, SystemStatusBtleDeviceScanDetail());
-
     pthread_mutex_unlock(&mMutexSystemStatus);
     return true;
 }
@@ -1671,7 +1685,7 @@ bool SystemStatus::setDefaultReport(void)
 bool SystemStatus::eventConnectionStatus(bool connected, int8_t type)
 {
     // send networkinof dataitem to systemstatus observer clients
-    SystemStatusNetworkInfo s(type, "", "", false, connected, false);
+    SystemStatusNetworkInfo s(type, "", "", connected);
     mSysStatusObsvr.notify({&s});
 
     return true;

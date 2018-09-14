@@ -30,9 +30,10 @@
 #define __SYSTEM_STATUS__
 
 #include <stdint.h>
-#include <string>
+#include <sys/time.h>
 #include <vector>
-#include <platform_lib_log_util.h>
+#include <loc_pla.h>
+#include <log_util.h>
 #include <MsgTask.h>
 #include <IDataItemCore.h>
 #include <IOsObserver.h>
@@ -70,10 +71,10 @@ public:
     static const uint32_t maxItem = 5;
 
     SystemStatusItemBase() {
-        timeval tv;
-        gettimeofday(&tv, NULL);
+        struct timespec tv;
+        clock_gettime(CLOCK_MONOTONIC, &tv);
         mUtcTime.tv_sec  = tv.tv_sec;
-        mUtcTime.tv_nsec = tv.tv_usec *1000ULL;
+        mUtcTime.tv_nsec = tv.tv_nsec;
         mUtcReported = mUtcTime;
     };
     virtual ~SystemStatusItemBase() {};
@@ -155,6 +156,12 @@ public:
     double   mAgcGlo;
     double   mAgcBds;
     double   mAgcGal;
+    uint32_t mGloBpAmpI;
+    uint32_t mGloBpAmpQ;
+    uint32_t mBdsBpAmpI;
+    uint32_t mBdsBpAmpQ;
+    uint32_t mGalBpAmpI;
+    uint32_t mGalBpAmpQ;
     inline SystemStatusRfAndParams() :
         mPgaGain(0),
         mGpsBpAmpI(0),
@@ -168,7 +175,13 @@ public:
         mAgcGps(0),
         mAgcGlo(0),
         mAgcBds(0),
-        mAgcGal(0) {}
+        mAgcGal(0),
+        mGloBpAmpI(0),
+        mGloBpAmpQ(0),
+        mBdsBpAmpI(0),
+        mBdsBpAmpQ(0),
+        mGalBpAmpI(0),
+        mGalBpAmpQ(0) {}
     inline SystemStatusRfAndParams(const SystemStatusPQWM1& nmea);
     bool equals(const SystemStatusRfAndParams& peer);
     void dump(void);
@@ -453,7 +466,6 @@ public:
             int32_t type=0,
             std::string typeName="",
             string subTypeName="",
-            bool available=false,
             bool connected=false,
             bool roaming=false) :
             NetworkInfoDataItemBase(
@@ -461,7 +473,7 @@ public:
                     type,
                     typeName,
                     subTypeName,
-                    available,
+                    connected && (!roaming),
                     connected,
                     roaming),
             mSrcObjPtr(nullptr) {}
@@ -471,15 +483,7 @@ public:
         mType = itemBase.getType();
     }
     inline bool equals(const SystemStatusNetworkInfo& peer) {
-        if ((mAllTypes == peer.mAllTypes) &&
-            (mTypeName == peer.mTypeName) &&
-            (mSubTypeName == peer.mSubTypeName) &&
-            (mAvailable == peer.mAvailable) &&
-            (mConnected == peer.mConnected) &&
-            (mRoaming == peer.mRoaming)) {
-            return true;
-        }
-        return false;
+        return (mAllTypes == peer.mAllTypes);
     }
     inline virtual SystemStatusItemBase& collate(SystemStatusItemBase& curInfo) {
         uint64_t allTypes = (static_cast<SystemStatusNetworkInfo&>(curInfo)).mAllTypes;
@@ -817,7 +821,7 @@ public:
     bool eventDataItemNotify(IDataItemCore* dataitem);
     bool setNmeaString(const char *data, uint32_t len);
     bool getReport(SystemStatusReports& reports, bool isLatestonly = false) const;
-    bool setDefaultReport(void);
+    bool setDefaultGnssEngineStates(void);
     bool eventConnectionStatus(bool connected, int8_t type);
 };
 

@@ -48,6 +48,7 @@ struct GnssInterface {
     void (*disable)(uint32_t id);
     uint32_t* (*gnssUpdateConfig)(GnssConfig config);
     uint32_t (*gnssDeleteAidingData)(GnssAidingData& data);
+    void (*gnssUpdateXtraThrottle)(const bool enabled);
     void (*injectLocation)(double latitude, double longitude, float accuracy);
     void (*injectTime)(int64_t time, int64_t timeReference, int32_t uncertainty);
     void (*agpsInit)(const AgpsCbInfo& cbInfo);
@@ -56,6 +57,8 @@ struct GnssInterface {
     void (*agpsDataConnFailed)(AGpsExtType agpsType);
     void (*getDebugReport)(GnssDebugReport& report);
     void (*updateConnectionStatus)(bool connected, int8_t type);
+    void (*odcpiInit)(const OdcpiRequestCallback& callback);
+    void (*odcpiInject)(const Location& location);
 };
 
 struct FlpInterface {
