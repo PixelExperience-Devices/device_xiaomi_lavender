@@ -50,9 +50,9 @@ vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# AptX
-lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
-lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
+# AptX - from Nokia 7 Plus Onyx_00WW-user 9 PKQ1.180712.001 00WW_3_150 release-keys
+vendor/lib64/libaptX_encoder.so|22f5749edb5099526788c22708099a7791dd837f
+vendor/lib64/libaptXHD_encoder.so|c4ad4d6d7615f7df3ea1a4be5c6dae8a8c8ee8b1
 
 # Audio
 vendor/bin/audioflacapp
