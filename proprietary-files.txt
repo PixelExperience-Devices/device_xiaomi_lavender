@@ -55,8 +55,6 @@ vendor/lib64/libaptX_encoder.so|22f5749edb5099526788c22708099a7791dd837f
 vendor/lib64/libaptXHD_encoder.so|c4ad4d6d7615f7df3ea1a4be5c6dae8a8c8ee8b1
 
 # Audio
-vendor/bin/audioflacapp
-vendor/bin/capture_audio.sh
 vendor/etc/drc/drc_cfg_5.1.txt
 vendor/etc/drc/drc_cfg_AZ.txt
 vendor/etc/surround_sound_3mic/surround_sound_rec_5.1.cfg
@@ -122,7 +120,6 @@ vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
 
 # Camera
-bin/mm-qcamera-daemon
 lib/libskia.so:vendor/lib/libskia.so
 lib/libtrueportrait.so
 lib64/libtrueportrait.so
@@ -903,7 +900,6 @@ framework/vendor.qti.data.factory-V1.0-java.jar|c3cf1f995e94fb9f69d1d468d7209b09
 framework/vendor.qti.hardware.data.qmi-V1.0-java.jar|07b5b9c4f43ed79a5886b1d7033987bed7750a59
 
 # Consumerir
-vendor/bin/consumerird
 vendor/lib/hw/consumerir.default.so
 vendor/lib64/hw/consumerir.default.so
 
@@ -1402,7 +1398,6 @@ vendor/lib64/vendor.qti.hardware.limits@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.wipower@1.0_vendor.so
 
 # Peripheral manager
-vendor/bin/hal_proxy_daemon
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
@@ -1483,12 +1478,7 @@ framework/qti-telephony-common.jar|4ebf6571b783b3e2fa9a0ca5457fd2f3b5c01162
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/app/SVIService/SVIService.apk
-vendor/bin/diag_callback_sample
-vendor/bin/diag_dci_sample
-vendor/bin/diag_klog
 vendor/bin/diag_mdlog
-vendor/bin/diag_socket_log
-vendor/bin/diag_uart_log
 vendor/bin/qti
 vendor/lib/lib_remote_simlock.so
 vendor/lib/libconfigdb.so
@@ -1740,13 +1730,9 @@ lib64/libwfdservice.so
 lib64/libwfduibcsrc.so
 lib64/libwfduibcinterface.so
 lib64/com.qualcomm.qti.wifidisplayhal@1.0.so
-vendor/bin/hdcp1prov
-vendor/bin/hdcp2p2prov
 vendor/bin/wifidisplayhalservice
 vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
 vendor/lib/libwfdhdcpcp.so
-vendor/lib/libhdcp1prov.so
-vendor/lib/libhdcp2p2prov.so
 vendor/lib/libmmosal_proprietary.so
 vendor/lib/libwfdmodulehdcpsession.so
 vendor/lib/libwfdhaldsmanager.so
@@ -1758,8 +1744,6 @@ vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0_vendor.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-impl.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
 vendor/lib64/libwfdhdcpcp.so
-vendor/lib64/libhdcp1prov.so
-vendor/lib64/libhdcp2p2prov.so
 vendor/lib64/libmmosal_proprietary.so
 vendor/lib64/libwfdmodulehdcpsession.so
 vendor/lib64/libwfdhaldsmanager.so
