@@ -1093,7 +1093,7 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/m
 
 service vendor.goodix_script /vendor/bin/init.goodix.sh
     class late_start
-    user root
+    user system
     oneshot
 
 service vendor.msm_irqbal_lb /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance_little_big.conf

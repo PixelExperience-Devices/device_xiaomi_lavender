@@ -1,0 +1,2 @@
+#============= tee ==============
+allow tee system_prop:property_service set;
