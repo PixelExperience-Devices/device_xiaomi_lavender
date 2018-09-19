@@ -815,5 +815,5 @@ on property:sys.thermal.isincall=0
 
 service vendor.goodix_script /vendor/bin/init.goodix.sh
     class late_start
-    user root
+    user system
     oneshot

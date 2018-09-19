@@ -1,0 +1,1 @@
+allow hal_power_default sysfs_tap_to_wake:file rw_file_perms;
