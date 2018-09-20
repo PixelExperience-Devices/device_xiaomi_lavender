@@ -1680,7 +1680,6 @@ vendor/lib64/mediadrm/libwvdrmengine.so|37c60196e0ebddf730f42e66a33a38120393fa1d
 vendor/bin/cnss_diag
 vendor/bin/cnss-daemon
 vendor/bin/fstman
-vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0_vendor.so
 
 # Wi-Fi Display
 -app/WfdService/WfdService.apk
