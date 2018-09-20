@@ -1987,8 +1987,9 @@ case "$target" in
 	    platform_subtype_id=`cat /sys/devices/soc0/platform_subtype_id`
         fi
 
+        # Socid 386 = Pukeena
         case "$soc_id" in
-           "303" | "307" | "308" | "309" | "320" )
+           "303" | "307" | "308" | "309" | "320" | "386" )
 
                   # Start Host based Touch processing
                   case "$hw_platform" in
