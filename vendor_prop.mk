@@ -87,7 +87,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # system props for the cne module
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=1
+    persist.vendor.cne.feature=1
 
 #
 # system props for the dpm module
