@@ -930,36 +930,33 @@ vendor/etc/qdcm_calib_data_shenchao_td4310_fhd_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_tianma_nt36672_fhd_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_tianma_td4310_fhd_video_mode_dsi_panel.xml
 
-# DPM
-bin/dpmd
-etc/dpm/dpm.conf
-etc/dpm/nsrm/NsrmConfiguration.xml
-etc/init/dpmd.rc
-etc/permissions/com.qti.dpmframework.xml
-etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar
-framework/dpmapi.jar
-framework/tcmclient.jar
--priv-app/dpmserviceapp/dpmserviceapp.apk
-lib/com.qualcomm.qti.dpm.api@1.0.so
-lib/libdiag_system.so
-lib/libdpmctmgr.so
-lib/libdpmfdmgr.so
-lib/libdpmframework.so
-lib/libdpmnsrm.so
-lib/libdpmtcm.so
-lib64/com.qualcomm.qti.dpm.api@1.0.so
-lib64/libdiag_system.so
-lib64/libdpmctmgr.so
-lib64/libdpmfdmgr.so
-lib64/libdpmframework.so
-lib64/libdpmnsrm.so
-lib64/libdpmtcm.so
-vendor/bin/dpmQmiMgr
-vendor/lib/com.qualcomm.qti.dpm.api@1.0_vendor.so
-vendor/lib/libdpmqmihal.so
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so
-vendor/lib64/libdpmqmihal.so
+# DPM - from Nokia 7 Plus Onyx_00WW-user 9 PKQ1.180712.001 00WW_3_150 release-keys
+bin/dpmd|497e222ec99aad51cd16bc6f7afccabb170f0360
+etc/dpm/dpm.conf|5f19d3984b5291ac956552bda2a84c10c535df0a
+etc/init/dpmd.rc|52ca6ad920a1804e4ff608113cece063730f5e0c
+etc/permissions/com.qti.dpmframework.xml|36b94c9338069e434b83359a92cdc7ff62b822df
+etc/permissions/dpmapi.xml|ded29f9befaef20a7ccee0c75427fda1d1d04890
+framework/com.qti.dpmframework.jar|05aadaa961b0f08b164df591eae4d5b6ce2fb7e3
+framework/dpmapi.jar|b9cc6f1222bafd1d879ce99b9d01646f16bc2c8b
+framework/tcmclient.jar|d63f61a2905cc48f0eed56cce5dc0ca80f7ada3a
+-priv-app/dpmserviceapp/dpmserviceapp.apk|6f5995040248e4e09c73a83229fdc752c0a19d27
+lib/com.qualcomm.qti.dpm.api@1.0.so|afd15ba72e8b689c60f7fd83f134acb127947235
+lib/libdiag_system.so|64bf8110cfe4589af722b108d0f2aa0fd4eb8020
+lib/libdpmctmgr.so|ef6d10d53637c212c33556a8f5659d36177c2ae0
+lib/libdpmfdmgr.so|1c319d0a3b36661154b85a4f7e84db25cfa6e0aa
+lib/libdpmframework.so|65ccf6e437b4cd680bba61e3ab9d73fa5e08abe1
+lib/libdpmtcm.so|ea0fd40a387855a81f3c4ecf0018c0b55ddc6d3a
+lib64/com.qualcomm.qti.dpm.api@1.0.so|9ecb520f6ff977464336a15c533640bc928d7807
+lib64/libdiag_system.so|93d82ca6f8f09d8ad543f162eae7bfd9f6094567
+lib64/libdpmctmgr.so|de05a71575bb2ffbb2629df9f10c38a63622c5fb
+lib64/libdpmfdmgr.so|3fb77eec51360cefbc4517cb542b5d3509c4418a
+lib64/libdpmframework.so|1143906fbd3d5afb4d35d9a230b5e4b5e3b7b532
+lib64/libdpmtcm.so|7fdba85093073ad8f748112b878edfc9ff0fd288
+vendor/bin/dpmQmiMgr|a6460e2ca8285400f0761ccebf3c06e25ed96eea
+vendor/lib/libdpmqmihal.so|21275ef120d5bcc6e63dbefdbde5bd5ee9a7198c
+vendor/lib64/libdpmqmihal.so|c3c800adff00122ce30397967e3718425b9bc4d5
+vendor/lib/com.qualcomm.qti.dpm.api@1.0.so|ed0661a70c44a7d9ee9f08f46141535605f671c1
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|f602a282596c1ab5065b9bbc4ecd098409957dce
 
 # DRM
 lib/libGPTEE_system.so

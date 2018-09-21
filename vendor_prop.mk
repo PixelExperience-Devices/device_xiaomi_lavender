@@ -93,7 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # system props for the dpm module
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dpm.feature=1
+    persist.vendor.dpm.feature=1
 
 #system props for the MM modules
 PRODUCT_PROPERTY_OVERRIDES += \
