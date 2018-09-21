@@ -123,8 +123,12 @@ vendor/lib64/libbtnv.so
 
 # Camera
 bin/mm-qcamera-daemon
+lib/libskia.so
+lib64/libskia.so
 lib/libtrueportrait.so
 lib64/libtrueportrait.so
+vendor/lib/libicuuc-v27.so|97cd1240093dac8a61ff51ee67d1118022ffa6bf
+vendor/lib/libminikin-v27.so|2768fc1fedd736f7d4c2ce30608699cd9408a417
 vendor/etc/camera/age_gender_bg
 vendor/etc/camera/camera_config.xml
 vendor/etc/camera/crown_156_128.bin
@@ -1071,6 +1075,7 @@ vendor/firmware/fpctzappfingerprint.b07
 vendor/firmware/fpctzappfingerprint.mdt
 
 # Fingerprint sensor
+lib64/libsoftkeymaster.so:vendor/lib64/libsoftkeymaster.so
 -vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk
 -vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/bin/qfp-daemon
