@@ -1105,7 +1105,6 @@ vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
 # FM
-bin/fmconfig
 lib/libfm-hci.so
 lib/fm_helium.so
 lib64/libfm-hci.so
@@ -1465,9 +1464,7 @@ vendor/lib64/libUserAgent.so
 -app/QtiSystemService/QtiSystemService.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 vendor/bin/ATFWD-daemon
-vendor/bin/ipacm-diag
 vendor/bin/netmgrd
-vendor/bin/port-bridge
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
 vendor/etc/data/dsi_config.xml
@@ -1482,7 +1479,6 @@ framework/qti-telephony-common.jar|4ebf6571b783b3e2fa9a0ca5457fd2f3b5c01162
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/app/SVIService/SVIService.apk
-vendor/bin/diag_mdlog
 vendor/bin/qti
 vendor/lib/lib_remote_simlock.so
 vendor/lib/libconfigdb.so
@@ -1681,9 +1677,7 @@ vendor/lib/mediadrm/libwvdrmengine.so|56f4f50b82787d4709b82cbffe3e41a1e0e9569a
 vendor/lib64/mediadrm/libwvdrmengine.so|37c60196e0ebddf730f42e66a33a38120393fa1d
 
 # Wifi
-vendor/bin/cnss_diag
 vendor/bin/cnss-daemon
-vendor/bin/fstman
 
 # Wi-Fi Display
 -app/WfdService/WfdService.apk

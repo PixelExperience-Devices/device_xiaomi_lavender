@@ -47,7 +47,6 @@ esac
 
 case "$baseband" in
     "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3" | "sdm" | "sdx")
-    start vendor.ipacm-diag
     start vendor.ipacm
     case "$baseband" in
         "svlte2a" | "csfb")
@@ -70,18 +69,15 @@ case "$baseband" in
         start vendor.ril-daemon2
     elif [ "$multisim" = "tsts" ]; then
         start vendor.ril-daemon2
-        start vendor.ril-daemon3
     fi
 
     case "$datamode" in
         "tethered")
             start vendor.qti
-            start vendor.port-bridge
             ;;
         "concurrent")
             start vendor.qti
             start vendor.netmgrd
-            start vendor.port-bridge
             ;;
         *)
             start vendor.netmgrd
