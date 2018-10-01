@@ -359,7 +359,7 @@ case "$target" in
              hw_platform=`cat /sys/devices/system/soc/soc0/hw_platform`
         fi
         case "$soc_id" in
-             "336" | "337" | "347" | "360" )
+             "336" | "337" | "347" | "360" | "393" )
                   case "$hw_platform" in
                        "Surf")
                                     setprop qemu.hw.mainkeys 0
