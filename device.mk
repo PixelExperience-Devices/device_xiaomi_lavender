@@ -24,6 +24,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
