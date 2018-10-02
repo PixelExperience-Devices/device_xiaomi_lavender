@@ -7,7 +7,6 @@
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
 
-# Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
 
 # Boot animation
@@ -21,6 +20,9 @@ DEVICE_PACKAGE_OVERLAYS += \
  
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += device/xiaomi/lavender
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
