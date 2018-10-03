@@ -1053,16 +1053,6 @@ vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so|11b133cc324028f585007596c8c
 vendor/lib64/vendor.qti.esepowermanager@1.0_vendor.so|5bd2c3917880ca06efe9586609532aeaf8d27ff6
 vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so|7519d62e08823e75bb502756e7cecbb1f7c1f755
 
-# Fido
-lib/libFidoCryptoJNI.so
-lib/libFidoCrypto_system.so
-lib64/libFidoCryptoJNI.so
-lib64/libFidoCrypto_system.so
-vendor/lib/libFidoCrypto_vendor.so
-vendor/lib64/libFidoCrypto_vendor.so
-vendor/lib/libFIDOKeyProvisioning.so
-vendor/lib64/libFIDOKeyProvisioning.so
-
 # Fingerprint firmware
 etc/firmware/goodixfp.b00
 etc/firmware/goodixfp.b01
