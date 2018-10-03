@@ -1623,10 +1623,6 @@ vendor/firmware/a530_gpmu.fw2
 vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
 
-# Subsystem restart
-vendor/bin/ssr_diag
-vendor/bin/ssr_setup
-
 # Thermal
 vendor/etc/thermal-engine.conf
 vendor/etc/thermal-engine-china.conf

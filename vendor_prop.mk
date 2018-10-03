@@ -328,10 +328,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.snapshot_enabled=1 \
     persist.vendor.radio.snapshot_timer=5
 
-#enable all system restart_level to relative
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.ssr.restart_level=ALL_ENABLE
-
 #Ignore the wrong IWLAN report when UE in W/G mode.
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.data_con_rprt=1
