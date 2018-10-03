@@ -450,12 +450,6 @@ on property:persist.debug.trace=1
     mkdir /data/core 0777 root root
     write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
 
-on property:sys.ftmd=1
-    start vendor.ftmd
-
-on property:ro.bluetooth.ftm_enabled=true
-    start vendor.ftmd
-
 service vendor.qcom-c_main-sh /vendor/bin/init.class_main.sh
     class main
     user root
@@ -509,13 +503,6 @@ service vendor.start_hci_filter /system/vendor/bin/wcnss_filter
     seclabel u:r:bluetooth:s0
     disabled
     writepid /dev/cpuset/system-background/tasks
-
-service vendor.ftmd /system/bin/logwrapper /system/vendor/bin/ftmdaemon
-    class late_start
-    user root
-    group bluetooth net_bt_admin misc diag net_bt
-    disabled
-    oneshot
 
 service vendor.netmgrd /system/vendor/bin/netmgrd
     class main
