@@ -1043,15 +1043,15 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib64/libsdsprpc.so
 
-# ESE-Powermanager
-vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
-vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
-lib/vendor.qti.esepowermanager@1.0.so
-lib64/vendor.qti.esepowermanager@1.0.so
-vendor/lib/vendor.qti.esepowermanager@1.0_vendor.so
-vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
-vendor/lib64/vendor.qti.esepowermanager@1.0_vendor.so
-vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
+# ESE-Powermanager - from Nokia 7 Plus Onyx_00WW-user 9 PPR1.180610.011 00WW_3_22C release-keys
+vendor/bin/hw/vendor.qti.esepowermanager@1.0-service|b1a238ace50739969170f72ceec136e514952e6b
+vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc|58a3866ad5a7613d9392c9adb671eaa7825578a2
+lib/vendor.qti.esepowermanager@1.0.so|71ddae4f12e0e946d487e48d4182b141c54ef1a8
+lib64/vendor.qti.esepowermanager@1.0.so|93e80d26335b8a8a66d155d90bbd7ef9cddf3ac2
+vendor/lib/vendor.qti.esepowermanager@1.0_vendor.so|d544e21c71fed7bd5ea1b6a986b52ead28b86d9a
+vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so|11b133cc324028f585007596c8c326532455e4b5
+vendor/lib64/vendor.qti.esepowermanager@1.0_vendor.so|5bd2c3917880ca06efe9586609532aeaf8d27ff6
+vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so|7519d62e08823e75bb502756e7cecbb1f7c1f755
 
 # Fido
 lib/libFidoCryptoJNI.so
