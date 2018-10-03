@@ -1654,15 +1654,6 @@ lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 
-# Voice fingerprint
-vendor/bin/qvop-daemon
-vendor/etc/qvop/antispoofing.bin
-vendor/etc/qvop/cmudict.bin
-vendor/etc/qvop/noisesample.bin
-vendor/etc/qvop/poc_64_hmm.gmm
-vendor/lib/libqvop-service.so
-vendor/lib64/libqvop-service.so
-
 # WideWine
 vendor/lib/libwvhidl.so
 vendor/lib/mediadrm/libwvdrmengine.so|56f4f50b82787d4709b82cbffe3e41a1e0e9569a
