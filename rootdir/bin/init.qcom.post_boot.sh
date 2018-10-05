@@ -3772,6 +3772,12 @@ case "$target" in
 	    do
 		echo 4000 > $l3gold/mem_latency/ratio_ceil
 	    done
+
+	    #Prime L3 ratio ceil
+	    for l3prime in $device/*cpu7-cpu-l3-lat/devfreq/*cpu7-cpu-l3-lat
+	    do
+		echo 20000 > $l3prime/mem_latency/ratio_ceil
+	    done
 	done
 
     if [ -f /sys/devices/soc0/hw_platform ]; then
