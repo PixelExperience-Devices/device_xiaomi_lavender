@@ -3638,10 +3638,10 @@ case "$target" in
 	# tasks eligible to run on previous cluster minus number of CPUs in
 	# the previous cluster).
 	#
-	# Setting to 3 by default which means there should be at least
-	# 6 tasks eligible to run on gold cluster (tasks running on gold cores
+	# Setting to 1 by default which means there should be at least
+	# 4 tasks eligible to run on gold cluster (tasks running on gold cores
 	# plus misfit tasks on silver cores) to trigger assitance from gold+.
-	echo 3 > /sys/devices/system/cpu/cpu7/core_ctl/nr_prev_assist_thresh
+	echo 1 > /sys/devices/system/cpu/cpu7/core_ctl/nr_prev_assist_thresh
 
 	# Disable Core control on silver
 	echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
