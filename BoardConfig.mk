@@ -189,7 +189,6 @@ include device/qcom/sepolicy/sepolicy.mk
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 BOARD_VNDK_VERSION := current
-PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_VENDOR_MOVE_ENABLED := true
 
 # WiFi
