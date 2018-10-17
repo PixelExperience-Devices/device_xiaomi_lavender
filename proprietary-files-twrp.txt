@@ -4,7 +4,6 @@ vendor/bin/qseecomd:recovery/root/sbin/qseecomd
 vendor/lib64/libtime_genoff.so:recovery/root/vendor/lib64/libtime_genoff.so
 vendor/lib64/libStDrvInt.so:recovery/root/vendor/lib64/libStDrvInt.so
 vendor/lib64/libsecureui.so:recovery/root/vendor/lib64/libsecureui.so
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so:recovery/root/vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib64/libGPreqcancel_svc.so:recovery/root/vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libkeymasterprovision.so:recovery/root/vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libGPreqcancel.so:recovery/root/vendor/lib64/libGPreqcancel.so
