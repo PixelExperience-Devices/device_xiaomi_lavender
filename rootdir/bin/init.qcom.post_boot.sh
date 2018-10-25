@@ -2870,6 +2870,10 @@ case "$target" in
       echo 100 > /proc/sys/kernel/sched_group_upmigrate
       echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
+      # colocation v3 settings
+      echo 740000 > /proc/sys/kernel/sched_little_cluster_coloc_fmin_khz
+
+
       # configure governor settings for little cluster
       echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
       echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/rate_limit_us
