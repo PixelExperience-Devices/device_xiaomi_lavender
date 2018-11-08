@@ -409,8 +409,8 @@ service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
 
 service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    class main
-   user system
-   group radio diag inet log
+   user radio
+   group radio vendor_qti_diag inet log
 
 service vendor.imsrcsservice /system/vendor/bin/imsrcsd
    class main
