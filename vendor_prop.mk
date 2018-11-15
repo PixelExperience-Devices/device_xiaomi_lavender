@@ -264,8 +264,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #system props for time-services
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true \
-    persist.delta_time.enable=true
+    persist.timed.enable=true
 
 #force disable Bluetooth AAC by default
 PRODUCT_PROPERTY_OVERRIDES += \
