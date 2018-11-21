@@ -3946,6 +3946,11 @@ case "$target" in
                     ;;
             esac
         ;;
+        "HDK" )
+            if [ -d /sys/kernel/hbtpsensor ] ; then
+                start_hbtp
+            fi
+        ;;
     esac
 
     echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
