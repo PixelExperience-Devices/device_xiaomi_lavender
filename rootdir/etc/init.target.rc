@@ -130,7 +130,8 @@ on boot
 #Peripheral manager
 service vendor.per_mgr /system/vendor/bin/pm-service
     class core
-    user root
+    user system
+    group system
     ioprio rt 4
 
 service vendor.per_proxy /system/vendor/bin/pm-proxy
@@ -139,7 +140,7 @@ service vendor.per_proxy /system/vendor/bin/pm-proxy
     group system
     disabled
 
-on property:init.svc.per_mgr=running
+on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
 
 on property:sys.powerctl=*
