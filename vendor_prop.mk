@@ -74,3 +74,8 @@ rild.libpath=/system/vendor/lib64/libril-qc-hal-qmi.so \
 ro.vendor.audio.voice.volume.boost=manual \
 sys.autosuspend.timeout=500000 \
 drm.service.enabled=true
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.audio_hal.in_period_size=144 \
+    vendor.audio_hal.period_multiplier=3 \
+    vendor.audio.adm.buffering.ms=2
