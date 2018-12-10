@@ -1414,16 +1414,6 @@ vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
 vendor/lib64/sensors.ssc.so
 
-# Signed graphics firmware
-vendor/firmware/a512_zap.b00
-vendor/firmware/a512_zap.b01
-vendor/firmware/a512_zap.b02
-vendor/firmware/a512_zap.elf
-vendor/firmware/a512_zap.mdt
-vendor/firmware/a530_gpmu.fw2
-vendor/firmware/a530_pfp.fw
-vendor/firmware/a530_pm4.fw
-
 # Thermal
 vendor/etc/thermal-engine.conf
 vendor/etc/thermal-engine-china.conf
