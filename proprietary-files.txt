@@ -903,48 +903,24 @@ vendor/bin/dpmQmiMgr|e2f12b458321a9a9353f1c4ced85bc740a1094d2
 vendor/lib64/libdpmqmihal.so|fecdfdb7591feec835ed713863a8dbcca141b252
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|05af4880ad4c633fe60750ff49525e62822585f7
 
-# DRM
-vendor/bin/qseecomd
-vendor/lib/libbase64.so
-vendor/lib/libcppf.so
-vendor/lib/libdrmfs.so
-vendor/lib/libdrmtime.so
-vendor/lib/libGPreqcancel_svc.so
-vendor/lib/libGPreqcancel.so
-vendor/lib/libmm-hdcpmgr.so
-vendor/lib/libqisl.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib/librmp.so
-vendor/lib/librpmb.so
-vendor/lib/libsdedrm.so
-vendor/lib/libsecureui.so
-vendor/lib/libsecureui_svcsock.so
-vendor/lib/libsi.so
-vendor/lib/libssd.so
-vendor/lib/libStDrvInt.so
-vendor/lib/libtzdrmgenprov.so
-vendor/lib/qcdrm/playready/lib/drm/libdrmprplugin_customer.so
-vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
-vendor/lib64/libbase64.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libmm-hdcpmgr.so
-vendor/lib64/libqisl.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/librmp.so
-vendor/lib64/librpmb.so
-vendor/lib64/libsdedrm.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsi.so
-vendor/lib64/libssd.so
-vendor/lib64/libStDrvInt.so
-vendor/lib64/libtzdrmgenprov.so
+# DRM - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
+vendor/bin/qseecomd|cf78dd27e93f4cfd59d95909651d7f719d079181
+vendor/lib/libQSEEComAPI.so|8ffb4568c78e36639687583c5b8ea5e49a1eb388
+vendor/lib/libsdedrm.so|8cb2d9afec44f74c9c8c5feb8e7f7152f17c5059
+vendor/lib64/libdrmfs.so|190f2ce59725f045c76ed14886fba8bc6a3a74ab
+vendor/lib64/libdrmtime.so|609c2964cd9d0f17c873ba7ce242752994ba2344
+vendor/lib64/libGPreqcancel_svc.so|a75a32d4cff28841783c0db222c08c618e52625b
+vendor/lib64/libGPreqcancel.so|19679b918e5dcce54f853b8019806cdb6d2da165
+vendor/lib64/libqisl.so|18c594b80a3eb7e1435985411457ef9fdeae862b
+vendor/lib64/libQSEEComAPI.so|6ec762ad6105ca6b8a22f2878a6c8bb6d1bff0b9
+vendor/lib64/librpmb.so|15b5052a97a4952246a9f9d7fce98e1be50f86cc
+vendor/lib64/libsdedrm.so|973dde7d654c4f1ef46844011e6a2de3e6f7ee8c
+vendor/lib64/libsecureui_svcsock.so|faad5dad9fb6a33f1e2a404514c12f86b56cfdf6
+vendor/lib64/libsecureui.so|6f8ae781f925b6852ad2d350fc2d362ce80e277b
+vendor/lib64/libSecureUILib.so|8b77215ac12265599bf50bbcbc0ef0f3e623cfff
+vendor/lib64/libssd.so|e8a688dac8c3f5d74e18cf81b646de7469201055
+vendor/lib64/libStDrvInt.so|ff4ef2707ca8d219fd52b2ff629ffc62a43e2480
+vendor/lib64/libtzdrmgenprov.so|3dc9eb29ca0ec753a6e8b62560d3f46abd75edf2
 
 # DRM - Widevine - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine|320749f5ce293176b9de747d13db7f026748b955
@@ -1014,9 +990,9 @@ vendor/lib/vendor.qti.hardware.fm@1.0.so|62f2ff5491b5013d9ddf91ced3fde01fd531119
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|2469d0cb6b1c01bcee8f280a113569bd5682bf89
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|061ebea5b94f63fdc25ce67869dde08dbd969cca
 
-# Gatekeeper
-vendor/lib/hw/gatekeeper.sdm660.so
-vendor/lib64/hw/gatekeeper.sdm660.so
+# Gatekeeper - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
+vendor/lib/hw/gatekeeper.sdm660.so|bb56ae8a8fcc13148d1723044b8c617e6cf0b7ae
+vendor/lib64/hw/gatekeeper.sdm660.so|e8f32651e4bfff88fcc02c34eca6cd5f04a444aa
 
 # GPS - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
 vendor/bin/hw/vendor.qti.gnss@2.0-service|d28d3fc9f62c0b5993518c6e55a0fc8727eb305a
@@ -1134,9 +1110,9 @@ vendor/lib64/libtinyxml2_1.so|9d5179eda8ce70b9a4014b144f9d23d33509fddc
 vendor/lib/hw/vulkan.sdm660.so|1426694ac179ddd26d0dadf9cc54305cad0386a4
 vendor/lib64/hw/vulkan.sdm660.so|82b72990a737799894c291f8a3515d7d668a5423
 
-# Keystore
-vendor/lib/hw/keystore.sdm660.so
-vendor/lib64/hw/keystore.sdm660.so
+# Keystore - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
+vendor/lib/hw/keystore.sdm660.so|990bc5ca05914f3df85320a31b26fae325e174e3
+vendor/lib64/hw/keystore.sdm660.so|ffd01591bd8a864cb2dbc6fd2c01fbd36ae54051
 
 # Listen - from Mi A2 jasmine_sprout 9 PKQ1.180904.001 V10.0.1.0.PDIMIFJ release-keys
 vendor/lib/hw/sound_trigger.primary.sdm660.so|22b58f782f34308c42bdacde2ee1aad3e740301e
