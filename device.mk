@@ -151,10 +151,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.sdm660_shim
 
-# Configstore
-PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-service
-
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
