@@ -1299,6 +1299,10 @@ service vendor.hbtp /vendor/bin/hbtp_daemon
 #    socket chre seqpacket 0660 root system
 #    shutdown critical
 
+
+on property:vendor.chre.enabled=0
+   stop chre
+
 service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
     class main
     disabled
