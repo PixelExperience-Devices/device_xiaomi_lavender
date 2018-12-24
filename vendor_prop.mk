@@ -11,6 +11,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m \
     video.disable.ubwc=1 \
+    vendor.video.disable.ubwc=1 \
     persist.radio.multisim.config=dsds \
     persist.vendor.qcomsysd.enabled=1 \
     ro.com.android.dataroaming=true \
