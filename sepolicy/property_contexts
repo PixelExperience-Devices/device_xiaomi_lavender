@@ -2,3 +2,7 @@
 persist.sys.fp.                                               u:object_r:fingerprint_prop:s0
 ro.boot.fp.                                                   u:object_r:fingerprint_prop:s0
 sys.fp.                                                       u:object_r:fingerprint_prop:s0
+ro.boot.fpsensor                    u:object_r:fingerprint_prop:s0
+
+# Mlipay
+persist.sys.ifaa                    u:object_r:ifaa_prop:s0
