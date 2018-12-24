@@ -23,6 +23,7 @@
 #include <hardware/fingerprint.h>
 #include "BiometricsFingerprint.h"
 
+#include <cutils/properties.h>
 #include <inttypes.h>
 #include <unistd.h>
 #include <cutils/properties.h>
@@ -213,6 +214,11 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
     return sInstance;
 }
 
+void setFpVendorProp(const char *fp_vendor) {
+    property_set("persist.sys.fp.vendor", fp_vendor);
+    property_set("ro.boot.fpsensor", fp_vendor);
+}
+
 fingerprint_device_t* getDeviceForVendor(const char *class_name)
 {
     const hw_module_t *hw_module = nullptr;
@@ -224,9 +230,13 @@ fingerprint_device_t* getDeviceForVendor(const char *class_name)
 
     if (!strcmp(fp_vendor, "fpc")) {
         err = hw_get_module_by_class(FINGERPRINT_HARDWARE_MODULE_ID, "fpc", &hw_module);
+	    setFpVendorProp("fpc");
     } else {
         err = hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_module);
+        setFpVendorProp("goodix");
     }
+
+    setFpVendorProp("none");
 
     if (err) {
         ALOGE("Failed to get fingerprint module: class %s, error %d", class_name, err);
