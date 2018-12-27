@@ -1,5 +1,3 @@
-persist.camera.HAL3.enable         u:object_r:camera_prop:s0
-
 # Fingerprint
 persist.sys.fp.                                               u:object_r:fingerprint_prop:s0
 ro.boot.fp.                                                   u:object_r:fingerprint_prop:s0

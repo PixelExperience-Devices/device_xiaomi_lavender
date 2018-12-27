@@ -347,10 +347,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson
 
-# XiaomiParts
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
