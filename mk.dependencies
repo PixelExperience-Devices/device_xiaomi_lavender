@@ -1,5 +1,9 @@
 [
  {
+   "repository": "android_vendor_xiaomi_miuicamera",
+   "target_path": "vendor/xiaomi/MiuiCamera"
+ },
+ {
    "repository": "android_vendor_xiaomi_whyred",
    "target_path": "vendor/xiaomi/whyred"
  },
