@@ -1123,11 +1123,13 @@ vendor/lib/libgcs-ipc.so|6df0dd491d385bc1379c36643a83ae5af6a31830
 vendor/lib/libgcs-osal.so|e040600e22381338ba7c471024a80ec188642092
 vendor/lib/libgcs.so|3755346a8aacdfdac6a756f5a73769baa6bdeba2
 vendor/lib/libsmwrapper.so|3ba2c53973436a805dc32395af83129d1b984dca
+vendor/lib/libsse.so|8c6e3270789c102fd871258341041ce29aa5610c
 vendor/lib64/hw/sound_trigger.primary.sdm660.so|ae6b41c76386b804fb807c6016ba62c1ae698578
 vendor/lib64/libgcs-calwrapper.so|091c5ef1ae31c59452804cdf3d8f43aa91a311c2
 vendor/lib64/libgcs-ipc.so|0eed30a36166c9e62e09158c2cd1779b65763884
 vendor/lib64/libgcs-osal.so|b0fc8964c906ed67fe49b19095856a0b226e6c4d
 vendor/lib64/libgcs.so|a6e412e8181ade6c97a97fa60ca2a7a2157bcc7d
+vendor/lib64/libsse.so|2cd6ab4f250b881fd6073923b636ea42ed8a0ce0
 
 # Media - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
 lib/libmmosal.so|37719ae5647ef6ec826d06b93e34e0b53c565529
