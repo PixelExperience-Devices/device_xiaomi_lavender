@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Copyright (c) 2014, 2016-2018, The Linux Foundation. All rights reserved.   -->
+<!-- Copyright (c) 2014, 2016-2019, The Linux Foundation. All rights reserved.   -->
 <!--                                                                        -->
 <!-- Redistribution and use in source and binary forms, with or without     -->
 <!-- modification, are permitted provided that the following conditions are -->
@@ -141,7 +141,7 @@
         <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" acdb_id="533"/>
         <device name="SND_DEVICE_IN_HANDSET_DMIC_INTERVIEW" acdb_id="1045"/>
         <device name="SND_DEVICE_IN_HANDSET_DMIC_HD" acdb_id="2581"/>
-        <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" acdb_id="2069"/>
+        <device name="SND_DEVICE_IN_HANDSET_DMIC_STEREO" acdb_id="2069"/>
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_TMIC" acdb_id="295"/>
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_TMIC_CONF" acdb_id="1319"/>
         <device name="SND_DEVICE_IN_CAMCORDER_DMIC" acdb_id="85"/>
@@ -466,13 +466,13 @@
                         <mic_info mic_device_id="builtin_mic_4"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                     </snd_dev>
-                    <snd_dev in_snd_device="SND_DEVICE_IN_HANDSET_STEREO_DMIC">
+                    <snd_dev in_snd_device="SND_DEVICE_IN_HANDSET_DMIC_STEREO">
                         <mic_info mic_device_id="builtin_mic_1"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                         <mic_info mic_device_id="builtin_mic_2"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                     </snd_dev>
-                    <snd_dev in_snd_device="SND_DEVICE_IN_SPEAKER_STEREO_DMIC">
+                    <snd_dev in_snd_device="SND_DEVICE_IN_SPEAKER_DMIC_STEREO">
                         <mic_info mic_device_id="builtin_mic_1"
                             channel_mapping="AUDIO_MICROPHONE_CHANNEL_MAPPING_PROCESSED"/>
                         <mic_info mic_device_id="builtin_mic_2"
