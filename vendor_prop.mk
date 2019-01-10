@@ -159,13 +159,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.audio.voice.volume.boost=manual \
 	sys.autosuspend.timeout=500000 \
 	persist.dbg.ims_volte_enable=1 \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=1 \
-    persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.data_ltd_sys_ind=1 \
-    persist.vendor.radio.data_con_rprt=1 \
-    persist.radio.calls.on.ims=1
+	persist.dbg.volte_avail_ovr=1 \
+	persist.dbg.vt_avail_ovr=1 \
+	persist.dbg.wfc_avail_ovr=1 \
+	persist.vendor.radio.rat_on=combine \
+	persist.vendor.radio.data_ltd_sys_ind=1 \
+	persist.vendor.radio.data_con_rprt=1 \
+	persist.radio.calls.on.ims=1
 
 # Debug Options
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -180,3 +180,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
    persist.vendor.radio.data_ltd_sys_ind=1 \
    persist.vendor.radio.data_con_rprt=1 \
    persist.radio.calls.on.ims=1
+
+# Enable headset calibration
+PRODUCT_PROPERTY_OVERRIDES += \
+	audio.volume.headset.gain.depcal=true
+
+# Enable dualmic fluence for voice communication
+PRODUCT_PROPERTY_OVERRIDES += \
+	persist.audio.fluence.voicecomm=true
