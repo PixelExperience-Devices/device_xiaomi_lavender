@@ -419,6 +419,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtinyxml2
 
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.mokee.trust@1.0-service
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
