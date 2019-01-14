@@ -1,42 +1,39 @@
-# ADSP
-vendor/bin/adsprpcd
-vendor/lib/libadsp_default_listener.so
-vendor/lib/libadsp_hvx_callback_skel.so
-vendor/lib/libadsp_hvx_stub.so
-vendor/lib/libadsprpc.so
-vendor/lib/libfastcvadsp_stub.so
-vendor/lib/libfastcvopt.so
-vendor/lib/libmdsprpc.so
-vendor/lib/libsdsprpc.so
-vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libadsprpc.so
-vendor/lib64/libfastcvadsp_stub.so
-vendor/lib64/libfastcvopt.so
-vendor/lib64/libmdsprpc.so
-vendor/lib64/libsdsprpc.so
+# ADSP - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
+vendor/bin/adsprpcd|8b439846f016decb7519e5fd5cb2c86e192af036
+vendor/lib/libadsp_default_listener.so|ca63c1b2c34bbde74c2b1fc6009ca244a1ffa535
+vendor/lib/libadsp_hvx_callback_skel.so|dc7080c68699f69f76260891ebcedcd68a093d40
+vendor/lib/libadsp_hvx_stub.so|4fa14ca235ace82551549b571f767f475fbf4b67
+vendor/lib/libadsprpc.so|7f4ea2cadc7b9a88769eb686e2915996f6b84273
+vendor/lib/libfastcvadsp_stub.so|7811d12d68ec3f9fcbd05f55264b6dcec61bc75b
+vendor/lib/libfastcvopt.so|ce937eac4dc7ca52edd9e31ee2e97b3d5ee8483b
+vendor/lib/libmdsprpc.so|631c3ab07b9da2cf49d72c55f9ffe6f1a09b2dd5
+vendor/lib/libsdsprpc.so|fd493e54776c19a6ead3a14ab318d751a6e5da01
+vendor/lib64/libadsp_default_listener.so|d28ea3a0509c13ff75c700efe1107bb2d2481eb6
+vendor/lib64/libadsprpc.so|23460c2dbf4b0d8ec2a7a2c5fcdff47d7aa7e144
+vendor/lib64/libfastcvadsp_stub.so|0cbdc83819780d8aa7cb8707633439db330b655d
+vendor/lib64/libfastcvopt.so|9c677f0458bd04c5daf27951a89a3fc89513a46e
+vendor/lib64/libmdsprpc.so|463b8c924cf0606a398f965d2b8d31ecabd2157d
+vendor/lib64/libsdsprpc.so|c5b1b06fbb57cd7282215db2bdb1cad10ce788d8
 
-# ADSP modules
-vendor/etc/scve/facereco/gModel.dat
-vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
-vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
-vendor/lib/rfsa/adsp/dirac_resource.dar
-vendor/lib/rfsa/adsp/libadsp_fd_skel.so
-vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
-vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
-vendor/lib/rfsa/adsp/libdirac-capiv2.so
-vendor/lib/rfsa/adsp/libdspCV_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_800h_skel.so
-vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
-vendor/lib/rfsa/adsp/libexternal_dog_skel.so
-vendor/lib/rfsa/adsp/libhvxMathVIO.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-vendor/lib/rfsa/adsp/libscveFaceLandmark_skel.so
-vendor/lib/rfsa/adsp/libscveT2T_skel.so
-vendor/lib/rfsa/adsp/libvpp_svc_skel.so
+# ADSP modules - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
+vendor/etc/scve/facereco/gModel.dat|447e5e3fefe8bcf36db0f7a8595c63fb326879ba
+vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so|8305c614ebf13f84f15989631b8fdfdb9828d9be
+vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so|eb0e912d25b06f977d5a89345c72d142b7ffb8ae
+vendor/lib/rfsa/adsp/dirac_resource.dar|fb339449eb429a631f89a0e52996ad04a8c69bfc
+vendor/lib/rfsa/adsp/libadsp_fd_skel.so|677d2932dac248049f031fc5893163e22b49439a
+vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so|26fb64a92d48e801a31a867976d325efa366a255
+vendor/lib/rfsa/adsp/libadsp_hvx_skel.so|05776246445316aea822eaa9cb6ae7a47b23c9aa
+vendor/lib/rfsa/adsp/libapps_mem_heap.so|fd362c6b0e30f62cc3fc4566855f46706d2c3c50
+vendor/lib/rfsa/adsp/libdirac-capiv2.so|63a6ff12f0373f6380921d4cad843c32e635f513
+vendor/lib/rfsa/adsp/libdspCV_skel.so|a788855fe98d5f6ea73d2693c983efb29165eae1
+vendor/lib/rfsa/adsp/libfastcvadsp.so|603711dc1af1f1952d8978a5b494b1541b24c54c
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|a06a3f52e89d219d2da0c7205e714cd7429b267c
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_800h_skel.so|c240d45c3a5fc37b964c4adab06f4cb0bfda62f5
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so|b9f68e320d24e9c51871a2056e1f47239bd1cb40
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so|99752b14bc669589f598b2c555af96834147e41e
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so|d2174a2a4a680e93ee4262b5e6d99fd3c398620c
+vendor/lib/rfsa/adsp/libscveT2T_skel.so|487f830aca26c85ef79c8b599b2f03668ab732b5
+vendor/lib/rfsa/adsp/libvpp_svc_skel.so|2da97f61c1d14f1f9a38aecd8ab89a1f6fa8d991
 
 # Alarm - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
 framework/vendor.qti.hardware.alarm-V1.0-java.jar|e1bf3224a115fb258fce5a2b6538418b98c58d28
