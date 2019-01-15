@@ -1193,28 +1193,24 @@ lib64/vendor.xiaomi.hardware.mlipay@1.0.so:vendor/lib64/vendor.xiaomi.hardware.m
 vendor/bin/mlipayd
 vendor/lib64/libmlipay.so
 
-# Perf
-vendor/bin/energy-awareness
-vendor/bin/msm_irqbalance
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/perfboostsconfig.xml
-vendor/lib/libfeedbackhandler.so
-vendor/lib/libperfgluelayer.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
-vendor/lib/libqti-utils.so
-vendor/lib/libqti-gt-prop.so
-vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so
-vendor/lib64/libfeedbackhandler.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
-vendor/lib64/libqti-utils.so
-vendor/lib64/libqti-gt-prop.so
-vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
+# Perf - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
+vendor/bin/energy-awareness|c1ad0ec1e4171b59f166e580ef8ce7395ccb41a5
+vendor/bin/msm_irqbalance|117d7c8a8f6f12b3615ec8ab676231df93d277f1
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|16759e5de2c3f1b83585842f2616be9b204971a7
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
+vendor/etc/perf/commonresourceconfigs.xml|73fc37a6fa498a98758b5a91ebacb87ef0ffdcdf
+vendor/etc/perf/perfboostsconfig.xml|8d78f6a4aefe2b2691e7da72fc60bc9f0c59cc9e
+vendor/etc/perf/targetconfig.xml|376ae331df9d6c30b6208f25d04ae4ea11c0e2ea
+vendor/etc/perf/targetresourceconfigs.xml|2084cab83603da8fb1817902836ffb890dfc8a16
+vendor/lib/libqti-perfd-client.so|a4a6da47ee26fcd5116c514f7fed15b91306aea3
+vendor/lib/libqti-perfd.so|17b50f447eb89bd540d0a4d72f4df0d9f1ee6509
+vendor/lib/libqti-util.so|459a7375feb57c2e11d012c5fb65befd94e91d06
+vendor/lib/vendor.qti.hardware.perf@1.0.so|39a81e7cc35f542e5e2eeed6f38152b44063928f
+vendor/lib64/libperfgluelayer.so|5ea72902a1a2ad20c18816872f9f9b6ce1b79b8f
+vendor/lib64/libqti-perfd-client.so|d9fb126fb7aff2db61978f46f78e0284e95183be
+vendor/lib64/libqti-perfd.so|7421e7e11bea5dda7a75b18bc0f5dd88f1a4d3af
+vendor/lib64/libqti-util.so|30dc90c1636fd100a8e101dfa659e0b7299ff813
+vendor/lib64/vendor.qti.hardware.perf@1.0.so|978a16bc6f27967f6345c5b51386d50768553ab5
 
 # Peripheral manager - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
 vendor/bin/pm-proxy|e5f8c69e8d231dd2665dc411b4e9d9e696c90187
