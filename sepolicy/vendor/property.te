@@ -5,4 +5,7 @@ type vendor_fp_prop, property_type;
 type ifaa_prop, property_type;
 
 # Thermal engine
-type thermal_prop, property_type;
+type thermal_prop, property_type; 
+
+# Dirac
+type dirac_prop, property_type;
