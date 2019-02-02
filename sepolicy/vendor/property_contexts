@@ -6,6 +6,9 @@ disable.cpp.power.collapse          u:object_r:camera_prop:s0
 persist.camera.                     u:object_r:camera_prop:s0
 persist.vendor.camera.              u:object_r:vendor_camera_prop:s0
 
+# Dirac
+persist.audio.dirac.                                          u:object_r:dirac_prop:s0
+
 # Fingerprint
 gf.debug.dump_data                  u:object_r:vendor_fp_prop:s0
 persist.sys.fp.                     u:object_r:vendor_fp_prop:s0
