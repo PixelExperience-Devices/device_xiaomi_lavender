@@ -1108,6 +1108,7 @@ vendor/lib/hw/keystore.sdm660.so|ad49563962736752cd094b113e46658e1b5e6d39
 vendor/lib64/hw/keystore.sdm660.so|645881b7a2709dfce5d6b9be9df4659ec2ab0eac
 
 # Listen - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
+vendor/etc/audio.bsd|a8a83254fff006e50a879806a8fd141596290cb3
 vendor/lib/hw/sound_trigger.primary.sdm660.so|6e41431a0d08f071e4ed8ef9aaadb271a1faf094
 vendor/lib/libadpcmdec.so|7c12a153200fd2e9f1f6139fcf40beee1a96f48d
 vendor/lib/libgcs-calwrapper.so|57922b4fd8f141eb21b4fa771789b1dba1c23ed6
@@ -1115,12 +1116,14 @@ vendor/lib/libgcs-ipc.so|6df0dd491d385bc1379c36643a83ae5af6a31830
 vendor/lib/libgcs-osal.so|e040600e22381338ba7c471024a80ec188642092
 vendor/lib/libgcs.so|3755346a8aacdfdac6a756f5a73769baa6bdeba2
 vendor/lib/libsmwrapper.so|3ba2c53973436a805dc32395af83129d1b984dca
+vendor/lib/libnwa.so|54b30f461c1589ed1217019f41e89a9f986eeea4
 vendor/lib/libsse.so|8c6e3270789c102fd871258341041ce29aa5610c
 vendor/lib64/hw/sound_trigger.primary.sdm660.so|ae6b41c76386b804fb807c6016ba62c1ae698578
 vendor/lib64/libgcs-calwrapper.so|091c5ef1ae31c59452804cdf3d8f43aa91a311c2
 vendor/lib64/libgcs-ipc.so|0eed30a36166c9e62e09158c2cd1779b65763884
 vendor/lib64/libgcs-osal.so|b0fc8964c906ed67fe49b19095856a0b226e6c4d
 vendor/lib64/libgcs.so|a6e412e8181ade6c97a97fa60ca2a7a2157bcc7d
+vendor/lib64/libnwa.so|fac04a2253dcc43d1f9de51fe80a7bdcc3fff534
 vendor/lib64/libsse.so|2cd6ab4f250b881fd6073923b636ea42ed8a0ce0
 
 # Media - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
