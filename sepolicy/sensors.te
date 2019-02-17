@@ -1,2 +1,0 @@
-#============= sensors ==============
-allow sensors self:capability dac_override;
