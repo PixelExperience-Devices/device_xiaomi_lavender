@@ -1,3 +1,2 @@
 #============= netmgrd ==============
-allow netmgrd default_prop:property_service set;
 allow netmgrd property_socket:sock_file write;

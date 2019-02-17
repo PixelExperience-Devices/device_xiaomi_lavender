@@ -17,11 +17,9 @@
 /sys/devices/soc/c175000\.i2c/i2c-1/1-[0-9a-f]+/input/input[0-9]+/wake_gesture u:object_r:sysfs_tap_to_wake:s0
 
 # Fingerprint
-/data/vendor/fpc(/.*)?                                        u:object_r:fingerprint_data_file:s0
-/data/vendor/goodix(/.*)?                                     u:object_r:fingerprint_data_file:s0
-/data/misc/gf_data(/.*)?                                      u:object_r:fingerprint_data_file:s0
-/data/gf_data(/.*)?                                           u:object_r:fingerprint_data_file:s0
-/data/misc/goodix(/.*)?                                       u:object_r:fingerprint_data_file:s0
+/data/misc/gf_data(/.*)?                                      u:object_r:fingerprintd_data_file:s0
+/data/gf_data(/.*)?                                           u:object_r:fingerprintd_data_file:s0
+/data/misc/goodix(/.*)?                                       u:object_r:fingerprintd_data_file:s0
 /persist/fpc(/.*)?                                            u:object_r:fingerprint_persist_file:s0
 /sys/devices/soc/soc:fpc1020.*/irq                            u:object_r:sysfs_fpc_dev:s0
 /sys/devices/soc/soc:fpc1020.*/hw_reset                       u:object_r:sysfs_fpc_dev:s0
