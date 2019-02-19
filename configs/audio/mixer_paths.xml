@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Copyright (c) 2015-2017, The Linux Foundation. All rights reserved.    -->
+<!-- Copyright (c) 2015-2019, The Linux Foundation. All rights reserved.    -->
 <!--                                                                        -->
 <!-- Redistribution and use in source and binary forms, with or without     -->
 <!-- modification, are permitted provided that the following conditions are -->
@@ -280,6 +280,10 @@
     <ctl name="RT_PROXY_1_RX SetCalMode" value="CAL_MODE_NONE" />
     <ctl name="RT_PROXY_1_TX SetCalMode" value="CAL_MODE_NONE" />
     <!-- RT Proxy Cal end -->
+
+    <!-- mixer control to disable lowlatency qos voting -->
+    <ctl name="MultiMedia5_RX QOS Vote" value="Disable" />
+    <!-- mixer control to disable lowlatency qos voting end -->
 
     <!-- Incall Recording -->
     <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="0" />
@@ -687,6 +691,10 @@
 
     <path name="multi-channel-playback afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia2" value="1" />
+    </path>
+
+    <path name="low-latency-playback resume">
+        <ctl name="MultiMedia5_RX QOS Vote" value="Enable" />
     </path>
 
     <path name="compress-offload-playback">
