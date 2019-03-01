@@ -216,6 +216,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.s5k3l8_ofilm.low.lux=379 \
     persist.s5k3l8_ofilm.light.lux=367
 
+# Enable HAL3
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=1
+
 #
 # PROPERTIES FOR IMS
 #
