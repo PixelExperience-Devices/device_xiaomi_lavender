@@ -135,6 +135,11 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
+# Codec2 modules
+PRODUCT_PACKAGES += \
+    com.android.media.swcodec \
+    libsfplugin_ccodec
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
