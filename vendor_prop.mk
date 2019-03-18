@@ -113,6 +113,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_scaler=0 \
     vendor.display.enable_default_color_mode=0 \
     vendor.display.enable_null_display=0 \
+    vendor.display.enable_optimize_refresh=1 \
     debug.mdpcomp.logs=0 \
     persist.sys.sf.color_saturation=1.0 \
     vendor.display.svi.config=1 \
