@@ -34,6 +34,8 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
+CLEAN_VENDOR=false
+
 while [ "$1" != "" ]; do
     case $1 in
         -n | --no-cleanup )     CLEAN_VENDOR=false
@@ -55,17 +57,11 @@ fi
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$MK_ROOT" false "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/proprietary-files-twrp.txt "$SRC" "$SECTION"
+#extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
+#extract "$MY_DIR"/proprietary-files-camera.txt "$SRC" "$SECTION"
 
-TWRP_QSEECOMD="$MK_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/recovery/root/sbin/qseecomd
-TWRP_GATEKEEPER="$MK_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/recovery/root/sbin/android.hardware.gatekeeper@1.0-service
-TWRP_KEYMASTER="$MK_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/recovery/root/sbin/android.hardware.keymaster@3.0-service
 GOODIX="$MK_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib64/libgf_ca.so
 
-sed -i "s|/system/bin/linker64|/sbin/linker64\x0\x0\x0\x0\x0\x0|g" "$TWRP_QSEECOMD"
-sed -i "s|/system/bin/linker64|/sbin/linker64\x0\x0\x0\x0\x0\x0|g" "$TWRP_GATEKEEPER"
-sed -i "s|/system/bin/linker64|/sbin/linker64\x0\x0\x0\x0\x0\x0|g" "$TWRP_KEYMASTER"
 sed -i "s|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g" $GOODIX
 
 BLOB_ROOT="$MK_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
@@ -74,4 +70,4 @@ patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/v
 patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/vendor/lib64/libmlipay.so
 patchelf --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "$BLOB_ROOT"/vendor/lib64/libmlipay@1.1.so
 
-"$MY_DIR"/setup-makefiles.sh
+#"$MY_DIR"/setup-makefiles.sh
