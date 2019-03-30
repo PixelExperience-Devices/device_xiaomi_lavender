@@ -206,6 +206,8 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/bt_firmware:/bt_firmware
 TARGET_COPY_OUT_VENDOR := vendor
 
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 
