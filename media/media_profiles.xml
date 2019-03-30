@@ -71,7 +71,7 @@
 <!ATTLIST AudioEncoderCap maxSampleRate CDATA #REQUIRED>
 <!ATTLIST AudioEncoderCap minChannels (1|2|6) #REQUIRED>
 <!ATTLIST AudioEncoderCap maxChannels (1|2|6) #REQUIRED>
-<!ELEMENT VideoDecoderCap EMPTY>
+<!ELEMENT VideoEditorCap EMPTY>
 <!ATTLIST VideoEditorCap maxInputFrameWidth CDATA #REQUIRED>
 <!ATTLIST VideoEditorCap maxInputFrameHeight CDATA #REQUIRED>
 <!ATTLIST VideoEditorCap maxOutputFrameWidth CDATA #REQUIRED>
@@ -348,7 +348,7 @@
     <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="2000000"
-             width="720"
+             width="640"
              height="480"
              frameRate="30" />
 

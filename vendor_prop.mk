@@ -1,8 +1,6 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.job_delay=true \
     persist.sys.mcd_config_file=/system/etc/mcd_default.conf \
-    persist.sys.perf.debug=true \
-    persist.sys.whetstone.level=2 \
     drm.service.enabled=true \
     dalvik.vm.heapgrowthlimit=256m \
     dalvik.vm.heapstartsize=8m \
@@ -10,17 +8,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m \
-    video.disable.ubwc=1 \
     vendor.video.disable.ubwc=1 \
     persist.radio.multisim.config=dsds \
     persist.vendor.qcomsysd.enabled=1 \
-    ro.com.android.dataroaming=true \
     ro.vendor.extension_library=libqti-perfd-client.so \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
-    persist.radio.schd.cache=3500 \
     sys.vendor.shutdown.waittime=500 \
     ro.build.shutdown_timeout=0 \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp \
@@ -76,7 +71,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_3="" \
     ril.subscription.types=NV,RUIM \
     DEVICE_PROVISIONED=1 \
-    rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so \
+    rild.libpath=/system/vendor/lib64/libril-qc-hal-qmi.so \
     ro.telephony.default_network=22,20
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -115,7 +110,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mmp.enable.3g2=true \
     media.aac_51_output_enabled=true \
     mm.enable.smoothstreaming=true \
-    mm.enable.qcom_parser=13631471 \
+    vendor.mm.enable.qcom_parser=13631471 \
     persist.mm.enable.prefetch=true \
     vidc.enc.dcvs.extra-buff-count=2
 
@@ -124,7 +119,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.use_data_netmgrd=true \
-    persist.data.netmgrd.qos.enable=true \
     persist.vendor.data.mode=concurrent
 
 # system property for maximum number of HFP client connections
@@ -180,7 +174,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.dev_ori=false \
     ro.vendor.sensors.pmd=true \
     ro.vendor.sensors.sta_detect=true \
-    ro.vendor.sensors.mot_detect=true
+    ro.vendor.sensors.mot_detect=true \
+    ro.vendor.sensors.pug=true
 
 #Expose aux camera for below packages
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -189,36 +184,43 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #disable UBWC for camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.preview.ubwc=0 \
-    persist.camera.stats.test=0 \
-    persist.camera.depth.focus.cb=0 \
-    persist.camera.isp.clock.optmz=0 \
-    persist.camera.hist.high=20 \
-    persist.camera.hist.drc=1.2 \
-    persist.camera.linkpreview=0 \
-    persist.camera.isp.turbo=1
+    persist.vendor.camera.preview.ubwc=0 \
+    persist.vendor.camera.stats.test=0 \
+    persist.vendor.camera.depth.focus.cb=0 \
+    persist.vendor.camera.isp.clock.optmz=0 \
+    persist.vendor.camera.linkpreview=0 \
+    persist.vendor.camera.isp.turbo=1
 
 #exif info for camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.exif.make=Xiaomi \
-    persist.sys.exif.model=RedmiNote5
+    persist.vendor.camera.exif.make=Xiaomi \
+    persist.vendor.camera.exif.model=RedmiNote5 \
+    persist.vendor.camera.expose.aux=1
+
+#enable video face detect func
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.camera.fdvideo=1
+
+#disable awb sync in bokeh mode
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.camera.awb.sync=2
 
 #properties for camera front flash lux
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.flash.low.lux=390 \
-    persist.flash.light.lux=340 \
-    persist.imx376_ofilm.low.lux=310 \
-    persist.imx376_ofilm.light.lux=280 \
-    persist.imx376_sunny.low.lux=310 \
-    persist.imx376_sunny.light.lux=280 \
-    persist.ov13855_sunny.low.lux=385 \
-    persist.ov13855_sunny.light.lux=370 \
-    persist.s5k3l8_ofilm.low.lux=379 \
-    persist.s5k3l8_ofilm.light.lux=367
+    persist.vendor.flash.low.lux=390 \
+    persist.vendor.flash.light.lux=340 \
+    persist.vendor.imx376_ofilm.low.lux=310 \
+    persist.vendor.imx376_ofilm.light.lux=280 \
+    persist.vendor.imx376_sunny.low.lux=310 \
+    persist.vendor.imx376_sunny.light.lux=280 \
+    persist.vendor.ov13855_sunny.low.lux=385 \
+    persist.vendor.ov13855_sunny.light.lux=370 \
+    persist.vendor.s5k3l8_ofilm.low.lux=379 \
+    persist.vendor.s5k3l8_ofilm.light.lux=367
 
-# Enable HAL3
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=1
+    persist.vendor.camera.HAL3.enabled=1 \
+    persist.vendor.camera.ltm.overlap=13
 
 # HAL1 apps list
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -272,7 +274,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vidc.enc.target_support_bframe=1 \
     vendor.vidc.enc.disable_bframes=1 \
-    vendor.vidc.dec.enable.downscalar=1
+    vendor.vidc.dec.enable.downscalar=0
 
 # enable PQ feature by default
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -325,16 +327,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #Property to enable display default color mode
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.display.enable_default_color_mode=1
+    vendor.display.enable_default_color_mode=0
 
 #Disable Skip Validate
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.display.disable_skip_validate=1 \
-    debug.sf.recomputecrop=0
+    vendor.display.disable_skip_validate=1
 
 #iwaln vowifi corresponding
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.iwlan.enable=true
+    persist.vendor.data.iwlan.enable=true
 
 #system property determining camera to be used for a Video call
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -345,10 +346,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.snapshot_enabled=1 \
     persist.vendor.radio.snapshot_timer=5
 
-#Ignore the wrong IWLAN report when UE in W/G mode.
+#HTH-30190 connect wifi, set 3G pre,observe Mobile network type should display UMTS but IWLAN.
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.data_con_rprt=1
+    persist.vendor.radio.data_con_rprt=1
+
+#lct liuxuan add the dom ignore time
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.radio.ignore_dom_time=15
 
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.mk.maintainer=guaiyihu
+    ro.mk.maintainer=subdragonzj

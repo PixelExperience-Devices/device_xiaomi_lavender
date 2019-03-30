@@ -47,7 +47,62 @@ case "$baseband" in
 esac
 
 case "$baseband" in
+    "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3")
+    start vendor.qmuxd
+esac
+
+case "$baseband" in
     "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3" | "sdm" | "sdx" | "sm6")
+
+    if [ -f /vendor/firmware_mnt/verinfo/ver_info.txt ]; then
+        modem=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
+                sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
+                sed 's/.*MPSS.\(.*\)/\1/g' | cut -d \. -f 1`
+        # Check if this is AT 3.0 or below. If so, start ril-daemon 
+        if [ "$modem" = "AT" ]; then
+            version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
+                    sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
+                    sed 's/.*AT.\(.*\)/\1/g' | cut -d \- -f 1`
+            if [ ! -z $version ]; then
+                if [ "$version" \< "3.1" ]; then
+                    # For OTA targets, ril-daemon will be defined and for new vendor.ril-daemon
+                    # To keep this script agnostic,start both of them as only valid one will start.
+                    start ril-daemon
+                    start vendor.ril-daemon
+                fi
+            fi
+        # For older than TA 3.0 start ril-daemon
+        elif [ "$modem" = "TA" ]; then
+            version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
+                    sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
+                    sed 's/.*TA.\(.*\)/\1/g' | cut -d \- -f 1`
+            if [ ! -z $version ]; then
+                if [ "$version" \< "3.0" ]; then
+                    # For OTA targets, ril-daemon will be defined and for new vendor.ril-daemon
+                    # To keep this script agnostic,start both of them as only valid one will start.
+                    start ril-daemon
+                    start vendor.ril-daemon
+                fi
+            fi
+        # For older than JO 3.2 start ril-daemon
+        elif [ "$modem" = "JO" ]; then
+            version=`cat /vendor/firmware_mnt/verinfo/ver_info.txt |
+                    sed -n 's/^[^:]*modem[^:]*:[[:blank:]]*//p' |
+                    sed 's/.*JO.\(.*\)/\1/g' | cut -d \- -f 1`
+            if [ ! -z $version ]; then
+                if [ "$version" \< "3.2" ]; then
+                    # For OTA targets, ril-daemon will be defined and for new vendor.ril-daemon
+                    # To keep this script agnostic,start both of them as only valid one will start.
+                    start ril-daemon
+                    start vendor.ril-daemon
+                fi
+            fi
+        else
+            start ril-daemon
+            start vendor.ril-daemon
+        fi
+    fi
+
     # Get ril-daemon status again to ensure that we have latest info
     rild_status=`getprop init.svc.ril-daemon`
     vendor_rild_status=`getprop init.svc.vendor.ril-daemon`
@@ -55,7 +110,20 @@ case "$baseband" in
     if [[ -z "$rild_status" || "$rild_status" = "stopped" ]] && [[ -z "$vendor_rild_status" || "$vendor_rild_status" = "stopped" ]]; then
       start vendor.qcrild
     fi
+    start vendor.ipacm-diag
     start vendor.ipacm
+    case "$baseband" in
+        "svlte2a" | "csfb")
+          start qmiproxy
+        ;;
+        "sglte" | "sglte2" )
+          if [ "x$sgltecsfb" != "xtrue" ]; then
+              start qmiproxy
+          else
+              setprop persist.vendor.radio.voice.modem.index 0
+          fi
+        ;;
+    esac
 
     multisim=`getprop persist.radio.multisim.config`
 
@@ -71,16 +139,19 @@ case "$baseband" in
           start vendor.qcrild3
         else
           start vendor.ril-daemon2
+          start vendor.ril-daemon3
         fi
     fi
 
     case "$datamode" in
         "tethered")
-            start vendor.qti
+            start vendor.dataqti
+            start vendor.dataadpl
             start vendor.port-bridge
             ;;
         "concurrent")
-            start vendor.qti
+            start vendor.dataqti
+            start vendor.dataadpl
             start vendor.netmgrd
             start vendor.port-bridge
             ;;
@@ -92,9 +163,9 @@ esac
 
 #
 # Allow persistent faking of bms
-# User needs to set fake bms charge in persist.bms.fake_batt_capacity
+# User needs to set fake bms charge in persist.vendor.bms.fake_batt_capacity
 #
-fake_batt_capacity=`getprop persist.bms.fake_batt_capacity`
+fake_batt_capacity=`getprop persist.vendor.bms.fake_batt_capacity`
 case "$fake_batt_capacity" in
     "") ;; #Do nothing here
     * )
