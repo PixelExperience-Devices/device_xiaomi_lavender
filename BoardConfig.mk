@@ -30,7 +30,7 @@ TARGET_NO_BOOTLOADER := true
 # Platform
 BOARD_VENDOR := xiaomi
 TARGET_BOARD_PLATFORM := sdm660
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno509
+TARGET_BOARD_PLATFORM_GPU := qcom-adreno512
 
 # Architecture
 TARGET_ARCH := arm64
