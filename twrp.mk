@@ -1,7 +1,7 @@
 # Recovery
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_DEVICE_DIRS += device/xiaomi/whyred/twrp
+TARGET_RECOVERY_DEVICE_DIRS += device/xiaomi/lavender/twrp
 
 # TWRP specific build flags
 RECOVERY_SDCARD_ON_DATA := true

@@ -21,7 +21,7 @@
 # definition file).
 #
 
-$(call inherit-product, vendor/xiaomi/whyred/whyred-vendor.mk)
+$(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
 
 # Vendor properties
 -include $(LOCAL_PATH)/vendor_prop.mk
@@ -374,7 +374,7 @@ PRODUCT_PACKAGES += \
 
 # Recovery
 PRODUCT_PACKAGES += \
-    librecovery_updater_whyred
+    librecovery_updater_lavender
 
 # RIL
 PRODUCT_PACKAGES += \
