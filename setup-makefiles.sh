@@ -43,6 +43,7 @@ setup_vendor "$DEVICE" "$VENDOR" "$MK_ROOT"
 write_headers
 
 write_makefiles "$MY_DIR"/proprietary-files.txt true
+write_makefiles "$MY_DIR"/proprietary-files-camera.txt true
 
 cat << EOF >> "$BOARDMK"
 ifeq (\$(WITH_TWRP),true)
