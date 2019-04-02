@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.light@2.0-service.xiaomi_sdm845"
+#define LOG_TAG "android.hardware.light@2.0-service.xiaomi_sm6150"
 
-#include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
 
 #include "Light.h"
@@ -32,31 +31,20 @@ using android::sp;
 using android::status_t;
 
 int main() {
-    status_t status;
-    sp<ILight> service = nullptr;
+    sp<ILight> service = new Light();
 
-    LOG(INFO) << "Light HAL service 2.0 is starting.";
+    configureRpcThreadpool(1, true);
 
-    service = new Light();
-    if (service == nullptr) {
-        LOG(ERROR) << "Can not create an instance of Light HAL Iface, exiting.";
-        goto shutdown;
-    }
-
-    configureRpcThreadpool(1, true /*callerWillJoin*/);
-
-    status = service->registerAsService();
+    status_t status = service->registerAsService();
     if (status != OK) {
-        LOG(ERROR) << "Could not register service for Light HAL Iface (" << status << ")";
-        goto shutdown;
+        ALOGE("Cannot register Light HAL service.");
+        return 1;
     }
 
-    LOG(INFO) << "Light HAL service is ready.";
-    joinRpcThreadpool();
-    // Should not pass this line
+    ALOGI("Light HAL service ready.");
 
-shutdown:
-    // In normal operation, we don't expect the thread pool to exit
-    LOG(ERROR) << "Light HAL service is shutting down.";
+    joinRpcThreadpool();
+
+    ALOGI("Light HAL service failed to join thread pool.");
     return 1;
 }

@@ -77,6 +77,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/idc/uinput-fpc.idc:system/usr/idc/uinput-fpc.idc \
     $(LOCAL_PATH)/idc/uinput-goodix.idc:system/usr/idc/uinput-goodix.idc
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.xiaomi_sm6150
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service-sdm

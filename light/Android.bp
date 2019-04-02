@@ -1,4 +1,4 @@
-// Copyright (C) 2018 The LineageOS Project
+// Copyright (C) 2019 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,17 +15,16 @@
 cc_binary {
     relative_install_path: "hw",
     defaults: ["hidl_defaults"],
-    name: "android.hardware.light@2.0-service.xiaomi_sdm845",
-    init_rc: ["android.hardware.light@2.0-service.xiaomi_sdm845.rc"],
+    name: "android.hardware.light@2.0-service.xiaomi_sm6150",
+    init_rc: ["android.hardware.light@2.0-service.xiaomi_sm6150.rc"],
     srcs: ["service.cpp", "Light.cpp"],
     shared_libs: [
-        "android.hardware.light@2.0",
-        "libbase",
         "libhardware",
         "libhidlbase",
         "libhidltransport",
-        "libhwbinder",
         "liblog",
+        "libhwbinder",
         "libutils",
+        "android.hardware.light@2.0",
     ],
 }
