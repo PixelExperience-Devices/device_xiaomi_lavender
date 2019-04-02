@@ -40,6 +40,10 @@ vendor/lib/libvidhance.so
 vendor/lib/libvidhance_gyro.so
 vendor/lib/libXMFD_AgeGender.so
 vendor/lib/mibokeh_660_opencl.bin
+vendor/lib/libcamera_scene.so
+vendor/lib/libSNPE.so
+vendor/lib/libsymphony-cpu.so
+vendor/lib/libsymphonypower.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libscveBlobDescriptor.so
 vendor/lib64/libscveBlobDescriptor_stub.so
