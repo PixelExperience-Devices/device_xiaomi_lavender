@@ -29,9 +29,6 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="lavender" \
-    PRODUCT_NAME="lavender" \
-    PRIVATE_BUILD_DESC="lavender-user 9 PKQ1.180904.001 V11.0.4.0.PFGMIXM release-keys"
-
-BUILD_FINGERPRINT := "xiaomi/lavender/lavender:9/PKQ1.180904.001/V11.0.4.0.PFGMIXM:user/release-keys"
-
+    PRODUCT_NAME="lavender"
+    
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
