@@ -28,6 +28,9 @@ on post-fs-data
     mkdir /data/vendor/hbtp 0750 system system
     mkdir /persist/qti_fp 0700 system system
     mkdir /data/misc/seemp 0700 system system
-    mkdir /data/misc/fpc 0770 system system
-    mkdir /data/misc/goodix 0770 system system
+    mkdir /data/vendor/fpc 0770 system system
+    mkdir /data/vendor/goodix 0770 system system
     mkdir /persist/fpc 0770 system system
+    copy /data/vendor/fpc/user.db /data/vendor_de/0/fpdata/user.db
+    chown system system /data/vendor_de/0/fpdata/user.db
+    rm /data/vendor/fpc/user.db
