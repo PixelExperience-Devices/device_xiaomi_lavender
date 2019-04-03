@@ -286,6 +286,7 @@
     <bool name="config_carrier_volte_available">true</bool>
 
     <!-- Flag specifying whether WFC over IMS is available on device -->
+    <bool name="config_device_vt_available">true</bool>
     <bool name="config_device_wfc_ims_available">true</bool>
 
     <!-- Flag specifying whether WFC over IMS should be available for carrier: independent of
