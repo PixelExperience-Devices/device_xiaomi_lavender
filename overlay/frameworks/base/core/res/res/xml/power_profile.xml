@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<device name="Android">
+    <item name="screen.on">96</item>
+    <item name="screen.full">403</item>
+    <array name="cpu.clusters.cores">
+        <value>6</value>
+        <value>2</value>
+    </array>
+    <array name="cpu.core_speeds.cluster0">
+        <value>300000</value>
+        <value>576000</value>
+        <value>748800</value>
+        <value>1017600</value>
+        <value>1209600</value>
+        <value>1363200</value>
+        <value>1516800</value>
+        <value>1593600</value>
+        <value>1708800</value>
+    </array>
+    <array name="cpu.core_power.cluster0">
+        <value>6</value>
+        <value>11</value>
+        <value>14</value>
+        <value>23</value>
+        <value>29</value>
+        <value>35</value>
+        <value>41</value>
+        <value>45</value>
+        <value>62</value>
+    </array>
+    <array name="cpu.core_speeds.cluster1">
+        <value>300000</value>
+        <value>652800</value>
+        <value>768000</value>
+        <value>979200</value>
+        <value>1017600</value>
+        <value>1209600</value>
+        <value>1363200</value>
+        <value>1516800</value>
+        <value>1708800</value>
+        <value>1900800</value>
+        <value>2016000</value>
+    </array>
+    <array name="cpu.core_power.cluster1">
+        <value>26</value>
+        <value>47</value>
+        <value>54</value>
+        <value>72</value>
+        <value>76</value>
+        <value>97</value>
+        <value>137</value>
+        <value>163</value>
+        <value>221</value>
+        <value>324</value>
+        <value>354</value>
+    </array>
+    <item name="cpu.idle">4</item>
+    <item name="cpu.active">3</item>
+    <item name="cpu.suspend">4</item>
+    <item name="battery.capacity">4000</item>
+    <item name="bluetooth.active">50</item>
+    <item name="bluetooth.at">2</item>
+    <item name="bluetooth.on">2</item>
+    <item name="wifi.on">1</item>
+    <item name="wifi.active">120</item>
+    <item name="wifi.scan">30</item>
+    <item name="dsp.audio">29</item>
+    <item name="dsp.video">52</item>
+    <item name="camera.flashlight">121</item>
+    <item name="camera.avg">650</item>
+    <item name="gps.on">70</item>
+    <item name="radio.active">20</item>
+    <item name="radio.scanning">52</item>
+    <array name="radio.on">
+        <value>3</value>
+        <value>2</value>
+    </array>
+</device> 
