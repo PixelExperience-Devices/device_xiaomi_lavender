@@ -439,3 +439,7 @@ PRODUCT_COPY_FILES += \
 # Wi-Fi Display
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+# Prebuilt modules
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/qca_cld3_wlan.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/qca_cld3_wlan.ko
