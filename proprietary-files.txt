@@ -729,6 +729,7 @@ vendor/lib64/hw/activity_recognition.sdm660.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
 vendor/lib64/sensors.ssc.so
+vendor/lib64/sensors.elliptic.so
 
 # Soter
 -app/SoterService/SoterService.apk
