@@ -1,30 +1,39 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.job_delay=true \
     persist.sys.mcd_config_file=/system/etc/mcd_default.conf \
-    drm.service.enabled=true \
+    qemu.hw.mainkeys=0 \
+    vendor.video.disable.ubwc=1 \
     dalvik.vm.heapgrowthlimit=256m \
     dalvik.vm.heapstartsize=8m \
     dalvik.vm.heapsize=512m \
     dalvik.vm.heaptargetutilization=0.75 \
     dalvik.vm.heapminfree=512k \
     dalvik.vm.heapmaxfree=8m \
-    vendor.video.disable.ubwc=1 \
+    ro.hardware.nfc_nci=nqx.default \
+    vendor.hw.fm.init=0 \
     persist.radio.multisim.config=dsds \
     persist.vendor.qcomsysd.enabled=1 \
+    keyguard.no_require_sim=true \
+    ro.com.android.dataroaming=false \
+    ro.config.ringtone=Ring_Synth_04.ogg \
+    ro.config.notification_sound=pixiedust.ogg \
+    ro.carrier=unknown \
+    ro.config.alarm_alert=Alarm_Classic.ogg \
+    ro.dalvik.vm.native.bridge=0 \
     ro.vendor.extension_library=libqti-perfd-client.so \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
+    persist.backup.ntpServer=0.pool.ntp.org \
     sys.vendor.shutdown.waittime=500 \
     ro.build.shutdown_timeout=0 \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp \
     ro.opengles.version=196610 \
-    ro.qualcomm.cabl=0 \
     vendor.qcom.bluetooth.soc=cherokee \
     af.fast_track_multiplier=1 \
     vendor.audio_hal.period_size=192 \
-    ro.vendor.audio.sdk.fluencetype=fluence \
+    ro.vendor.audio.sdk.fluencetype=none \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
     persist.vendor.audio.fluence.speaker=true \
@@ -42,8 +51,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.multiple.enabled=false \
     vendor.audio.offload.passthrough=false \
     ro.vendor.audio.sdk.ssr=false \
-    ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_steps=7 \
     vendor.audio.offload.gapless.enabled=true \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.parser.ip.buffer.size=262144 \
@@ -56,10 +63,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.noisy.broadcast.delay=600 \
     persist.vendor.audio.hifi.int_codec=true \
     vendor.audio.offload.pstimeout.secs=3 \
-    vendor.audio.adm.buffering.ms=6 \
+    ro.af.client_heap_size_kbyte=7168 \
+    persist.vendor.audio.hw.binder.size_kbyte=1024 \
+    ro.vendor.audio.sos=true \
+    ro.vendor.audio.soundtrigger=none \
+    ro.vendor.audio.soundtrigger.lowpower=false \
     ro.vendor.sensors.facing=false \
     ro.vendor.sensors.cmc=false \
     ro.vendor.sdk.sensors.gestures=false \
+    rild.libpath=/system/vendor/lib64/libril-qc-hal-qmi.so \
+    ro.vendor.audio.voice.volume.boost=manual \
+    sys.autosuspend.timeout=500000
+
+#rild.libpath=/system/lib/libreference-ril.so
+PRODUCT_PROPERTY_OVERRIDES += \
+    rild.libpath=/system/vendor/lib64/libril-qc-hal-qmi.so
+
+#rild.libargs=-d /dev/smd0
+PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_plmn="" \
     persist.rild.nitz_long_ons_0="" \
     persist.rild.nitz_long_ons_1="" \
@@ -70,9 +91,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_2="" \
     persist.rild.nitz_short_ons_3="" \
     ril.subscription.types=NV,RUIM \
-    DEVICE_PROVISIONED=1 \
-    rild.libpath=/system/vendor/lib64/libril-qc-hal-qmi.so \
-    ro.telephony.default_network=22,20
+    DEVICE_PROVISIONED=1
+
+#
+# Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=9,9
 
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1 \
@@ -80,13 +105,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.latch_unsignaled=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
     dev.pm.dyn_samplingrate=1
-
-#Set AudioFlinger client heap size
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.af.client_heap_size_kbyte=7168
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.audio.hw.binder.size_kbyte=1024
 
 #
 # system props for the cne module
@@ -185,42 +203,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #disable UBWC for camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.preview.ubwc=0 \
-    persist.vendor.camera.stats.test=0 \
-    persist.vendor.camera.depth.focus.cb=0 \
     persist.vendor.camera.isp.clock.optmz=0 \
-    persist.vendor.camera.linkpreview=0 \
-    persist.vendor.camera.isp.turbo=1
+    persist.vendor.camera.isp.turbo=1 \
+    persist.vendor.camera.imglib.usefdlite=1 \
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.HAL3.enabled=1
 
 #exif info for camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.exif.make=Xiaomi \
-    persist.vendor.camera.exif.model=RedmiNote5 \
-    persist.vendor.camera.expose.aux=1
+    persist.vendor.camera.manufacturer=Xiaomi \
+    persist.vendor.camera.model=Redmi Note 7
 
-#enable video face detect func
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.fdvideo=1
+#use camera2 api
+persist.sys.camera.camera2=true
 
 #disable awb sync in bokeh mode
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.awb.sync=2
-
-#properties for camera front flash lux
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.flash.low.lux=390 \
-    persist.vendor.flash.light.lux=340 \
-    persist.vendor.imx376_ofilm.low.lux=310 \
-    persist.vendor.imx376_ofilm.light.lux=280 \
-    persist.vendor.imx376_sunny.low.lux=310 \
-    persist.vendor.imx376_sunny.light.lux=280 \
-    persist.vendor.ov13855_sunny.low.lux=385 \
-    persist.vendor.ov13855_sunny.light.lux=370 \
-    persist.vendor.s5k3l8_ofilm.low.lux=379 \
-    persist.vendor.s5k3l8_ofilm.light.lux=367
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.HAL3.enabled=1 \
-    persist.vendor.camera.ltm.overlap=13
 
 # HAL1 apps list
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -288,12 +287,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.bt.a2dp.aac_disable=true
 
-# ad
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qcom.ad=1 \
-    ro.qcom.ad.calib.data=/system/etc/calib.cfg \
-    ro.qcom.ad.sensortype=2
-
 #system prop for wipower support
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.emb_wp_mode=true \
@@ -306,6 +299,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # 2 or anything else is camera2
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.VT_CAM_INTERFACE=2
+
+# cherrypick form d2s  for video call
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.qti.telephony.vt_cam_interface=1
 
 #Enable stm-events
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -336,10 +333,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #iwaln vowifi corresponding
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.data.iwlan.enable=true
-
-#system property determining camera to be used for a Video call
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qti.telephony.vt_cam_interface=1
 
 #enable snapshot
 PRODUCT_PROPERTY_OVERRIDES += \
