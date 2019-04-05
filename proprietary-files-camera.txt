@@ -6,6 +6,7 @@ vendor/lib/lib_lowlight.so
 vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_dualcam_refocus.so
 vendor/lib/libarcsoft_high_dynamic_range.so
+vendor/lib/libarcsoft_supernight.so
 vendor/lib/libcdsprpc.so
 vendor/lib/libdepthmapwrapper.so
 vendor/lib/libflash_pmic.so
@@ -40,6 +41,10 @@ vendor/lib/libvidhance.so
 vendor/lib/libvidhance_gyro.so
 vendor/lib/libXMFD_AgeGender.so
 vendor/lib/mibokeh_660_opencl.bin
+vendor/lib/libc++_shared.so
+vendor/lib/libVDClearShot.so
+vendor/lib/libVDSuperPhotoAPI.so
+vendor/lib/libFaceGrade.so
 vendor/lib/libcamera_scene.so
 vendor/lib/libSNPE.so
 vendor/lib/libsymphony-cpu.so
