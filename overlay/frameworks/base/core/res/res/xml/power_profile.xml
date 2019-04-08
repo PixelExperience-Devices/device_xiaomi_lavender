@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
     <item name="none">0</item>
-    <item name="screen.on">88</item>
+    <item name="screen.on">90</item>
     <item name="screen.full">300</item>
     <array name="cpu.clusters.cores">
         <value>4</value>
@@ -35,8 +35,11 @@
         <value>170</value>
         <value>193</value>
     </array>
-    <item name="cpu.awake">4</item>
+    <item name="cpu.suspend">4</item>
     <item name="cpu.idle">3</item>
+    <item name="cpu.active">1</item>
+    <item name="cpu.cluster_power.cluster0">1</item>
+    <item name="cpu.cluster_power.cluster1">1</item>
     <item name="battery.capacity">4000</item>
     <item name="bluetooth.active">80</item>
     <item name="bluetooth.at">2</item>
