@@ -3,3 +3,6 @@ type vendor_fp_prop, property_type;
 
 # Mlipay
 type ifaa_prop, property_type;
+
+# Thermal engine
+type thermal_prop, property_type;
