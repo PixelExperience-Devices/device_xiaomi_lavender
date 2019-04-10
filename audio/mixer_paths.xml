@@ -46,13 +46,6 @@
     <ctl name="Voip Evrc Min Max Rate Config" id="1" value="4" />
     <ctl name="Voip Dtx Mode" value="0" />
     <ctl name="TTY Mode" value="OFF" />
-    <ctl name="Ultrasound Event" value="0" />
-    <ctl name="Ultrasound Mode" value="0" />
-    <ctl name="Ultrasound Suspend" value="0" />
-    <ctl name="Ultrasound Enable" value="Off" />
-    <ctl name="Ultrasound Rx Port" value="Off" />
-    <ctl name="Ultrasound RampDown" value="Off" />
-    <ctl name="Ultrasound Microphone Index" value="0" />
     <ctl name="Load acoustic model" value="0" />
     <ctl name="Backlog size" value="0" />
     <ctl name="Microphone mode" value="0" />
@@ -156,7 +149,6 @@
     <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia14" value="0" />
     <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia15" value="0" />
     <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia16" value="0" />
-	<ctl name="PRIM_MI2S_TX Channels" value="Two" />
 	<!-- PRI_MI2S end -->
     <ctl name="USB_AUDIO_RX Audio Mixer MultiMedia1" value="0" />
     <ctl name="USB_AUDIO_RX Audio Mixer MultiMedia2" value="0" />
@@ -187,7 +179,6 @@
     <ctl name="PRI_MI2S_RX Channels" value="One" />
     <ctl name="INT0_MI2S_RX Channels" value="One" />
     <ctl name="INT3_MI2S_TX Channels" value="One" />
-    <ctl name="INT0_MI2S_RX SampleRate" value="KHZ_48" />
     <!-- ctl name="PowerCtrl" value="0" /-->
     <ctl name="I2S TX2 INP1" value="ZERO" />
     <ctl name="I2S TX2 INP2" value="ZERO" />
@@ -289,7 +280,7 @@
     <!-- Incall Recording End -->
 
     <!-- Incall Music -->
-<!-- HTH-32892 ADD by duanlongfei for MIUI SOS feature at 20180919 start -->
+<!-- HTH-32892 HTH-32895 ADD by duanlongfei for MIUI SOS feature at 20180919 start -->
     <ctl name="Incall_Music Audio Mixer MultiMedia2" value="0" />
     <ctl name="Incall_Music Audio Mixer MultiMedia1" value="0" />
     <ctl name="Incall_Music_2 Audio Mixer MultiMedia2" value="0" />
@@ -438,9 +429,6 @@
     <ctl name="IIR1 INP4 Volume" value="53" />
     <ctl name="IIR1 INP1 MUX" value="ZERO" />
 
-	<!-- smart PA TFA 9894 -->
-	<ctl name="TFA Profile" value="music" />
-	
     <!-- anc related -->
 
     <!-- vbat related data -->
@@ -463,7 +451,7 @@
    </path>
 
     <path name="echo-reference">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="INT0_MI2S_RX" />
+        <ctl name="AUDIO_REF_EC_UL1 MUX" value="INT4_MI2S_RX" />
     </path>
 
     <path name="echo-reference headphones">
@@ -471,10 +459,6 @@
     </path>
 
     <path name="echo-reference headphones-44.1">
-    </path>
-
-    <path name="echo-reference speaker">
-        <ctl name="AUDIO_REF_EC_UL1 MUX" value="I2S_RX" />
     </path>
 
     <path name="deep-buffer-playback">
@@ -547,7 +531,6 @@
     </path>
     <path name="low-latency-playback speaker">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia5" value="1" />
-        <ctl name="TFA Profile" value="ringtone" />
     </path>
 
     <path name="low-latency-playback speaker-protected">
@@ -572,15 +555,12 @@
         <path name="low-latency-playback bt-sco" />
     </path>
 
-    <path name="low-latency-playback speaker-and-bt-sco">
-        <path name="low-latency-playback bt-sco" />
-        <path name="low-latency-playback speaker" />
-    </path>
-    <path name="low-latency-playback speaker-and-bt-sco-wb">
-        <path name="low-latency-playback bt-sco-wb" />
-        <path name="low-latency-playback speaker" />
-    </path>
-
+    <!-- lct add for whatsapp call ring -->    
+    <path name="low-latency-playback speaker-and-bt-sco-wb"> 
+	 <path name="low-latency-playback bt-sco-wb" /> 
+	 <path name="low-latency-playback speaker" /> 
+    </path> 
+    
     <path name="low-latency-playback speaker-and-hdmi">
         <path name="low-latency-playback hdmi" />
         <path name="low-latency-playback speaker" />
@@ -1560,7 +1540,7 @@
     <path name="compress-voip-call speaker">
         <ctl name="PRI_MI2S_RX_Voice Mixer Voip" value="1" />
         <ctl name="Voip_Tx Mixer INT3_MI2S_TX_Voip" value="1" />
-        <!--  ctl name="VOC_EXT_EC MUX" value="PRI_MI2S_TX" / -->
+        <ctl name="VOC_EXT_EC MUX" value="PRI_MI2S_TX" />
     </path>
 
     <path name="compress-voip-call bt-a2dp">
@@ -1617,7 +1597,7 @@
     <path name="voicemmode1-call speaker">
         <ctl name="PRI_MI2S_RX_Voice Mixer VoiceMMode1" value="1" />
         <ctl name="VoiceMMode1_Tx Mixer INT3_MI2S_TX_MMode1" value="1" />
-        <!-- ctl name="VOC_EXT_EC MUX" value="PRI_MI2S_TX" / -->
+        <ctl name="VOC_EXT_EC MUX" value="PRI_MI2S_TX" />
     </path>
     <path name="voicemmode1-call headphones">
         <ctl name="INT0_MI2S_RX_Voice Mixer VoiceMMode1" value="1" />
@@ -1650,10 +1630,6 @@
         <ctl name="VoiceMMode1_Tx Mixer INT3_MI2S_TX_MMode1" value="1" />
     </path>
 
-    <path name="voicemmode1-call speaker-and-headphones">
-    	<path name="voicemmode1-call" />
-    </path>
-
     <path name="voicemmode1-call usb-headset">
         <ctl name="USB_AUDIO_RX_Voice Mixer VoiceMMode1" value="1" />
         <ctl name="VoiceMMode1_Tx Mixer USB_AUDIO_TX_MMode1" value="1" />
@@ -1676,13 +1652,8 @@
     <path name="voicemmode2-call speaker">
         <ctl name="PRI_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer INT3_MI2S_TX_MMode2" value="1" />
-        <!-- ctl name="VOC_EXT_EC MUX" value="PRI_MI2S_TX" / -->
+        <ctl name="VOC_EXT_EC MUX" value="PRI_MI2S_TX" />
     </path>
-
-    <path name="voicemmode2-call speaker-and-headphones">
-       <path name="voicemmode2-call" />
-    </path>
-
     <path name="voicemmode2-call headphones">
         <ctl name="INT0_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer INT3_MI2S_TX_MMode2" value="1" />
@@ -1815,7 +1786,7 @@
         <ctl name="SpkrRight SWR DAC_Port Switch" value="1" />
         <ctl name="SpkrRight WSA PA Mute" value="0" />
     </path>
-<!-- HTH-32892 ADD by duanlongfei for MIUI SOS feature at 20180919 start -->
+<!-- HTH-32892 HTH-32895 ADD by duanlongfei for MIUI SOS feature at 20180919 start -->
     <path name="incall_music_uplink">
         <ctl name="Incall_Music Audio Mixer MultiMedia2" value="1" />
     </path>
@@ -1970,9 +1941,8 @@
     </path>
 
     <path name="speaker-mic">
-        <path name="adc3" />
-        <!-- path name="adc1" / -->
-        <!-- ctl name="IIR1 INP1 MUX" value="DEC1" / -->
+        <path name="adc1" />
+        <ctl name="IIR1 INP1 MUX" value="DEC1" />
     </path>
 
     <path name="speaker-mic-liquid">
@@ -1995,7 +1965,6 @@
         <path name="speaker-mono" />
         <ctl name="VI_FEED_TX Channels" value="One" />
         <ctl name="INT4_MI2S_RX_VI_FB_MONO_CH_MUX" value="INT5_MI2S_TX" />
-	<ctl name="TFA Profile" value="voice" />
     </path>
 
     <path name="voice-speaker-2-protected">
@@ -2004,7 +1973,6 @@
         <ctl name="VI_FEED_TX Channels" value="One" />
         <ctl name="INT4_MI2S_RX_VI_FB_MONO_CH_MUX" value="INT5_MI2S_TX" />
         <ctl name="INT5 MI2S VI MONO" value="Right" />
-	<ctl name="TFA Profile" value="voice" />
     </path>
 
     <path name="vi-feedback">
@@ -2029,80 +1997,12 @@
     </path>
 
     <path name="handset">
-    	<ctl name="INT0_MI2S_RX SampleRate" value="KHZ_96" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
-        <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="EAR PA Gain" value="POS_4P5_DB" />
+        <ctl name="RX1 Digital Volume" value="83" />
+        <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="EAR_S" value="Switch" />
     </path>
-
-    <path name="ultrasound-capture-input">
-    	<ctl name="MultiMedia2 Mixer INT3_MI2S_TX" value="1" />
-    </path>
-
-    <path name="ultrasound-proximity-calibration">
-    	<ctl name="Ultrasound Enable" value="On" />
-    	<ctl name="Ultrasound Mode" value="613" />
-    	<ctl name="Ultrasound Debug Mode" value="1" />
-    	<ctl name="Ultrasound Log Level" value="7" />
-    </path>
-
-    <path name="ultrasound-proximity-factory-func">
-        <ctl name="Ultrasound Enable" value="On" />
-        <ctl name="Ultrasound Mode" value="614" />
-        <ctl name="Ultrasound Debug Mode" value="1" />
-        <ctl name="Ultrasound Log Level" value="7" />
-    </path>
-
-
-    <path name="ultrasound-proximity">
-        <ctl name="Ultrasound Enable" value="On" />
-        <ctl name="Ultrasound Mode" value="615" />
-        <ctl name="Ultrasound Debug Mode" value="1" />
-        <ctl name="Ultrasound Log Level" value="7" />
-    </path>
-
-    <path name="ultrasound-proximity-output">
-
-    </path>
-
-    <path name="ultrasound-proximity-input">
-        <!-- ctl name="Ultrasound Microphone Index" value="1" / -->
-    </path>
-
-    <path name="ultrasound-output">
-	    <path name="handset" />
-		<ctl name="INT0_MI2S_RX Channels" value="One" />
-		<!--ctl name="INT0_MI2S_RX SampleRate" value="KHZ_96" /-->
-    </path>
-
-    <path name="ultrasound-input">
-        <path name="speaker-mic" />
-    </path>
-
-    <path name="ultrasound-output-stereo">
-    </path>
-
-    <path name="ultrasound-secondary-input">
-    </path>
- 
-    <path name="ultrasound-rampdown">
-        <ctl name="Ultrasound RampDown" value="On" />
-    </path>
-    
-    <path name="ultrasound-screen-on">
-         <ctl name="Ultrasound Event" value="1" />
-    </path>
-    
-    <path name="ultrasound-on">
-        <ctl name="Ultrasound Rx Port" value="On" />
-    </path>
-    
-    <path name="ultrasound-suspend">
-        <ctl name="Ultrasound Suspend" value="1" />
-    </path>
-
 
     <path name="handset-mic">
         <path name="adc1" />
@@ -2153,14 +2053,14 @@
 
     <path name="headphones-ce">
         <path name="headphones" />
-        <ctl name="RX1 Digital Volume" value="74" />
-        <ctl name="RX2 Digital Volume" value="74" />
+        <ctl name="RX1 Digital Volume" value="72" />
+        <ctl name="RX2 Digital Volume" value="72" />
     </path>
 
     <path name="headphones-no-ce">
         <path name="headphones" />
-        <ctl name="RX1 Digital Volume" value="84" />
-        <ctl name="RX2 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="82" />
+        <ctl name="RX2 Digital Volume" value="82" />
     </path>
 
     <path name="headphones-karaoke">
@@ -2198,17 +2098,14 @@
     <path name="voice-speaker">
 	<!--ctl name="VOC_EXT_EC MUX" value="PRI_MI2S_TX" /-->
         <path name="speaker" />
-	<ctl name="TFA Profile" value="voice" />
     </path>
 
     <path name="voice-speaker-2">
         <path name="speaker-mono-2" />
-	<ctl name="TFA Profile" value="voice" />
     </path>
 
     <path name="voice-speaker-fluid">
         <path name="speaker-fluid" />
-	<ctl name="TFA Profile" value="voice" />
     </path>
 
     <path name="voice-speaker-mic">
@@ -2217,16 +2114,16 @@
 
     <path name="voice-speaker-vbat">
         <path name="speaker-vbat-mono" />
-	<ctl name="TFA Profile" value="voice" />
     </path>
 
     <path name="voice-speaker-2-vbat">
         <path name="speaker-vbat-mono-2" />
-	<ctl name="TFA Profile" value="voice" />
     </path>
 
     <path name="voice-headphones">
         <path name="headphones" />
+	<ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX2 Digital Volume" value="84" />
     </path>
 
     <path name="voice-line">
@@ -2326,9 +2223,7 @@
     </path>
 
     <path name="voice-rec-mic">
-        <ctl name="DEC1 MUX" value="ADC2" />
-        <ctl name="ADC2 MUX" value="INP3" />
-        <ctl name="ADC3 Volume" value="6" />
+        <path name="handset-mic" />
     </path>
 
     <path name="camcorder-mic">
@@ -2370,8 +2265,6 @@
         <ctl name="DEC2 MUX" value="ADC2" />
 		<ctl name="ADC2 MUX" value="INP3" />
         <ctl name="INT3_MI2S_TX Channels" value="Two" />
-        <ctl name="Ultrasound Microphone Index" value="1" />
-	<ctl name="INT3_MI2S_TX SampleRate" value="KHZ_48" />`
     </path>
 
     <path name="speaker-dmic-endfire">
@@ -2380,8 +2273,6 @@
         <ctl name="DEC2 MUX" value="ADC2" />
 		<ctl name="ADC2 MUX" value="INP3" />
         <ctl name="INT3_MI2S_TX Channels" value="Two" />
-        <ctl name="Ultrasound Microphone Index" value="1" />
-	<ctl name="INT3_MI2S_TX SampleRate" value="KHZ_48" />
     </path>
 
     <path name="dmic-endfire">

@@ -102,11 +102,11 @@
                     <profile name="" format="AUDIO_FORMAT_FLAC"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000,64000,88200,96000,128000,176400,192000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
-                    <!-- Remove alac codec for xiaomi global verison by lct wyh begin
+                    <!-- Remove alac codec for xiaomi global verison by lct wyh begin-->
                     <profile name="" format="AUDIO_FORMAT_ALAC"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000,64000,88200,96000,128000,176400,192000"
                              channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_2POINT1,AUDIO_CHANNEL_OUT_QUAD,AUDIO_CHANNEL_OUT_PENTA,AUDIO_CHANNEL_OUT_5POINT1,AUDIO_CHANNEL_OUT_6POINT1,AUDIO_CHANNEL_OUT_7POINT1"/>
-                    end -->
+                    <!--end -->
                     <profile name="" format="AUDIO_FORMAT_APE"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000,64000,88200,96000,128000,176400,192000"
                              channelMasks="AUDIO_CHANNEL_OUT_STEREO,AUDIO_CHANNEL_OUT_MONO"/>
@@ -162,7 +162,7 @@
                              samplingRates="8000,16000,32000,48000" channelMasks="AUDIO_CHANNEL_OUT_MONO"/>
                 </mixPort>
 
-                <mixPort name="primary input" role="sink" maxOpenCount="2" maxActiveCount="2">
+                <mixPort name="primary input" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,11025,12000,16000,22050,24000,32000,44100,48000"
                              channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO,AUDIO_CHANNEL_IN_FRONT_BACK"/>
@@ -243,18 +243,6 @@
                 <devicePort tagName="FM" type="AUDIO_DEVICE_OUT_FM" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Out" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Headphones" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Speaker" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
                 </devicePort>
                 <devicePort tagName="USB Device Out" type="AUDIO_DEVICE_OUT_USB_DEVICE" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
@@ -342,62 +330,13 @@
                        sources="Built-In Mic,Built-In Back Mic"/>
                 <route type="mix" sink="record_24"
                        sources="Built-In Mic,Built-In Back Mic,Wired Headset Mic"/>
-                <route type="mix" sink="BT A2DP Out"
-                       sources="primary output,deep_buffer,direct_pcm,compressed_offload"/>
-                <route type="mix" sink="BT A2DP Headphones"
-                       sources="primary output,deep_buffer,direct_pcm,compressed_offload"/>
-                <route type="mix" sink="BT A2DP Speaker"
-                       sources="primary output,deep_buffer,direct_pcm,compressed_offload"/>
                 <route type="mix" sink="hifi_input" sources="USB Device In,USB Headset In" />
             </routes>
 
         </module>
 
         <!-- A2DP Audio HAL -->
-        <module name="a2dp" halVersion="2.0">
-            <mixPorts>
-                <mixPort name="a2dp output" role="source"/>
-                <mixPort name="a2dp input" role="sink">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="44100,48000" channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO"/>
-                </mixPort>
-            </mixPorts>
-
-            <devicePorts>
-                <devicePort tagName="BT A2DP Out" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP" role="sink" address="ldac_a2dp">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                            samplingRates="44100,48000,96000"
-                            channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Headphones" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_HEADPHONES" role="sink" address="ldac_a2dp">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                            samplingRates="44100,48000,96000"
-                            channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-                <devicePort tagName="BT A2DP Speaker" type="AUDIO_DEVICE_OUT_BLUETOOTH_A2DP_SPEAKER" role="sink" address="ldac_a2dp">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                            samplingRates="44100,48000,96000"
-                            channelMasks="AUDIO_CHANNEL_OUT_STEREO"/>
-                </devicePort>
-
-                <devicePort tagName="BT A2DP In" type="AUDIO_DEVICE_IN_BLUETOOTH_A2DP" role="source">
-                    <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
-                             samplingRates="44100,48000" channelMasks="AUDIO_CHANNEL_IN_MONO,AUDIO_CHANNEL_IN_STEREO"/>
-                </devicePort>
-            </devicePorts>
-
-            <routes>
-                <route type="mix" sink="BT A2DP Out"
-                        sources="a2dp output"/>
-                <route type="mix" sink="BT A2DP Headphones"
-                        sources="a2dp output"/>
-                <route type="mix" sink="BT A2DP Speaker"
-                       sources="a2dp output"/>
-
-                <route type="mix" sink="a2dp input"
-                       sources="BT A2DP In"/>
-            </routes>
-        </module>
+        <xi:include href="/vendor/etc/a2dp_audio_policy_configuration.xml"/>
 
         <!-- Usb Audio HAL -->
         <module name="usb" halVersion="2.0">
