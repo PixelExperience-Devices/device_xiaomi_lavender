@@ -1,2 +1,0 @@
-#============= hal_imsrtp ==============
-allow hal_imsrtp sysfs:file { open read };

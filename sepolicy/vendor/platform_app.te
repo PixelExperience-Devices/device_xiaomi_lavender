@@ -1,2 +1,0 @@
-#============= platform_app ==============
-allow platform_app vendor_default_prop:file { getattr open read };
