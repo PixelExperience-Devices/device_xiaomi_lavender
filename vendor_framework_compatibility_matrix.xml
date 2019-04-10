@@ -439,7 +439,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="hidl" optional="true">
         <name>com.fingerprints.extension</name>
-        <transport>hwbinder</transport>
         <version>2.0</version>
         <interface>
             <name>IFingerprintEngineering</name>
@@ -456,18 +455,9 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.goodix.hardware.interfaces.biometrics.fingerprint</name>
-        <transport>hwbinder</transport>
         <version>2.1</version>
         <interface>
             <name>IGoodixFingerprintDaemon</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.goodix.hardware.fingerprintextension</name>
-        <version>1.0</version>
-        <interface>
-            <name>IGoodixBiometricsFingerprint</name>
             <instance>default</instance>
         </interface>
     </hal>
