@@ -1,8 +1,13 @@
 # Fingerprint
-persist.sys.fp.                                               u:object_r:fingerprint_prop:s0
-ro.boot.fp.                                                   u:object_r:fingerprint_prop:s0
-sys.fp.                                                       u:object_r:fingerprint_prop:s0
-ro.boot.fpsensor                    u:object_r:fingerprint_prop:s0
+gf.debug.dump_data                  u:object_r:vendor_fp_prop:s0
+persist.sys.fp.                     u:object_r:vendor_fp_prop:s0
+persist.vendor.sys.fp.              u:object_r:vendor_fp_prop:s0
+ro.boot.fp.                         u:object_r:vendor_fp_prop:s0
+sys.fp.                             u:object_r:vendor_fp_prop:s0
+ro.boot.fpsensor                    u:object_r:vendor_fp_prop:s0
 
 # Mlipay
-persist.sys.ifaa                    u:object_r:ifaa_prop:s0
+persist.vendor.sys.pay.ifaa         u:object_r:ifaa_prop:s0
+
+# vendor_default_prop
+fpc_kpi                             u:object_r:vendor_default_prop:s0
