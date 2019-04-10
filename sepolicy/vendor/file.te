@@ -7,8 +7,12 @@ type sysfs_tap_to_wake, sysfs_type, fs_type;
 
 # Fingerprint
 type fingerprintd_device, file_type, dev_type;
-type fingerprint_persist_file, file_type;
-type sysfs_fpc_dev, sysfs_type, fs_type;
+type persist_fingerprint_file, file_type;
+type sysfs_fingerprint, sysfs_type, fs_type;
+
+# Input files
+type idc_file, file_type, vendor_file_type;
+type keylayout_file, file_type, vendor_file_type;
 
 # Keylayout
 type vendor_keylayout_file, file_type, vendor_file_type;
