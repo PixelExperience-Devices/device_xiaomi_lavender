@@ -49,6 +49,13 @@ vendor/lib/libcamera_scene.so
 vendor/lib/libSNPE.so
 vendor/lib/libsymphony-cpu.so
 vendor/lib/libsymphonypower.so
+vendor/lib/libMegviiFacepp-0.5.2.so
+vendor/lib/libSonyIMX376C3RmscLibrary.so
+vendor/lib/libSonyIMX376KRmscLibrary.so
+vendor/lib/libbase64.so
+vendor/lib/libgui_vendor.so
+vendor/lib/libmegface.so
+vendor/lib/libstdc++.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libscveBlobDescriptor.so
 vendor/lib64/libscveBlobDescriptor_stub.so
@@ -62,6 +69,11 @@ vendor/lib64/libscveObjectTracker_stub.so
 vendor/lib64/libscvePanorama.so
 vendor/lib64/libscvePanorama_lite.so
 vendor/lib64/libvideoutils.so
+
+vendor/etc/scve/facereco/gModel.dat
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
 # Camera XML
 vendor/etc/camera/camera_config.xml
@@ -84,6 +96,14 @@ vendor/etc/camera/lavender_s5kgm1_ofilm_i_chromatix.xml
 vendor/etc/camera/lavender_s5kgm1_ofilm_india_i_chromatix.xml
 vendor/etc/camera/lavender_s5kgm1_sunny_ii_chromatix.xml
 vendor/etc/camera/lavender_s5kgm1_sunny_india_ii_chromatix.xml
+
+vendor/etc/camera/GpuKernelRepo.pb
+vendor/etc/camera/beauty_ui9_intelligent_params.config
+vendor/etc/camera/lf_facerank_model.bin
+vendor/etc/camera/megviifacepp_model
+vendor/etc/camera/model_back.dlc
+vendor/etc/camera/model_front.dlc
+vendor/etc/camera/sdm_ys_32p_120_21_5_perturb50.bin
 
 # Camera actuators
 vendor/lib/libactuator_lavender_imx486_ofilm_i_bu64982.so
@@ -944,3 +964,8 @@ vendor/firmware/cpp_firmware_v1_8_0.fw
 
 # Camera OIS
 vendor/lib/libois_bu63165.so
+vendor/lib/libois_lc898122.so
+
+# Camera HIDL
+vendor/lib64/vendor.qti.hardware.camera.device@1.0.so
+
