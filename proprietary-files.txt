@@ -301,11 +301,16 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
+# Factory
+framework/vendor.qti.data.factory-V1.0-java.jar
 vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
 vendor/lib/hw/vendor.qti.hardware.factory@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.factory@1.0-impl.so
 vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
+vendor/etc/permissions/vendor.qti.hardware.factory.xml
+vendor/lib/vendor.qti.data.factory@1.0.so
 vendor/lib/vendor.qti.hardware.factory@1.0.so
+vendor/lib64/vendor.qti.data.factory@1.0.so
 vendor/lib64/vendor.qti.hardware.factory@1.0.so
 
 # Keymaster
@@ -315,9 +320,11 @@ vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
 vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib/libkeymasterdeviceutils.so
+vendor/lib/libkeymasterprovision.so
 vendor/lib/libqtikeymaster4.so
 vendor/lib/libkeymasterutils.so
 vendor/lib64/libkeymasterdeviceutils.so
+vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libqtikeymaster4.so
 vendor/lib64/libkeymasterutils.so
 
