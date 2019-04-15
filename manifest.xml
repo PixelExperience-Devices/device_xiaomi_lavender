@@ -571,7 +571,7 @@
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.uim</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.2</version>
         <interface>
             <name>IUim</name>
             <instance>Uim0</instance>
