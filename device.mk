@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Enable updating of APEXes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
+
 $(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
 
 # Vendor properties
