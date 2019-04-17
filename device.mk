@@ -270,6 +270,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
 
+# Touchscreen
+PRODUCT_PACKAGES += \
+    libtinyxml2
+
 # Trust HAL
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service
