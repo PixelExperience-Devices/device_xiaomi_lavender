@@ -581,7 +581,7 @@ vendor/lib64/vendor.display.postproc@1.0.so
 
 # QMI
 etc/permissions/qti_permissions.xml
-etc/permissions/qti_libpermissions.xml
+etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
 vendor/bin/irsc_util
 vendor/bin/pd-mapper
 vendor/lib/libdiag.so
