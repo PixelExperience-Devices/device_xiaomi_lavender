@@ -1,36 +1,15 @@
 service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660
+    # "class hal" causes a race condition on some devices due to files created
+    # in /data. As a workaround, postpone startup until later in boot once
+    # /data is mounted.
     class late_start
     user system
     group system input
     writepid /dev/cpuset/system-background/tasks
 
-on init
-    chown system system /dev/goodix_fp
-
-on boot
-    chown system system /sys/bus/platform/devices/soc:fpc1020/irq
-    chown system system /sys/bus/platform/devices/soc:fpc1020/wakeup_enable
-    chown system system /sys/bus/platform/devices/soc:fpc1020/hw_reset
-    chown system system /sys/bus/platform/devices/soc:fpc1020/device_prepare
-    chown system system /data/misc/fpc/calibration_image.pndat
-    chmod 0700 /sys/bus/platform/devices/soc:fpc1020/irq
-    chmod 0700 /sys/bus/platform/devices/soc:fpc1020/wakeup_enable
-    chmod 0700 /sys/bus/platform/devices/soc:fpc1020/hw_reset
-    chmod 0700 /sys/bus/platform/devices/soc:fpc1020/device_prepare
-    chmod 0600 /data/misc/fpc/calibration_image.pndat
-
 on post-fs-data
-    mkdir /data/tombstones 0771 system system
-    mkdir /tombstones/modem 0771 system system
-    mkdir /tombstones/lpass 0771 system system
-    mkdir /tombstones/wcnss 0771 system system
-    mkdir /tombstones/dsps 0771 system system
-    mkdir /data/vendor/hbtp 0750 system system
-    mkdir /persist/qti_fp 0700 system system
-    mkdir /data/misc/seemp 0700 system system
-    mkdir /data/vendor/fpc 0770 system system
-    mkdir /data/vendor/goodix 0770 system system
-    mkdir /persist/fpc 0770 system system
-    copy /data/vendor/fpc/user.db /data/vendor_de/0/fpdata/user.db
-    chown system system /data/vendor_de/0/fpdata/user.db
-    rm /data/vendor/fpc/user.db
+	mkdir /data/vendor/goodix 0770 system system
+	mkdir /data/vendor/fpc 0770 system system
+	copy /data/vendor/fpc/user.db /data/vendor_de/0/fpdata/user.db
+	chown system system /data/vendor_de/0/fpdata/user.db
+	rm /data/vendor/fpc/user.db
