@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2016, The CyanogenMod Project
- * Copyright (C) 2017-2018, The LineageOS Project
+ * Copyright (C) 2017, The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,15 +41,6 @@
 #define MODEM_VER_STR "Time_Stamp\": \""
 #define MODEM_VER_STR_LEN 14
 #define MODEM_VER_BUF_LEN 20
-
-#define VENDOR_PART_PATH "/dev/block/bootdevice/by-name/vendor"
-#define VENDOR_DATE_STR "ro.vendor.build.date.utc="
-#define VENDOR_DATE_STR_LEN 25
-#define VENDOR_DATE_BUF_LEN 11
-
-#define VNDK_VER_STR "ro.vndk.version="
-#define VNDK_VER_STR_LEN 16
-#define VNDK_VER_BUF_LEN 3
 
 /* Boyer-Moore string search implementation from Wikipedia */
 
@@ -128,41 +119,40 @@ static char* bm_search(const char* str, size_t str_len, const char* pat, size_t 
     return NULL;
 }
 
-static int get_info(char* str, size_t len, char* lookup_str, size_t lookup_str_len,
-                    char* part_path) {
+static int get_modem_version(char* ver_str, size_t len) {
     int ret = 0;
     int fd;
-    off64_t size;
-    char* data = NULL;
+    off64_t modem_size;
+    char* modem_data = NULL;
     char* offset = NULL;
 
-    fd = open(part_path, O_RDONLY);
+    fd = open(MODEM_PART_PATH, O_RDONLY);
     if (fd < 0) {
         ret = errno;
         goto err_ret;
     }
 
-    size = lseek64(fd, 0, SEEK_END);
-    if (size == -1) {
+    modem_size = lseek64(fd, 0, SEEK_END);
+    if (modem_size == -1) {
         ret = errno;
         goto err_fd_close;
     }
 
-    data = (char*)mmap(NULL, size, PROT_READ, MAP_PRIVATE, fd, 0);
-    if (data == (char*)-1) {
+    modem_data = (char*)mmap(NULL, modem_size, PROT_READ, MAP_PRIVATE, fd, 0);
+    if (modem_data == (char*)-1) {
         ret = errno;
         goto err_fd_close;
     }
 
-    /* Do Boyer-Moore search across data */
-    offset = bm_search(data, size, lookup_str, lookup_str_len);
+    /* Do Boyer-Moore search across MODEM data */
+    offset = bm_search(modem_data, modem_size, MODEM_VER_STR, MODEM_VER_STR_LEN);
     if (offset != NULL) {
-        snprintf(str, len, "%s", offset + lookup_str_len);
+        snprintf(ver_str, len, "%s", offset + MODEM_VER_STR_LEN);
     } else {
         ret = -ENOENT;
     }
 
-    munmap(data, size);
+    munmap(modem_data, modem_size);
 err_fd_close:
     close(fd);
 err_ret:
@@ -176,8 +166,7 @@ Value* VerifyModemFn(const char* name, State* state,
     int ret;
     struct tm tm1, tm2;
 
-    ret = get_info(current_modem_version, MODEM_VER_BUF_LEN, MODEM_VER_STR, MODEM_VER_STR_LEN,
-                   MODEM_PART_PATH);
+    ret = get_modem_version(current_modem_version, MODEM_VER_BUF_LEN);
     if (ret) {
         return ErrorAbort(state, kVendorFailure,
                           "%s() failed to read current MODEM build time-stamp: %d", name, ret);
@@ -204,46 +193,6 @@ Value* VerifyModemFn(const char* name, State* state,
     return StringValue(strdup(ret ? "1" : "0"));
 }
 
-/* verify_vendor("VENDOR_DATE", "VNDK_VERSION") */
-Value* VerifyVendorFn(const char* name, State* state,
-                      const std::vector<std::unique_ptr<Expr>>& argv) {
-    char current_vendor_date[VENDOR_DATE_BUF_LEN];
-    char current_vndk_version[VNDK_VER_BUF_LEN];
-    int ret;
-
-    // Check for UTC build date
-    ret = get_info(current_vendor_date, VENDOR_DATE_BUF_LEN, VENDOR_DATE_STR, VENDOR_DATE_STR_LEN,
-                   VENDOR_PART_PATH);
-    if (ret) {
-        return ErrorAbort(state, kVendorFailure,
-                          "%s() failed to read current vendor UTC build date: %d", name, ret);
-    }
-
-    std::vector<std::string> args;
-    if (!ReadArgs(state, argv, &args)) {
-        return ErrorAbort(state, kArgsParsingFailure, "%s() error parsing arguments", name);
-    }
-
-    if (std::stoi(current_vendor_date) < std::stoi(args[0])) {
-        // Fail immediately if build is older than required
-        return StringValue(strdup("0"));
-    }
-
-    // Check for VNDK version
-    ret = get_info(current_vndk_version, VNDK_VER_BUF_LEN, VNDK_VER_STR, VNDK_VER_STR_LEN,
-                   VENDOR_PART_PATH);
-    if (ret) {
-        return ErrorAbort(state, kVendorFailure,
-                          "%s() failed to read current vendor VNDK version: %d", name, ret);
-    }
-
-    if (std::stoi(current_vndk_version) == std::stoi(args[1])) {
-        ret = 1;
-    }
-    return StringValue(strdup(ret ? "1" : "0"));
-}
-
 void Register_librecovery_updater_xiaomi() {
     RegisterFunction("xiaomi.verify_modem", VerifyModemFn);
-    RegisterFunction("xiaomi.verify_vendor", VerifyVendorFn);
 }
