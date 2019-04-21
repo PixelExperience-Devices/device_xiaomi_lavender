@@ -122,6 +122,10 @@ on boot
 #Create folder dump yuv images while debugging
     mkdir /data/vendor/camera 0770 camera camera
 
+    # Double Tap to Wake
+    chown system system /proc/tp_gesture
+    chmod 0660 /proc/tp_gesture
+
 #Load WLAN driver
    insmod /vendor/lib/modules/qca_cld3_wlan.ko
    chown wifi wifi /sys/module/wlan/parameters/fwpath
