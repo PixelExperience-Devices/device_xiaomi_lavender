@@ -139,6 +139,9 @@ TARGET_USES_ION := true
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
 
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/proc/tp_gesture"
+
 # FM
 BOARD_HAVE_QCOM_FM := true
 BOARD_HAS_QCA_FM_SOC := "cherokee"
