@@ -94,6 +94,14 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0 \
+    android.hardware.graphics.composer@2.2-service \
+    android.hardware.graphics.composer@2.2-impl \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service \
+    libdisplayconfig \
+    libqdMetaData.system \
+    libtinyxml \
     libvulkan \
     vendor.display.config@1.0
 
