@@ -94,6 +94,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.qcom.rc
 
+# Configstore
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.1-impl \
+    android.hardware.configstore@1.1-service
+
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
