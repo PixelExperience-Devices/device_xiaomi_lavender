@@ -94,6 +94,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.qcom.rc
 
+# Consumer IR
+PRODUCT_PACKAGES += \
+    android.hardware.ir@1.0-impl \
+    android.hardware.ir@1.0-service
+
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
