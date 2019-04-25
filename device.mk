@@ -84,6 +84,12 @@ PRODUCT_PACKAGES += \
     libxml2 \
     Snap
 
+# CnE
+PRODUCT_PACKAGES += \
+    cneapiclient \
+    com.quicinc.cne \
+    services-ext
+
 # Common init scripts
 PRODUCT_PACKAGES += \
     init.qcom.rc
