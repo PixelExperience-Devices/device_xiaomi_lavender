@@ -127,10 +127,6 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
-# Common init scripts
-PRODUCT_PACKAGES += \
-    init.qcom.rc
-
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-impl \
@@ -267,6 +263,23 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.class_main.sh \
+    init.msm.usb.configfs.rc \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.rc \
+    init.qcom.sensors.sh \
+    init.qcom.sh \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.qti.qseecomd.sh \
+    init.qti.fm.sh \
+    init.target.rc \
+    ueventd.qcom.rc \
+    fstab.qcom
 
 # RCS
 PRODUCT_PACKAGES += \
