@@ -1,0 +1,1 @@
+require version-baseband=4.3.c2-00016-SM6150_GEN_PACK-1,10.2.8.0
