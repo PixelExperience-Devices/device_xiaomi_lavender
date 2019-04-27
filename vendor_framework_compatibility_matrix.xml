@@ -499,4 +499,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
+    <avb>
+        <vbmeta-version>1.0</vbmeta-version>
+    </avb>
 </compatibility-matrix>
