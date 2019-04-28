@@ -26,6 +26,14 @@ def IncrementalOTA_Assertions(info):
   AddBasebandAssertion(info, info.target_zip)
   return
 
+def FullOTA_InstallEnd(info):
+  OTA_InstallEnd(info)
+  return
+
+def IncrementalOTA_InstallEnd(info):
+  OTA_InstallEnd(info)
+  return
+
 def AddBasebandAssertion(info, input_zip):
   android_info = input_zip.read("OTA/android-info.txt")
   m = re.search(r'require\s+version-baseband\s*=\s*(.+)', android_info)
@@ -35,4 +43,15 @@ def AddBasebandAssertion(info, input_zip):
         (len(firmware_version) and '*' not in firmware_version)):
       cmd = 'assert(xiaomi.verify_baseband("{}") == "1" || abort("ERROR: This package requires firmware from MIUI {} or newer. Please upgrade firmware and retry!"););'
       info.script.AppendExtra(cmd.format(timestamp, firmware_version))
+  return
+
+def AddImage(info, basename, dest):
+  name = basename
+  data = info.input_zip.read("IMAGES/" + basename)
+  common.ZipWriteStr(info.output_zip, name, data)
+  info.script.AppendExtra('package_extract_file("%s", "%s");' % (name, dest))
+
+def OTA_InstallEnd(info):
+  info.script.Print("Patching firmware images...")
+  AddImage(info, "dtbo.img", "/dev/block/bootdevice/by-name/dtbo")
   return
