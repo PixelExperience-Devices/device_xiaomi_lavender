@@ -28,7 +28,7 @@
 #
 
 on early-init
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_wglink audio_q6_pdr audio_q6_notifier audio_snd_event audio_apr audio_adsp_loader audio_q6 audio_native audio_usf audio_pinctrl_wcd audio_pinctrl_lpi audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_wcd_core audio_wsa881x audio_hdmi audio_bolero_cdc audio_wsa_macro audio_va_macro audio_rx_macro audio_tx_macro audio_machine_talos audio_wcd937x audio_wcd937x_slave
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules adsp_loader_dlkm apr_dlkm bolero_cdc_dlkm hdmi_dlkm machine_dlkm mbhc_dlkm native_dlkm pinctrl_lpi_dlkm pinctrl_wcd_dlkm platform_dlkm q6_dlkm q6_notifier_dlkm q6_pdr_dlkm rx_macro_dlkm snd_event_dlkm stub_dlkm swr_ctrl_dlkm swr_dlkm tx_macro_dlkm usf_dlkm va_macro_dlkm wcd9xxx_dlkm wcd934x_dlkm wcd937x_dlkm wcd937x_slave_dlkm wcd_core_dlkm wcd_spi_dlkm wglink_dlkm wsa881x_dlkm wsa_macro_dlkm
     write /proc/sys/kernel/sched_boost 1
     symlink /data/tombstones /tombstones
 
@@ -130,7 +130,7 @@ on boot
    chmod 0666 /dev/qseecom
 
 #Load WLAN driver
-    insmod /vendor/lib/modules/qca_cld3_wlan.ko
+    insmod /vendor/lib/qcacld_module/qca_cld3_wlan.ko
 
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
