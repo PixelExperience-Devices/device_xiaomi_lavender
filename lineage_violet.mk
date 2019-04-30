@@ -6,7 +6,6 @@
 
 $(call inherit-product, device/xiaomi/violet/device.mk)
 
-
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
@@ -17,10 +16,10 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7 Pro
 PRODUCT_MANUFACTURER := Xiaomi
 
-BUILD_FINGERPRINT := "xiaomi/violet/violet:9/PKQ1.181203.001/V10.2.7.0.PFHINXM:user/release-keys"
+BUILD_FINGERPRINT := "xiaomi/violet/violet:9/PKQ1.181203.001/V10.2.10.0.PFHINXM:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="violet-user 9  PKQ1.181203.001 V10.2.7.0.PFHINXM release-keys" \
+    PRIVATE_BUILD_DESC="violet-user 9 PKQ1.181203.001 V10.2.10.0.PFHINXM release-keys" \
     PRODUCT_NAME="violet" \
     TARGET_DEVICE="violet"
 
