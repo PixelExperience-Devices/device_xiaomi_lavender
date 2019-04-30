@@ -1,8 +1,4 @@
 # Allow init to chown/chmod on pseudo files in /sys
 allow init {
     sysfs_fp_proximity
-    sysfs_graphics
 }:file { open read setattr };
-
-# Allow init to mount vendor configs
-allow init vendor_configs_file:file mounton;

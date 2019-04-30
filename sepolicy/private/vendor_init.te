@@ -1,4 +1,1 @@
 allow vendor_init rootfs:dir write;
-allow vendor_init persist_file:lnk_file read;
-#allow vendor_init system_data_file:dir setattr;
-#allow vendor_init tombstone_data_file:dir setattr;
