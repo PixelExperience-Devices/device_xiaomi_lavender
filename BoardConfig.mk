@@ -155,7 +155,6 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 
-
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
 
@@ -232,6 +231,10 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
+
+# Verified Boot
+BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 
 # WiFi
 BOARD_HAS_QCOM_WLAN := true
