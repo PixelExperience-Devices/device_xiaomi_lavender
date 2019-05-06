@@ -60,8 +60,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.video=true \
-    media.settings.xml=/system/etc/media_profiles_vendor.xml
+    audio.offload.video=true
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
