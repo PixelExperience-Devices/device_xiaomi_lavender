@@ -91,6 +91,7 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY ?= true
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # DPM
 BOARD_USES_DPM := true
