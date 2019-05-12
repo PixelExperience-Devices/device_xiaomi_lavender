@@ -14,3 +14,7 @@ allow hal_light_client hal_light_hwservice:hwservice_manager find;
 
 type hal_light_sm6150_exec, exec_type, file_type;
 init_daemon_domain(hal_light_sm6150)
+
+allow hal_light_sm6150 { sysfs_graphics sysfs_white_led }:lnk_file read;
+allow hal_light_sm6150 { sysfs_graphics sysfs_white_led }:file rw_file_perms;
+allow hal_light_sm6150 { sysfs_graphics sysfs_leds sysfs_white_led }:dir r_dir_perms;

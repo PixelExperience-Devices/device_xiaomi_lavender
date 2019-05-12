@@ -1,0 +1,2 @@
+get_prop(system_server, adsprpc_prop);
+get_prop(system_server, vendor_fp_prop);

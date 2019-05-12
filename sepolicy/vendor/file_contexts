@@ -1,0 +1,71 @@
+# Audio
+/persist/audio(/.*)?                          u:object_r:persist_audio_file:s0
+/mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0
+
+# Data files
+/data/display(/.*)?             u:object_r:display_data_file:s0
+/data/vendor/goodix(/.*)?       u:object_r:fingerprint_data_file:s0
+/data/vendor/fpc(/.*)?          u:object_r:fingerprint_data_file:s0
+/data/vendor/thermal(/.*)?      u:object_r:thermal_data_file:s0
+/data/vendor/mac_addr(/.*)?     u:object_r:wifi_vendor_data_file:s0
+
+# FBE
+/(vendor|system/vendor)/bin/init.qti.qseecomd.sh                                            u:object_r:init-qti-fbe-sh_exec:s0
+/(vendor|system/vendor)/bin/init\.qti\.can\.sh                                              u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor.qti.hardware.automotive.vehicle@1.0-service           u:object_r:hal_automotive_vehicle_qti_exec:s0
+
+# Fingerprint
+/sys/devices/platform/soc/soc:fpc1020(/.*)?                                                                         u:object_r:sysfs_fingerprint:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi632@3:qcom,leds@d000/modalias u:object_r:sysfs_fps_attr:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_sm6150               u:object_r:hal_fingerprint_default_exec:s0
+
+# Graphics
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/modes		u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/status		u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/soc:qcom,cam-req-mgr/video4linux/video[0-9]+/name(/.*)?                       u:object_r:sysfs_graphics:s0
+
+# Input files
+/vendor/usr/idc(/.*)?                               u:object_r:idc_file:s0
+/vendor/usr/keylayout(/.*)?                         u:object_r:keylayout_file:s0
+
+# Lights HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_sm6150 u:object_r:hal_light_default_exec:s0
+
+# LED
+/sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-[0-1]/spmi0-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,leds@d000/leds/white(/.*)?       u:object_r:sysfs_leds:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/flashlight/brightness               u:object_r:sysfs_white_led:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_0/brightness              u:object_r:sysfs_white_led:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:torch_1/brightness              u:object_r:sysfs_white_led:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:switch_0/brightness             u:object_r:sysfs_white_led:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d300/leds/led:switch_1/brightness             u:object_r:sysfs_white_led:s0
+
+# Non-HLOS mountpoints
+/bt_firmware(/.*)?       u:object_r:bt_firmware_file:s0
+/firmware(/.*)?          u:object_r:firmware_file:s0
+
+# Partitions
+/dev/block/platform/soc/7c4000.sdhci/by-name/persist                            u:object_r:persist_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/frp                                u:object_r:frp_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/userdata                           u:object_r:userdata_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/cache                              u:object_r:cache_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/ssd                                u:object_r:ssd_device:s0
+/dev/block/mmcblk0rpmb                                                          u:object_r:rpmb_device:s0
+/dev/block/mmcblk0                                                              u:object_r:root_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/fsc                                u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/fsg                                u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/modemst1                           u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/modemst2                           u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/msadp                              u:object_r:mba_debug_dev:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/mdtp                               u:object_r:mdtp_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/dip                                u:object_r:dip_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/storsec                            u:object_r:boot_block_device:s0
+
+# Secure Element
+/data/vendor/secure_element(/.*)?                                   u:object_r:secure_element_vendor_data_file:s0
+
+# SP-HAL Libs
+/vendor/lib(64)?/hw/gralloc\.sm6150\.so   u:object_r:same_process_hal_file:s0
+/vendor/lib(64)?/hw/vulkan\.sm6150\.so    u:object_r:same_process_hal_file:s0
+
+# SSR
+/sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0

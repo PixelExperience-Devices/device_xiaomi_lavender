@@ -1,0 +1,2 @@
+allow hal_camera_default sysfs:file { getattr open read };
+allow hal_camera_default sysfs_kgsl:file { getattr open read };

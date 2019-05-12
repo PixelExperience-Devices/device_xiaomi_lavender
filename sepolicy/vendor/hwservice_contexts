@@ -1,0 +1,12 @@
+vendor.goodix.hardware.interfaces.biometrics.fingerprint::IGoodixFingerprintDaemon       u:object_r:hal_fingerprint_hwservice:s0
+vendor.goodix.hardware.interfaces.biometrics.fingerprint::IGoodixFingerprintDaemonExt       u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintEngineering          u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintSensorTest           u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintNavigation           u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintCalibration          u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintSenseTouch           u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintEngineering u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintAuthenticator u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintNavigation u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintSensorTest u:object_r:hal_fingerprint_hwservice:s0
+com.fingerprints.extension::IFingerprintCalibration u:object_r:hal_fingerprint_hwservice:s0

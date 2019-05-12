@@ -1,0 +1,16 @@
+allow vendor_init rootfs:dir { w_dir_perms add_name };
+allow vendor_init sysfs_boot_adsp:file { create write };
+
+typeattribute vendor_init data_between_core_and_vendor_violators;
+
+allow vendor_init {
+  dhcp_data_file
+  fingerprintd_data_file
+  media_rw_data_file
+  system_data_file
+  thermal_data_file
+  tombstone_data_file
+  wifi_data_file
+}:dir create_dir_perms;
+
+allow vendor_init media_rw_data_file:file { getattr relabelfrom };

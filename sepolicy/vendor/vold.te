@@ -1,0 +1,1 @@
+dontaudit vold self:capability dac_read_search;
