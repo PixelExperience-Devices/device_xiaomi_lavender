@@ -136,6 +136,11 @@ PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-impl \
     android.hardware.configstore@1.1-service
 
+# Context hub HAL
+PRODUCT_PACKAGES += \
+    android.hardware.contexthub@1.0-impl.generic \
+    android.hardware.contexthub@1.0-service
+
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
