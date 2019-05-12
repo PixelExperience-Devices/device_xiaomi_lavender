@@ -227,7 +227,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.perf.gestureflingboost.enable=true \
     vendor.perf.workloadclassifier.enable=true \
     persist.vendor.qti.games.gt.prof=1 \
-    ro.vendor.at_library=libqti-at.so \
     ro.vendor.qti.config.zram=true
 
 # Qualcomm System Daemon
