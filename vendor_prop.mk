@@ -163,10 +163,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.gralloc.disable_ubwc=0 \
+    vendor.display.disable_skip_validate=1 \
     ro.opengles.version=196610 \
     dev.pm.dyn_samplingrate=1 \
-    persist.demo.hdmirotationlock=false
+    persist.demo.hdmirotationlock=false \
+    debug.sf.hw=1 \
+    dev.pm.dyn_samplingrate=1 \
+    persist.demo.hdmirotationlock=false \
+    persist.sys.force_sw_gles=0
 
 # IO CGroup
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -288,12 +292,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     config.disable_rtt=true \
     ro.wlan.chip=39xx \
     ro.wlan.mimo=1
-
-# WiFi Display
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=1 \
-	persist.hwc.enable_vds=1 \
-	persist.sys.wfd.virtual=0
 
 # XLAT
 PRODUCT_PROPERTY_OVERRIDES += \
