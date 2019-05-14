@@ -215,7 +215,7 @@ on boot
     chown system system /sys/class/backlight/panel0-backlight/max_brightness
 
     #add flashlight
-    chmod 0660 /sys/class/leds/flashlight/brightness
+    chmod 0666 /sys/class/leds/flashlight/brightness
     chown system system /sys/class/leds/flashlight/brightness
 
     # Allow access to sensors device attributes

@@ -25,7 +25,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.multiple.enabled=false \
     vendor.audio.offload.passthrough=false \
     vendor.audio.offload.pstimeout.secs=3 \
-    vendor.audio.offload.track.enable=true \
+    vendor.audio.offload.track.enable=false \
     vendor.audio.parser.ip.buffer.size=262144 \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.tunnel.encode=false \
@@ -109,7 +109,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
  PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.display.cabl=2 \
+    ro.vendor.display.cabl=0 \
     ro.vendor.display.sensortype=2 \
     ro.vendor.display.svi=1 \
     vendor.display.comp_mask=0 \
@@ -201,6 +201,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.audio.game.effect=true \
     persist.sys.job_delay=true \
     persist.vendor.qg.log_level=1 \
     ro.control_privapp_permissions=log \
@@ -227,7 +228,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf Stack
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
-    vendor.perf.dolphin.enable=true \
+    vendor.perf.dolphin.enable=false \
     vendor.perf.gestureflingboost.enable=true \
     vendor.perf.workloadclassifier.enable=true \
     persist.vendor.qti.games.gt.prof=1 \
