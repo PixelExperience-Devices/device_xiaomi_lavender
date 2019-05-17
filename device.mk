@@ -389,6 +389,9 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # Recovery
+PRODUCT_COPY_FILES += \
+    device/xiaomi/lavender/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+
 PRODUCT_PACKAGES += \
     librecovery_updater_xiaomi
 
