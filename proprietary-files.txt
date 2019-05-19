@@ -383,52 +383,49 @@ vendor/firmware/a530_gpmu.fw2
 vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
 
-# Graphics - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
-vendor/lib64/egl/eglSubDriverAndroid.so|0cf3c7717ada28a99036114ff21b97695d136a47
-vendor/lib64/egl/libEGL_adreno.so|687b2e53dc5080c05d84da9ec707cf0c31de4d9b
-vendor/lib64/egl/libGLESv1_CM_adreno.so|95497830d4e08c02a3b6d82bc7623f926d2ef9ed
-vendor/lib64/egl/libGLESv2_adreno.so|2d4eeac846dd38d0288feada63095440a653b8ce
-vendor/lib64/egl/libq3dtools_adreno.so|4bd18c19a4d8376311983303b0971a7aa1334897
-vendor/lib64/egl/libq3dtools_esx.so|19d96756fda3f1ba0251c041120d1d4f3a5a8d03
-vendor/lib64/egl/libQTapGLES.so|dac820eea4d54f98f7e20a49b82404de6f09743b
-vendor/lib64/libadreno_utils.so|4b9072beb7ce486163966d6a12d8edd7e92830b5
-vendor/lib64/libbccQTI.so|be1ae3a075c42dcb19bc6e1ecd7374f9aeae083c
-vendor/lib64/libC2D2.so|724684ac0e167bc729cbdea1ee9e21da248cfd58
-vendor/lib64/libc2d30_bltlib.so|e950f918802d3d3e656ab4f0fe731bb60e1b357e
-vendor/lib64/libCB.so|880aa2ccd7130938abe0934d7782faf6021d13de
-vendor/lib64/libgsl.so|f45d67c2bb1dc10609ae2936256834c225b26334
-vendor/lib64/libllvm-glnext.so|f67202d9ec4f5947548df842e670026fa20bcbba
-vendor/lib64/libllvm-qcom.so|4e9dc8128379692407bf730f1b1ebdd3307bd5c0
-vendor/lib64/libllvm-qgl.so|852cd7e8d801507a6aec5b744912dbfda2ca738f
-vendor/lib64/libmm-disp-apis.so|2f1e64c85eae2497bf350c2e993286993127ea94
-vendor/lib64/libmm-qdcm.so|1c1f0f6847b222e8ef0cc2cf1f9222089fb649b5
-vendor/lib64/libOpenCL.so|1e78c9b98378803703835a3e1cbfabf43318f341
-vendor/lib64/librs_adreno_sha1.so|e746c872c123948f91ea8fe93e39bda5a67cc7a2
-vendor/lib64/librs_adreno.so|b6bc2274fc4079818f3124a694348a890c5d7b07
-vendor/lib64/libRSDriver_adreno.so|3d77fb21a40b98e908840aa89d044aea4f695694
-vendor/lib/egl/eglSubDriverAndroid.so|4b14f0a47090c851adfe6e50bcc078f74f91dd33
-vendor/lib/egl/libEGL_adreno.so|f6f748b3b96513beffb7fa2b8bdedbbd80ffc320
-vendor/lib/egl/libGLESv1_CM_adreno.so|0930a64d8889c184de31a085539e1b8b28520a31
-vendor/lib/egl/libGLESv2_adreno.so|b56faa80eff4315b231191b6f162a9aef927eaf6
-vendor/lib/egl/libq3dtools_adreno.so|a2506b94eb0fe3c2bccc7c8e6d8b8d21bd314ae8
-vendor/lib/egl/libq3dtools_esx.so|9116ff1328163d82ca624ea02f09d80ec0f055dc
-vendor/lib/egl/libQTapGLES.so|7641cd4f894d86f53394bcdc421ecae254afaf30
-vendor/lib/libadreno_utils.so|34023494194932a62c70d82c60d4f6cf2e64b58f
-vendor/lib/libbccQTI.so|aa1220cad9df3c39c0c14c4a36546342cc518ad1
-vendor/lib/libC2D2.so|a110bf0568eef9e49b251b7750cf6e51c3c85969
-vendor/lib/libc2d30_bltlib.so|e9767a3e4e674d42f23f5482471d38973e038d45
-vendor/lib/libCB.so|db524fb31d2ff07fea831edff90c6020a1ac521e
-vendor/lib/libgsl.so|665a6668c528cbf0681e266ddf0e3e78977cafe8
-vendor/lib/libllvm-glnext.so|d94b95923053e77710de9b131922a54dc4bdc918
-vendor/lib/libllvm-qcom.so|ee5b5f6e78e7e82d277fb8a90b91bb2a3398447e
-vendor/lib/libOpenCL.so|fbf2d8e82973ea44583f1ca6a624163759167a73
-vendor/lib/librs_adreno_sha1.so|3a7034b54ee04ff3ae1feefdaf5d1ea53a479cd5
-vendor/lib/librs_adreno.so|41b2a1b35a8a9966728cea607bf5b7a8f568680d
-vendor/lib/libRSDriver_adreno.so|7e6b61cb975de2029ea6debe4fe442852da06e00
+# Graphics
+vendor/lib64/egl/eglSubDriverAndroid.so
+vendor/lib64/egl/libEGL_adreno.so
+vendor/lib64/egl/libGLESv1_CM_adreno.so
+vendor/lib64/egl/libGLESv2_adreno.so
+vendor/lib64/egl/libq3dtools_adreno.so
+vendor/lib64/egl/libq3dtools_esx.so
+vendor/lib64/egl/libQTapGLES.so
+vendor/lib64/libadreno_utils.so
+vendor/lib64/libbccQTI.so
+vendor/lib64/libC2D2.so
+vendor/lib64/libc2d30_bltlib.so
+vendor/lib64/libCB.so
+vendor/lib64/libgsl.so
+vendor/lib64/libllvm-glnext.so
+vendor/lib64/libllvm-qcom.so
+vendor/lib64/libOpenCL.so
+vendor/lib64/librs_adreno_sha1.so
+vendor/lib64/librs_adreno.so
+vendor/lib64/libRSDriver_adreno.so
+vendor/lib/egl/eglSubDriverAndroid.so
+vendor/lib/egl/libEGL_adreno.so
+vendor/lib/egl/libGLESv1_CM_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/egl/libq3dtools_esx.so
+vendor/lib/egl/libQTapGLES.so
+vendor/lib/libadreno_utils.so
+vendor/lib/libbccQTI.so
+vendor/lib/libC2D2.so
+vendor/lib/libc2d30_bltlib.so
+vendor/lib/libCB.so
+vendor/lib/libgsl.so
+vendor/lib/libllvm-glnext.so
+vendor/lib/libllvm-qcom.so
+vendor/lib/libOpenCL.so
+vendor/lib/librs_adreno_sha1.so
+vendor/lib/librs_adreno.so
+vendor/lib/libRSDriver_adreno.so
 
-# Graphics (HDR) - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
-vendor/lib/libhdr_tm.so|37ac96055e1fcb2d1a3b4507ba62760ca30915b3
-vendor/lib64/libhdr_tm.so|f4c0fe6a734077666ec5e10f68577f70a26cd2d2
+# Graphics (HDR)
+vendor/lib/libhdr_tm.so
+vendor/lib64/libhdr_tm.so
 
 # Graphics (SDM) - from LA.UM.7.4.r1-04100-8x98.0
 vendor/lib/libqseed3.so|c60e08f5efa1e9aea339a7a5a6dccdc2d107f530
@@ -443,32 +440,27 @@ vendor/lib64/libsdm-disp-vndapis.so|8ac59a32a2601a8a4b0d3b097ed02f1279f3c6b7
 vendor/lib64/libsdmextension.so|c4a416cb8c0f5dc87bee8494d70247cf049224b9
 vendor/lib64/libtinyxml2_1.so|9d5179eda8ce70b9a4014b144f9d23d33509fddc
 
-# Graphics (Vulkan) - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
-vendor/lib/hw/vulkan.sdm660.so|b50effe52bc030cdf5b337d18c4d9a07daf94a45
-vendor/lib64/hw/vulkan.sdm660.so|213678394fd6a3ab464841b54064372d3606df8c
+# Graphics (Vulkan)
+vendor/lib/hw/vulkan.sdm660.so
+vendor/lib64/hw/vulkan.sdm660.so
 
 # Keystore
 vendor/lib/hw/keystore.sdm660.so
 vendor/lib64/hw/keystore.sdm660.so
 
-# Listen - from MI 8 Lite platina-user 9 PKQ1.181007.001 8.12.13 release-keys
-vendor/etc/audio.bsd|a8a83254fff006e50a879806a8fd141596290cb3
-vendor/lib/hw/sound_trigger.primary.sdm660.so|6e41431a0d08f071e4ed8ef9aaadb271a1faf094
-vendor/lib/libadpcmdec.so|7c12a153200fd2e9f1f6139fcf40beee1a96f48d
-vendor/lib/libgcs-calwrapper.so|57922b4fd8f141eb21b4fa771789b1dba1c23ed6
-vendor/lib/libgcs-ipc.so|6df0dd491d385bc1379c36643a83ae5af6a31830
-vendor/lib/libgcs-osal.so|e040600e22381338ba7c471024a80ec188642092
-vendor/lib/libgcs.so|3755346a8aacdfdac6a756f5a73769baa6bdeba2
-vendor/lib/libsmwrapper.so|3ba2c53973436a805dc32395af83129d1b984dca
-vendor/lib/libnwa.so|54b30f461c1589ed1217019f41e89a9f986eeea4
-vendor/lib/libsse.so|8c6e3270789c102fd871258341041ce29aa5610c
-vendor/lib64/hw/sound_trigger.primary.sdm660.so|ae6b41c76386b804fb807c6016ba62c1ae698578
-vendor/lib64/libgcs-calwrapper.so|091c5ef1ae31c59452804cdf3d8f43aa91a311c2
-vendor/lib64/libgcs-ipc.so|0eed30a36166c9e62e09158c2cd1779b65763884
-vendor/lib64/libgcs-osal.so|b0fc8964c906ed67fe49b19095856a0b226e6c4d
-vendor/lib64/libgcs.so|a6e412e8181ade6c97a97fa60ca2a7a2157bcc7d
-vendor/lib64/libnwa.so|fac04a2253dcc43d1f9de51fe80a7bdcc3fff534
-vendor/lib64/libsse.so|2cd6ab4f250b881fd6073923b636ea42ed8a0ce0
+# Listen
+vendor/lib/hw/sound_trigger.primary.sdm660.so
+vendor/lib/libadpcmdec.so
+vendor/lib/libgcs-calwrapper.so
+vendor/lib/libgcs-ipc.so
+vendor/lib/libgcs-osal.so
+vendor/lib/libgcs.so
+vendor/lib/libsmwrapper.so
+vendor/lib64/hw/sound_trigger.primary.sdm660.so
+vendor/lib64/libgcs-calwrapper.so
+vendor/lib64/libgcs-ipc.so
+vendor/lib64/libgcs-osal.so
+vendor/lib64/libgcs.so
 
 # Media
 lib/libmmosal.so
