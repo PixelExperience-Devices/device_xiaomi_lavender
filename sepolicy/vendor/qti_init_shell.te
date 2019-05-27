@@ -1,2 +1,3 @@
 dontaudit qti_init_shell self:capability { dac_override dac_read_search };
-allow qti_init_shell wifi_vendor_data_file:dir search;
+allow qti_init_shell wifi_vendor_data_file:dir rw_dir_perms;
+allow qti_init_shell wifi_vendor_data_file:file rw_file_perms;
