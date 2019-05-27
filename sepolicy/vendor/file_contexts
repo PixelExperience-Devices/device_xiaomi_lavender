@@ -69,3 +69,6 @@
 
 # SSR
 /sys/devices(/platform)?/soc/[a-z0-9\.:]+,[a-z0-9\-\_]+/subsys[0-9]+/name         u:object_r:sysfs_ssr:s0
+
+# Mlipay
+/vendor/bin/mlipayd@1\.1             u:object_r:hal_mlipay_default_exec:s0
