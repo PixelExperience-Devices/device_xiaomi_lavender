@@ -15,3 +15,10 @@ ro.vendor.ril u:object_r:vendor_radio_prop:s0
 # Thermal
 sys.thermal.			u:object_r:thermal_engine_prop:s0
 persist.sys.thermal.		u:object_r:thermal_engine_prop:s0
+
+# Camera
+persist.camera.		u:object_r:vendor_camera_prop:s0
+persist.vendor.camera.  u:object_r:vendor_camera_prop:s0
+ro.camera.		u:object_r:vendor_camera_prop:s0
+camera.			u:object_r:vendor_camera_prop:s0
+vendor.camera		u:object_r:vendor_camera_prop:s0

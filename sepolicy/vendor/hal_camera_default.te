@@ -1,2 +1,4 @@
 allow hal_camera_default sysfs:file { getattr open read };
 allow hal_camera_default sysfs_kgsl:file { getattr open read };
+get_prop(hal_camera_default, vendor_camera_prop)
+set_prop(hal_camera_default, vendor_camera_prop)
