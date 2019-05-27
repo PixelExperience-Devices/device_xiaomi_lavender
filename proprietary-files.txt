@@ -1153,9 +1153,6 @@ vendor/lib64/libperipheral_client.so
 # Power-off charging daemon
 -sbin/charger:sbin/chargeonlymode;rootfs|f048d2cc20783ba1a608b73d440b3053af6ec9fd
 
-# Qualcomm Atheros CLD WLAN Module (Prebuilt until CAF OSS)
-vendor/lib/modules/qca_cld3_wlan.ko:vendor/lib/qcacld_module/qca_cld3_wlan.ko|ee186782a8add1db9a93ad2bb23c326f
-
 # Qualcomm Display calibration
 vendor/etc/qdcm_calib_data_sw43404_amoled_cmd_mode_dsi_boe_panel_with_DSC.xml
 vendor/etc/qdcm_calib_data_sw43404_amoled_boe_fhd+_panel_with_DSC.xml
