@@ -16,6 +16,9 @@ persist.vendor.fpc.  u:object_r:vendor_fp_prop:s0
 persist.sys.ifaa                    u:object_r:ifaa_prop:s0
 persist.vendor.sys.pay.		    u:object_r:ifaa_prop:s0
 
+# Perf
+persist.vendor.perfservice.	u:object_r:vendor_mpctl_prop:s0
+
 # RIL
 ro.vendor.ril u:object_r:vendor_radio_prop:s0
 
