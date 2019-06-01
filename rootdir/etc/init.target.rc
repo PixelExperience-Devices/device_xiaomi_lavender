@@ -94,15 +94,11 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
-#F7B has no hbtp feature
-#mkdir /data/vendor/hbtp 0750 system system
-#end
     mkdir /data/vendor/tloc 0700 system drmrpc
     mkdir /persist/qti_fp 0700 system system
     mkdir /data/vendor/nnhal 0700 system system
-# zad Import QR feature from F7A.	Begin
     mkdir /data/vendor/mac_addr 0770 system wifi
-# End
+
  chmod 0644 /dev/goodix_fp
     chown system system /dev/goodix_fp
     #mkdir charger log   --yangshengtao  19.1.04
@@ -110,6 +106,15 @@ on post-fs-data
 
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
+
+    chmod 0666 /dev/migt
+    restorecon /dev/migt
+    chmod 0777 /sys/module/migt/parameters/migt_freq
+    restorecon /sys/module/migt/parameters/migt_freq
+    chmod 0777 /sys/module/migt/parameters/migt_ms
+    restorecon /sys/module/migt/parameters/migt_ms
+    chmod 0777 /sys/module/migt/parameters/migt_thresh
+    restorecon /sys/module/migt/parameters/migt_thresh
 
 # For cpusets initialize for Silver Only first and then Silver + Gold
 # Silver Only configuration cannot work with 0-7
@@ -415,9 +420,6 @@ service vendor.imsrcsservice /system/vendor/bin/imsrcsd
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start vendor.imsdatadaemon
 
-#on property:vold.decrypt=trigger_restart_framework
-#   start vendor.cnss_diag
-
 service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    class main
    user system
@@ -500,8 +502,7 @@ service smcinvoked /system/bin/smcinvoked
 #    user system
 #    group drmrpc gps net_raw
 
-# smart pa cal  add by dzy 
-service smart-pa-cal /system/vendor/bin/FactoryApp -t 25 -c /vendor/etc/tas2563_aacspk.ftcfg -v
+service smart-pa-cal /system/vendor/bin/FactoryApp -r -t 25
     user root
     group root audio
     disabled
@@ -513,7 +514,7 @@ on property:odm.pa-cal=0
 on property:odm.pa-cal=1
     start smart-pa-cal
 
-service smart-pa-test /system/vendor/bin/FactoryApp -t 25 -c /vendor/etc/tas2563_aacspk.ftcfg -v -m
+service smart-pa-test /system/vendor/bin/FactoryApp -f
     user root
     group root audio
     disabled
@@ -524,8 +525,6 @@ on property:odm.pa-test=0
 
 on property:odm.pa-test=1
     start smart-pa-test
-
-# Add by dzy for mic2 to speaker loopback test 20181126
 
 service tinyhostless_spk /system/bin/tinyhostless -D 0 -P 37 -C 36 -p 256 -n 2 -c 1 -r 48000
     user root
@@ -550,9 +549,7 @@ on property:odm.loopback-spk=1
 
 on property:odm.loopback-spk=0
     start loopback_spk_stop
-# Add by dzy mic2 to speaker end 20181126
 
-#lcd feature nodes test begin
 on property:persist.sys.display_srgb=1
     write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_srgb 1
 
@@ -571,20 +568,25 @@ on property:persist.sys.display_cabc=1
 on property:persist.sys.display_cabc=2
     write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_cabc 2
 
-on property:persist.sys.display_cabc_movie=1
-    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_cabc_movie 1
+on property:persist.sys.display_cabc=3
+    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_cabc 3
 
-on property:persist.sys.display_cabc_movie=2
-    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_cabc_movie 2
+on property:persist.sys.display_cabc=0
+    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_cabc 0
 
-on property:persist.sys.display_cabc_still=1
-    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_cabc_still 1
+on property:sys.display_hbm=1
+    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_hbm 1
 
-on property:persist.sys.display_cabc_still=2
-    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_cabc_still 2
-#lcd feature nodes test end
+on property:sys.display_hbm=2
+    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_hbm 2
 
-#add thermal tactics
+on property:sys.display_hbm=3
+    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_hbm 3
+
+on property:sys.display_hbm=0
+    write /sys/devices/platform/soc/soc:qcom,dsi-display/dsi_display_hbm 0
+
+# Add thermal tactics
 on  property:vendor.camera.boost.en=1
     write /sys/class/thermal/thermal_message/sconfig 33
 on  property:vendor.camera.boost.en=0
@@ -592,7 +594,13 @@ on  property:vendor.camera.boost.en=0
 on  property:vendor.camera.boost.en=2
     write /sys/class/thermal/thermal_message/sconfig 33
 
-#service sviswitch add begin
+on  property:vendor.camera.hfr.en=1
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+	write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 6
+on  property:vendor.camera.hfr.en=0
+    write /dev/stune/foreground/schedtune.prefer_idle 0
+	write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 4
+
 service sviswitch /vendor/bin/sviswitch
     user root
     group root
@@ -612,7 +620,6 @@ service checknv /system/bin/checknv
      oneshot
      seclabel u:r:vendor_init:s0
 
-# zhanandong @ 20181129	Import QR feature from F7A.	Begin
 service nv_mac /vendor/bin/nv_mac
 	class late_start
 	user system
@@ -621,11 +628,9 @@ service nv_mac /vendor/bin/nv_mac
 
 on property:sys.boot_completed=1
 	start nv_mac
-# End
 
 on property:sys.thermallct.isincall=1
     write /sys/class/power_supply/battery/device/thermalcall 1
 
 on property:sys.thermallct.isincall=0
     write /sys/class/power_supply/battery/device/thermalcall 0
-

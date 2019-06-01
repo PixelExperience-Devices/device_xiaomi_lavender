@@ -28,6 +28,7 @@ vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
 vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
+vendor/lib/rfsa/adsp/tas25xx_TI_0.bin
 
 # Alarm
 framework/vendor.qti.hardware.alarm-V1.0-java.jar
@@ -97,9 +98,6 @@ vendor/lib64/soundfx/libvolumelistener.so
 
 # Audio (speaker amplifier) Firmware
 vendor/firmware/tas2563_uCDSP.bin
-
-# Audio (speaker amplifier) Calibration
-vendor/etc/tas2563_aacspk.ftcfg
 
 # ACDB
 vendor/etc/acdbdata/IDP/IDP_Bluetooth_cal.acdb
@@ -965,6 +963,9 @@ vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
 
 # Listen
+vendor/etc/spk_cal_pinknoise.wav
+vendor/etc/spk_cal_silence.wav
+vendor/etc/spk_cal_whitenoise.wav
 vendor/lib/libadpcmdec.so
 vendor/lib/libgcs-calwrapper.so
 vendor/lib/libgcs-ipc.so
@@ -1084,28 +1085,6 @@ vendor/lib64/libvpptestutils.so
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so
 vendor/lib64/vendor.qti.hardware.vpp@1.2.so
 
-# Misc
-lib/vendor.xiaomi.hardware.misys@1.0.so
-lib/vendor.xiaomi.hardware.misys@2.0.so
-lib/vendor.xiaomi.hardware.touchfeature@1.0.so
-vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
-vendor/bin/hw/vendor.xiaomi.hardware.touchfeature@1.0-service
-vendor/etc/init/vendor.xiaomi.hardware.misys@1.0-service.rc
-vendor/etc/init/vendor.xiaomi.hardware.misys@2.0-service.rc
-vendor/lib/hw/vendor.xiaomi.hardware.misys@1.0-impl.so
-vendor/lib/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
-vendor/lib/hw/vendor.xiaomi.hardware.touchfeature@1.0-impl.so
-vendor/lib/vendor.xiaomi.hardware.misys@1.0.so
-vendor/lib/vendor.xiaomi.hardware.misys@2.0.so
-vendor/lib/vendor.xiaomi.hardware.touchfeature@1.0.so
-vendor/lib64/hw/vendor.xiaomi.hardware.misys@1.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.misys@2.0-impl.so
-vendor/lib64/hw/vendor.xiaomi.hardware.touchfeature@1.0-impl.so
-vendor/lib64/vendor.xiaomi.hardware.misys@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.misys@2.0.so
-vendor/lib64/vendor.xiaomi.hardware.touchfeature@1.0.so
-
 # Mlipay
 vendor/bin/mlipayd@1.1
 vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
@@ -1154,6 +1133,7 @@ vendor/lib64/libperipheral_client.so
 -sbin/charger:sbin/chargeonlymode;rootfs|f048d2cc20783ba1a608b73d440b3053af6ec9fd
 
 # Qualcomm Display calibration
+vendor/etc/calib.config
 vendor/etc/qdcm_calib_data_sw43404_amoled_cmd_mode_dsi_boe_panel_with_DSC.xml
 vendor/etc/qdcm_calib_data_sw43404_amoled_boe_fhd+_panel_with_DSC.xml
 vendor/etc/qdcm_calib_data_ft8719_video_mode_dsi_tianma_panel.xml
@@ -1505,6 +1485,7 @@ vendor/etc/thermal-engine-normal.conf
 vendor/etc/thermal-engine-pubgmhd.conf
 vendor/etc/thermal-engine-sgame.conf
 vendor/etc/thermal-engine-studio.conf
+vendor/etc/thermal-engine-tgame.conf
 vendor/etc/thermal-engine.conf
 vendor/lib/hw/thermal.sm6150.so
 vendor/lib/libthermalfeature.so

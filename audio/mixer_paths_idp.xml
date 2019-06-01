@@ -432,6 +432,9 @@
     <ctl name="MultiMedia16 Mixer SLIM_8_TX" value="0" />
     <ctl name="MultiMedia16 Mixer USB_AUDIO_TX" value="0" />
 
+    <!-- Speaker IV sense TAS25XX -->
+    <ctl name="PRIM_MI2S_TX Channels"  value="One" />
+
     <!-- These are audio route (FE to BE) specific mixer settings -->
     <path name="gsm-mode">
         <ctl name="GSM mode Enable" value="ON" />
@@ -2084,7 +2087,7 @@
     </path>
 
     <path name="spkr-vi-record">
-
+	<ctl name="PRIM_MI2S_TX Channels"  value="Two" />
     </path>
 
     <!-- These are actual sound device specific mixer settings -->
@@ -2144,12 +2147,10 @@
     <!-- modify by dzy for not use wsa start -->
     <path name="speaker">
 	<ctl name="PRIM_MI2S_RX Channels" value="One" />
-	<ctl name="Configuration" value="0" />
     </path>
 
     <path name="speaker-ring">
     <ctl name="PRIM_MI2S_RX Channels" value="One" />
-	<ctl name="Configuration" value="2" />
     </path>
 
     <path name="speaker-mono">
@@ -2329,7 +2330,6 @@
 
     <path name="voice-speaker-2">
         <path name="speaker-mono-2" />
-	<ctl name="Configuration" value="1" />
     </path>
 
     <path name="voice-speaker-vbat">

@@ -83,10 +83,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.dpm.feature=1
 
-# DRM
-PRODUCT_PROPERTY_OVERRIDES += \
-    drm.service.enabled=true
-
 # Dalvik VM
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
@@ -109,7 +105,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
  PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.display.cabl=0 \
     ro.vendor.display.sensortype=2 \
     ro.vendor.display.svi=1 \
     vendor.display.comp_mask=0 \
@@ -204,7 +199,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.audio.game.effect=true \
     persist.sys.job_delay=true \
     persist.vendor.qg.log_level=1 \
-    ro.control_privapp_permissions=log \
     sys.vendor.shutdown.waittime=500 # ro.kernel.qemu.gles=0
 
 # NetFlix
