@@ -1098,30 +1098,36 @@ vendor/bin/hw/android.hardware.neuralnetworks@1.1-service-qti
 vendor/etc/init/android.hardware.neuralnetworks@1.1-service-qti.rc
 vendor/lib64/libhexagon_nn_stub.so
 
-# Perf
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
-vendor/bin/msm_irqbalance
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/etc/powerhint.xml
-vendor/lib/libperfgluelayer.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
-vendor/lib/libqti-utils.so
-vendor/lib/vendor.qti.hardware.perf@1.0.so
-vendor/lib64/liblearningmodule.so
-vendor/lib64/libmeters-ns.so
-vendor/lib64/libmeters.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
-vendor/lib64/libqti-utils.so
-vendor/lib64/vendor.qti.hardware.perf@1.0.so
+# Perf - from LA.UM.7.9.r1-06100-sm6150.0
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|736249219ad6be57b8d96e91587f03e092865f7e
+vendor/bin/msm_irqbalance|d189e3f624a6df88c6d369254990e433a6e4b234
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b06477c0943e543d58a71550b544160d28b9b9d0
+vendor/etc/lm/AdaptLaunchFeature.xml|21c91f86ed80b4ca513d68b8fca6754ffd31395d
+vendor/etc/lm/AppClassifierFeature.xml|102e4291357dd384c0f474d4192370e25123c5e7
+vendor/etc/lm/GameOptimizationFeature.xml|de0bd5be9e1f6ad936fb817fa2ff745a8ca94fd4
+vendor/etc/perf/commonresourceconfigs.xml|7bf6b442875ec6244db05ffcc2ebb85a1c370863
+vendor/etc/perf/perfboostsconfig.xml|60a71858e340ca653db81098c60a64652097d9e5
+vendor/etc/perf/targetconfig.xml|53d6e2936c1cdc67edf86a2ccf04084adbff4a68
+vendor/etc/perf/targetresourceconfigs.xml|0a614d97672c516aedc253aec525468fbdb270ec
+vendor/etc/powerhint.xml|277e519993a295c42f9a5605dc77065479d9416b
+vendor/lib/libperfgluelayer.so|f482cca35a01de10e2ac6a422330546fe4ba7341
+vendor/lib/libqti-perfd-client.so|676b8ab8528062f1fcceea4bc0cf5027be48056d
+vendor/lib/libqti-perfd.so|b7494055c1b2535bfc0d72c6eb7dca2674e8562f
+vendor/lib/libqti-util.so|689004ee7b6e28b2559816e1f0c6e06740686c66
+vendor/lib/libqti-utils.so|94f88a2c176736f134216dfba644dc2be65e98c5
+vendor/lib/vendor.qti.hardware.perf@1.0.so|c5296294a93d7273affa056fd693d2b3b93a0113
+vendor/lib64/libadaptlaunch.so|3bba3a2f72116ac609dee87130b252d47bf12f99
+vendor/lib64/libappclassifier.so|8ef13fdb8e1b549f53868f8f57937f244fb8afa2
+vendor/lib64/libgameoptfeature.so|84839fd1de0f483c47a9567ea6c3431d58bbdc20
+vendor/lib64/liblearningmodule.so|1fdaf203215e6d244785ffa199df675f1aa8c973
+vendor/lib64/libmeters-ns.so|c7d6f501988ccb473a116736b7732fdb02ce76f9
+vendor/lib64/libmeters.so|9747033a9187992ea9b0a98430e4abe95c29d5ca
+vendor/lib64/libperfgluelayer.so|183eeaacee83f4c37d8d8d89587f3345074acaa5
+vendor/lib64/libqti-perfd-client.so|f80f452e788d1c10f41d165439f0966e2ae05c87
+vendor/lib64/libqti-perfd.so|81e4b003bee1fa898e9741de6d4684cdd48fbb52
+vendor/lib64/libqti-util.so|e2afe83fefd79327eb763364011b14cb5fdf840a
+vendor/lib64/libqti-utils.so|c9ded4c62af77afd47835ed8d7fcf0d09b4a9871
+vendor/lib64/vendor.qti.hardware.perf@1.0.so|ff5f079ddf876ad910e1aaba925e7f5d56cde9af
 
 # Peripheral manager
 vendor/bin/pm-proxy
