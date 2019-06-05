@@ -1,5 +1,5 @@
 # Audio
-tas.smartamp.           u:object_r:audio_prop:s0
+tas.smartamp.           u:object_r:vendor_audio_prop:s0
 
 # Camera
 persist.camera.         u:object_r:vendor_camera_prop:s0
