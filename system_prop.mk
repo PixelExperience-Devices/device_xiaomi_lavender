@@ -6,7 +6,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.bluetooth.soc=cherokee \
     persist.vendor.btstack.enable.splita2dp=true \
     persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
     persist.vendor.btstack.avrcp-playstatus.blacklist=true \
@@ -43,6 +42,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dirac.gef.ext.did=0xA,0x2D \
     persist.dirac.gef.ext.mid=0x10012DE1 \
     persist.dirac.gef.int.mid=0x10012DE0
+
+# FM Radio/BT
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    vendor.bluetooth.soc=cherokee
 
 # Fluence/Audio Proccessing
 PRODUCT_PROPERTY_OVERRIDES += \

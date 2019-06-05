@@ -1,1 +1,0 @@
-allow hal_bluetooth_qti exported3_default_prop:file { read write open getattr map };
