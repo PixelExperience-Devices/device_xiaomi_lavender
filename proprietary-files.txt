@@ -488,6 +488,7 @@ vendor/bin/hvdcp_opti
 -vendor/lib64/com.quicinc.cne.server@2.0.so|246bb5477f8016682c4fe6705023e0a987ab5f19
 -vendor/lib64/com.quicinc.cne.server@2.1.so|2b3b4a9f2709a31d0347fd16532c70a23403f679
 -vendor/lib64/com.quicinc.cne.server@2.2.so|e64214934bd90ab2bbb7d646f6190e9486106cc5
+-vendor/lib64/com.quicinc.cne.server@2.3.so|c2be1cb3c438a6db1722c19aa29816523bb0296f
 etc/permissions/cneapiclient.xml|15831adf0e80243042b90c734eea0a68eb8ae9c9
 etc/permissions/com.quicinc.cne.xml|e99e631d8b06ba4680529e9e4004d8d05baf6904
 framework/cneapiclient.jar|af7db889362e562a4c5073bb6aae32947218abf0
@@ -502,6 +503,7 @@ framework/com.quicinc.cne.server-V2.0-java.jar|6bba42f810057b8b52a73f55dbf7bf4de
 framework/com.quicinc.cne.server-V2.1-java.jar|a95528efeb0c14a0077c8b0b375e95ac433edc33
 framework/com.quicinc.cne.server-V2.2-java.jar|e1041e559afecd0d9371ba78ddb36ea1873f9f15
 framework/vendor.qti.data.factory-V1.0-java.jar|23a060c1197f21f4f3b0f77485d8ee387d740e5d
+framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar|7ef3726eca6455545a729cc56b54c796e9cf0210|d3bd8005451d3309ba64ff256ee11173bae71caf
 framework/vendor.qti.hardware.data.qmi-V1.0-java.jar|94c3e0efe3bc51358fe9145ed1ff0708c262380d
 lib/com.quicinc.cne.server@1.0.so|01f977588c1e52dfe674ca97d21ab9d47097725c
 lib64/com.quicinc.cne.server@1.0.so|978741789deeff1a8c465d5a9d81cee4dbeb317f
@@ -533,25 +535,26 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml|9b123d81c9b8991499cda33b0706810e0c
 vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml|ff91feb5060a6df07e3e4d9bc99ae58bccad7649
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml|f76c894f3c6d5b6ed35113a088dc3174c900501b
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml|14d136e7fcc682311757d3edc0b9d3eaeba11815
+vendor/lib/com.quicinc.cne.api@1.0.so|388296b64a3604c352e8912108cdcde684ed5eaf
+vendor/lib/com.quicinc.cne.api@1.1.so|6ce6c888480ce5688474e081f0cfee80b78e6563
 vendor/lib/com.quicinc.cne.constants@1.0.so|51803172a73df9d1e79c6d5a2896ebf274c68fdc
 vendor/lib/com.quicinc.cne.constants@2.0.so|2d5157f90d138c35b6f67d7cb1902ea0297c2625
 vendor/lib/com.quicinc.cne.constants@2.1.so|32fec983d648720175aa3024b639980fa9617443
 vendor/lib/com.quicinc.cne.server@2.0.so|ba5696ee323783a5f7cfcb46316a7894d813f272
 vendor/lib/com.quicinc.cne.server@2.1.so|5f8947a9dca17783c398c4dea9e08c78a68f7cbc
 vendor/lib/com.quicinc.cne.server@2.2.so|6ae4cc0a61b9489b8e67d1de534c6607cd80c6fe
+vendor/lib/com.quicinc.cne.server@2.3.so|cd9b10ffea25ebc5239db55d33f26ceffbf90353
 vendor/lib/libcne.so|f04a988c3a5e1693ef6ce212f8c9671021e0c7db
 vendor/lib/libcneapiclient.so|94b6bb09c9d1bc6caa7a819d5c4e5f1a6a311f69
+vendor/lib/libcneoplookup.so|861855837f1ab91c252ae257318cb8cc77798368
 vendor/lib/libcneqmiutils.so|a641d0769d31a720f8c04464138c6168bbd6e511
 vendor/lib/libwms.so|d03621a10f8244e7fb37e85f3c9d6f90f66585fb
 vendor/lib/libwqe.so|223b862bc473a8c9f6cbdc9b47aaab68dfbb5cc3
+vendor/lib/libxml.so|0fab35597104d2b3d3c0230775550d625f9b8c7f
 vendor/lib/vendor.qti.data.factory@1.0.so|9279dc9bc3e65511c83ab7efe3db13bbbd9cb54f
+vendor/lib/vendor.qti.data.factory@1.1.so|6a8fab98d1db7b2af31082a7fce93ba44cb796f0
 vendor/lib/vendor.qti.hardware.data.dynamicdds@1.0.so|3595a2291edd5b5cb142854686f932c53a1426e2
-vendor/lib64/com.quicinc.cne.constants@1.0.so|25e137064d7c93121e0a8bc6122ddac72e3d3ba4
-vendor/lib64/com.quicinc.cne.constants@2.0.so|d356ed77d3cef94b330595bdecc0670a04c220fa
-vendor/lib64/com.quicinc.cne.constants@2.1.so|8cc6a8b154880664f622cf6af54913dd25667f29
-vendor/lib64/com.quicinc.cne.server@2.0.so|246bb5477f8016682c4fe6705023e0a987ab5f19
-vendor/lib64/com.quicinc.cne.server@2.1.so|2b3b4a9f2709a31d0347fd16532c70a23403f679
-vendor/lib64/com.quicinc.cne.server@2.2.so|e64214934bd90ab2bbb7d646f6190e9486106cc5
+vendor/lib/vendor.qti.hardware.data.qmi@1.0.so|47fa494517437f8d2d04c9eaa53abd982c699596
 vendor/lib64/libcne.so|cf16933204434e9614c10d7f9416da47149c468c
 vendor/lib64/libcneapiclient.so|6a2689eef8225f7b98477828c81b0dd778d1a55f
 vendor/lib64/libcneoplookup.so|6ec113ba0e78c542a4917bad7d8f58b5f1f12352
@@ -560,6 +563,7 @@ vendor/lib64/libwms.so|14fe81a1fbb26251e4cf79547816a6842b864543
 vendor/lib64/libwqe.so|cb36aafc4e06764ca7ee5171bf8da12fafe3e99e
 vendor/lib64/libxml.so|562cc459393349600d6acb56ac5fe772f24a8fdd
 vendor/lib64/vendor.qti.data.factory@1.0.so|370f034fe2d0d5eb69b2c94129f4e5d4b3e431eb
+vendor/lib64/vendor.qti.data.factory@1.1.so|7308e2711694efcdc4eccfd973f4cfb9aeb44635
 vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so|18d8fbe1aedb98b87bff100ba54083884cad6b4f
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|bcdcd5600e7e0b5cc6e967f117fdc934a0147199
 
@@ -955,13 +959,17 @@ vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
 
-# Latency
-lib/vendor.qti.hardware.data.latency@1.0.so
-lib/vendor.qti.latency@2.0.so
-lib64/vendor.qti.hardware.data.latency@1.0.so
-lib64/vendor.qti.latency@2.0.so
-vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
-vendor/lib64/vendor.qti.latency@2.0.so
+# Latency - from LA.UM.7.9.r1-06100-sm6150.0
+framework/vendor.qti.hardware.data.latency-V1.0-java.jar|7ef3726eca6455545a729cc56b54c796e9cf0210|e11ebb7be868ef1202247d21b8c47b096444ece9
+framework/vendor.qti.latency-V2.0-java.jar|7ef3726eca6455545a729cc56b54c796e9cf0210|d631b4b4945b6d73d05c3383c6d5fe29bf27817e
+lib/vendor.qti.hardware.data.latency@1.0.so|75b6f9487674ddf2c5402234a5deb919d3335d0c
+lib/vendor.qti.latency@2.0.so|5f01858c081e3d57d006c95c9ef28a5776b5fedb
+lib64/vendor.qti.hardware.data.latency@1.0.so|688d0f6b6e5a06f1c64bfe0834bc43174f2dddce
+lib64/vendor.qti.latency@2.0.so|128104f878d8120a84bafa3e6114cb27253aefe3
+vendor/lib/vendor.qti.hardware.data.latency@1.0.so|6421f82a50b36b5b3107e393e4a5f8c6b1e4c3bd
+vendor/lib/vendor.qti.latency@2.0.so|0557179d6a0d105ff1feef0219e8a3993d5d7816
+vendor/lib64/vendor.qti.hardware.data.latency@1.0.so|8d57b867736257590f4cf6a02af7c39b5e5d8db1
+vendor/lib64/vendor.qti.latency@2.0.so|b7fea688e4be5b94f5d36e6eb0061b4f51937c3e
 
 # Listen
 vendor/etc/spk_cal_pinknoise.wav
