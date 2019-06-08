@@ -1,1 +1,4 @@
  genfscon debugfs /wlan0   u:object_r:debugfs_wlan:s0
+
+ # RTC
+ genfscon sysfs /devices/soc/800f000.qcom,spmi/spmi-0/spmi0-00/800f000.qcom,spmi:qcom,pm660@0:qcom,pm660_rtc/rtc     u:object_r:sysfs_rtc:s0
