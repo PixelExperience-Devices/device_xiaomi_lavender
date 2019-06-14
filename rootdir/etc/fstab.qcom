@@ -11,7 +11,7 @@
 /dev/block/bootdevice/by-name/recovery       /recovery               emmc    defaults                                   recoveryonly
 /dev/block/bootdevice/by-name/vendor         /vendor                 ext4    ro,barrier=1                               wait,recoveryonly
 /dev/block/bootdevice/by-name/system     /                      ext4   ro,barrier=1,discard                             wait,avb
-/dev/block/bootdevice/by-name/userdata   /data                  ext4   nosuid,nodev,barrier=1,noauto_da_alloc,noatime,lazytime   wait,check,forceencrypt=footer,quota,reservedsize=128M
+/dev/block/bootdevice/by-name/userdata   /data                  ext4   nosuid,nodev,barrier=1,noauto_da_alloc,noatime,lazytime   wait,resize,check,forceencrypt=footer,crashcheck,quota,reservedsize=128M
 /dev/block/bootdevice/by-name/userdata   /data                  f2fs   nosuid,nodev,noatime,inline_xattr,reserve_root=32768,resgid=1065    wait,check,forceencrypt=footer,reservedsize=128M
 /devices/soc/c084000.sdhci/mmc_host*     /storage/sdcard1       vfat   nosuid,nodev                                     wait,voldmanaged=sdcard1:auto,encryptable=footer
 /dev/block/bootdevice/by-name/misc       /misc                  emmc   defaults                                         defaults
@@ -20,4 +20,5 @@
 /devices/soc/a800000.ssusb/a800000.dwc3/xhci-hcd.0.auto*     /storage/usbotg    vfat    nosuid,nodev         wait,voldmanaged=usbotg:auto
 /dev/block/bootdevice/by-name/dsp        /vendor/dsp            ext4   ro,nosuid,nodev,barrier=1                        wait
 /dev/block/bootdevice/by-name/cache      /cache                 ext4   nosuid,nodev,noatime,barrier=1                           wait
+/dev/block/bootdevice/by-name/cache      /cache                 f2fs   nosuid,nodev,noatime,inline_xattr,flush_merge,data_flush    wait,check
 /dev/block/bootdevice/by-name/persist    /mnt/vendor/persist    ext4   noatime,nosuid,nodev,barrier=1                   wait,check

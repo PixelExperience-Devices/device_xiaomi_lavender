@@ -58,7 +58,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/lavender
-TARGET_KERNEL_CONFIG := lineage-lavender_defconfig
+TARGET_KERNEL_CONFIG := lavender-perf_defconfig
 
 # dtbo
 BOARD_KERNEL_SEPARATED_DTBO := true
