@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.mokee.settings.doze;
+package org.lineageos.settings.doze;
 
 import android.app.ActionBar;
 import android.app.Activity;

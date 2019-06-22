@@ -74,7 +74,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/vendor/lib64/libril-qc-hal-qmi.so \
     ro.vendor.audio.voice.volume.boost=manual \
     sys.autosuspend.timeout=500000
-
-# Maintainer
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.mk.maintainer=subdragonzj

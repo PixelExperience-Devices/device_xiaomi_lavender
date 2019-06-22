@@ -21,7 +21,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v14-preference \
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    org.mokee.platform.internal
+    org.lineageos.platform.internal
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
