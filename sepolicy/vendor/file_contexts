@@ -19,9 +19,6 @@
 # Light HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_lavender u:object_r:hal_light_default_exec:s0
 
-# Touchscreen
-/sys/devices/soc/c175000\.i2c/i2c-1/1-[0-9a-f]+/input/input[0-9]+/wake_gesture u:object_r:sysfs_tap_to_wake:s0
-
 # Mlipay
 /(vendor|system/vendor)/bin/mlipayd@1.1             u:object_r:hal_mlipay_default_exec:s0
 
