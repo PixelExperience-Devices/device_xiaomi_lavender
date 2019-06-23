@@ -1,6 +1,0 @@
-# Allow writing to files in /proc/tp_gesture
-allow hal_power_default proc:file rw_file_perms;
-allow hal_power_default proc:dir search;
-
-#Read sysfs stats files:
-r_dir_file(hal_power_default, debugfs_wlan)

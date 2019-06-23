@@ -1,2 +1,0 @@
-#============= rild ==============
-allow rild vendor_file:file ioctl;
