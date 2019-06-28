@@ -560,9 +560,6 @@ vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
-# Power-off charging daemon
--sbin/charger:sbin/chargeonlymode;rootfs
-
 # Postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/mm-pp-dpps
