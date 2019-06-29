@@ -3,7 +3,7 @@
 #
 
 #rild.libpath=/system/lib/libreference-ril.so
-rild.libpath=/system/vendor/lib64/libril-qc-hal-qmi.so
+rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
 #rild.libargs=-d /dev/smd0
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
@@ -31,8 +31,9 @@ dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 #Disable Skip Validate
 sdm.debug.disable_skip_validate=1
+
 #Property to enable display default color mode
-vendor.display.enable_default_color_mode=0
+vendor.display.enable_default_color_mode=1
 
 # Display Properties as per treble compliance
 vendor.gralloc.enable_fb_ubwc=1
@@ -84,9 +85,6 @@ bt.max.hfpclient.connections=1
 ro.qualcomm.cabl=0
 ro.vendor.display.cabl=0
 
-ro.vendor.display.ad=1
-ro.vendor.display.ad.sdr_calib_data=/data/vendor/display/ad_calib.cfg
-ro.vendor.display.sensortype=2
 #
 # System props for telephony
 # System prop to turn on CdmaLTEPhone always
@@ -166,7 +164,7 @@ persist.vendor.radio.atfwd.start=true
 persist.hwc.enable_vds=1
 
 #Increase cached app limit
-#ro.vendor.qti.sys.fw.bg_apps_limit=60
+ro.vendor.qti.sys.fw.bg_apps_limit=60
 
 #Settings to enable sensors
 #Device Orientation sensor
@@ -181,8 +179,7 @@ ro.vendor.sensors.mot_detect=true
 ro.vendor.sensors.pug = true
 
 #Expose aux camera for below packages
-camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.longcheertel.cit
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.longcheertel.cit
+vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
 # enable b-services aging propagation
 ro.vendor.qti.sys.fw.bservice_enable=true
@@ -201,6 +198,7 @@ persist.vendor.camera.model=Redmi Note 7
 
 #set maximum supported adapter voltage
 persist.chg.max_volt_mv=9000
+
 #add for dirac algo tsx 9/12
 persist.dirac.acs.controller=qem
 persist.dirac.acs.storeSettings=1
@@ -211,12 +209,29 @@ ro.audio.soundfx.dirac=true
 
 #system prop for Bluetooth SOC type
 vendor.bluetooth.soc=cherokee
-persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
+persist.vendor.btstack.enable.splita2dp=true
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+persist.vendor.btstack.avrcp-playstatus.blacklist=true
 
 # Property for backup NTP Server
 persist.backup.ntpServer="0.pool.ntp.org"
 # enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
+
+# ro.location properties below are used in conjunction
+# with NLP_MODE setting in /vendor/etc/izat.conf
+# either as the main network provider or as a fallback
+# provider depending on NLP_MODE that is set
+# These properties are optional and will not cause
+# issues if not set to existing packages.
+# ro.location.osnlp.package sets the name of default
+# OS sepecific network location provider package to use
+# ro.location.osnlp.region.package is set to the name
+# of the alternative network location provider package
+# to be used for a particular region where the default
+# network location provider is not functional
+ro.location.osnlp.package=com.google.android.gms
+ro.location.osnlp.region.package=
 
 #use camera2 api
 persist.sys.camera.camera2=true
@@ -234,25 +249,33 @@ persist.vendor.radio.data_con_rprt=1
 #lct.ydt 20180911 add for ignore OOS 5 seconds
 persist.vendor.radio.snapshot_enabled=1
 persist.vendor.radio.snapshot_timer=5
+persist.radio.sib16_support=1
+
+#lct liuxuan add the dom ignore time
+persist.vendor.radio.ignore_dom_time=15
 
 #add for color invert
 ro.vendor.df.effect.conflict=1
 persist.sys.df.extcolor.proc=0
 
-#enable all system restart_level to relative
-persist.vendor.ssr.restart_level=ALL_ENABLE
-
-#thermal configs path
-sys.thermal.data.path=/data/vendor/thermal/
+#paper mode
+sys.paper_mode_max_level=255
+sys.tianma_nt36672a_offset=6
+sys.tianma_nt36672a_length=42
+sys.boe_td4320_offset=-9
+sys.boe_td4320_length=42
+sys.shenchao_nt36672a_offset=-10
+sys.shenchao_nt36672a_length=38
 
 # miui
-debug.sf.disable_backpressure=1	
+debug.sf.disable_backpressure=1
+keyguard.no_require_sim=true
 persist.vendor.radio.report_codec=1
 persist.vendor.radio.redir_party_num=1
 ro.config.media_vol_default=10
 persist.radio.apm_sim_not_pwdn=1
 
-# PROPERTIES FOR IMS
+# IMS
 persist.dbg.ims_volte_enable=1
 persist.radio.videopause.mode=1
 persist.data.iwlan.enable=true
