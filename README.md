@@ -14,7 +14,7 @@ Xiaomi Redmi Note 7 Pro was announced in February 2019 and released in March 201
 | GPU           | Adreno 612                                      |
 | Memory        | 4GB / 6GB RAM (LPDDR4X)                         |
 | Shipped Android version | 9.0                                   |
-| Cuurrent Android version | 9.0                                  |
+| Current Android version | 9.0                                  |
 | Storage       | 64GB / 128GB                                    |
 | Battery       | Non-removable Li-Po 4000 mAh                    |
 | Dimensions    | 159.21 x 75.21 x 8.1 mm                         |
