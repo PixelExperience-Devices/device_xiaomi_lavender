@@ -2,6 +2,11 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.codec2=2
 
+# Ccodec
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.stagefright.omx_default_rank.sw-audio=1 \
+    debug.stagefright.omx_default_rank=0
+
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.sys.job_delay=true \
 persist.sys.mcd_config_file=/system/etc/mcd_default.conf \
