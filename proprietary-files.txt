@@ -702,30 +702,30 @@ vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.color@1.2.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
-# DPM
-bin/dpmd
-etc/dpm/dpm.conf
-etc/init/dpmd.rc
-etc/permissions/com.qti.dpmframework.xml
-etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar
-framework/dpmapi.jar
-framework/tcmclient.jar
-lib64/libdiag_system.so
-lib64/com.qualcomm.qti.dpm.api@1.0.so
-lib64/libdpmctmgr.so
-lib64/libdpmfdmgr.so
-lib64/libdpmframework.so
-lib64/libdpmtcm.so
-lib/com.qualcomm.qti.dpm.api@1.0.so
-lib/libdpmctmgr.so
-lib/libdpmfdmgr.so
-lib/libdpmframework.so
-lib/libdpmtcm.so
--priv-app/dpmserviceapp/dpmserviceapp.apk
-vendor/bin/dpmQmiMgr
-vendor/lib64/libdpmqmihal.so
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
+# DPM - from LA.UM.7.9.r1-06100-sm6150.0
+-priv-app/dpmserviceapp/dpmserviceapp.apk|8f153185721c3383f8f5858aee3b0bb73220526c
+bin/dpmd|b4ab23a880c43a5e32c1b74c3743445d64c3cf25
+etc/dpm/dpm.conf|fec89edb6cff81424a6c3a730fed92efa3613f72
+etc/init/dpmd.rc|52ca6ad920a1804e4ff608113cece063730f5e0c
+etc/permissions/com.qti.dpmframework.xml|36b94c9338069e434b83359a92cdc7ff62b822df
+etc/permissions/dpmapi.xml|ded29f9befaef20a7ccee0c75427fda1d1d04890
+framework/com.qti.dpmframework.jar|2a6ff555ebff148a508fc7ea2fbeaee4b9a2dff6
+framework/dpmapi.jar|89ddc5bf0c4c88a3f341169edc4d89f9e834337b
+framework/tcmclient.jar|91b415288494fa208b5f5ec9fafa33c47e569c96
+lib/com.qualcomm.qti.dpm.api@1.0.so|f695f0320c57940d342c5134c02b2c3ff1cb479d
+lib/libdpmctmgr.so|39a22fed0691797322ad3361ab064cce944a1621
+lib/libdpmfdmgr.so|cbba45c4b84d0eea7b014fb7b9b861fc62607d9f
+lib/libdpmframework.so|697dbe82192024b518bed0668ffad42fff815d93
+lib/libdpmtcm.so|326cc53ac27ef6598a61ca257ac080eaee6090a5
+lib64/com.qualcomm.qti.dpm.api@1.0.so|cf8ef6f0f641c55273acf7d2644f7f3a41cce2ca
+lib64/libdiag_system.so|4bc135003900ca7c728b59be8efca597751eab3e
+lib64/libdpmctmgr.so|20101d5929ba97f16083ad9c71933111cb9ae8ff
+lib64/libdpmfdmgr.so|45061fee7721b8f94aef431f589e4024d4eae374
+lib64/libdpmframework.so|ecdd62e25ae080fd450bdd75d5fe3429d187454e
+lib64/libdpmtcm.so|1b43a23871a0a247e4adbe1e63c5e0864740938b
+vendor/bin/dpmQmiMgr|2d337b75221a9183dbcf502aae5833fb207cd83b
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|ee7d14d8054ab05266484ac9df8887b388593f47
+vendor/lib64/libdpmqmihal.so|54f7da0356c0da2ed4a18759df87f5d90da9020f
 
 # DRM stack - from violet PKQ1.181203.001 V10.2.10.0.PFHINXM
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine|35fdfb67ad964f586334f52942ed9c8a50633d42
