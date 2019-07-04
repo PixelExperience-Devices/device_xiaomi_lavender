@@ -149,10 +149,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.speaker=true \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=false \
-    ro.qc.sdk.audio.fluencetype=none \
     persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
+    ro.qc.sdk.audio.fluencetype=none \
     ro.vendor.audio.sdk.fluencetype=none
 
 # GPS/GNSS

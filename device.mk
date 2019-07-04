@@ -69,19 +69,30 @@ PRODUCT_PACKAGES += \
     fs_config_files
 
 # Audio
-PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio@4.0-impl \
-    android.hardware.audio@2.0-service \
-    android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@4.0-impl \
+  PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl \
+    audio.primary.sm6150 \
+    android.hardware.audio@2.0-service \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
+    android.hardware.audio@4.0 \
+    android.hardware.audio.common@4.0 \
+    android.hardware.audio.common@4.0-util \
+    android.hardware.audio@4.0-impl \
+    android.hardware.audio.effect@4.0 \
+    android.hardware.audio.effect@4.0-impl \
     android.hardware.soundtrigger@2.1-impl:32 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    libqcomvoiceprocessing \
+    libqcompostprocbundle \
+    libvolumelistener \
     tinymix
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -145,7 +156,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     XiaomiParts
 
-# Display
+# Display/Graphics
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0 \
     android.hardware.graphics.composer@2.2-service \
@@ -156,7 +167,12 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     libvulkan \
-    vendor.display.config@1.0
+    vendor.display.config@1.0.vendor \
+    vendor.display.config@1.1.vendor \
+    vendor.display.config@1.2.vendor \
+    vendor.display.config@1.3.vendor \
+    vendor.display.config@1.4.vendor \
+    vendor.display.config@1.5.vendor
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -256,6 +272,21 @@ PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
     libandroid_net \
     netutils-wrapper-1.0
+
+# OMX
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxG711Enc \
+    libOmxQcelp13Enc \
+    libOmxVdec \
+    libOmxVenc \
+    libc2dcolorconvert \
+    libmm-omxcore \
+    libstagefrighthw \
+    libplatformconfig
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
