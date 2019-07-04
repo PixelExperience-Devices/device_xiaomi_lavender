@@ -779,15 +779,15 @@ vendor/lib64/libssd.so|83ec2e52a7b14b6c57e8a4c7d27561653ee54270
 vendor/lib64/libtzdrmgenprov.so|ca2454f7daed7cf18c9b811a71abdbe0faf4fd6b
 vendor/lib64/mediadrm/libwvdrmengine.so|ec9144c057329fbd5a6e27d16ca5c3321124aa38
 
-# ESE-Powermanager
-vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
-vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
-lib/vendor.qti.esepowermanager@1.0.so
-lib64/vendor.qti.esepowermanager@1.0.so
-vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
-vendor/lib/vendor.qti.esepowermanager@1.0.so
-vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
-vendor/lib64/vendor.qti.esepowermanager@1.0.so
+# ESE-Powermanager - from LA.UM.7.9.r1-06100-sm6150.0
+lib/vendor.qti.esepowermanager@1.0.so|b9e81890c97ba126206d3c33fdf0531578f86854
+lib64/vendor.qti.esepowermanager@1.0.so|2d02f836bf06a70cf55262ca7ab5f6a35b91b469
+vendor/bin/hw/vendor.qti.esepowermanager@1.0-service|c3edd1fe9260fddd80c63efad3d1e38677e32a3f
+vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc|58a3866ad5a7613d9392c9adb671eaa7825578a2
+vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so|0a4705383b84230083c8389f042e66018e9f44b6
+vendor/lib/vendor.qti.esepowermanager@1.0.so|bc413dcaf6401aeb88fc52393e3dd428e3c480ab
+vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so|7a3850cf7d9daaab5f3a9098a1c96cec717c20ef
+vendor/lib64/vendor.qti.esepowermanager@1.0.so|fd83ac11c5047ab99deba74d0a215de4eccd7ade
 
 # Fingerprint sensor
 -vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk
