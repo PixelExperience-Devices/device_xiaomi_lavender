@@ -1,2 +1,1 @@
 set_prop(rild, vendor_radio_prop)
-get_prop(rild, vendor_radio_prop)

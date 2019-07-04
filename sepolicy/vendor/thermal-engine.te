@@ -1,8 +1,7 @@
 allow thermal-engine sysfs_devfreq:dir search;
-allow thermal-engine sysfs_devfreq:file { read write open };
+allow thermal-engine sysfs_devfreq:file rw_file_perms;
 allow thermal-engine thermal_data_file:dir rw_dir_perms;
 allow thermal-engine thermal_data_file:file create_file_perms;
 allow thermal-engine init:unix_stream_socket connectto;
 allow thermal-engine property_socket:sock_file write;
 set_prop(thermal-engine, thermal_engine_prop)
-get_prop(thermal-engine, thermal_engine_prop)

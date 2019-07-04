@@ -1,6 +1,4 @@
 allow init tee_device:chr_file { write ioctl };
-dontaudit init vendor_modprobe:process noatsecure;
-allow init kernel:system module_request;
 allow init sysfs_graphics:lnk_file { r_file_perms setattr };
 allow init sysfs_graphics:file { r_file_perms setattr };
 allow init sysfs_fingerprint:file { rw_file_perms };

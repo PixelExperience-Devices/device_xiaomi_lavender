@@ -1,2 +1,3 @@
-get_prop(system_server, adsprpc_prop);
-get_prop(system_server, vendor_fp_prop);
+get_prop(system_server, adsprpc_prop)
+get_prop(system_server, vendor_fp_prop)
+allow system_server lirc_device:chr_file rw_file_perms;
