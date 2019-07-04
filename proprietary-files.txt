@@ -603,19 +603,19 @@ vendor/firmware/a640_gmu.bin
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 
-# IO Prefetcher
-vendor/bin/hw/vendor.qti.hardware.iop@2.0-service
-vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc
-vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib/libqti-iopd-client.so
-vendor/lib/libqti-iopd.so
-vendor/lib/vendor.qti.hardware.iop@1.0.so
-vendor/lib/vendor.qti.hardware.iop@2.0.so
-vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so
-vendor/lib64/libqti-iopd-client.so
-vendor/lib64/libqti-iopd.so
-vendor/lib64/vendor.qti.hardware.iop@1.0.so
-vendor/lib64/vendor.qti.hardware.iop@2.0.so
+# IO Prefetcher - from LA.UM.7.9.r1-06100-sm6150.0
+vendor/bin/hw/vendor.qti.hardware.iop@2.0-service|40d7bf132ba2139f10567fda516783b05ca24005
+vendor/etc/init/vendor.qti.hardware.iop@2.0-service.rc|fd11367b2585702190ef2577ce2ce6fc68f3a2f8
+vendor/lib/hw/vendor.qti.hardware.iop@2.0-impl.so|abc3a762564ca66f8b3ac9b4eba4dff843c1759c
+vendor/lib/libqti-iopd-client.so|9bba96c2adddb3a6938ec3fb32e70e16457d97f3
+vendor/lib/libqti-iopd.so|31722e457ee91dbc8b95c6cf3e9bb16f98ce4b38
+vendor/lib/vendor.qti.hardware.iop@1.0.so|849ed8ef617108b2bdc92d2d19d735fd7090bfcb
+vendor/lib/vendor.qti.hardware.iop@2.0.so|68adfb8b46bdc96da447e691fe480ef5b9030ae8
+vendor/lib64/hw/vendor.qti.hardware.iop@2.0-impl.so|c98a26fc9e4dd288bbfa5d79627f54f8d742f3f6
+vendor/lib64/libqti-iopd-client.so|6e7946057cb64a5b9f083adff35ef0de23808ce4
+vendor/lib64/libqti-iopd.so|ddd3e395b9830ccd5bdc909bc992d541d7823478
+vendor/lib64/vendor.qti.hardware.iop@1.0.so|61060391dc235b212f8da30241a8e10e2afb52a5
+vendor/lib64/vendor.qti.hardware.iop@2.0.so|02e20c69b1aff5e529c5fb663ef3d341328dbf3d
 
 # IPA Firmware
 vendor/firmware/ipa_fws.b00
