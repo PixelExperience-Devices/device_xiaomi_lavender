@@ -1102,10 +1102,10 @@ vendor/lib64/libmlipay.so
 vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so
 
-# Neural-networks
-vendor/bin/hw/android.hardware.neuralnetworks@1.1-service-qti
-vendor/etc/init/android.hardware.neuralnetworks@1.1-service-qti.rc
-vendor/lib64/libhexagon_nn_stub.so
+# Neural-networks - from LA.UM.7.9.r1-06100-sm6150.0
+vendor/bin/hw/android.hardware.neuralnetworks@1.1-service-qti|f6ea3195dd5a14d238cc7884f740c08130c7e685
+vendor/etc/init/android.hardware.neuralnetworks@1.1-service-qti.rc|f36a191ba1fdd82d8c05cf9abf3940f9af32e238
+vendor/lib64/libhexagon_nn_stub.so|2ff38e841830e0aa7ba1e074a6ce2f2d961d3352
 
 # Perf - from LA.UM.7.9.r1-06100-sm6150.0
 vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|736249219ad6be57b8d96e91587f03e092865f7e
