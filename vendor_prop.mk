@@ -79,10 +79,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.allow_encrypt_override=true \
     ro.crypto.volume.filenames_mode=aes-256-cts
 
-# DPM
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dpm.feature=1
-
 # Dalvik VM
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
@@ -122,6 +118,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.svi.config=1 \
     vendor.display.svi.config_path=/system/etc/display/SVIConfig.xml \
     ro.colorpick_adjust=true
+
+# DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dpm.feature=1
+
+# DRM
+PRODUCT_PROPERTY_OVERRIDES += \
+    drm.service.enabled=true
 
 # Enable Color Invert
 PRODUCT_PROPERTY_OVERRIDES += \

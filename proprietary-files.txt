@@ -28,7 +28,6 @@ vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
 vendor/lib/rfsa/adsp/libhexagon_nn_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so
-vendor/lib/rfsa/adsp/tas25xx_TI_0.bin
 
 # Alarm
 framework/vendor.qti.hardware.alarm-V1.0-java.jar
@@ -410,7 +409,6 @@ vendor/lib64/camera/components/com.qtistatic.stats.pdlib.so
 vendor/lib64/camera/components/com.vidhance.node.eis.so
 vendor/lib64/camera/components/com.vidhance.stats.aec_dmbr.so
 vendor/lib64/camera/components/com.xiaomi.node.mibokeh.so
-vendor/lib64/camera/components/com.xiaomi.node.misegment.so
 vendor/lib64/camera/components/libdepthmapwrapper.so
 vendor/lib64/camera/components/libmmcamera_cac3.so
 vendor/lib64/camera/components/model_back.dlc
@@ -727,7 +725,7 @@ vendor/bin/dpmQmiMgr|2d337b75221a9183dbcf502aae5833fb207cd83b
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|ee7d14d8054ab05266484ac9df8887b388593f47
 vendor/lib64/libdpmqmihal.so|54f7da0356c0da2ed4a18759df87f5d90da9020f
 
-# DRM stack - from violet PKQ1.181203.001 V10.2.10.0.PFHINXM
+# DRM stack - from violet PKQ1.181203.001 V10.3.9.0.PFHINXM
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine|35fdfb67ad964f586334f52942ed9c8a50633d42
 vendor/bin/qseecomd|f87021891b47e1b7922ffeb8f1f405f7313f6bd4
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|458dd241f5f8536eccb57f012b3eba0061736e8e
@@ -753,8 +751,8 @@ vendor/lib/libsecureui.so|04e94d3075813b08b69b480e09c065bef3055461
 vendor/lib/libsecureui_svcsock.so|a2dde621f7c7223b963c8202621506b527adbfdf
 vendor/lib/libssd.so|a470203dc54ba3e816288b6a44611a313029d003
 vendor/lib/libtzdrmgenprov.so|ac8caf236a6def7560a6ec15f2e8b761559874bc
-vendor/lib/libwvhidl.so|05a72664d13cf6ce645dd5420d3d4eff2f77107a
-vendor/lib/mediadrm/libwvdrmengine.so|712bcef03ac51c39aa453b20504828d4f9b5209a
+vendor/lib/libwvhidl.so|dee921e09b800d6e4f8f88589ae3b4b6c74db1af
+vendor/lib/mediadrm/libwvdrmengine.so|116003d42d254cfd5dc2dab84833eac0561aed59
 vendor/lib64/libGPreqcancel.so|e2548f7837aea578ee25707b950935aee4f55a3b
 vendor/lib64/libGPreqcancel_svc.so|801119171daebc3bcdde04e4e4c7cba4611bd8f5
 vendor/lib64/libQSEEComAPI.so|8d4c6980a4c1fd6ae1e2a5d8174bd226b461bf4b
@@ -777,7 +775,7 @@ vendor/lib64/libsecureui.so|4d1f7ed74934d3fbccd3b8bb49810422608c4221
 vendor/lib64/libsecureui_svcsock.so|9201ae866000b1ee08bb0fada2cdf090a709ae8d
 vendor/lib64/libssd.so|83ec2e52a7b14b6c57e8a4c7d27561653ee54270
 vendor/lib64/libtzdrmgenprov.so|ca2454f7daed7cf18c9b811a71abdbe0faf4fd6b
-vendor/lib64/mediadrm/libwvdrmengine.so|ec9144c057329fbd5a6e27d16ca5c3321124aa38
+vendor/lib64/mediadrm/libwvdrmengine.so|a731820eac196eeda559a07d445e2215efe22436
 
 # ESE-Powermanager - from LA.UM.7.9.r1-06100-sm6150.0
 lib/vendor.qti.esepowermanager@1.0.so|b9e81890c97ba126206d3c33fdf0531578f86854
@@ -972,9 +970,6 @@ vendor/lib64/vendor.qti.hardware.data.latency@1.0.so|8d57b867736257590f4cf6a02af
 vendor/lib64/vendor.qti.latency@2.0.so|b7fea688e4be5b94f5d36e6eb0061b4f51937c3e
 
 # Listen
-vendor/etc/spk_cal_pinknoise.wav
-vendor/etc/spk_cal_silence.wav
-vendor/etc/spk_cal_whitenoise.wav
 vendor/lib/libadpcmdec.so
 vendor/lib/libgcs-calwrapper.so
 vendor/lib/libgcs-ipc.so
@@ -1094,13 +1089,13 @@ vendor/lib64/libvpptestutils.so
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so
 vendor/lib64/vendor.qti.hardware.vpp@1.2.so
 
-# Mlipay
-vendor/bin/mlipayd@1.1
-vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
-vendor/lib64/libmlipay@1.1.so
-vendor/lib64/libmlipay.so
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so
+# Mlipay - from violet PKQ1.181203.001 V10.3.9.0.PFHINXM
+vendor/bin/mlipayd@1.1|d3129c961cf24785e01d3615ab5716bd5703cebc
+vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc|b5ab5bcd031fe4d9781b5911c0595eaeac8b80ea
+vendor/lib64/libmlipay.so|38cc028209b0d4503210539649b3590f471dddc0
+vendor/lib64/libmlipay@1.1.so|d6090b84f53db3bad09d86d9b3955d2e71f3708d
+vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so|bcd74afe1002827f017eda1ed3c5412874711a6e
+vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so|8f25b37df26cab5c11b3b32faaee3903628aed88
 
 # Neural-networks - from LA.UM.7.9.r1-06100-sm6150.0
 vendor/bin/hw/android.hardware.neuralnetworks@1.1-service-qti|f6ea3195dd5a14d238cc7884f740c08130c7e685
@@ -1148,7 +1143,6 @@ vendor/lib64/libperipheral_client.so|0005c7b4507694e7bd4476e984e259e40890948d
 -sbin/charger:sbin/chargeonlymode;rootfs|f048d2cc20783ba1a608b73d440b3053af6ec9fd
 
 # Qualcomm Display calibration
-vendor/etc/calib.config
 vendor/etc/qdcm_calib_data_sw43404_amoled_cmd_mode_dsi_boe_panel_with_DSC.xml
 vendor/etc/qdcm_calib_data_sw43404_amoled_boe_fhd+_panel_with_DSC.xml
 vendor/etc/qdcm_calib_data_ft8719_video_mode_dsi_tianma_panel.xml
@@ -1494,11 +1488,8 @@ vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 -vendor/lib64/libthermalclient.so
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine-camera.conf
-vendor/etc/thermal-engine-high.conf
 vendor/etc/thermal-engine-map.conf
 vendor/etc/thermal-engine-normal.conf
-vendor/etc/thermal-engine-pubgmhd.conf
-vendor/etc/thermal-engine-sgame.conf
 vendor/etc/thermal-engine-studio.conf
 vendor/etc/thermal-engine-tgame.conf
 vendor/etc/thermal-engine.conf
