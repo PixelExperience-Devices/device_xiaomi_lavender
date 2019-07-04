@@ -39,10 +39,11 @@ def AddBasebandAssertion(info, input_zip):
   m = re.search(r'require\s+version-baseband\s*=\s*(.+)', android_info)
   if m:
     timestamp, firmware_version = m.group(1).rstrip().split(',')
-    if ((len(timestamp) and '*' not in timestamp) and \
+    timestamps = timestamp.split('|')
+    if ((len(timestamps) and '*' not in timestamps) and \
         (len(firmware_version) and '*' not in firmware_version)):
-      cmd = 'assert(xiaomi.verify_baseband("{}") == "1" || abort("ERROR: This package requires firmware from MIUI {} or newer. Please upgrade firmware and retry!"););'
-      info.script.AppendExtra(cmd.format(timestamp, firmware_version))
+      cmd = 'assert(xiaomi.verify_baseband(' + ','.join(['"%s"' % baseband for baseband in timestamps]) + ') == "1" || abort("ERROR: This package requires firmware from MIUI {1} or newer. Please upgrade firmware and retry!"););'
+      info.script.AppendExtra(cmd.format(timestamps, firmware_version))
   return
 
 def AddImage(info, basename, dest):
