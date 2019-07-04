@@ -1,0 +1,2 @@
+allow hal_ir_default lirc_device:chr_file { ioctl read write open };
+allow hal_ir_default lirc_device:file { ioctl read write getattr lock append map open };

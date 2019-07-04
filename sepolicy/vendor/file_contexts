@@ -28,6 +28,9 @@
 /vendor/usr/idc(/.*)?                               u:object_r:idc_file:s0
 /vendor/usr/keylayout(/.*)?                         u:object_r:keylayout_file:s0
 
+# IR
+/dev/spidev[0-9]\.1		u:object_r:lirc_device:s0
+
 # Lights HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_sm6150 u:object_r:hal_light_default_exec:s0
 
