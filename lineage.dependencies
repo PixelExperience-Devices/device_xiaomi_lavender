@@ -2,5 +2,9 @@
   {
     "repository": "android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings"
+  },
+  {
+    "repository": "android_kernel_xiaomi_violet",
+    "target_path": "kernel/xiaomi/violet"
   }
 ]
