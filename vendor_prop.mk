@@ -162,6 +162,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.latch_unsignaled=1 \
     vendor.display.disable_skip_validate=1 \
     ro.opengles.version=196610 \
     dev.pm.dyn_samplingrate=1 \
