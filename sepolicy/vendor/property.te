@@ -1,5 +1,11 @@
+# CHRE
+type vendor_chre_enabled_prop, property_type;
+
 # Fingerprint
 type vendor_fp_prop, property_type;
+
+# Media
+type vendor_media_sm6150_version_prop, property_type;
 
 # Mlipay
 type ifaa_prop, property_type;
