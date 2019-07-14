@@ -292,6 +292,7 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
 
 # inherit from the proprietary version
 -include vendor/xiaomi/lavender/BoardConfigVendor.mk
