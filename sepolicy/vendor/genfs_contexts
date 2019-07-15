@@ -69,5 +69,8 @@ genfscon sysfs /devices/platform/soc/soc:qcom,kgsl-hyp/subsys6/name           u:
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/extldo u:object_r:sysfs_bluetooth_writable:s0
 genfscon sysfs /devices/platform/soc/soc:bt_qca6174/rfkill/rfkill0/state u:object_r:sysfs_bluetooth_writable:s0
 
+# Touchpanel
+genfscon proc /tp_gesture                             u:object_r:proc_touchpanel:s0
+
 # USB Controller
 genfscon sysfs /devices/platform/soc/a600000.ssusb/a600000.dwc3/udc/a600000.dwc3 u:object_r:sysfs_usb_controller:s0

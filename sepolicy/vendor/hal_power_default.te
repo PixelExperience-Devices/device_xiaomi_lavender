@@ -1,2 +1,2 @@
-allow hal_power_default input_device:dir search;
-allow hal_power_default input_device:chr_file rw_file_perms;
+allow hal_power_default proc_touchpanel:file { w_file_perms read };
+allow hal_power_default proc_touchpanel:dir search;
