@@ -8,7 +8,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_VENDOR_MODULE := true
 
 LOCAL_SRC_FILES := \
-    power-msmnile.c \
+    power-steppe.c \
     power.c \
     utils.c
 
