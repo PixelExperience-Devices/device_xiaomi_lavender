@@ -127,6 +127,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1 \
     persist.vendor.dpm.feature=1
 
+# Charger
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.charger.enable_suspend=true
+
 # Ccodec
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.omx_default_rank.sw-audio=1 \
