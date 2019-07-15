@@ -1,9 +1,10 @@
-/* Copyright (c) 2016, The Linux Foundation. All rights reserved.
+/*
+ * Copyright (c) 2018, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
  * met:
- *     * Redistributions of source code must retain the above copyright
+ * *    * Redistributions of source code must retain the above copyright
  *       notice, this list of conditions and the following disclaimer.
  *     * Redistributions in binary form must reproduce the above
  *       copyright notice, this list of conditions and the following
@@ -24,25 +25,40 @@
  * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  * OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
  * IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
  */
 
-#ifndef __POWERHINTPARSER__
-#define __POWERHINTPARSER__
+#define LOG_NIDEBUG 0
 
-#define POWERHINT_XML "/vendor/etc/powerhint.xml"
-#define MAX_HINT 6
-#define MAX_PARAM 30
+#include <dlfcn.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
 
-typedef struct perflock_param_t {
-    int type;
-    int numParams;
-    int paramList[MAX_PARAM];  // static limit on number of hints - 15
-} perflock_param_t;
+#define LOG_TAG "QTI PowerHAL"
+#include <hardware/hardware.h>
+#include <hardware/power.h>
+#include <log/log.h>
+#include <time.h>
 
-static perflock_param_t powerhint[MAX_HINT];
+#include "power-common.h"
 
-int parsePowerhintXML();
-int* getPowerhint(int, int*);
+void interaction(int duration, int num_args, int opt_list[]);
 
-#endif /* __POWERHINTPARSER__ */
+int power_hint_override(struct power_module* module __unused, power_hint_t hint,
+                        void* data __unused) {
+    int ret_val = HINT_NONE;
+    switch (hint) {
+        case POWER_HINT_INTERACTION: {
+            int resources[] = {0x40800100, 0x514};
+            int duration = 100;
+            interaction(duration, sizeof(resources) / sizeof(resources[0]), resources);
+            ret_val = HINT_HANDLED;
+        }
+        default:
+            break;
+    }
+    return ret_val;
+}

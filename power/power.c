@@ -37,12 +37,12 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <time.h>
 
-#define LOG_TAG "QCOM PowerHAL"
+#define LOG_TAG "QTI PowerHAL"
 #include <hardware/hardware.h>
 #include <hardware/power.h>
-#include <linux/input.h>
-#include <utils/Log.h>
+#include <log/log.h>
 
 #include "hint-data.h"
 #include "performance.h"
@@ -57,7 +57,7 @@ static struct hw_module_methods_t power_module_methods = {
     .open = power_device_open,
 };
 
-static void power_init(struct power_module* module) {
+static void power_init(struct power_module* module __unused) {
     ALOGI("Initing");
 
     for (int i = 0; i < NUM_HINTS; i++) {
@@ -66,8 +66,8 @@ static void power_init(struct power_module* module) {
     }
 }
 
-int __attribute__((weak))
-power_hint_override(struct power_module* module, power_hint_t hint, void* data) {
+int __attribute__((weak)) power_hint_override(struct power_module* module __unused,
+                                              power_hint_t hint __unused, void* data __unused) {
     return HINT_NONE;
 }
 
@@ -80,12 +80,12 @@ static void power_hint(struct power_module* module, power_hint_t hint, void* dat
         /* The power_hint has been handled. We can skip the rest. */
         return;
     }
-
     switch (hint) {
         case POWER_HINT_VSYNC:
+            ALOGI("VSYNC power hint not handled in power_hint_override");
             break;
         case POWER_HINT_VR_MODE:
-            ALOGI("VR mode power hint not handled in power_hint_override");
+            ALOGI("VR_MODE power hint not handled in power_hint_override");
             break;
         case POWER_HINT_INTERACTION: {
             int resources[] = {0x702, 0x20F, 0x30F};
@@ -93,24 +93,20 @@ static void power_hint(struct power_module* module, power_hint_t hint, void* dat
 
             interaction(duration, sizeof(resources) / sizeof(resources[0]), resources);
         } break;
-        //fall through below, hints will fail if not defined in powerhint.xml
+        // fall through below, hints will fail if not defined in powerhint.xml
         case POWER_HINT_SUSTAINED_PERFORMANCE:
         case POWER_HINT_VIDEO_ENCODE:
             if (data) {
                 if (handles[hint].ref_count == 0)
                     handles[hint].handle = perf_hint_enable((AOSP_DELTA + hint), 0);
 
-                if (handles[hint].handle > 0)
-                    handles[hint].ref_count++;
-            } else {
-                if (handles[hint].handle > 0) {
-                    if (--handles[hint].ref_count == 0) {
-                        release_request(handles[hint].handle);
-                        handles[hint].handle = 0;
-                    }
-                } else {
+                if (handles[hint].handle > 0) handles[hint].ref_count++;
+            } else if (handles[hint].handle > 0) {
+                if (--handles[hint].ref_count == 0) {
+                    release_request(handles[hint].handle);
+                    handles[hint].handle = 0;
+                } else
                     ALOGE("Lock for hint: %X was not acquired, cannot be released", hint);
-                }
             }
             break;
         default:
@@ -118,11 +114,7 @@ static void power_hint(struct power_module* module, power_hint_t hint, void* dat
     }
 }
 
-int __attribute__((weak)) set_interactive_override(struct power_module* module, int on) {
-    return HINT_NONE;
-}
-
-void set_interactive(struct power_module* module, int on) {
+void set_interactive(struct power_module* module __unused, int on) {
     if (!on) {
         /* Send Display OFF hint to perf HAL */
         perf_hint_enable(VENDOR_HINT_DISPLAY_OFF, 0);
@@ -131,26 +123,13 @@ void set_interactive(struct power_module* module, int on) {
         perf_hint_enable(VENDOR_HINT_DISPLAY_ON, 0);
     }
 
-    if (set_interactive_override(module, on) == HINT_HANDLED) {
-        return;
-    }
-
     ALOGI("Got set_interactive hint");
 }
 
-void set_feature(struct power_module* module, feature_t feature, int state) {
+void set_feature(struct power_module* module __unused, feature_t feature, int state __unused) {
     switch (feature) {
-#ifdef TAP_TO_WAKE_NODE
-        case POWER_FEATURE_DOUBLE_TAP_TO_WAKE: {
-            int fd = open(TAP_TO_WAKE_NODE, O_RDWR);
-            struct input_event ev;
-            ev.type = EV_SYN;
-            ev.code = SYN_CONFIG;
-            ev.value = state ? INPUT_EVENT_WAKUP_MODE_ON : INPUT_EVENT_WAKUP_MODE_OFF;
-            write(fd, &ev, sizeof(ev));
-            close(fd);
-        } break;
-#endif
+        case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
+            break;
         default:
             break;
     }
@@ -167,13 +146,13 @@ static int power_device_open(const hw_module_t* module, const char* name, hw_dev
 
                 if (dev) {
                     /* initialize the fields */
-                    dev->common.module_api_version = POWER_MODULE_API_VERSION_0_3;
+                    dev->common.module_api_version = POWER_MODULE_API_VERSION_0_2;
                     dev->common.tag = HARDWARE_DEVICE_TAG;
                     dev->init = power_init;
                     dev->powerHint = power_hint;
                     dev->setInteractive = set_interactive;
-                    /* At the moment we support 0.3 APIs */
                     dev->setFeature = set_feature;
+                    /* At the moment we support 0.3 APIs */
                     dev->get_number_of_platform_modes = NULL;
                     dev->get_platform_low_power_stats = NULL;
                     dev->get_voter_list = NULL;
@@ -198,13 +177,13 @@ struct power_module HAL_MODULE_INFO_SYM = {
             .module_api_version = POWER_MODULE_API_VERSION_0_3,
             .hal_api_version = HARDWARE_HAL_API_VERSION,
             .id = POWER_HARDWARE_MODULE_ID,
-            .name = "QCOM Power HAL",
-            .author = "Qualcomm",
+            .name = "QTI Power HAL",
+            .author = "QTI",
             .methods = &power_module_methods,
         },
 
     .init = power_init,
     .powerHint = power_hint,
     .setInteractive = set_interactive,
-    .setFeature = set_feature
+    .setFeature = set_feature,
 };
