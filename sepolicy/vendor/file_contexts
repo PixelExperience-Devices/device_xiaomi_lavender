@@ -62,6 +62,7 @@
 /dev/block/platform/soc/7c4000.sdhci/by-name/mdtp                               u:object_r:mdtp_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/dip                                u:object_r:dip_device:s0
 /dev/block/platform/soc/7c4000.sdhci/by-name/storsec                            u:object_r:boot_block_device:s0
+/dev/block/platform/soc/7c4000.sdhci/by-name/misc                               u:object_r:misc_block_device:s0
 
 # Secure Element
 /data/vendor/secure_element(/.*)?                                   u:object_r:secure_element_vendor_data_file:s0
