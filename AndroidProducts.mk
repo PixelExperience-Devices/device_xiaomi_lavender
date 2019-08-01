@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/mk_lavender.mk
+    $(LOCAL_DIR)/aosp_lavender.mk
