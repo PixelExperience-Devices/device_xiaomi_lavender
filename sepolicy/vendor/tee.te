@@ -1,2 +1,0 @@
-#============= tee ==============
-allow tee fingerprintd_data_file:file { read write };

@@ -1,2 +1,0 @@
-#============= thermal-engine ==============
-allow thermal-engine property_socket:sock_file write;

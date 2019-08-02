@@ -1,4 +1,0 @@
-#============= system_app ==============
-allow system_app vendor_default_prop:file { getattr open read };
-allow system_app wificond:binder call;
-add_service(system_app, goodix_fingerprint_service)

@@ -1,1 +1,0 @@
-allow hal_ir_default ir_dev_file:chr_file { open read write };
