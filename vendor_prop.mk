@@ -81,7 +81,7 @@ drm.service.enabled=true
 
 #enable headset calibration
 PRODUCT_PROPERTY_OVERRIDES += \
-audio.volume.headset.gain.depcal=true
+vendor.audio.volume.headset.gain.depcal=true
 
 #add dynamic feature flags here
 PRODUCT_PROPERTY_OVERRIDES += \
