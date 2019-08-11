@@ -40,7 +40,7 @@
     <integer name="config_notificationsBatteryMediumARGB">0xFFFFFF00</integer>
 
     <!-- Default value for led color when battery is fully charged -->
-    <integer name="config_notificationsBatteryFullARGB">0xFF00FF00</integer>
+    <integer name="config_notificationsBatteryFullARGB">0x00000000</integer>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
