@@ -1,3 +1,7 @@
+# HW Info
+/sys/devices/platform/HardwareInfo(/.*)? u:object_r:sysfs_info:s0
+/sys/devices/platform/HardwareInfo/gsensor  u:object_r:sysfs_info:s0
+
 # IR
 /dev/spidev7\.1  u:object_r:ir_dev_file:s0
 

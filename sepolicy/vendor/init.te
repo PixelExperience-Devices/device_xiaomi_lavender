@@ -1,0 +1,2 @@
+allow init sysfs_info:file { open read };
+allow init sysfs:file setattr;
