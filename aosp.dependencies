@@ -10,7 +10,7 @@
     "remote": "lineage"
   },
   {
-    "repository": "BeastRoms-Devices/kernel_xiaomi_lavender",
+    "repository": "nunocodex/kernel_xiaomi_lavender",
     "target_path": "kernel/xiaomi/lavender"
   }
 ]
