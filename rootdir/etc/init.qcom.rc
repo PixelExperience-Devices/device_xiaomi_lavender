@@ -462,12 +462,6 @@ on post-fs-data
     #Start move time data to /data/vendor once post-fs-data done
     start vendor.move_time_data
 
-service nqnfcinfo /system/vendor/bin/nqnfcinfo
-    class late_start
-    group nfc
-    user system
-    oneshot
-
 service iop /system/vendor/bin/iop
     class main
     user root
@@ -669,7 +663,7 @@ service qmiproxy /system/bin/qmiproxy
 service vendor.qmuxd /system/vendor/bin/qmuxd
     class main
     user root
-    group radio audio bluetooth gps nfc diag
+    group radio audio bluetooth gps diag
     disabled
 
 service vendor.netmgrd /system/vendor/bin/netmgrd
@@ -1191,11 +1185,6 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
     user system
     group system
-
-service esepmdaemon /system/vendor/bin/esepmdaemon
-    class core
-    user system
-    group nfc
 
 on charger
     setprop persist.sys.usb.config mass_storage
