@@ -4,12 +4,6 @@
     "target_path": "device/xiaomi/lavender"
   },
   {
-    "repository":  "android_packages_resources_devicesettings",
-    "target_path": "packages/resources/devicesettings",
-    "branch": "lineage-16.0",
-    "remote": "lineage"
-  },
-  {
     "repository": "nunocodex/kernel_xiaomi_lavender",
     "target_path": "kernel/xiaomi/lavender"
   }
