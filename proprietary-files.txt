@@ -35,6 +35,7 @@ vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/nuance.scd
 
 # Alarm
+-framework/vendor.qti.hardware.alarm-V1.0-java.jar
 -vendor/app/PowerOffAlarm/PowerOffAlarm.apk
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
 vendor/bin/power_off_alarm
@@ -733,6 +734,7 @@ vendor/lib64/vendor.qti.ims.callinfo@1.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 
 # Sensors
+-framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 vendor/bin/sensors.qti
 vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/etc/elliptic_sensor.xml
