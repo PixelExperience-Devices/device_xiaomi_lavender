@@ -735,6 +735,7 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 # Sensors
 vendor/bin/sensors.qti
 vendor/etc/sensors/sensor_def_qcomdev.conf
+vendor/etc/elliptic_sensor.xml
 vendor/lib/hw/activity_recognition.sdm660.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
