@@ -39,6 +39,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp \
     ro.opengles.version=196610 \
     vendor.qcom.bluetooth.soc=cherokee \
+    persist.bluetooth.bluetooth_audio_hal.disabled=true \
     af.fast_track_multiplier=1 \
     vendor.audio_hal.period_size=192 \
     ro.vendor.audio.sdk.fluencetype=fluence \
