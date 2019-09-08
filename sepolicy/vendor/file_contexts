@@ -20,10 +20,6 @@
 /firmware                                                     u:object_r:firmware_file:s0
 /bt_firmware                                                  u:object_r:bt_firmware_file:s0
 
-# Input files
-/vendor/usr/idc(/.*)?                               u:object_r:idc_file:s0
-/vendor/usr/keylayout(/.*)?                         u:object_r:keylayout_file:s0
-
 # Amplifier
 /(vendor|system/vendor)/bin/tinymix                           u:object_r:vendor_tinyalsa_exec:s0
 

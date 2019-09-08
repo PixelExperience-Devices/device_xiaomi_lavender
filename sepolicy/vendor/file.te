@@ -6,7 +6,3 @@ allow ueventd ir_dev_file:chr_file { create setattr };
 type fingerprintd_device, file_type, dev_type;
 type persist_fingerprint_file, file_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
-
-# Input files
-type idc_file, file_type, vendor_file_type;
-type keylayout_file, file_type, vendor_file_type;
