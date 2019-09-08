@@ -16,8 +16,8 @@ TARGET_SCREEN_WIDTH := 1080
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage 
- 
+    $(LOCAL_PATH)/overlay-lineage
+
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
@@ -120,6 +120,10 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service\
     Snap
+
+# Camera  Shims
+PRODUCT_PACKAGES += \
+    camera.sdm660_shim
 
 # CNE
 PRODUCT_PACKAGES += \
