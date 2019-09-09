@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
- * Copyright (C) 2018 The LineageOS Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_sdm660"
+
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_lavender"
 
 #include <hardware/hw_auth_token.h>
 
