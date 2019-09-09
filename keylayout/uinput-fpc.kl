@@ -8,7 +8,9 @@
 # as published by the Free Software Foundation.
 #
 
+
 key 96    POWER VIRTUAL
+
 #key 102   HOME
 #key 105   DPAD_LEFT
 #key 106   DPAD_RIGHT
