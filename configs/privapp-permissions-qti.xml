@@ -40,6 +40,9 @@ It allows additional grants on top of privapp-permissions-platform.xml
     <privapp-permissions package="com.qualcomm.qcrilmsgtunnel">
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
     </privapp-permissions>
+    <privapp-permissions package="se.dirac.acs">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
 
     <privapp-permissions package="org.codeaurora.dialer">
         <permission name="android.permission.ALLOW_ANY_CODEC_FOR_PLAYBACK"/>
@@ -54,10 +57,6 @@ It allows additional grants on top of privapp-permissions-platform.xml
     </privapp-permissions>
 
     <privapp-permissions package="org.codeaurora.qti.qtiNetworkApp">
-        <permission name="android.permission.MODIFY_PHONE_STATE"/>
-    </privapp-permissions>
-
-    <privapp-permissions package="org.codeaurora.qti.nrNetworkSettingApp">
         <permission name="android.permission.MODIFY_PHONE_STATE"/>
     </privapp-permissions>
 
@@ -79,6 +78,11 @@ It allows additional grants on top of privapp-permissions-platform.xml
 
     <privapp-permissions package="com.qualcomm.qti.carrierswitch">
         <permission name="android.permission.REBOOT"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.qualcomm.wfd.service">
+        <permission name="android.permission.READ_FRAME_BUFFER"/>
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
     </privapp-permissions>
 
     <privapp-permissions package="com.android.mms">
@@ -104,14 +108,4 @@ It allows additional grants on top of privapp-permissions-platform.xml
         <permission name="android.permission.READ_BLOCKED_NUMBERS" />
         <permission name="android.permission.VIBRATE" />
     </privapp-permissions>
-
-    <privapp-permissions package="com.skyhook.blp">
-        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
-    </privapp-permissions>
-
-    <!--caoyang_20181221 HTH-41877 Add permission for DiracAudioControlService -->
-    <privapp-permissions package="se.dirac.acs">
-        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
-    </privapp-permissions>
-
 </permissions>
