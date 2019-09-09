@@ -129,7 +129,7 @@ case "$target" in
             365|366)
                 sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc1/sku_version` 2> /dev/null
                 if [ $sku_ver -eq 1 ]; then
-                    setprop vendor.media.sm7150.version 1
+                    setprop vendor.media.sdmmagpie.version 1
                 fi
                 ;;
             355)
@@ -387,7 +387,15 @@ case "$product" in
         ;;
 esac
 case "$product" in
-        "talos_au")
+        "sm6150_au")
+         setprop vendor.display.lcd_density 160
+         ;;
+        *)
+        ;;
+esac
+
+case "$product" in
+        "sdmshrike_au")
          setprop vendor.display.lcd_density 160
          ;;
         *)

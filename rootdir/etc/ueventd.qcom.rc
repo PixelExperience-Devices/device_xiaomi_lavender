@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2015, 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2015, 2017-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -56,7 +56,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/ipa_odl_ctl          0660   radio      radio
 /dev/ipa_adpl             0660   system     oem_2905
 /dev/hab                  0666   system     system
-/dev/spidev0.1            0660  system 	    system
+/dev/synx_device          0660   root       camera
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -139,6 +139,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/sec_nvm_*            0660   system     system
 /dev/cryptoapp            0660   system     system
 /dev/spdaemon_ssr         0660   system     system
+/dev/cam-hyp-intf*        0660   system     camera
 /dev/gemini0              0660   system     camera
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
@@ -161,6 +162,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/soc/a000000.qcom,wcnss-wlan/net/wlan0/queues/rx-* rps_cpus           0660   system     system
 /sys/devices/soc/a000000.qcom,wcnss-wlan/net/p2p0/queues/rx-* rps_cpus            0660   system     system
 /dev/spidev0.0            0660   system     audio
+/dev/i2c-7                0660   system     audio
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
 /dev/mercury0             0660   system     camera
@@ -277,12 +279,6 @@ firmware_directories /vendor/firmware_mnt/image/
 # GNSS PPS Device premissions
 /dev/pps*                  0660   gps     gps
 
-# fpc fingerprint
-/sys/devices/platform/soc/soc:fpc1020*  hw_reset          0660 system system
-/sys/devices/platform/soc/soc:fpc1020*  irq               0660 system system
-/sys/devices/platform/soc/soc:fpc1020*  wakeup_enable     0660 system system
-/sys/devices/platform/soc/soc:fpc1020*  fingerdown_wait   0220 system system
-
 # laser sensor access
 /sys/devices/virtual/input/input*                   enable_ps_sensor 0660  system   input
 /sys/devices/virtual/input/input*                   set_delay_ms     0660  system   input
@@ -305,11 +301,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/bus/pci/drivers/wil6210* 0000:01:00.0/net/wigig0/queues/rx-0/rps_cpus 0660 system system
 /sys/bus/pci/drivers/wil6210* 0000:01:00.0/net/wigig0/gro_flush_timeout 0660 system system
 /sys/devices/virtual/net/bond0 queues/rx-0/rps_cpus 0660 system system
-
-#nfc permissions
-/dev/nfc-nci              0660    nfc         nfc
-/dev/nq-nci               0660    nfc         nfc
-/dev/assd                 0660    nfc         nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -340,6 +331,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/block/platform/soc/c0c4000.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/1d84000.ufshc/by-name/frp       0600   system     system
 /dev/block/platform/soc/7c4000.sdhci/by-name/frp        0600   system     system
+/dev/block/platform/soc/4744000.sdhci/by-name/frp       0600   system     system
+/dev/block/platform/soc/4804000.ufshc/by-name/frp       0600   system     system
 
 # This is temporary while using SD card for initial bring-up
 /dev/block/platform/soc/8804000.sdhci/by-name/frp       0600   system     system
@@ -357,12 +350,6 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/leds/blue     delay_on     0640    system    system
 /sys/class/leds/blue     delay_off    0640    system    system
 /sys/class/leds/blue     breath       0640    system    system
-
-#add sdg For Cit
-/sys/class/leds/led:torch_0	brightness	0644    system    system
-/sys/class/leds/led:torch_1	brightness	0644    system    system
-/sys/class/leds/led:switch_0	brightness	0644    system    system
-/sys/class/leds/led:switch_1	brightness	0644    system    system
 
 # NPU device
 /dev/msm_npu             0644   system     system
@@ -407,3 +394,27 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/graphics/fb0     dynamic_bitclk           0664    system  graphics
 
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
+
+#QG device
+/dev/qg               0660   system     system
+/dev/qg_battery       0660   system     system
+
+# fpc fingerprint
+/sys/devices/soc/soc:fpc1020*   hw_reset 0660 system system
+/sys/devices/soc/soc:fpc1020*   irq 0660 system system
+/sys/devices/soc/soc:fpc1020*   wakeup_enable 0660 system system
+/sys/devices/soc/soc:fpc1020*    fingerdown_wait 0220 system system
+
+# leds
+/sys/class/leds/red      delay_on     0640    system    system
+/sys/class/leds/red      delay_off    0640    system    system
+/sys/class/leds/red      breath       0640    system    system
+/sys/class/leds/green    delay_on     0640    system    system
+/sys/class/leds/green    delay_off    0640    system    system
+/sys/class/leds/green    breath       0640    system    system
+/sys/class/leds/blue     delay_on     0640    system    system
+/sys/class/leds/blue     delay_off    0640    system    system
+/sys/class/leds/blue     breath       0640    system    system
+
+# ir
+/dev/spidev7.1            0660   system            system
