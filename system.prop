@@ -1,0 +1,281 @@
+#
+# system.prop for sdm660
+#
+
+#rild.libpath=/system/lib/libreference-ril.so
+rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+#rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+DEVICE_PROVISIONED=1
+
+#
+# Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
+#
+ro.telephony.default_network=22,20
+
+debug.sf.enable_hwc_vds=1
+debug.cpurend.vsync=false
+debug.sf.early_app_phase_offset_ns=1500000
+debug.sf.early_gl_phase_offset_ns=3000000
+debug.sf.early_gl_app_phase_offset_ns=15000000
+debug.sf.early_phase_offset_ns=1500000
+debug.sf.hw=1
+debug.sf.latch_unsignaled=1
+debug.gralloc.enable_fb_ubwc=1
+dalvik.vm.heapsize=36m
+dev.pm.dyn_samplingrate=1
+persist.demo.hdmirotationlock=false
+#Disable Skip Validate
+sdm.debug.disable_skip_validate=1
+
+# Make data selection stick in dual SIM devices
+persist.radio.aosp_usr_pref_sel=true
+
+#Property to enable display default color mode
+vendor.display.enable_default_color_mode=1
+
+# Display Properties as per treble compliance
+vendor.gralloc.enable_fb_ubwc=1
+vendor.display.disable_skip_validate=1
+
+#ro.hdmi.enable=true
+#
+# system props for the cne module
+#
+persist.vendor.cne.feature=1
+
+#system props for the MM modules
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-scan=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+mm.enable.smoothstreaming=true
+persist.mm.enable.prefetch=true
+
+#property to enable narrow search range for video encoding
+vidc.enc.target_support_bframe=1
+vendor.vidc.enc.disable_bframes=1
+vendor.vidc.dec.enable.downscalar=1
+
+# enable PQ feature by default
+vendor.vidc.enc.disable.pq=false
+
+# Additional buffers shared between Camera and Video
+vidc.enc.dcvs.extra-buff-count=2
+
+#Netflix custom property
+ro.netflix.bsp_rev=Q660-13149-1
+
+#
+# system props for the data modules
+#
+ro.vendor.use_data_netmgrd=true
+persist.vendor.data.mode=concurrent
+#system props for time-services
+persist.timed.enable=true
+
+# system property for maximum number of HFP client connections
+bt.max.hfpclient.connections=1
+
+# System property for cabl
+ro.qualcomm.cabl=0
+ro.vendor.display.cabl=0
+
+#
+# System props for telephony
+# System prop to turn on CdmaLTEPhone always
+telephony.lteOnCdmaDevice=1
+
+#Simulate sdcard on /data/media
+#
+persist.fuse_sdcard=true
+
+#system prop for wipower support
+ro.bluetooth.emb_wp_mode=true
+ro.bluetooth.wipower=true
+
+#
+#snapdragon value add features
+#
+
+#minimum duration for offload playback in secs
+audio.offload.min.duration.secs=30
+
+#enable offload audio video playback by default
+audio.offload.video=true
+
+#enable music through deep buffer
+audio.deep_buffer.media=true
+
+#system prop for RmNet Data
+persist.data.df.dev_name=rmnet_usb0
+
+#
+# system property determining camera HAL to be used for a Video call
+#
+# 1 is camera1
+# 2 or anything else is camera2
+persist.radio.VT_CAM_INTERFACE=2
+
+# cherrypick form d2s  for video call
+persist.vendor.qti.telephony.vt_cam_interface=1
+
+#property to enable user to access Google WFD settings
+persist.debug.wfd.enable=1
+#Enable stm-events
+persist.debug.coresight.config=stm-events
+##property to choose between virtual/external wfd display
+persist.sys.wfd.virtual=0
+
+#min/max cpu in core control
+ro.vendor.qti.core_ctl_min_cpu=2
+ro.vendor.qti.core_ctl_max_cpu=4
+
+# Enable B-services
+ro.vendor.qti.sys.fw.bservice_enable=true
+
+#Bringup properties
+persist.vendor.radio.atfwd.start=true
+
+#property to enable VDS WFD solution
+persist.hwc.enable_vds=1
+
+#Persistent Motion Detector
+ro.vendor.sensors.pmd=true
+#Stationary Detector
+ro.vendor.sensors.sta_detect=true
+#Motion Detector
+ro.vendor.sensors.mot_detect=true
+#enable pickup gesture
+ro.vendor.sensors.pug = true
+
+#Expose aux camera for below packages
+vendor.camera.aux.packagelist=org.codeaurora.snapcam
+
+# enable b-services aging propagation
+ro.vendor.qti.sys.fw.bservice_enable=true
+
+#disable UBWC for camera
+persist.vendor.camera.preview.ubwc=0
+persist.vendor.camera.isp.clock.optmz=0
+persist.vendor.camera.isp.turbo=1
+persist.vendor.camera.imglib.usefdlite=1
+persist.vendor.camera.expose.aux=1
+persist.vendor.camera.HAL3.enabled=1
+
+# add for exif info
+persist.vendor.camera.manufacturer=Xiaomi
+persist.vendor.camera.model=Redmi Note 7
+
+#set maximum supported adapter voltage
+persist.chg.max_volt_mv=9000
+
+#add for dirac algo tsx 9/12
+persist.dirac.acs.controller=qem
+persist.dirac.acs.storeSettings=1
+persist.dirac.acs.ignore_error=1
+
+#set for xiaomi headset effect
+ro.audio.soundfx.dirac=true
+
+#system prop for Bluetooth SOC type
+vendor.bluetooth.soc=cherokee
+persist.vendor.btstack.enable.splita2dp=true
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+persist.vendor.btstack.avrcp-playstatus.blacklist=true
+
+# Property for backup NTP Server
+persist.backup.ntpServer="0.pool.ntp.org"
+# enable IZat OptInApp overlay
+persist.vendor.overlay.izat.optin=rro
+
+# ro.location properties below are used in conjunction
+# with NLP_MODE setting in /vendor/etc/izat.conf
+# either as the main network provider or as a fallback
+# provider depending on NLP_MODE that is set
+# These properties are optional and will not cause
+# issues if not set to existing packages.
+# ro.location.osnlp.package sets the name of default
+# OS sepecific network location provider package to use
+# ro.location.osnlp.region.package is set to the name
+# of the alternative network location provider package
+# to be used for a particular region where the default
+# network location provider is not functional
+ro.location.osnlp.package=com.google.android.gms
+ro.location.osnlp.region.package=
+
+#use camera2 api
+persist.sys.camera.camera2=true
+
+#disable awb sync in bokeh mode
+persist.vendor.camera.awb.sync=2
+
+#lct.ydt 20180911 add for voWIFI
+#iwaln vowifi corresponding
+persist.vendor.data.iwlan.enable=true
+
+#HTH-30190 connect wifi, set 3G pre,observe Mobile network type should display UMTS but IWLAN.
+persist.vendor.radio.data_con_rprt=1
+
+#lct.ydt 20180911 add for ignore OOS 5 seconds
+persist.vendor.radio.snapshot_enabled=1
+persist.vendor.radio.snapshot_timer=5
+persist.radio.sib16_support=1
+
+#lct liuxuan add the dom ignore time
+persist.vendor.radio.ignore_dom_time=15
+
+#add for color invert
+ro.vendor.df.effect.conflict=1
+persist.sys.df.extcolor.proc=0
+
+#paper mode
+sys.paper_mode_max_level=255
+sys.tianma_nt36672a_offset=6
+sys.tianma_nt36672a_length=42
+sys.boe_td4320_offset=-9
+sys.boe_td4320_length=42
+sys.shenchao_nt36672a_offset=-10
+sys.shenchao_nt36672a_length=38
+
+# Enable all system restart_level to relative
+persist.vendor.ssr.restart_level=ALL_ENABLE
+
+# Thermal configs path
+sys.thermal.data.path=/data/vendor/thermal/
+
+# miui
+debug.sf.disable_backpressure=1
+keyguard.no_require_sim=true
+persist.vendor.radio.report_codec=1
+persist.vendor.radio.redir_party_num=1
+ro.config.media_vol_default=10
+persist.radio.apm_sim_not_pwdn=1
+
+# IMS
+persist.dbg.ims_volte_enable=1
+persist.radio.videopause.mode=1
+persist.data.iwlan.enable=true
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1 
+persist.radio.VT_HYBRID_ENABLE=1
+
+# dpi
+ro.sf.lcd_density=420
+
+# proximity
+gsm.proximity.enable=true
+ro.lge.proximity.delay=200
+mot.proximity.delay=200
