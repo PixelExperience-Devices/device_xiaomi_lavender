@@ -1,2 +1,1 @@
-allow hal_perf_default init:dir { read search open };
-allow hal_perf_default kernel:dir  { read search open };
+dontaudit hal_perf_default self:capability { dac_override dac_read_search };

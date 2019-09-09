@@ -1,1 +1,1 @@
-dontaudit vold self:capability dac_read_search;
+dontaudit vold vendor_file:file { getattr open read };

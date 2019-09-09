@@ -1,37 +1,26 @@
-# Audio
-tas.smartamp.           u:object_r:vendor_audio_prop:s0
-
 # Camera
-persist.camera.         u:object_r:vendor_camera_prop:s0
-persist.vendor.camera.  u:object_r:vendor_camera_prop:s0
-ro.boot.hwc             u:object_r:vendor_camera_prop:s0
-ro.camera.              u:object_r:vendor_camera_prop:s0
-camera.                 u:object_r:vendor_camera_prop:s0
-vendor.camera           u:object_r:vendor_camera_prop:s0
-
-# CHRE
-vendor.chre.enabled              u:object_r:vendor_chre_enabled_prop:s0
+camera.                             u:object_r:camera_prop:s0
+cameradaemon.SaveMemAtBoot          u:object_r:camera_prop:s0
+cpp.set.clock                       u:object_r:camera_prop:s0
+disable.cpp.power.collapse          u:object_r:camera_prop:s0
+persist.camera.                     u:object_r:camera_prop:s0
+persist.vendor.camera.              u:object_r:vendor_camera_prop:s0
 
 # Fingerprint
-gf.debug.dump_data u:object_r:vendor_fp_prop:s0
-persist.sys.fp.  u:object_r:vendor_fp_prop:s0
-ro.boot.fp.  u:object_r:vendor_fp_prop:s0
-ro.boot.fpsensor u:object_r:vendor_fp_prop:s0
-persist.vendor.fpc.  u:object_r:vendor_fp_prop:s0
-
-# Media
-vendor.media.sm6150.version      u:object_r:vendor_media_sm6150_version_prop:s0
+gf.debug.dump_data                  u:object_r:vendor_fp_prop:s0
+persist.sys.fp.                     u:object_r:vendor_fp_prop:s0
+persist.vendor.sys.fp.              u:object_r:vendor_fp_prop:s0
+ro.boot.fp.                         u:object_r:vendor_fp_prop:s0
+sys.fp.                             u:object_r:vendor_fp_prop:s0
+ro.boot.fpsensor                    u:object_r:vendor_fp_prop:s0
 
 # Mlipay
-persist.sys.ifaa                    u:object_r:ifaa_prop:s0
-persist.vendor.sys.pay.		    u:object_r:ifaa_prop:s0
+persist.vendor.sys.pay.ifaa         u:object_r:ifaa_prop:s0
 
-# Perf
-persist.vendor.perfservice.	u:object_r:vendor_mpctl_prop:s0
+# Thermal engine
+persist.sys.thermal.                u:object_r:thermal_prop:s0
+sys.thermal.                        u:object_r:thermal_prop:s0
 
-# RIL
-ro.vendor.ril u:object_r:vendor_radio_prop:s0
-
-# Thermal
-sys.thermal.			u:object_r:thermal_engine_prop:s0
-persist.sys.thermal.		u:object_r:thermal_engine_prop:s0
+# vendor_default_prop
+fpc_kpi                             u:object_r:vendor_default_prop:s0
+gpu.stats.debug.level               u:object_r:vendor_default_prop:s0

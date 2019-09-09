@@ -1,2 +1,0 @@
-allow webview_zygote mnt_expand_file:dir getattr;
-allow webview_zygote zygote:unix_dgram_socket write;

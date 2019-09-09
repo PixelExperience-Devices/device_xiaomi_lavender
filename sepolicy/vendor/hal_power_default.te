@@ -1,2 +1,3 @@
-allow hal_power_default proc_touchpanel:file { w_file_perms read };
-allow hal_power_default proc_touchpanel:dir search;
+allow hal_power_default sysfs_tap_to_wake:file rw_file_perms;
+r_dir_file(hal_power_default, debugfs_wlan)
+allow hal_power_default proc:file { open write };

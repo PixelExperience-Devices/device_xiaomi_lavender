@@ -1,2 +1,8 @@
-allow system_app sysfs_fp_proximity:file { w_file_perms getattr };
-allow system_app fs_bpf:dir search;
+#============= system_app ==============
+allow system_app vendor_default_prop:file { getattr open read };
+allow system_app wificond:binder call;
+allow system_app hal_mlipay_hwservice:hwservice_manager find;
+allow system_app hal_mlipay_default:binder call;
+allow system_app sysfs_zram:dir search;
+allow system_app sysfs_zram:file read;
+allow system_app proc_pagetypeinfo:file { getattr open read };
