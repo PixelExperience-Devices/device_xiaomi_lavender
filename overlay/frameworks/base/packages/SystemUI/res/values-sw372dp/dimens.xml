@@ -16,5 +16,7 @@
 */
 -->
 <resources>
-    <dimen name="rounded_corner_content_padding">36px</dimen>
+    <dimen name="rounded_corner_radius">16dp</dimen>
+    <dimen name="rounded_corner_content_padding">16dp</dimen>
+    <dimen name="status_bar_extra_padding">12dp</dimen>
 </resources>
