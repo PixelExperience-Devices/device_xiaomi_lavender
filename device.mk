@@ -419,6 +419,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libicuuc.vendor \
     libstdc++.vendor \
+    libgui_vendor \
     vndk_package
 
 # Wifi
