@@ -173,7 +173,6 @@ persist.vendor.camera.isp.clock.optmz=0
 persist.vendor.camera.isp.turbo=1
 persist.vendor.camera.imglib.usefdlite=1
 persist.vendor.camera.expose.aux=1
-persist.vendor.camera.HAL3.enabled=1
 
 # add for exif info
 persist.vendor.camera.manufacturer=Xiaomi
