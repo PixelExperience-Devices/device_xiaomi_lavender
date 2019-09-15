@@ -1,0 +1,2 @@
+type avb_file, file_type;
+type cust_file, file_type;

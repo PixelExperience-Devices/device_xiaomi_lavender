@@ -1,0 +1,5 @@
+# Root Symlinks
+/bt_firmware(/.*)?       u:object_r:bt_firmware_file:s0
+/firmware(/.*)?          u:object_r:firmware_file:s0
+/avb(/.*)?               u:object_r:avb_file:s0
+/cust(/.*)?              u:object_r:cust_file:s0
