@@ -369,7 +369,8 @@ PRODUCT_PACKAGES += \
     init.qcom.sensors.sh \
     init.target.rc \
     ueventd.qcom.rc \
-    fstab.qcom
+    fstab.qcom \
+    init.safailnet.rc
 
 # RCS
 PRODUCT_PACKAGES += \
