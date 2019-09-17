@@ -1152,24 +1152,11 @@ vendor/etc/qdcm_calib_data_shenchao_nt36672a_fhdplus_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_tianma_nt36672a_fhdplus_video_mode_dsi_panel.xml
 
 # DPM - from Redmi K20 V10.3.6.0.PFJCNXM
-bin/dpmd|b4ab23a880c43a5e32c1b74c3743445d64c3cf25
-etc/dpm/dpm.conf|fec89edb6cff81424a6c3a730fed92efa3613f72
-etc/init/dpmd.rc|52ca6ad920a1804e4ff608113cece063730f5e0c
-etc/permissions/com.qti.dpmframework.xml|36b94c9338069e434b83359a92cdc7ff62b822df
-etc/permissions/dpmapi.xml|ded29f9befaef20a7ccee0c75427fda1d1d04890
-framework/com.qti.dpmframework.jar|2a6ff555ebff148a508fc7ea2fbeaee4b9a2dff6
-framework/dpmapi.jar|89ddc5bf0c4c88a3f341169edc4d89f9e834337b
 framework/tcmclient.jar|91b415288494fa208b5f5ec9fafa33c47e569c96
--priv-app/dpmserviceapp/dpmserviceapp.apk|a642336052f3e5d70580700e2aebba230a5f663f
 lib64/com.qualcomm.qti.dpm.api@1.0.so|99df73ba93fe95e98cb64069592675e1751aaee2
 lib64/libdiag_system.so|9e6e39892961871e42e3b33c850f968b51c61d09
-lib64/libdpmctmgr.so|20101d5929ba97f16083ad9c71933111cb9ae8ff
-lib64/libdpmfdmgr.so|45061fee7721b8f94aef431f589e4024d4eae374
-lib64/libdpmframework.so|623095565a453e10498a5a28ef689f52c85e8784
-lib64/libdpmtcm.so|1b43a23871a0a247e4adbe1e63c5e0864740938b
 vendor/bin/dpmQmiMgr|5c8868fa54fe77e5bdef995950843ab35bf4e686
 vendor/lib64/libdpmqmihal.so|e7dbf5ed0bd789da89faf35027dfd2b8f303b192
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|ecf91d0902c45d133425f69903844d26871c60c8
 
 # DRM
 vendor/bin/qseecomd
