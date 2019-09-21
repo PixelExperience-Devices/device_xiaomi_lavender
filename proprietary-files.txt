@@ -34,13 +34,13 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/nuance.scd
 
-# Power-off alarm
--vendor/app/PowerOffAlarm/PowerOffAlarm.apk
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
-vendor/bin/power_off_alarm
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so
+# Alarm - from raphael-user 10 QKQ1.190716.003 V10.4.6.0.QFKCNXM release-keys
+-product/app/PowerOffAlarm/PowerOffAlarm.apk|04fa09a343309407aae6a06e3d92056e7b299df1
+product/framework/vendor.qti.hardware.alarm-V1.0-java.jar|69dedc62181ae26bb2fac4eaacb1f2c38eb21c31
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|ace444a46744cc1f99b579ff57503d3be6d33e1b
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc23dba77101b3d6980
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|4e66cbe25c3b31662b986ee3b58160f526f04e07
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so|af14bdb67a6ea27662a607fff62bd06b20cf8607
 
 # ANT+ (system)
 lib/com.qualcomm.qti.ant@1.0.so
