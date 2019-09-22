@@ -1171,9 +1171,6 @@ vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|ecf91d0902c45d133425f69903844d26871
 vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libsdedrm.so
-vendor/lib64/libcpion.so
-vendor/lib64/libcppf.so
-vendor/lib64/liboemcrypto.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -1188,14 +1185,25 @@ vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
+
+# DRM - Widevine
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/libbase64.so
+vendor/lib/libcpion.so
+vendor/lib/libcppf.so
+vendor/lib64/libwvhidl.so
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+vendor/lib64/mediadrm/libwvdrmengine.so
+vendor/lib64/libbase64.so
+vendor/lib64/libcpion.so
+vendor/lib64/libcppf.so
 vendor/lib64/libhdcp1prov.so
 vendor/lib64/libhdcp2p2prov.so
 vendor/lib64/libhdcpsrm.so
-
-# DRM
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine
-vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
-vendor/lib64/libwvhidl.so
+vendor/lib64/liboemcrypto.so
 
 # ESE-Powermanager
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
