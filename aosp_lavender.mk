@@ -43,4 +43,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := "google/blueline/blueline:10/QP1A.191005.007/5878874:user/release-keys"
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+
 TARGET_VENDOR := Xiaomi
