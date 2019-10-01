@@ -173,4 +173,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.data_con_rprt=1 \
     persist.radio.calls.on.ims=1
 
->>>>>>> c7dcb81... lavender: Force disable bluetooth audio hal 2.0
+# Debug Options
+PRODUCT_PROPERTY_OVERRIDES += \
+   persist.dbg.ims_volte_enable=1 \
+   persist.dbg.volte_avail_ovr=1 \
+   persist.dbg.vt_avail_ovr=1 \
+   persist.dbg.wfc_avail_ovr=1
+
+# Radio Options
+PRODUCT_PROPERTY_OVERRIDES += \
+   persist.vendor.radio.rat_on=combine \
+   persist.vendor.radio.data_ltd_sys_ind=1 \
+   persist.vendor.radio.data_con_rprt=1 \
+   persist.radio.calls.on.ims=1
