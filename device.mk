@@ -130,41 +130,18 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    bluedut.sh \
-    bt_close.sh \
-    capture_audio.sh \
     init.class_main.sh \
-    init.crda.sh \
-    init.mdm.sh \
-    init.qcom.class_core.sh \
-    init.qcom.coex.sh \
-    init.qcom.crashdata.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.efs.sync.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.sdio.sh \
-    init.qcom.sensors.sh \
-    init.qcom.sh \
-    init.qcom.syspart_fixup.sh \
-    init.qcom.usb.sh \
-    init.qcom.wifi.sh \
-    init.qti.fm.sh \
-    init.qti.ims.sh \
-    init.qti.qseecomd.sh \
-    loopback.sh \
-    myftm.agent.sh \
-    playback.sh \
-    playback_audio.sh \
-    qca6234-service.sh \
-    wifitest.sh \
-    wifitest_close.sh \
     init.msm.usb.configfs.rc \
-    init.qcom.factory.rc \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
     init.qcom.rc \
+    init.qcom.sh \
     init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.qcom.sensors.sh \
     init.target.rc \
-    fstab.qcom \
     ueventd.qcom.rc \
+    fstab.qcom
 
 # Seccomp
 PRODUCT_COPY_FILES += \
