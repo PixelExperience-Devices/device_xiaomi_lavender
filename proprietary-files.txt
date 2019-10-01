@@ -1314,7 +1314,7 @@ vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libhdcpsrm.so
-vendor/lib64/liboemcrypto.so
+#vendor/lib64/liboemcrypto.so
 vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
@@ -1810,7 +1810,7 @@ vendor/lib64/vendor.qti.hardware.radio.ims@1.4.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/lib64/vendor.qti.ims.callinfo@1.0.so
-vendor/lib64/vendor.qti.ims.rcsconfig@1.0.s
+vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 
 # SSR
 vendor/bin/ssr_diag

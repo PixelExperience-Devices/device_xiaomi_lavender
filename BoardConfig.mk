@@ -4,8 +4,6 @@
 #
 
 
-BOARD_VENDOR := xiaomi
-
 DEVICE_PATH := device/xiaomi/lavender
 
 # Bootloader
