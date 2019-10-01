@@ -17,5 +17,5 @@
 
 <selector
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="#BFFFFFFF" />
+    <item android:color="#82000000" />
 </selector>
