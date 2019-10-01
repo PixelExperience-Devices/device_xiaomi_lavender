@@ -88,8 +88,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/vendor/lib64/libril-qc-hal-qmi.so \
     ro.vendor.audio.voice.volume.boost=manual \
     sys.autosuspend.timeout=500000
-<<<<<<< HEAD
-=======
 	persist.sys.job_delay=true \
 	persist.sys.mcd_config_file=/system/etc/mcd_default.conf \
 	ro.control_privapp_permissions=log \
