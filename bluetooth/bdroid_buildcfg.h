@@ -18,7 +18,8 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Xiaomi MI 6"
+#define BTM_DEF_LOCAL_NAME "Redmi Note 7"
+#undef PROPERTY_VALUE_MAX
 #define BLUETOOTH_QTI_SW TRUE
 // Disables read remote device feature
 #define MAX_ACL_CONNECTIONS   16
@@ -26,5 +27,8 @@
 #define BLE_VND_INCLUDED   TRUE
 // skips conn update at conn completion
 #define BT_CLEAN_TURN_ON_DISABLED 1
-#undef PROPERTY_VALUE_MAX
+
+/* Increasing SEPs to 12 from 6 to support SHO/MCast i.e. two streams per codec */
+#define AVDT_NUM_SEPS 12
+
 #endif
