@@ -102,7 +102,6 @@ vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
 # Bluetooth
-vendor/bin/btnvtool
 vendor/bin/hci_qcomm_init
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
