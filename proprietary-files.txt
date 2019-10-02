@@ -34,13 +34,13 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/nuance.scd
 
-# Power-off alarm
--vendor/app/PowerOffAlarm/PowerOffAlarm.apk
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
-vendor/bin/power_off_alarm
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so
+# Alarm - from raphael-user 10 QKQ1.190716.003 V10.4.6.0.QFKCNXM release-keys
+-product/app/PowerOffAlarm/PowerOffAlarm.apk|04fa09a343309407aae6a06e3d92056e7b299df1
+product/framework/vendor.qti.hardware.alarm-V1.0-java.jar|69dedc62181ae26bb2fac4eaacb1f2c38eb21c31
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|ace444a46744cc1f99b579ff57503d3be6d33e1b
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc23dba77101b3d6980
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|4e66cbe25c3b31662b986ee3b58160f526f04e07
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so|af14bdb67a6ea27662a607fff62bd06b20cf8607
 
 # ANT+ (system)
 lib/com.qualcomm.qti.ant@1.0.so
@@ -54,9 +54,9 @@ vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
-# AptX - from Nokia 7 Plus Onyx_00WW-user 9 PPR1.180610.011 00WW_3_22C release-keys
-lib64/libaptX_encoder.so|22f5749edb5099526788c22708099a7791dd837f
-lib64/libaptXHD_encoder.so|c4ad4d6d7615f7df3ea1a4be5c6dae8a8c8ee8b1
+# AptX - from crosshatch-user 10 QP1A.190711.020 5800535 release-keys
+lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Audio
 vendor/firmware/dbmd4_va_fw.bin
@@ -103,6 +103,10 @@ vendor/lib64/soundfx/libasphere.so|718aa55bf9a32cb77a6f5e8f33e776d30e2dadc9
 vendor/lib64/soundfx/libqcbassboost.so|1f9b4eca3f6b1fea872d90b943d2c434e25e0fa4
 vendor/lib64/soundfx/libqcreverb.so|d8ce60a46a0d20e21d3246742e08328606ddf960
 vendor/lib64/soundfx/libqcvirt.so|88349315d99cea68a3b766fa4c6e1181d26f561b
+
+# Bluetooth (aptX) - from crosshatch-user 10 QP1A.190711.020 5800535 release-keys
+product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Bluetooth
 vendor/bin/hci_qcomm_init
@@ -1171,9 +1175,6 @@ vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|ecf91d0902c45d133425f69903844d26871
 vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libsdedrm.so
-vendor/lib64/libcpion.so
-vendor/lib64/libcppf.so
-vendor/lib64/liboemcrypto.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -1188,14 +1189,25 @@ vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
+
+# DRM - Widevine
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
+vendor/lib/mediadrm/libdrmclearkeyplugin.so
+vendor/lib/mediadrm/libwvdrmengine.so
+vendor/lib/libbase64.so
+vendor/lib/libcpion.so
+vendor/lib/libcppf.so
+vendor/lib64/libwvhidl.so
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+vendor/lib64/mediadrm/libwvdrmengine.so
+vendor/lib64/libbase64.so
+vendor/lib64/libcpion.so
+vendor/lib64/libcppf.so
 vendor/lib64/libhdcp1prov.so
 vendor/lib64/libhdcp2p2prov.so
 vendor/lib64/libhdcpsrm.so
-
-# DRM
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine
-vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
-vendor/lib64/libwvhidl.so
+vendor/lib64/liboemcrypto.so
 
 # ESE-Powermanager
 vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
@@ -1700,10 +1712,11 @@ vendor/lib64/libthermalfeature.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
-# Time services - from LA.UM.7.2.r1-06900-sdm660.0
--vendor/app/TimeService/TimeService.apk|9e1a803c35bc748ebb26d55a447fd32577291a23
-vendor/bin/time_daemon|ac244644735005d4c4322168001dcd3ae757007f
-vendor/lib64/libtime_genoff.so|9de68b1aa139b06b0e455bd1c24ed0c527492c3b
+# Time services - from raphael-user 10 QKQ1.190716.003 V10.4.6.0.QFKCNXM release-keys
+-vendor/app/TimeService/TimeService.apk|27f9b81621c446baa8c37581d9bfbca2fd67b496
+vendor/bin/time_daemon|2652ed04ebe55219b5da38db021d43b38e9227d3
+vendor/lib/libtime_genoff.so|cd8a5cc7ccc598e3c3308980c45acb804baa5986
+vendor/lib64/libtime_genoff.so|746db5267fde236de820fa7d887386f65aea7a8a
 
 # TUI
 lib/vendor.qti.hardware.tui_comm@1.0.so

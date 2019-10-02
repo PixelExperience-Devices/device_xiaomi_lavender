@@ -58,7 +58,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/lavender
-TARGET_KERNEL_CONFIG := lineage-lavender_defconfig
+TARGET_KERNEL_CONFIG := lavender-perf_defconfig
 
 # dtbo
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -227,8 +227,9 @@ ENABLE_VENDOR_RIL_SERVICE := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 TARGET_USES_OLD_MNC_FORMAT := true
 
-# Security patch level
-VENDOR_SECURITY_PATCH := 2018-06-05
+
+# Security
+VENDOR_SECURITY_PATCH := 2018-10-05
 
 # Seccomp
 BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
@@ -249,10 +250,6 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
-
-# Vendor init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_lavender
-TARGET_RECOVERY_DEVICE_MODULES := libinit_lavender
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
