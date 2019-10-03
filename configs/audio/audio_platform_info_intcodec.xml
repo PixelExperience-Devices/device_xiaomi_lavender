@@ -73,6 +73,7 @@
         <!--param key="native_audio_mode" value="true"/-->
         <param key="hfp_pcm_dev_id" value="39"/>
         <param key="input_mic_max_count" value="4"/>
+		 <param key="hifi_filter" value="false"/>
     </config_params>
     <acdb_ids>
         <device name="SND_DEVICE_OUT_SPEAKER" acdb_id="15"/>
@@ -152,6 +153,7 @@
     </acdb_ids>
     <backend_names>
         <device name="SND_DEVICE_OUT_HEADPHONES" backend="headphones" interface="INT0_MI2S_RX"/>
+		<device name="SND_DEVICE_OUT_HEADPHONES_HIFI_FILTER" backend="headphones" interface="INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_HEADPHONES_KARAOKE" backend="headphones" interface="INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_HEADPHONES_CE" backend="headphones" interface="INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_HEADPHONES_NO_CE" backend="headphones" interface="INT0_MI2S_RX"/>
@@ -160,6 +162,7 @@
         <device name="SND_DEVICE_OUT_BT_A2DP" backend="bt-a2dp" interface="SLIMBUS_7_RX"/>
         <device name="SND_DEVICE_OUT_LINE" backend="headphones" interface="INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_ANC_HEADSET" backend="headphones" interface="INT0_MI2S_RX"/>
+		<device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES_HIFI_FILTER" backend="speaker-and-headphones" interface="PRI_MI2S_RX-and-INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" backend="speaker-and-headphones" interface="PRI_MI2S_RX-and-INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES_CE" backend="speaker-and-headphones" interface="PRI_MI2S_RX-and-INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES_NO_CE" backend="speaker-and-headphones" interface="PRI_MI2S_RX-and-INT0_MI2S_RX"/>
@@ -653,4 +656,3 @@
         </input_snd_device>
     </snd_devices>
 </audio_platform_info>
-
