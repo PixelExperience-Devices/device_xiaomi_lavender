@@ -412,8 +412,6 @@
     state changes. Voice radio tech change will always trigger an update of
     phone object irrespective of this config -->
     <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
-    <!--  Define Google play service package for FRP-->
-    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
 
     <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
     <bool name="config_supportAudioSourceUnprocessed">true</bool>
@@ -620,4 +618,15 @@
     <!-- reference volume index for music stream to limit headphone volume and display warning -->
     <integer name="config_safe_media_volume_index">8</integer>
 
+    <!-- Component name for default assistant on this device -->
+    <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
+
+    <!-- Whether to enable smart clock feature -->
+    <bool name="config_enableSmartClock">true</bool>
+
+    <!-- Default value for proximity check on screen wake
+     NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
+    <bool name="config_proximityCheckOnWake">true</bool>
+    <integer name="config_proximityCheckTimeout">100</integer>
+    <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
 </resources>

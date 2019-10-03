@@ -183,9 +183,6 @@ DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
-# Keystore
-TARGET_PROVIDES_KEYMASTER := true
-
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
 
@@ -268,16 +265,6 @@ WIFI_DRIVER_FW_PATH_P2P := "p2p"
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-
-# Enable dex pre-opt to speed up initial boot
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-    endif
-  endif
-endif
 
 # inherit from the proprietary version
 -include vendor/xiaomi/lavender/BoardConfigVendor.mk

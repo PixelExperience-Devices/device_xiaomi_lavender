@@ -33,7 +33,7 @@ PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-pe
 
 # RRO
 PRODUCT_ENFORCE_RRO_TARGETS := \
@@ -389,6 +389,9 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # Recovery
+PRODUCT_COPY_FILES += \
+    device/xiaomi/lavender/recovery/root/init.recovery.qcom.rc:root/init.recovery.qcom.rc
+
 PRODUCT_PACKAGES += \
     librecovery_updater_xiaomi
 

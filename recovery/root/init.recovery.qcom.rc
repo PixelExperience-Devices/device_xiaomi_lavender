@@ -1,0 +1,9 @@
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+on init
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller "a800000.dwc3"
+    # Xiaomi's bootloader doesn't set this for some reason
+    setprop ro.boot.vbmeta.avb_version ${ro.boot.avb_version}
