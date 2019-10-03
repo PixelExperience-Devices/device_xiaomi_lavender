@@ -9,7 +9,7 @@
 #
 
 
-key 96    POWER VIRTUAL
+#key 96    POWER VIRTUAL
 
 #key 102   HOME
 #key 105   DPAD_LEFT
