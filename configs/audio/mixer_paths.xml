@@ -2159,6 +2159,10 @@
         <path name="headphones" />
     </path>
 
+    <path name="headphones-hifi-filter">
+        <path name="headphones" />
+    </path>
+
     <path name="headphones-ce">
         <path name="headphones" />
         <ctl name="RX1 Digital Volume" value="74" />
@@ -2250,6 +2254,11 @@
         <path name="speaker" />
     </path>
 
+    <path name="speaker-and-headphones-hifi-filter">
+        <path name="headphones" />
+        <path name="speaker" />
+    </path>
+    
     <path name="speaker-and-headphones-ce">
         <path name="headphones-ce" />
         <path name="speaker" />
