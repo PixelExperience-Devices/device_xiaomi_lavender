@@ -10,6 +10,3 @@ type sysfs_fingerprint, sysfs_type, fs_type;
 # Input files
 type idc_file, file_type, vendor_file_type;
 type keylayout_file, file_type, vendor_file_type;
-
-# Keylayout
-type vendor_keylayout_file, file_type, vendor_file_type;
