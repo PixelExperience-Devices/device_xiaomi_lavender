@@ -1014,7 +1014,6 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
 
 on charger
     setprop persist.sys.usb.config mass_storage
-    load_system_props
     start qcom-post-boot
 
 #add poweroffhandler

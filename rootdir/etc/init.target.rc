@@ -291,7 +291,6 @@ on property:init.svc.zygote=restarting
     stop ppd
 
 on charger
-    load_system_props
     start qcom-post-boot
     mkdir /data/vendor/charge_logger 0771 system system
     chown system system /sys/class/leds/red/brightness
