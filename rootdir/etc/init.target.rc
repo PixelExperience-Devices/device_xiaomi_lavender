@@ -52,10 +52,7 @@ on fs
     mkdir /mnt/vendor/persist/data 0700 system system
     mkdir /mnt/vendor/persist/stability 0755 system system
     mkdir /mnt/vendor/persist/bms 0700 root system
-#+ add for watermark
-    mkdir /mnt/vendor/persist/camera 0777 root root
     restorecon_recursive /mnt/vendor/persist
-    restorecon_recursive /mnt/vendor/persist/camera
     write /sys/kernel/boot_adsp/boot 1
     chown system system /dev/goodix_fp
     #chmod 0644 /dev/goodix_fp
@@ -128,6 +125,8 @@ on boot
 
 #Load WLAN driver
    insmod /vendor/lib/modules/qca_cld3_wlan.ko
+   chown wifi wifi /sys/module/wlan/parameters/fwpath
+
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "rndis_bam"
     setprop vendor.usb.rmnet.func.name "rmnet_bam"
