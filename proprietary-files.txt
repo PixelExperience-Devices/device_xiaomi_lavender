@@ -101,6 +101,11 @@ vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
+
+# Bluetooth (aptX) - from Mata
+lib64/libaptX_encoder.so
+lib64/libaptXHD_encoder.so
+
 # Bluetooth
 vendor/bin/hci_qcomm_init
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -1519,7 +1524,7 @@ vendor/lib/libRSDriver_adreno.so
 vendor/lib/libhdr_tm.so
 vendor/lib64/libhdr_tm.so
 
-# Graphics (SDM)
+# Graphics (SDM) - LA.UM.7.4.r1-04100-8x98.0 
 vendor/lib/libqseed3.so
 vendor/lib/libsdedrm.so
 vendor/lib/libsdm-color.so
