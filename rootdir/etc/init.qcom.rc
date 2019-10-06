@@ -724,7 +724,9 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user system
     group system
-    disabled
+    capabilities NET_BIND_SERVICE
+    writepid /dev/cpuset/system-background/tasks
+   
 
 on property:ro.vendor.use_data_netmgrd=false
     # netmgr not supported on specific target
@@ -1335,27 +1337,9 @@ on property:vendor.gpu.available_frequencies=*
 on property:sys.camera.face.unlock=*
     setprop vendor.camera.face.unlock ${sys.camera.face.unlock}
     
-#add MIUI camera flag
-on property:sys.camera.miui.apk=*
-    setprop vendor.camera.miui.apk ${sys.camera.miui.apk}
-#add cts camera flag
-#add MIUI camera flag
-on property:sys.camera.not.cts.apk=*
-    setprop vendor.camera.not.cts.apk ${sys.camera.not.cts.apk}
-
-#add MIUI camera flag
-on property:sys.camera.douyin.apk=*
-    setprop vendor.camera.douyin.apk ${sys.camera.douyin.apk}
-
-#add cts verify flag	
-on property:sys.camera.not.ctsverify.apk=*
-    setprop vendor.camera.not.ctsverify.apk ${sys.camera.not.ctsverify.apk}
 #add cts verify flag	
     on property:sys.gyro.sensorname=*
     setprop vendor.camera.gyro.sensorname ${sys.gyro.sensorname}
-#add vtcall flag
-on property:sys.camera.vtcall=*
-	setprop vendor.camera.vtcall ${sys.camera.vtcall}
 
 service vendor.goodix_script /vendor/bin/init.goodix.sh
     class late_start
