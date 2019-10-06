@@ -46,80 +46,8 @@ if [ -f /sys/class/android_usb/f_mass_storage/lun/nofua ]; then
 	echo 1  > /sys/class/android_usb/f_mass_storage/lun/nofua
 fi
 
-#
-# Override USB default composition
-#
-# If USB persist config not set, set default configuration
-if [ "$(getprop persist.vendor.usb.config)" == "" -a \
-	"$(getprop init.svc.vendor.usb-gadget-hal-1-0)" != "running" ]; then
-    if [ "$esoc_name" != "" ]; then
-	  setprop persist.vendor.usb.config diag,diag_mdm,qdss,qdss_mdm,serial_cdev,dpl,rmnet,adb
-    else
-	  case "$(getprop ro.baseband)" in
-	      "apq")
-	          setprop persist.vendor.usb.config diag,adb
-	      ;;
-	      *)
-	      case "$soc_hwplatform" in
-	          "Dragon" | "SBC")
-	              setprop persist.vendor.usb.config diag,adb
-	          ;;
-                  *)
-		  soc_machine=${soc_machine:0:3}
-		  case "$soc_machine" in
-		    "SDA")
-	              setprop persist.vendor.usb.config diag,adb
-		    ;;
-		    *)
-	            case "$target" in
-	              "msm8996")
-	                  setprop persist.vendor.usb.config diag,serial_cdev,serial_tty,rmnet_ipa,mass_storage,adb
-		      ;;
-	              "msm8909")
-		          setprop persist.vendor.usb.config diag,serial_smd,rmnet_qti_bam,adb
-		      ;;
-	              "msm8937")
-			    if [ -d /config/usb_gadget ]; then
-				       setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
-			    else
-			               case "$soc_id" in
-				               "313" | "320")
-				                  setprop persist.vendor.usb.config diag,serial_smd,rmnet_ipa,adb
-				               ;;
-				               *)
-				                  setprop persist.vendor.usb.config diag,serial_smd,rmnet_qti_bam,adb
-				               ;;
-			               esac
-			    fi
-		      ;;
-	              "msm8953")
-			      if [ -d /config/usb_gadget ]; then
-				      setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
-			      else
-				      setprop persist.vendor.usb.config diag,serial_smd,rmnet_ipa,adb
-			      fi
-		      ;;
-	              "msm8998" | "sdm660" | "sdm636"| "apq8098_latv")
-		          setprop persist.vendor.usb.config diag,serial_cdev,rmnet,adb
-		      ;;
-	              "sdm845" | "sdm710")
-		          setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,adb
-		      ;;
-	              "msmnile" | "talos")
-			  setprop persist.vendor.usb.config diag,serial_cdev,rmnet,dpl,qdss,adb
-		      ;;
-	              *)
-		          setprop persist.vendor.usb.config diag,adb
-		      ;;
-                    esac
-		    ;;
-		  esac
-	          ;;
-	      esac
-	      ;;
-	  esac
-      fi
-fi
+# Clear vendor USB config because it is only needed for debugging
+setprop persist.vendor.usb.config ""
 
 # set rndis transport to BAM2BAM_IPA for 8920 and 8940
 if [ "$target" == "msm8937" ]; then
