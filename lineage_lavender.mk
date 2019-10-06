@@ -1,4 +1,3 @@
- 33 lines (25 sloc) 1.06 KB
 #
 # Copyright (C) 2019 The LineageOS Project
 #
