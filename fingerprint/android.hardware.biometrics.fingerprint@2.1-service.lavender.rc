@@ -1,0 +1,15 @@
+service vendor.fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service.lavender
+    # "class hal" causes a race condition on some devices due to files created
+    # in /data. As a workaround, postpone startup until later in boot once
+    # /data is mounted.
+    class late_start
+    user system
+    group system input
+    writepid /dev/cpuset/system-background/tasks
+
+on post-fs-data
+	mkdir /data/vendor/goodix 0770 system system
+	mkdir /data/vendor/fpc 0770 system system
+	copy /data/vendor/fpc/user.db /data/vendor_de/0/fpdata/user.db
+	chown system system /data/vendor_de/0/fpdata/user.db
+	rm /data/vendor/fpc/user.db
