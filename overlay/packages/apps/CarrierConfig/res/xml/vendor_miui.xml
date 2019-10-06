@@ -9,7 +9,6 @@
         <boolean name="allow_adding_apns_bool" value="true" />
         <string-array name="read_only_apn_types_string_array" num="0" />
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
-        <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
         <boolean name="carrier_5g_switch_available_bool" value="false" />
     </carrier_config>
     <carrier_config sdk="26">
@@ -88,9 +87,6 @@
     </carrier_config>
     <carrier_config mcc="405" mnc="840,854,855,856,857,858,859,860,861,862,863,864,865,866,867,868,869,870,871,872,873,874">
         <boolean name="carrier_use_ims_first_for_emergency_bool" value="true" />
-        <int name="carrier_default_wfc_ims_mode_int" value="2" />
-        <boolean name="editable_wfc_mode_bool" value="false" />
-        <boolean name="hide_wfc_mode_option" value="true" />
     </carrier_config>
     <carrier_config mcc="455" mnc="02,07">
         <string-array name="apn_hide_rule_strings_array" num="2">
@@ -100,13 +96,9 @@
     </carrier_config>
     <carrier_config mcc="404" mnc="02,03,10,16,31,40,45,49,70,90,92,93,94,95,96,97,98">
         <int name="carrier_default_wfc_ims_mode_int" value="2" />
-        <boolean name="editable_wfc_mode_bool" value="false" />
-        <boolean name="hide_wfc_mode_option" value="true" />
     </carrier_config>
     <carrier_config mcc="405" mnc="51,52,53,54,55,56">
         <int name="carrier_default_wfc_ims_mode_int" value="2" />
-        <boolean name="editable_wfc_mode_bool" value="false" />
-        <boolean name="hide_wfc_mode_option" value="true" />
     </carrier_config>
     <carrier_config mcc="427" mnc="02">
         <boolean name="carrier_5g_switch_available_bool" value="true" />
@@ -230,10 +222,6 @@
     </carrier_config>
     <carrier_config mcc="214" mnc="05,07">
         <boolean name="config_show_prefer_4g" value="true" />
-        <string name="default_vm_number_string">123</string>
-    </carrier_config>
-    <carrier_config mcc="214" mnc="03">
-        <string name="default_vm_number_string">242</string>
     </carrier_config>
     <carrier_config mcc="730" mnc="03">
         <string-array name="non_roaming_operator_string_array" num="1">
@@ -294,9 +282,6 @@
     </carrier_config>
     <carrier_config mcc="226" mnc="01">
         <boolean name="config_support_callbarring_over_ims" value="false" />
-    </carrier_config>
-    <carrier_config mcc="226" mnc="05">
-        <boolean name="carrier_5g_switch_available_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="222" mnc="10">
         <boolean name="config_support_callbarring_over_ims" value="false" />
@@ -374,81 +359,5 @@
     </carrier_config>
     <carrier_config mcc="231" mnc="02">
         <boolean name="config_show_prefer_4g" value="true" />
-    </carrier_config>
-    <carrier_config cust_region="mx_telcel">
-        <boolean name="support_direct_fdn_dialing_bool" value="true" />
-    </carrier_config>
-    <carrier_config mcc="232" mnc="03">
-        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
-        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
-        <string name="default_vm_number_string">+436762200</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-        <int name="wfc_spn_format_idx_int" value="1" />
-    </carrier_config>
-    <carrier_config mcc="232" mnc="07">
-        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
-        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
-        <string name="default_vm_number_string">+4365011000</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-        <int name="wfc_spn_format_idx_int" value="1" />
-    </carrier_config>
-    <carrier_config mcc="230" mnc="01">
-        <int name="carrier_default_wfc_ims_mode_int" value="2" />
-        <string name="default_vm_number_string">+420603123311</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-        <int name="wfc_spn_format_idx_int" value="1" />
-    </carrier_config>
-    <carrier_config mcc="262" mnc="01">>
-<boolean name="editable_wfc_mode_bool" value="false" />
-        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
-        <int name="carrier_default_wfc_ims_roaming_mode_int" value="2" />
-        <string name="default_vm_number_string">3311</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-        <int name="wfc_spn_format_idx_int" value="1" />
-    </carrier_config>
-    <carrier_config mcc="262" mnc="01" gid1="44">
-        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
-        <boolean name="editable_wfc_mode_bool" value="false" />
-        <int name="carrier_default_wfc_ims_roaming_mode_int" value="2" />
-        <boolean name="hide_enhanced_4g_lte_bool" value="true" />
-        <boolean name="carrier_hide_wfc_bool" value="true" />
-        <string name="default_vm_number_string">3311</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-        <int name="wfc_spn_format_idx_int" value="1" />
-    </carrier_config>
-    <carrier_config mcc="202" mnc="01">
-        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
-        <string name="default_vm_number_string">+306971000123</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-        <int name="wfc_spn_format_idx_int" value="1" />
-    </carrier_config>
-    <carrier_config mcc="216" mnc="30">
-        <string name="default_vm_number_string">+36309888444</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-        <int name="wfc_spn_format_idx_int" value="1" />
-    </carrier_config>
-    <carrier_config mcc="260" mnc="02">
-        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
-        <int name="carrier_default_wfc_ims_mode_int" value="2" />
-        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
-        <string name="default_vm_number_string">+48602950000</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-        <int name="wfc_spn_format_idx_int" value="1" />
-    </carrier_config>
-    <carrier_config mcc="231" mnc="02">
-        <string name="default_vm_number_string">+421903333999</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-    </carrier_config>
-    <carrier_config mcc="219" mnc="01">
-        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
-        <int name="carrier_default_wfc_ims_mode_int" value="2" />
-        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
-        <string name="default_vm_number_string">+38598151100</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
-        <int name="wfc_spn_format_idx_int" value="1" />
-    </carrier_config>
-    <carrier_config mcc="231" mnc="02">
-        <string name="default_vm_number_string">+40766177177</string>
-        <boolean name="show_ims_registration_status_bool" value="true" />
     </carrier_config>
 </carrier_config_list>
