@@ -379,6 +379,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndk_package
 
+# VR
+PRODUCT_PACKAGES += \
+    vr.sdm660
+
+PRODUCT_PACKAGES += \
+    android.hardware.vr@1.0-impl \
+    android.hardware.vr@1.0-service
+
 # Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
