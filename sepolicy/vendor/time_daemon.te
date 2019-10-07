@@ -1,1 +1,0 @@
-allow time_daemon self:capability { setuid setgid sys_time };
