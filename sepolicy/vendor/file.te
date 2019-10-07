@@ -19,3 +19,6 @@ type vendor_keylayout_file, file_type, vendor_file_type;
 
 # Power
 type debugfs_wlan, debugfs_type, fs_type;
+
+# Avb
+type avb_file, file_type;
