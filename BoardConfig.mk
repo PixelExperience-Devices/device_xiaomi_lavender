@@ -222,9 +222,6 @@ VENDOR_SECURITY_PATCH := 2019-09-05
 # Seccomp
 BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/configs/seccomp
 
-# Sepolicy
-include device/qcom/sepolicy/sepolicy.mk
-
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
