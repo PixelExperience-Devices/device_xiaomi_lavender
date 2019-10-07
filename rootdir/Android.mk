@@ -1,5 +1,5 @@
 LOCAL_PATH:= $(call my-dir)
-include $(CLEAR_VARS)
+#include $(CLEAR_VARS)
 
 # files that live under device/qcom/common/rootdir/etc/
 
