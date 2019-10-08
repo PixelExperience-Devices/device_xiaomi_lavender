@@ -20,6 +20,9 @@
 /vendor/usr/idc(/.*)?                               u:object_r:idc_file:s0
 /vendor/usr/keylayout(/.*)?                         u:object_r:keylayout_file:s0
 
+# Amplifier
+/(vendor|system/vendor)/bin/tinymix                           u:object_r:vendor_tinyalsa_exec:s0
+
 # Light HAL
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.lavender u:object_r:hal_light_default_exec:s0
 
