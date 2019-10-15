@@ -350,6 +350,11 @@ vendor/lib/libmmcamera_lavender_s5kgm1sp_ofilm_i_eeprom.so
 vendor/lib/libmmcamera_lavender_s5kgm1sp_sunny_ii_eeprom.so
 
 # Camera chromatix
+vendor/lib/libchromatix_csidtg_common.so
+vendor/lib/libchromatix_csidtg_cpp_preview.so
+vendor/lib/libchromatix_csidtg_postproc.so
+vendor/lib/libchromatix_csidtg_preview.so
+vendor/lib/libchromatix_csidtg_zsl_preview.so
 vendor/lib/libchromatix_lavender_imx486_ofilm_i_bokeh_preview_3a.so
 vendor/lib/libchromatix_lavender_imx486_ofilm_i_common.so
 vendor/lib/libchromatix_lavender_imx486_ofilm_i_cpp_hfr_120.so
