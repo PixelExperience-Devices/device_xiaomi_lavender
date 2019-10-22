@@ -247,11 +247,6 @@ PRODUCT_PACKAGES += \
     libipanat \
     liboffloadhal
 
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
-
 # IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
