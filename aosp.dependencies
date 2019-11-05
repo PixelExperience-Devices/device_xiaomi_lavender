@@ -8,5 +8,11 @@
     "repository": "PixelExperience-Lavender/vendor_xiaomi_lavender",
     "target_path": "vendor/xiaomi/lavender",
     "branch": "official/ten"
+  },
+  {
+    "repository": "packages_apps_WallpapersBReel2019",
+    "target_path": "packages/apps/WallpapersBReel2019",
+    "branch": "ten",
+    "remote": "pixel-gitlab"
   }
 ]
