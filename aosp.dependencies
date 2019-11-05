@@ -1,0 +1,12 @@
+[
+  {
+    "repository": "PixelExperience-Lavender/kernel_xiaomi_lavender",
+    "target_path": "kernel/xiaomi/lavender",
+    "branch": "minimal"
+  },
+  {
+    "repository": "PixelExperience-Lavender/vendor_xiaomi_lavender",
+    "target_path": "vendor/xiaomi/lavender",
+    "branch": "official/ten"
+  }
+]
