@@ -96,13 +96,7 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 # Audio FX modules - from perseus-user 9 PKQ1.180729.001 9.7.31 release-keys
 vendor/lib/soundfx/libasphere.so|0783283ac9f68d5ebbeef350adc9b66b3248449b
 vendor/lib/soundfx/libmisoundfx.so|95ae9145647a85e435685036beba4dba0579a951
-vendor/lib/soundfx/libqcbassboost.so|1722ba76b9e6922fca17ce9f538d71b3ae37d78e
-vendor/lib/soundfx/libqcreverb.so|fa8a59cc8dc376ba8903104ac36707e576280c24
-vendor/lib/soundfx/libqcvirt.so|c373619e800e379d3bc88bee9dacf80a87a4e0ca
 vendor/lib64/soundfx/libasphere.so|718aa55bf9a32cb77a6f5e8f33e776d30e2dadc9
-vendor/lib64/soundfx/libqcbassboost.so|1f9b4eca3f6b1fea872d90b943d2c434e25e0fa4
-vendor/lib64/soundfx/libqcreverb.so|d8ce60a46a0d20e21d3246742e08328606ddf960
-vendor/lib64/soundfx/libqcvirt.so|88349315d99cea68a3b766fa4c6e1181d26f561b
 
 # Bluetooth (aptX) - from crosshatch-user 10 QP1A.190711.020 5800535 release-keys
 product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
