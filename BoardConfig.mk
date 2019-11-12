@@ -239,6 +239,7 @@ BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_VERS := 28.0
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy-minimal
+SELINUX_IGNORE_NEVERALLOWS += true
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true

@@ -47,3 +47,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.fingerprint=$(BUILD_FINGERPRINT)
 
 TARGET_VENDOR := Xiaomi
+
