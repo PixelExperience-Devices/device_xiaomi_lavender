@@ -2249,6 +2249,10 @@
         <path name="headset-mic" />
     </path>
 
+    <path name="voice-headset">
+        <path name="headphones" />
+    </path>
+
     <path name="speaker-and-headphones">
         <path name="headphones" />
         <path name="speaker" />
