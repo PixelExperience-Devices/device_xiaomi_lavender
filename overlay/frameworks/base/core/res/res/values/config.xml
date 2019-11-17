@@ -236,10 +236,10 @@
     <!-- Whether camera shutter sound is forced or not  (country specific). -->
     <bool name="config_camera_sound_forced">false</bool>
 
-    <!-- Configuration to enable non-default PDP during IWLAN 
+    <!-- Configuration to enable non-default PDP during IWLAN
     <bool name="config_feature_iwlan_enabled">true</bool> -->
 
-    <!-- Is the device capable of supporting digital pen 
+    <!-- Is the device capable of supporting digital pen
     <bool name="config_digitalPenCapable">true</bool> -->
 
     <!-- Flag specifying whether VoLTE, VT and WFC is available on device -->
@@ -550,7 +550,7 @@
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
 
     <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
-    <bool translatable="false" name="config_wifi_softap_acs_supported">true</bool>
+    <bool translatable="false" name="config_wifi_softap_acs_supported">false</bool>
 
     <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
     <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
