@@ -410,7 +410,13 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
 # VNDK
+# Update this list with what each blob is actually for
+# libicuuc: vendor.qti.hardware.qteeconnector@1.0-impl
+# libstdc++: camera.sdm660
 PRODUCT_PACKAGES += \
+    libicuuc.vendor \
+    libstdc++.vendor \
+    libgui_vendor \
     vndk_package
 
 # VR
