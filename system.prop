@@ -67,6 +67,9 @@ mm.enable.smoothstreaming=true
 vendor.mm.enable.qcom_parser=13631487
 persist.mm.enable.prefetch=true
 
+#prefer HW codec over SW for thumbnail
+media.stagefright.thumbnail.prefer_hw_codecs=true
+
 #property to enable narrow search range for video encoding
 vidc.enc.target_support_bframe=1
 vendor.vidc.enc.disable_bframes=1
@@ -151,13 +154,6 @@ persist.sys.wfd.virtual=0
 # system prop for NFC DT
 ro.nfc.port=I2C
 
-#property for vendor specific library
-ro.vendor.at_library=libqti-at.so
-
-#min/max cpu in core control
-ro.vendor.qti.core_ctl_min_cpu=2
-ro.vendor.qti.core_ctl_max_cpu=4
-
 #hwui properties
 ro.hwui.texture_cache_size=72
 ro.hwui.layer_cache_size=48
@@ -177,9 +173,6 @@ persist.vendor.radio.atfwd.start=true
 #property to enable VDS WFD solution
 persist.hwc.enable_vds=1
 
-#Increase cached app limit
-ro.vendor.qti.sys.fw.bg_apps_limit=60
-
 #Settings to enable sensors
 #Device Orientation sensor
 ro.vendor.sensors.dev_ori=false
@@ -195,6 +188,10 @@ ro.vendor.sensors.pug=true
 #Expose aux camera for below packages
 camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.longcheertel.cit
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.longcheertel.cit
+
+#Whitelisting the below packages
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam
+persist.camera.privapp.list=org.codeaurora.snapcam
 
 # enable b-services aging propagation
 ro.vendor.qti.sys.fw.bservice_enable=true
@@ -223,21 +220,6 @@ persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 persist.backup.ntpServer="0.pool.ntp.org"
 # enable IZat OptInApp overlay
 persist.vendor.overlay.izat.optin=rro
-
-# ro.location properties below are used in conjunction
-# with NLP_MODE setting in /vendor/etc/izat.conf
-# either as the main network provider or as a fallback
-# provider depending on NLP_MODE that is set
-# These properties are optional and will not cause
-# issues if not set to existing packages.
-# ro.location.osnlp.package sets the name of default
-# OS sepecific network location provider package to use
-# ro.location.osnlp.region.package is set to the name
-# of the alternative network location provider package
-# to be used for a particular region where the default
-# network location provider is not functional
-ro.location.osnlp.package=com.google.android.gms
-ro.location.osnlp.region.package=
 
 #use camera2 api
 persist.sys.camera.camera2=true

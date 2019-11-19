@@ -80,7 +80,6 @@ on post-fs-data
 #    mkdir /data/vendor/hbtp 0750 system system
 #end
     mkdir /data/misc/seemp 0700 system system
-    mkdir /data/vendor/tloc 0700 system drmrpc
 #    start pa-cal-load
    mkdir /data/vendor/mac_addr 0770 system wifi
 
@@ -214,10 +213,6 @@ service vendor.qseecomd /vendor/bin/qseecomd
    user root
    group root
 
-#service mpdecision /system/vendor/bin/mpdecision --avg_comp
-#   user root
-#   disabled
-#
 #service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
 #   user system
 #   group system
@@ -522,20 +517,10 @@ service seempd /system/bin/seempd
     group system sdcard_rw
     socket seempdw dgram 0666 system system
 
-service vendor.tlocd /vendor/bin/tloc_daemon
-    class late_start
-    user system
-    group drmrpc gps net_raw
-
 service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
      class main
      user root
      group system wakelock
-
-service smcinvoked /system/bin/smcinvoked
-   class main
-   user system
-   group system
 
 # smart pa cal     tsx 08/26
 service pa-cal-load /system/vendor/bin/smart-pa-cal -load
