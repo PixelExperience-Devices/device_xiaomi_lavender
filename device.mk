@@ -174,6 +174,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
 
+# Exclude TOF sensor from InputManager
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
+
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -191,9 +195,9 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
-# Exclude TOF sensor from InputManager
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
+# fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect.vendor
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -238,7 +242,8 @@ PRODUCT_PACKAGES += \
 
 # IMS
 PRODUCT_PACKAGES += \
-    ims-ext-common
+   ims-ext-common \
+   ims_ext_common.xml
 
 # IDC
 PRODUCT_COPY_FILES += \
@@ -255,6 +260,10 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     libipanat \
     liboffloadhal
+
+# Ion
+PRODUCT_PACKAGES += \
+    libion
 
 # IR
 PRODUCT_PACKAGES += \
@@ -418,14 +427,6 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     libgui_vendor \
     vndk_package
-
-# VR
-#PRODUCT_PACKAGES += \
-#    vr.sdm660
-
-#PRODUCT_PACKAGES += \
-#    android.hardware.vr@1.0-impl \
-#    android.hardware.vr@1.0-service
 
 # Wifi
 PRODUCT_PACKAGES += \

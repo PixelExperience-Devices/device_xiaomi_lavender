@@ -666,13 +666,6 @@ service vendor.netmgrd /system/vendor/bin/netmgrd
     class main
     disabled
 
-service vendor.ipacm-diag /system/vendor/bin/ipacm-diag
-    class main
-    user radio
-    socket ipacm_log_file dgram 660 radio radio
-    group radio diag oem_2901
-    disabled
-
 service vendor.ipacm /system/vendor/bin/ipacm
     class main
     user radio
