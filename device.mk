@@ -461,6 +461,7 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     libwpa_client \
     vendor.qti.hardware.wifi.supplicant@1.0_vendor \
+    vendor.qti.hardware.wifi.hostapd@1.1.vendor \
     wificond \
     wifilogd \
     wpa_supplicant \
