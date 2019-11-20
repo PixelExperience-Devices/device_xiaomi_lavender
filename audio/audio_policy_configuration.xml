@@ -219,7 +219,7 @@
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="8000,11025,16000,22050,32000,44100,48000,64000,88200,96000,128000,176400,192000" channelMasks="dynamic"/>
                 </devicePort>
-                <devicePort tagName="FM" type="AUDIO_DEVICE_OUT_FM" role="sink">
+                <devicePort tagName="FM Tuner" type="AUDIO_DEVICE_OUT_FM" role="sink">
                     <profile name="" format="AUDIO_FORMAT_PCM_16_BIT"
                              samplingRates="48000" channelMasks="AUDIO_CHANNEL_OUT_MONO,AUDIO_CHANNEL_OUT_STEREO"/>
                 </devicePort>
