@@ -478,6 +478,9 @@ PRODUCT_PACKAGES += \
     libnl \
     libwfdaac
 
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 # HW crypto
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
