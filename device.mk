@@ -483,3 +483,6 @@ PRODUCT_PACKAGES += \
 # Wallpapers
 PRODUCT_PACKAGES += \
     WallpapersBReel2019
+
+#APEX
+PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=true
