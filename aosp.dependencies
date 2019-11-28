@@ -1,0 +1,18 @@
+[
+  {
+    "repository": "faham1997/kernel",
+    "target_path": "kernel/xiaomi/lavender",
+    "branch": "10"
+  },
+  {
+    "repository": "vendor_xiaomi_lavender",
+    "target_path": "vendor/xiaomi/lavender",
+    "branch": "ten"
+  },
+  {
+    "repository":  "android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "branch": "lineage-17.0",
+    "remote": "lineage"
+  }
+]
