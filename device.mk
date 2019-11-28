@@ -418,6 +418,11 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor \
     libgui_vendor \
     vndk_package
+    
+    
+# Wallpapers
+PRODUCT_PACKAGES += \
+    PixelLiveWallpaperPrebuilt
 
 # Wifi
 PRODUCT_PACKAGES += \
