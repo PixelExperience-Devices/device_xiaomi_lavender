@@ -1,19 +1,19 @@
-# ADSP
-vendor/bin/adsprpcd
-vendor/lib/libadsprpc.so
-vendor/lib/libadsp_default_listener.so
-vendor/lib/libadsp_hvx_callback_skel.so
-vendor/lib/libadsp_hvx_stub.so
-vendor/lib/libfastcvadsp_stub.so
-vendor/lib/libfastcvopt.so
-vendor/lib/libmdsprpc.so
-vendor/lib/libsdsprpc.so
-vendor/lib64/libadsprpc.so
-vendor/lib64/libadsp_default_listener.so
-vendor/lib64/libfastcvadsp_stub.so
-vendor/lib64/libfastcvopt.so
-vendor/lib64/libmdsprpc.so
-vendor/lib64/libsdsprpc.so
+# ADSP - from LA.UM.8.2.r1-04000-sdm660.0
+vendor/bin/adsprpcd|0cdd541ee0a365c5dccd0613e495611f4d0f6607
+vendor/lib/libadsp_default_listener.so|85bdbaf59256e3a01e3d1bf1f5ac753eea4f935b
+vendor/lib/libadsp_hvx_callback_skel.so|17e18628d5f06f5ad46b9577baac0d3571b42be1
+vendor/lib/libadsp_hvx_stub.so|d3f2bfdf3f6bd4911e5015a022a098582addcf6f
+vendor/lib/libadsprpc.so|35bf7c53dc7149b39126638c5c1bac3b08e262be
+vendor/lib/libfastcvadsp_stub.so|43740cca4f7549c86e4b2ab1daf4d703d9a9b258
+vendor/lib/libfastcvopt.so|77789b2b6e978bcc2ee7e848d6163fc31d6b5393
+vendor/lib/libmdsprpc.so|caae31754dee7a45267ae3912685773046ab6b47
+vendor/lib/libsdsprpc.so|b78c12ebe73d344af786dd39f1313ec88668aacc
+vendor/lib64/libadsp_default_listener.so|abace257c0ae59ddc693f1e42d16670312673873
+vendor/lib64/libadsprpc.so|02d0684cba8bd52d2a291f85afae9ce343c94bd4
+vendor/lib64/libfastcvadsp_stub.so|ef3fd1a7d1217ad9bfff9cff0aa52db36eb73143
+vendor/lib64/libfastcvopt.so|9f95397d7e1b171f9b00323ed7acc17341200e01
+vendor/lib64/libmdsprpc.so|7aca0cc4524687c48df9e2247a6c59d0be9581bc
+vendor/lib64/libsdsprpc.so|9c3ac49b1a3c7d383c64f7fb554b1c00e2963527
 
 # ADSP-Modules
 vendor/etc/scve/facereco/gModel.dat
@@ -83,9 +83,6 @@ vendor/lib64/libqtigef.so
 
 # Audio FX modules
 vendor/lib/soundfx/libasphere.so
-vendor/lib/soundfx/libqcbassboost.so
-vendor/lib/soundfx/libqcreverb.so
-vendor/lib/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libasphere.so
 
 # Audio-ACDB
@@ -100,9 +97,9 @@ vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
 
-# Bluetooth (aptX) - from Mata
-lib64/libaptX_encoder.so
-lib64/libaptXHD_encoder.so
+# AptX - from crosshatch - QP1A.190711.020
+product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Bluetooth
 vendor/bin/hci_qcomm_init
@@ -1654,11 +1651,11 @@ vendor/lib64/libqti-util.so
 vendor/lib64/libqti-utils.so
 vendor/lib64/vendor.qti.hardware.perf@1.0.so
 
-# Peripheral
-vendor/bin/pm-proxy
-vendor/bin/pm-service
-vendor/lib/libperipheral_client.so
-vendor/lib64/libperipheral_client.so
+# Peripheral manager - from LA.UM.8.2.r1-04000-sdm660.0
+vendor/bin/pm-proxy|bc4e972e3fe595b973197efe5114da8ff4339a59
+vendor/bin/pm-service|b0f77edfe04a3cc6284738196c0044e676d5eeb3
+vendor/lib/libperipheral_client.so|836411f7b88afe296b3f3090aab70fc5700ba434
+vendor/lib64/libperipheral_client.so|a0dd574c8af3135adae10ef49065fa765906db7a
 
 
 # Power-off charging daemon
