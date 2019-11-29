@@ -14,11 +14,5 @@
     "target_path": "packages/resources/devicesettings",
     "branch": "lineage-17.0",
     "remote": "lineage"
-  },
-  {
-    "repository": "packages_apps_PixelLiveWallpaper",
-    "target_path": "packages/apps/PixelLiveWallpaper",
-    "branch": "ten",
-    "remote": "pixel-gitlab"
   }
 ]
