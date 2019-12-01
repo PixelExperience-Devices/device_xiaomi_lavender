@@ -112,6 +112,29 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.VT_CAM_INTERFACE=2  \
     persist.sys.camera.camera2=true
 
+# Google Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.eis.enable=1 \
+    persist.vendor.camera.eis.enable=1 \
+    persist.camera.max.previewfps=60 \
+    persist.vendor.camera.max.previewfps=60 \
+    persist.camera.tnr_cds=1 \
+    persist.vendor.camera.tnr_cds=1 \
+    persist.camera.tnr.video=1 \
+    persist.vendor.camera.tnr.video=1 \
+    persist.camera.tnr.preview=1 \
+    persist.vendor.camera.tnr.preview=1 \
+    persist.camera.tnr.snapshot=1 \
+    persist.vendor.camera.tnr.snapshot \
+    persist.camera.llnoise=1 \
+    persist.vendor.camera.llnoise=1 \
+    persist.tnr.process.plates=2 \
+    persist.vendor.tnr.process.plates=2 \
+    persist.denoise.process.plates=2 \
+    persist.vendor.denoise.process.plates=2 \
+    camera.lowpower.record.enable=1 \
+    vidc.enc.dcvs.extra-buff-count=2
+
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1 \
