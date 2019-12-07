@@ -261,6 +261,10 @@ persist.vendor.qcomsysd.enabled=1 \
 keyguard.no_require_sim=true \
 ro.com.android.dataroaming=false \
 persist.backup.ntpServer=0.pool.ntp.org \
-sys.vendor.shutdown.waittime=2000 \
+sys.vendor.shutdown.waittime=500 \
 ro.build.shutdown_timeout=0 \
-vendor.fm.a2dp.conc.disabled=true
+vendor.fm.a2dp.conc.disabled=true \
+ro.vendor.audio.soundtrigger=none \
+ro.vendor.audio.soundtrigger.lowpower=false \
+ro.vendor.audio.voice.volume.boost=manual
+
