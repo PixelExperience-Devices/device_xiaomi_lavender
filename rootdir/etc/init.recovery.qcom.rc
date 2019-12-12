@@ -44,6 +44,10 @@ on init
     write /config/usb_gadget/g1/os_desc/qw_sign "MSFT100"
     setprop sys.usb.configfs 1
 
+on property:ro.boot.recover_usb=*
+    write /sys/bus/platform/devices/a600000.ssusb/mode "peripheral"
+
+
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
 
