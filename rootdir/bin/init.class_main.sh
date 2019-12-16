@@ -41,17 +41,11 @@ case "$baseband" in
     stop ril-daemon
     stop vendor.ril-daemon
     stop vendor.qcrild
-    start vendor.ipacm
 esac
 
 case "$baseband" in
     "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3")
     start vendor.qmuxd
-esac
-
-case "$baseband" in
-    "sa8")
-    start vendor.ipacm
 esac
 
 case "$baseband" in
@@ -105,7 +99,6 @@ case "$baseband" in
         start ril-daemon
         start vendor.ril-daemon
     fi
-    start vendor.ipacm
     case "$baseband" in
         "svlte2a" | "csfb")
           start qmiproxy

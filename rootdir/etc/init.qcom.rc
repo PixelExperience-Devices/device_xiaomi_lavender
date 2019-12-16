@@ -666,11 +666,11 @@ service vendor.netmgrd /system/vendor/bin/netmgrd
     class main
     disabled
 
-service vendor.ipacm /system/vendor/bin/ipacm
-    class main
-    user radio
-    group radio inet
-    disabled
+#service vendor.ipacm /system/vendor/bin/ipacm
+#    class main
+#    user radio
+#    group radio inet
+ #   disabled
 
 service vendor.dataqti /system/vendor/bin/qti
     class main
