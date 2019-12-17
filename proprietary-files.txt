@@ -264,9 +264,7 @@ vendor/lib/libMegviiFacepp-0.5.2.so
 vendor/lib/libSonyIMX376C3RmscLibrary.so
 vendor/lib/libSonyIMX376KRmscLibrary.so
 vendor/lib/libbase64.so
-vendor/lib/libgui_vendor.so
 vendor/lib/libmegface.so
-vendor/lib/libstdc++.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libscveBlobDescriptor.so
 vendor/lib64/libscveBlobDescriptor_stub.so
@@ -1549,7 +1547,7 @@ vendor/lib64/hw/vulkan.sdm660.so
 vendor/lib/hw/keystore.sdm660.so
 vendor/lib64/hw/keystore.sdm660.so
 
-# Listen from MI 8 lite platina-user 10 QKQ1.190910.002 9.12.4 release-keys
+# Listen
 vendor/etc/audio.scd
 vendor/lib/hw/sound_trigger.primary.sdm660.so
 vendor/lib/libadpcmdec.so
@@ -1564,45 +1562,45 @@ vendor/lib64/libgcs-ipc.so
 vendor/lib64/libgcs-osal.so
 vendor/lib64/libgcs.so
 
-# Media - from MI 8 lite platina-user 10 QKQ1.190910.002 9.12.4 release-keys
-vendor/lib/libAlacSwDec.so
-vendor/lib/libApeSwDec.so
-vendor/lib/libdsd2pcm.so
-vendor/lib/libFlacSwDec.so
--vendor/lib/libgpustats.so
-vendor/lib/libI420colorconvert.so
-vendor/lib/libmm-color-convertor.so
-vendor/lib/libOmxAacDec.so
-vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxAlacDec.so
-vendor/lib/libOmxAlacDecSw.so
-vendor/lib/libOmxAmrDec.so
-vendor/lib/libOmxAmrwbplusDec.so
-vendor/lib/libOmxApeDec.so
-vendor/lib/libOmxApeDecSw.so
-vendor/lib/libOmxDsdDec.so
-vendor/lib/libOmxG711Dec.so
-vendor/lib/libOmxVideoDSMode.so
-vendor/lib/libOmxWmaDec.so
-vendor/lib/libvqzip.so
-vendor/lib64/libAlacSwDec.so
-vendor/lib64/libApeSwDec.so
-vendor/lib64/libFlacSwDec.so
--vendor/lib64/libgpustats.so
-vendor/lib64/libI420colorconvert.so
-vendor/lib64/libmm-color-convertor.so
-vendor/lib64/libOmxAacDec.so
-vendor/lib64/libOmxAlacDec.so
-vendor/lib64/libOmxAlacDecSw.so
-vendor/lib64/libOmxAmrDec.so
-vendor/lib64/libOmxAmrwbplusDec.so
-vendor/lib64/libOmxApeDec.so
-vendor/lib64/libOmxApeDecSw.so
-vendor/lib64/libOmxEvrcDec.so
-vendor/lib64/libOmxG711Dec.so
-vendor/lib64/libOmxQcelp13Dec.so
-vendor/lib64/libOmxWmaDec.so
+# Media - from LA.UM.8.2.r1-04000-sdm660.0
+vendor/lib/libAlacSwDec.so|bca4278cb74a63772a0fc369480b5d9814063d9b
+vendor/lib/libApeSwDec.so|d175422c4b2e691dd5f2a3fe0c7dbc978084e838
+vendor/lib/libdsd2pcm.so|df3b8b4f7c209f061fd6c48bf833cb2ad3342791
+vendor/lib/libFlacSwDec.so|05013a9ca75ffe5ca7ec25747679b0addabdb0c1
+-vendor/lib/libgpustats.so|51338b96a0a61b1062a11723c86faba3c1f1d58e
+vendor/lib/libI420colorconvert.so|3398b258f5454361e15c063798fe03974dc1cfd4
+vendor/lib/libmm-color-convertor.so|43d7d4ac5587ecf5a7e8428e0437f45254acd767
+vendor/lib/libOmxAacDec.so|b0bea6f1277c784279b9ead0b445a81f29e85bcc
+vendor/lib/libOmxEvrcDec.so|e16f0f94e91742f1aef16aad6f2438a12611a6b3
+vendor/lib/libOmxQcelp13Dec.so|2674324f46dfb77d2e586a04d380d6cea188e79e
+vendor/lib/libOmxAlacDec.so|94f72d0f0dac46df437033ee1a7ec517c7a47c7f
+vendor/lib/libOmxAlacDecSw.so|195745033c16f74745ef7fb73834a1781618ff32
+vendor/lib/libOmxAmrDec.so|1eeec539a53b86789261ae3c75a161c894986ddb
+vendor/lib/libOmxAmrwbplusDec.so|178174848adaf64568ba4500f588874fd84454ab
+vendor/lib/libOmxApeDec.so|6cff6d41ea3a3aea85269ba7c926eae5b0231df6
+vendor/lib/libOmxApeDecSw.so|50681d86957d6a6adc71967e67b24e2114fbf1ab
+vendor/lib/libOmxDsdDec.so|d81e103794648cf58a363cacbfa21a2ab96bda7b
+vendor/lib/libOmxG711Dec.so|57c1e3d4ba2ebee59de630649e0c57d1a6a0e9ab
+vendor/lib/libOmxVideoDSMode.so|a5a6bd8e1fe4ee4ceb11ba77fae441435a4ae207
+vendor/lib/libOmxWmaDec.so|c3b7a91fb4d24b192f18b15e9240bba986d89505
+vendor/lib/libvqzip.so|d037d6e54f6cff1755acb5e1f04a43536bcb8acf
+vendor/lib64/libAlacSwDec.so|5dac99a5291cf37b191663f728a2feaa7aa7dc5c
+vendor/lib64/libApeSwDec.so|ef2dd074b2f59ef5f7c5095251f6743827ded20c
+vendor/lib64/libFlacSwDec.so|fe401c04a3d794e430c2d85a4f041500036e2b17
+-vendor/lib64/libgpustats.so|b7f9e1ee3f0d86e87d96db55404f3507db8cac6f
+vendor/lib64/libI420colorconvert.so|528fbbd8908ed1fbb64277ec614ba8f7ce1dda6e
+vendor/lib64/libmm-color-convertor.so|e1d0ed0a02287c38410232c857bd967a9414eeb3
+vendor/lib64/libOmxAacDec.so|b25d8ce050c665f6be7e24807ad9fbb8990b3fec
+vendor/lib64/libOmxAlacDec.so|c0572bde221ac0ba36be922890f03f8a2c1e1b4b
+vendor/lib64/libOmxAlacDecSw.so|c83f56efb8e4ce29e21a1371f8ee10598f3fd30f
+vendor/lib64/libOmxAmrDec.so|8cc11fc64470d7243f5e3fa8941375ea32af6723
+vendor/lib64/libOmxAmrwbplusDec.so|f593dc73a9f1fba74690028eda77af741dde6d45
+vendor/lib64/libOmxApeDec.so|bf44dfa90fe02fe31b55f465efaa0b4e00e1fa9a
+vendor/lib64/libOmxApeDecSw.so|9b72a8bfd4fd6a33fe9302e6b7eb88523f32a878
+vendor/lib64/libOmxEvrcDec.so|260f18fbed00fd69134f08227f382deaccfadb11
+vendor/lib64/libOmxG711Dec.so|3ed995ed10b22e50df62fa5738746d5e8c05822c
+vendor/lib64/libOmxQcelp13Dec.so|ecbf4b4c086be98aff418726d7b6e0d55a6d142a
+vendor/lib64/libOmxWmaDec.so|5138e17526ef181310c0f25b11828bdb8f2a06a2
 
 # Mlipay
 vendor/bin/mlipayd@1.1
@@ -1612,28 +1610,28 @@ vendor/lib64/libmlipay.so
 vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so
 vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so
 
-# Perf - from MI 8 lite platina-user 10 QKQ1.190910.002 9.12.4 release-keys
-vendor/bin/energy-awareness
-vendor/bin/msm_irqbalance
-vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
-vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/lib/libperfconfig.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
-vendor/lib/vendor.qti.hardware.perf@1.0.so
-vendor/lib/vendor.qti.hardware.perf@2.0.so
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
-vendor/lib64/vendor.qti.hardware.perf@1.0.so
-vendor/lib64/vendor.qti.hardware.perf@2.0.so
+# Perf - from LA.UM.8.2.r1-04000-sdm660.0
+vendor/bin/energy-awareness|6515fada09432a437d2ed591ce141bb70fb10a9e
+vendor/bin/msm_irqbalance|e917104fbd26c844d27ffb2b7ec4f665fdfb8b78
+vendor/bin/hw/vendor.qti.hardware.perf@2.0-service|57b1e050c9300a72baff8a19872b5a32ae9122e9
+vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc|cc8658db5e19f8e5e575fb986e7d38147e675f8d
+vendor/etc/perf/commonresourceconfigs.xml|1db765e3a8fb902bdb648091178a709c34f3fb16
+vendor/etc/perf/perfboostsconfig.xml|0fd6a9951f22cfe9f0942629f9d20da433604f14
+vendor/etc/perf/targetconfig.xml|376ae331df9d6c30b6208f25d04ae4ea11c0e2ea
+vendor/etc/perf/targetresourceconfigs.xml|7132f1e9ce3bb21b4854b81d6e5d24409251f177
+vendor/lib/libperfconfig.so|b67b45def855f25663f093b1db76ebc0b88bb1fa
+vendor/lib/libqti-perfd-client.so|3fa11449bc068278b7a87aa55e161b015cd780f3
+vendor/lib/libqti-perfd.so|f09adaadc93019827274d4eb7725d09412911d82
+vendor/lib/libqti-util.so|e7882172095bb0df546d4c358744761aba932b5a
+vendor/lib/vendor.qti.hardware.perf@1.0.so|a528c00bbdea1c2a3c0754bef1cff0f94023a6ed
+vendor/lib/vendor.qti.hardware.perf@2.0.so|135bffe1f7cc29bffcf31382a8b39e6debfb28b4
+vendor/lib64/libperfconfig.so|0f3ab4aba588a1de0dfee7731f9e569c96b2cbcf
+vendor/lib64/libperfgluelayer.so|bfb9706a184fca4163e5a7cb5fcad11674958761
+vendor/lib64/libqti-perfd-client.so|ac1ca3a6ba93feee4c977cb6e54ca91ab3ce3b23
+vendor/lib64/libqti-perfd.so|184e4a124ef4f509ce377ce3941353948917e605
+vendor/lib64/libqti-util.so|c78b855b3909b01071ced5fc898add769de4a5b6
+vendor/lib64/vendor.qti.hardware.perf@1.0.so|dce6b3c8b7046f910b96de3d7d2e5967271c65fe
+vendor/lib64/vendor.qti.hardware.perf@2.0.so|f796f5a8c1713b3c36a6d890d1a89568359c4ddd
 
 # Peripheral manager - from LA.UM.8.2.r1-04000-sdm660.0
 vendor/bin/pm-proxy|bc4e972e3fe595b973197efe5114da8ff4339a59
@@ -1688,6 +1686,9 @@ vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 
+# Radio - from mata - QP1A.190502.046 
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
@@ -1698,9 +1699,14 @@ vendor/bin/port-bridge
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
 vendor/bin/hw/qcrild
+vendor/bin/adpl|d5724cd8b615ccb18c08ceb250f287ff8ea2809f
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
 vendor/etc/init/qcrild.rc
+vendor/etc/init/dataadpl.rc|cd4907d9bfd438fe5f5c86f5d6cec590ac0bac2a
+vendor/etc/init/dataqti.rc|6abfd1a850d782adbbb6f42c9d8ca870036b2ad1
+vendor/etc/init/netmgrd.rc|fd3457c69a9fab11b87d0d1b494188fe089684cd
+vendor/etc/init/port-bridge.rc|e52d61a0de5e8a3b21bfbfca929e862422645377
 etc/permissions/embms.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
@@ -1708,7 +1714,6 @@ framework/embmslibrary.jar
 framework/qcrilhook.jar
 framework/qti-telephony-common.jar
 framework/QtiTelephonyServicelibrary.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
 vendor/lib/libmdmdetect.so
 vendor/lib64/libconfigdb.so
@@ -1750,7 +1755,7 @@ vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
 vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
--priv-app/ims/ims.apk
+-priv-app/ims/ims.apk|58dea61205ffcee82b8d9b7431759e0eeb0f84b7
 -app/imssettings/imssettings.apk:vendor/app/imssettings/imssettings.apk
 etc/permissions/com.qualcomm.qti.imscmservice.xml
 etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
@@ -1864,57 +1869,61 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# Voice - from MI 8 lite platina-user 10 QKQ1.190910.002 9.12.4 release-keys
-vendor/lib/vendor.qti.voiceprint@1.0.so
-vendor/lib64/vendor.qti.voiceprint@1.0.so
-
 # WiFi
 vendor/bin/cnss-daemon
 
-# Wfd - from LA.UM.8.2.r1-04300-sdm660.0
-bin/wfdservice|d9cccfd6ca14a1d83117533296d6cac2c139c310
-etc/init/wfdservice.rc|311bfdd1675e56499662f39455536b75b78477bb
-etc/wfdconfig.xml|d07f6b0441c0aa8913865100239490fa8687a020
-etc/wfdconfigsink.xml|5b4a96f251fd83c2eee520d06bea2b5b159fcd36
--framework/WfdCommon.jar|3440607d29511e1a671e565a2acc4d262e38a9fb
-lib/com.qualcomm.qti.wifidisplayhal@1.0.so|47e7949bceaff2d4ef11c51073fa2a173b82eddd
-lib/libFileMux.so|79661e6dffc90234ad446641264fd0fa1a3fe6ab
-lib/libOmxMux.so|1ad1aa835a3dfb8bfea2a29291f82a173ba6a868
-lib/libmmparser_lite.so|b1b4161b7097f5feeff0f043e8b94cd94553e4ad
-lib/libmmrtpdecoder.so|ff871cfac4a4d9dac89a612f100ca9de9add9344
-lib/libmmrtpencoder.so|eb32452859323bdfdabcf3780bebad781b367ac4
-lib/libwfdavenhancements.so|94de9381e10e4cdac47cd379b7e883f717fa8439
-lib/libwfdclient.so|9c075928fa35c57863bd16a5571fe97d599a988a
-lib/libwfdcodecv4l2.so|bfaf6e18013d9cc4665c57c1f9f639b87da3e433
-lib/libwfdcommonutils.so|c02a5d6f5eb17a12ff79b08b77d07d99e3d54de5
-lib/libwfdconfigutils.so|f28efa1221d495cb25fa830eff170d3f45990d0f
-lib/libwfdmminterface.so|c2914c60cb412732d45610e67e7e408f6ad7a45a
-lib/libwfdmmsink.so|987b4d5b40fb584763da477ea08b91c0146bb2b1
-lib/libwfdmmsrc.so|43ee8c98670c9395fd2a6edce1db929760fab1c2
-lib/libwfdnative.so|c691e94b79943dbcf570e8ca9a7f4407070f0ba7
-lib/libwfdrtsp.so|6194fed354ed8f26b813b39510d2ee8db729492d
-lib/libwfdservice.so|ba2e446ef8ad69123eaa49814d1fdff4946ff9f6
-lib/libwfdsm.so|2256010a75247f3b1638a31aac332a7ca4bc7364
-lib/libwfduibcinterface.so|6bfbcfaec293efb6029cb871558ccef8c74ce5bf
-lib/libwfduibcsink.so|78db2e13f03602d089160397ac494d35a5f4a1f3
-lib/libwfduibcsinkinterface.so|23b1a68bd56e9788c61a262a0350b0a0b8c5b031
-lib/libwfduibcsrc.so|f6f35ca89441967fcf3f6590f45b81d92311a81c
-lib/libwfduibcsrcinterface.so|bfe916d7d1a9395883417b4076a41a50d7cf83ad
-lib64/libFileMux.so|6489129fa0ac93f0c76d304c249ffc18d4fd8677
-lib64/libOmxMux.so|1f45d8ab66af19ddb8088bd3a316995378c290e7
-lib64/libmmparser_lite.so|a3bb2aefbcca59d845a55682a2bcc36b24433f54
-lib64/libmmrtpdecoder.so|680db93b68a30fef67268c5f8783371a0af22ed7
-lib64/libmmrtpencoder.so|8d03db323d3ee5efce386374769ecf6214d9a13c
-lib64/libwfdclient.so|884bfd6710f05d567eb0083a00ee4889f73d796d
-lib64/libwfdnative.so|e109284a91ad1eb6b64b29b78ae5130c3d73e60e
--priv-app/WfdService/WfdService.apk|9da05dab9097ef8b016e99fd646b50167309ee5b
-vendor/bin/wifidisplayhalservice|56ec79e39595e0c34baba8cb16ab5d1931d793db
-vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|04e463342cbba4c0e9c311a18238f95dec9359fd
-vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so|f8d82d7e80e730c01fc0c84f4464762d273b4d62
-vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so|cf03926fce8af504ae3a36af6ea50ce066112ca1
-vendor/lib/libwfdcommonutils_proprietary.so|14df45871041125273609b6ddc507fa6901cb44d
-vendor/lib/libwfdhaldsmanager.so|00a7bf5c76ef2b1ee72fcaf6d3af6d7f09f31fae
-vendor/lib/libwfdhdcpcp.so|ba051604d914847b862d78af70d02abf85d86d4b
-vendor/lib/libwfdmmservice.so|87f9c841031272e6a3713abd85326f84d2ae52e5
-vendor/lib/libwfdmodulehdcpsession.so|97ffe7c96970fc5605f4f6414fc31ab7cec78bdc
-vendor/lib64/libwfdhdcpcp.so|1987f0ab60d9905be6489fa6ca3720fe2d9c636b
+# WFD
+bin/wfdservice
+etc/init/wfdservice.rc
+etc/wfdconfig.xml
+etc/wfdconfigsink.xml
+-framework/WfdCommon.jar
+lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+lib/extractors/libmmparser.so
+lib/libFileMux.so
+lib/libOmxMux.so
+lib/libmmparser_lite.so
+lib/libmmrtpdecoder.so
+lib/libmmrtpencoder.so
+lib/libwfdavenhancements.so
+lib/libwfdclient.so
+lib/libwfdcodecv4l2.so
+lib/libwfdcommonutils.so
+lib/libwfdconfigutils.so
+lib/libwfdmminterface.so
+lib/libwfdmmsink.so
+lib/libwfdmmsrc.so
+lib/libwfdnative.so
+lib/libwfdrtsp.so
+lib/libwfdservice.so
+lib/libwfdsm.so
+lib/libwfduibcinterface.so
+lib/libwfduibcsink.so
+lib/libwfduibcsinkinterface.so
+lib/libwfduibcsrc.so
+lib/libwfduibcsrcinterface.so
+lib64/extractors/libmmparser.so
+lib64/libFileMux.so
+lib64/libOmxMux.so
+lib64/libmmparser_lite.so
+lib64/libmmrtpdecoder.so
+lib64/libmmrtpencoder.so
+lib64/libwfdclient.so
+lib64/libwfdnative.so
+-priv-app/WfdService/WfdService.apk
+vendor/bin/wifidisplayhalservice
+vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+vendor/lib/libhdcp1prov.so
+vendor/lib/libhdcp2p2prov.so
+vendor/lib/libhdcpsrm.so
+vendor/lib/libwfdcommonutils_proprietary.so
+vendor/lib/libwfdhaldsmanager.so
+vendor/lib/libwfdhdcpcp.so
+vendor/lib/libwfdmmservice.so
+vendor/lib/libwfdmodulehdcpsession.so
+vendor/lib64/libhdcp1prov.so
+vendor/lib64/libhdcp2p2prov.so
+vendor/lib64/libhdcpsrm.so
+vendor/lib64/libwfdhdcpcp.so
