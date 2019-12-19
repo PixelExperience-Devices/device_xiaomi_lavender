@@ -9,9 +9,6 @@ dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 ro.colorpick_adjust=true
 
-# enable PQ feature by default
-vendor.vidc.enc.disable.pq=false
-
 # system property for maximum number of HFP client connections
 bt.max.hfpclient.connections=1
 

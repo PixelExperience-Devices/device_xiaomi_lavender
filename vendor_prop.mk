@@ -268,3 +268,6 @@ ro.vendor.audio.soundtrigger=none \
 ro.vendor.audio.soundtrigger.lowpower=false \
 ro.vendor.audio.voice.volume.boost=manual
 
+# disable PQ feature by default
+PRODUCT_PROPERTY_OVERRIDES += \
+	vendor.vidc.enc.disable.pq=true
