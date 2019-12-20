@@ -4968,7 +4968,7 @@ esac
 
 case "$target" in
 	"kona")
-
+	rev=`cat /sys/devices/soc0/revision`
 	ddr_type=`od -An -tx /proc/device-tree/memory/ddr_device_type`
 	ddr_type4="07"
 	ddr_type5="08"
@@ -5018,7 +5018,7 @@ case "$target" in
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-        if [ `cat /sys/devices/soc0/revision` == "2.0" ]; then
+        if [ $rev == "2.0" ] || [ $rev == "2.1"]; then
 		echo 1248000 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
 	else
 		echo 1228800 > /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
@@ -5041,7 +5041,7 @@ case "$target" in
 	echo "schedutil" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/down_rate_limit_us
 	echo 0 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/up_rate_limit_us
-        if [ `cat /sys/devices/soc0/revision` == "2.0" ]; then
+        if [ $rev == "2.0" ] || [ $rev == "2.1"]; then
 		echo 1632000 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
 	else
 		echo 1612800 > /sys/devices/system/cpu/cpufreq/policy7/schedutil/hispeed_freq
