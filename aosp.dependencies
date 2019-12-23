@@ -1,8 +1,8 @@
 [
   {
-    "repository": "faham1997/kernel",
+    "repository": "faham1997/kernel_sdm660",
     "target_path": "kernel/xiaomi/lavender",
-    "branch": "10"
+    "branch": "rebase"
   },
   {
     "repository": "vendor_xiaomi_lavender",
