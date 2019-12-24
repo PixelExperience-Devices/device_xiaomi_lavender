@@ -5,6 +5,11 @@
     "branch": "rebase"
   },
   {
+    "repository": "faham1997/packages_apps_GoogleCamera_lavender",
+    "target_path": "packages/apps/GoogleCamera",
+    "branch": "ten"
+  },
+  {
     "repository": "vendor_xiaomi_lavender",
     "target_path": "vendor/xiaomi/lavender",
     "branch": "ten"
