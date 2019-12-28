@@ -6,4 +6,3 @@ type ifaa_prop, property_type;
 
 # Thermal engine
 type thermal_prop, property_type;
-
