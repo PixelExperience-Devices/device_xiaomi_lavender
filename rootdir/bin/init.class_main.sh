@@ -44,6 +44,11 @@ case "$baseband" in
 esac
 
 case "$baseband" in
+    "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3")
+    start vendor.qmuxd
+esac
+
+case "$baseband" in
     "msm" | "csfb" | "svlte2a" | "mdm" | "mdm2" | "sglte" | "sglte2" | "dsda2" | "unknown" | "dsda3" | "sdm" | "sdx" | "sm6")
 
     # For older modem packages launch ril-daemon.
@@ -94,7 +99,6 @@ case "$baseband" in
         start ril-daemon
         start vendor.ril-daemon
     fi
-
     case "$baseband" in
         "svlte2a" | "csfb")
           start qmiproxy
@@ -130,12 +134,16 @@ case "$baseband" in
         "tethered")
             start vendor.dataqti
             start vendor.dataadpl
+            start vendor.port-bridge
             ;;
         "concurrent")
             start vendor.dataqti
             start vendor.dataadpl
+            start vendor.netmgrd
+            start vendor.port-bridge
             ;;
         *)
+            start vendor.netmgrd
             ;;
     esac
 esac
