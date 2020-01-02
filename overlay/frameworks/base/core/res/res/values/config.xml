@@ -288,9 +288,6 @@
     <!-- Whether camera shutter sound is forced or not  (country specific). -->
     <bool name="config_camera_sound_forced">false</bool>
 
-    <!-- Configuration to enable non-default PDP during IWLAN
-    <bool name="config_feature_iwlan_enabled">true</bool> -->
-
     <!-- Is the device capable of supporting digital pen
     <bool name="config_digitalPenCapable">true</bool> -->
 
@@ -357,6 +354,17 @@
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
     <integer name="config_screenBrightnessDoze">17</integer>
+
+    <!-- IWLAN data service package name to bind to by default. If none is specified in an overlay, an
+         empty string is passed in -->
+    <string name="config_wlan_data_service_package">vendor.qti.iwlan</string>
+
+    <!-- IWLAN network service package name to bind to by default. If none is specified in an overlay, an
+         empty string is passed in -->
+    <string name="config_wlan_network_service_package">vendor.qti.iwlan</string>
+
+    <!-- Telephony qualified networks service package name to bind to by default. -->
+    <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
 
     <string-array name="config_mobile_tcp_buffers">
         <item>"5gnr:2097152,6291456,16777216,512000,2097152,8388608"</item>
