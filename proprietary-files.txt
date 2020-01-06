@@ -467,7 +467,7 @@ vendor/etc/camera/score_icon.png
 vendor/etc/camera/sdm_ys_32p_120_21_5_perturb50.bin
 
 
-# Camera-chromatix
+# Camera-chromatix - from lavender-user 9 PKQ1.180904.001 V11.0.4.0.PFGMIXM release-keys
 vendor/lib/libchromatix_csidtg_common.so
 vendor/lib/libchromatix_csidtg_cpp_preview.so
 vendor/lib/libchromatix_csidtg_postproc.so
