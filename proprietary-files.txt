@@ -1383,18 +1383,18 @@ vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
-# FM
-lib/libfm-hci.so
-lib/fm_helium.so
-lib64/libfm-hci.so
-lib64/fm_helium.so
-vendor/bin/fm_qsoc_patches
--lib/vendor.qti.hardware.fm@1.0.so
--lib64/vendor.qti.hardware.fm@1.0.so
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib/vendor.qti.hardware.fm@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.fm@1.0.so
+# FM - from LA.UM.7.2.r1-06900-sdm660.0
+lib/libfm-hci.so|4d6f17e23c6b1e613ec246b6a5f4685107bb312e
+lib/fm_helium.so|1e14ee96e5ad2a82d7c9c4082c7dd7ad4ec71341
+lib64/libfm-hci.so|c3038faab85ad96ceeed30048e487d044feadd71
+lib64/fm_helium.so|c4d2b7a831c7b829b63f6bc02ff34ed8ae2fc149
+vendor/bin/fm_qsoc_patches|39418920c74cefb165d7c653c6796e52487f9144
+-lib/vendor.qti.hardware.fm@1.0.so|b438141abfb4a52cf82b9680326c22495e6de450
+-lib64/vendor.qti.hardware.fm@1.0.so|32dd637f377d18e862ad24be7086a71a5fe52f71
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|c35ae0be2170bea8f2fcf97cca27c45f07eb11c8
+vendor/lib/vendor.qti.hardware.fm@1.0.so|34c82a9ff2f67915c3986f53103971b320395853
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|ddc519c869326a00264444cf960cef4a5deca599
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|f8818a9827d40ad2c562d8e29a5e3949d985b852
 
 # Factory
 framework/vendor.qti.data.factory-V1.0-java.jar
