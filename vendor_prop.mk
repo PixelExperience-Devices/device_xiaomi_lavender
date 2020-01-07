@@ -249,6 +249,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thermal configs path
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.thermal.data.path=/data/vendor/thermal/
+	
+# Time
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.delta_time.enable=true
 
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \
