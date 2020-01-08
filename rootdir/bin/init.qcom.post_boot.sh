@@ -3737,7 +3737,7 @@ case "$target" in
         fi
 
         case "$soc_id" in
-                 "417" )
+                 "417" | "420" | "444" | "445" )
 
             # Core control is temporarily disabled till bring up
             echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
