@@ -23,10 +23,6 @@ ro.vendor.display.ad.sdr_calib_data=/data/vendor/display/ad_calib.cfg
 #
 persist.fuse_sdcard=true
 
-#system prop for wipower support
-ro.bluetooth.emb_wp_mode=true
-ro.bluetooth.wipower=true
-
 # cherrypick form d2s  for video call
 persist.vendor.qti.telephony.vt_cam_interface=1
 

@@ -89,9 +89,9 @@ on boot
     chown system system /sys/class/touch/touch_dev/palm_sensor
     start vendor.rmt_storage
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 0-6
-    write /dev/cpuset/foreground/boost/cpus 0-6
-    write /dev/cpuset/background/cpus 0-1
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/boost/cpus 0-7
+    write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-3
 
     chown root system /proc/tp_grip_area
@@ -295,6 +295,8 @@ on charger
     load_system_props
     start qcom-post-boot
     mkdir /data/vendor/charge_logger 0771 system system
+    chown system system /sys/class/leds/red/brightness
+	chmod 0666 /sys/class/leds/red/brightness
     start vendor.hvdcp_opti
     setprop sys.usb.configfs 1
     start power_off_alarm
@@ -311,179 +313,6 @@ service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
      user root
      group system wakelock
 
-# smart pa cal     tsx 08/26
-service pa-cal-load /system/vendor/bin/smart-pa-cal -load
-    user root
-    group root
-    disabled
-    oneshot
-
-# smart pa cal     tsx 08/26
-service smart-pa-cal /system/vendor/bin/smart-pa-cal -t 30 -c /system/vendor/etc/speaker.ftcfg -v -u
-    user root
-    group root
-    disabled
-    oneshot
-
-on property:sys.pa-cal=0
-    stop smart-pa-cal
-
-on property:sys.pa-cal=1
-    start smart-pa-cal
-
-# audio loopback test begin    tsx 08/26
-service loopback_spk1 /system/vendor/bin/loopback.sh 1 1
-    user root
-    group root
-    disabled
-    oneshot
-	
-service loopback_spk0 /system/vendor/bin/loopback.sh 1 0
-    user root
-    group root
-    disabled
-    oneshot
-	
-service loopback_rec1 /system/vendor/bin/loopback.sh 2 1
-    user root
-    group root
-    disabled
-    oneshot
-	
-service loopback_rec0 /system/vendor/bin/loopback.sh 2 0
-    user root
-    group root
-    disabled
-    oneshot
-	
-service loopback_hand1 /system/vendor/bin/loopback.sh 3 1
-    user root
-    group root
-    disabled
-    oneshot
-	
-service loopback_hand0 /system/vendor/bin/loopback.sh 3 0
-    user root
-    group root
-    disabled
-    oneshot
-	
-service loopback_sec1 /system/vendor/bin/loopback.sh 4 1
-    user root
-    group root
-    disabled
-    oneshot
-	
-service loopback_sec0 /system/vendor/bin/loopback.sh 4 0
-    user root
-    group root
-    disabled
-    oneshot
-
-service spk_playback1 /system/vendor/bin/loopback.sh 5 1
-    user root
-    group root
-    disabled
-    oneshot
-	
-service spk_playback0 /system/vendor/bin/loopback.sh 5 0
-    user root
-    group root
-    disabled
-    oneshot
-#mic1 to rec
-service loopback_mic12rec1 /system/vendor/bin/loopback.sh 11 1
-    user root
-    group root
-    disabled
-    oneshot
-
-service loopback_mic12rec0 /system/vendor/bin/loopback.sh 11 0
-    user root
-    group root
-    disabled
-    oneshot
-#mic2 to spk
-service loopback_mic22spk1 /system/vendor/bin/loopback.sh 12 1
-    user root
-    group root
-    disabled
-    oneshot
-
-service loopback_mic22spk0 /system/vendor/bin/loopback.sh 12 0
-    user root
-    group root
-    disabled
-    oneshot
-
-on property:sys.loopback-spk=1
-    start loopback_spk1
-	
-on property:sys.loopback-spk=0
-    start loopback_spk0
-	
-on property:sys.loopback-rec=1
-    start loopback_rec1
-	
-on property:sys.loopback-rec=0
-    start loopback_rec0
-	
-on property:sys.loopback-mic1=1
-    start loopback_hand1
-	
-on property:sys.loopback-mic1=0
-    start loopback_hand0
-	
-on property:sys.loopback-mic2=1
-    start loopback_sec1
-	
-on property:sys.loopback-mic2=0
-    start loopback_sec0
-
-on property:sys.spk-playback=1
-    start spk_playback1
-	
-on property:sys.spk-playback=0
-    start spk_playback0
-
-#mic1 to rec
-on property:sys.loopback-mic12rec=1
-    start loopback_mic12rec1
-
-on property:sys.loopback-mic12rec=0
-    start loopback_mic12rec0
-#mic2 to spk
-on property:sys.loopback-mic22spk=1
-    start loopback_mic22spk1
-
-on property:sys.loopback-mic22spk=0
-    start loopback_mic22spk0
-
-service tinyhostless_spk /system/bin/tinyhostless -D 0 -P 35 -C 11 -p 256 -n 2 -c 1 -r 48000
-    user root
-    group root
-    disabled
-    oneshot
-
-service tinyhostless /system/bin/tinyhostless -D 0 -P 5 -C 11 -p 256 -n 2 -c 1 -r 48000
-    user root
-    group root
-    disabled
-    oneshot
-
-on property:sys.tinyhostless=0
-    stop tinyhostless 
-
-on property:sys.tinyhostless=1
-    start tinyhostless
-
-on property:sys.tinyhostless-spk=0
-    stop tinyhostless_spk
-
-on property:sys.tinyhostless-spk=1
-    start tinyhostless_spk
-	
-#audio loopback test end
 on property:persist.sys.display_srgb=1
     write /sys/class/graphics/fb0/msm_fb_srgb 1
 
@@ -538,18 +367,6 @@ service adswitch /vendor/bin/adswitch
     disabled
     oneshot
 
-service checknv /system/bin/checknv
-    class late_start
-    user root
-    oneshot
-    seclabel u:r:vendor_init:s0
-
-service nv_mac /vendor/bin/nv_mac
-	class late_start
-	user system
-	group system inet net_raw wifi
-	oneshot
-
 on property:sys.ad.enable=on
     start adswitch
 
@@ -558,32 +375,6 @@ on property:sys.ad.enable=off
 
 on property:sys.boot_completed=1
 	start nv_mac
-
-on property:sys.dynamic_debug=1
-   write /sys/kernel/debug/dynamic_debug/control "file q6afe.c +p" 
-   write /sys/kernel/debug/dynamic_debug/control "file q6adm.c +p" 
-   write /sys/kernel/debug/dynamic_debug/control "file msm-pcm-routing-v2.c +p" 
-   write /sys/kernel/debug/dynamic_debug/control "file msm-dai-q6-v2.c +p" 
-   write /sys/kernel/debug/dynamic_debug/control "file soc-core.c +p" 
-   write /sys/kernel/debug/dynamic_debug/control "file soc-dapm.c +p" 
-   write /sys/kernel/debug/dynamic_debug/control "file sdm660-internal.c +p" 
-   write /sys/kernel/debug/dynamic_debug/control "file sdm660-common.c +p" 
-   write /sys/kernel/debug/dynamic_debug/control "file msm-analog-cdc.c +p" 
-   write /sys/kernel/debug/dynamic_debug/control "file msm-digital-cdc.c +p"
-   write /sys/kernel/debug/dynamic_debug/control "file wcd-mbhc-v2.c +p" 
-
-on property:sys.dynamic_debug=0
-   write /sys/kernel/debug/dynamic_debug/control "file q6afe.c -p" 
-   write /sys/kernel/debug/dynamic_debug/control "file q6adm.c -p" 
-   write /sys/kernel/debug/dynamic_debug/control "file msm-pcm-routing-v2.c -p" 
-   write /sys/kernel/debug/dynamic_debug/control "file msm-dai-q6-v2.c -p" 
-   write /sys/kernel/debug/dynamic_debug/control "file soc-core.c -p" 
-   write /sys/kernel/debug/dynamic_debug/control "file soc-dapm.c -p" 
-   write /sys/kernel/debug/dynamic_debug/control "file sdm660-internal.c -p" 
-   write /sys/kernel/debug/dynamic_debug/control "file sdm660-common.c -p" 
-   write /sys/kernel/debug/dynamic_debug/control "file msm-analog-cdc.c -p" 
-   write /sys/kernel/debug/dynamic_debug/control "file msm-digital-cdc.c -p"
-   write /sys/kernel/debug/dynamic_debug/control "file wcd-mbhc-v2.c -p"
 
 #touch settings
 on property:vendor.tp.grip_area=90
@@ -596,3 +387,9 @@ on property:vendor.tp.grip_area=1
     write /proc/tp_grip_area 1
 on property:vendor.tp.grip_area=180
     write /proc/tp_grip_area 180
+    
+service checknv /vendor/bin/checknv
+     class late_start
+     user root
+     oneshot
+     seclabel u:r:recovery:s0

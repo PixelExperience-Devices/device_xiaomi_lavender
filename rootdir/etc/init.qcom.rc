@@ -43,6 +43,10 @@ on early-init
     chown system graphics /sys/kernel/debug/dri/0/debug/recovery_reg
     chown system graphics /sys/kernel/debug/dri/0/debug/recovery_dbgbus
     chown system graphics /sys/kernel/debug/dri/0/debug/recovery_vbif_dbgbus
+    
+    # Change ownership of sw_sync node
+	chown system graphics /sys/kernel/debug/sync/sw_sync
+	chmod 0666 /sys/kernel/debug/sync/sw_sync
 
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
@@ -64,12 +68,11 @@ on init
 
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
-		chown 0660 /sys/class/leds/red/brightness
+	chown 0660 /sys/class/leds/red/brightness
 	chown 0660 /sys/class/leds/red/blink
     chown system system /sys/class/leds/red/brightness
 	chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/red/duty_pcts
-    insmod /vendor/lib/modules/exfat.ko
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -92,13 +95,18 @@ on early-boot
 
     chown system system /mnt/vendor/persist/sensors
     chown system system /mnt/vendor/persist/sensors/sns.reg
+    chown system system /mnt/vendor/persist/sensors/sensors_list.txt
     chown system system /mnt/vendor/persist/sensors/registry
     chown system system /mnt/vendor/persist/sensors/registry/registry
     chown system system /mnt/vendor/persist/sensors/registry/registry/sensors_registry
     chown system system /mnt/vendor/persist/sensors/sensors_settings
     chown system system /mnt/vendor/persist/sensors/registry/sns_reg_config
+    chown system system /mnt/vendor/persist/sensors/registry/sns_reg_version
     chown system system /mnt/vendor/persist/sensors/registry/config
     chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+    
+    chown system system /mnt/vendor/persist/data/pfm/licenses
+    chmod 0775 /mnt/vendor/persist/data/pfm/licenses
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -550,12 +558,6 @@ on property:vendor.bluetooth.dun.status=stopped
 on property:ro.bluetooth.ftm_enabled=true
     start ftmd
 
-on property:vendor.bluetooth.startbtsnoop=true
-    start vendor.btsnoop
-
-on property:vendor.bluetooth.startbtsnoop=false
-    stop vendor.btsnoop
-
 on property:vendor.bluetooth.startbtlogger=true
     start vendor.bt_logger
 
@@ -619,13 +621,6 @@ service vendor.bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
     disabled
     oneshot
 
-service vendor.btsnoop /system/bin/btsnoop
-   user bluetooth
-   group bluetooth net_bt_admin sdcard_rw sdcard_r media_rw
-   class late_start
-   disabled
-   oneshot
-
 service vendor.bt_logger /system/bin/bt_logger
    user bluetooth
    group bluetooth net_bt_admin sdcard_rw sdcard_r media_rw
@@ -663,12 +658,6 @@ service vendor.qmuxd /system/vendor/bin/qmuxd
 service vendor.netmgrd /system/vendor/bin/netmgrd
     class main
     disabled
-
-#service vendor.ipacm /system/vendor/bin/ipacm
-#    class main
-#    user radio
-#    group radio inet
- #   disabled
 
 service vendor.dataqti /system/vendor/bin/qti
     class main
@@ -876,18 +865,6 @@ service stoppktlog /system/bin/iwpriv wlan0 pktlog 0
     group root
     disabled
     oneshot
-
-on property:persist.vendor.data.shs_ko_load=1
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules rmnet_shs
-
-on property:persist.vendor.data.shs_ko_load=0
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -r -d /vendor/lib/modules rmnet_shs
-
-on property:persist.vendor.data.perf_ko_load=1
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules rmnet_perf
-
-on property:persist.vendor.data.perf_ko_load=0
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -r -d /vendor/lib/modules rmnet_perf
 
 service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     class late_start
@@ -1260,7 +1237,7 @@ on property:sys.thermal.isinvideo=1
 
 on property:sys.thermal.isinvideo=0
     write /sys/class/power_supply/battery/device/thermalvideo 0
-service power_off_alarm /vendor/bin/power_off_alarm
+service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core
     group system
     disabled
@@ -1299,6 +1276,31 @@ on property:vendor.opengles.version=*
 #Set gpu available frequencies property
 on property:vendor.gpu.available_frequencies=*
     setprop ro.vendor.gpu.available_frequencies ${vendor.gpu.available_frequencies}
+
+service vendor.audio-hal-2-0 /vendor/bin/hw/android.hardware.audio@2.0-service
+    override
+    class hal
+    user audioserver
+    # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+    group audio camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct oem_2901 wakelock
+    capabilities BLOCK_SUSPEND
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
+    # audioflinger restarts itself when it loses connection with the hal
+    # and its .rc file has an "onrestart restart audio-hal" rule, thus
+    # an additional auto-restart from the init process isn't needed.
+    oneshot
+    interface android.hardware.audio@5.0::IDevicesFactory default
+    interface android.hardware.audio@4.0::IDevicesFactory default
+    interface android.hardware.audio@2.0::IDevicesFactory default
+
+service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0-service
+    override
+    class hal
+    interface android.hardware.contexthub@1.0::IContexthub default
+    user system
+    group system
+    disabled    
 
 #workaround for camera HAL can not read sys property 
 on property:sys.camera.face.unlock=*
