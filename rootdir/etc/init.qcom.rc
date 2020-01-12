@@ -257,6 +257,7 @@ on boot
 
     # Allow access to UFS device attributes on sysfs
     chown system system /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
+    chmod 0660 /sys/devices/platform/soc/1d84000.ufshc/auto_hibern8
 
     # Create directory used for display
     mkdir /persist/display 0770 system graphics
