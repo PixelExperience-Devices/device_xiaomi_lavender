@@ -1,6 +1,6 @@
 [
   {
-    "repository": "faham1997/android_kernel_xiaomi_lavender",
+    "repository": "kernel_xiaomi_lavender",
     "target_path": "kernel/xiaomi/lavender",
     "branch": "ten"
   },
@@ -10,8 +10,8 @@
     "branch": "ten"
   },
   {
-    "repository": "vendor_xiaomi_lavender",
-    "target_path": "vendor/xiaomi/lavender",
+    "repository": "vendor_xiaomi",
+    "target_path": "vendor/xiaomi",
     "branch": "ten"
   },
   {
