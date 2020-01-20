@@ -1640,7 +1640,7 @@ vendor/lib64/libperipheral_client.so|a0dd574c8af3135adae10ef49065fa765906db7a
 # Power-off charging daemon
 -sbin/charger:sbin/chargeonlymode;rootfs
 
-# Postprocessing - from LA.UM.8.2.r1-04000-sdm660.0
+# Postprocessing - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
 vendor/bin/hw/vendor.display.color@1.0-service|b091c0d0f898959afedf8a3f83b5e97205fdfbc8
 vendor/bin/mm-pp-dpps|87650deb0e6df4afae33020b23af0d1cf33ec51c
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
