@@ -1814,24 +1814,24 @@ vendor/lib64/libsubsystem_control.so
 vendor/etc/sensors/elliptic.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
 
-# Sensors
-vendor/bin/sensors.qti
-vendor/etc/elliptic_sensor.xml
-vendor/lib/hw/activity_recognition.sdm660.so
-vendor/lib/libsensor1.so
-vendor/lib/libsensor_reg.so
-vendor/lib/sensors.ssc.so
-vendor/lib/sensors.touch.so
-vendor/lib/sensor_calibrate.so
-vendor/lib64/hw/activity_recognition.sdm660.so
-vendor/lib64/libnotifyaudiohal.so
-vendor/lib64/libsensor1.so
-vendor/lib64/libsensorndkbridge.so
-vendor/lib64/libsensor_reg.so
-vendor/lib64/sensors.elliptic.so
-vendor/lib64/sensors.ssc.so
-vendor/lib64/sensors.touch.so
-vendor/lib64/sensor_calibrate.so
+# Sensors - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/bin/sensors.qti|e00ca0957c3a6a71a19bf0bf1a1b4406dcc364af
+vendor/etc/elliptic_sensor.xml|a2e5622cfa13eddb11efec6a891b71f7f09c868b
+vendor/lib/hw/activity_recognition.sdm660.so|9114ef1cdf5cd48b62bb7023b776c2abb32d357e
+vendor/lib/libsensor1.so|fde24e9290da09cc81c8de5b057acb3383a02081
+vendor/lib/libsensor_reg.so|2d865aa3ddb4d15e8cba16a5d133886480d3ee8e
+vendor/lib/libssc_default_listener.so|94bcf6cb842a08e233fa7f6bfea4002dd7ab0efc
+vendor/lib/sensors.ssc.so|1c37ad46b43cd81024dd41243c949a24dd2d9f86
+vendor/lib/sensor_calibrate.so|8fb10e8c4fb59904eae1363281442bcc4be2272d
+vendor/lib64/hw/activity_recognition.sdm660.so|b1c0be438f80e92acb931b101da52a98599f3005
+vendor/lib64/libnotifyaudiohal.so|aa37847e44012c177ff6e76444ca689936adf2d3
+vendor/lib64/libsensor1.so|16469d36e6ada214c2741e2490f5ea1a363e96f5
+vendor/lib64/libsensorndkbridge.so|05497b857afa117169e1dce3ef08d34f150d92fa
+vendor/lib64/libsensor_reg.so|d39e690d68f53f0032518d4f5ddae8b075ea44cb
+vendor/lib64/libssc_default_listener.so|71c4f6feef87826eee1843dbbb971204ecc3ab7a
+vendor/lib64/sensors.elliptic.so|51b8b3a1926274981f749109db9baea20b974c83
+vendor/lib64/sensors.ssc.so|fe650649184fd43dcfa90776395fe0680d972a7c
+vendor/lib64/sensor_calibrate.so|1bca9e2c4cfad36f264aab39f7d3641e2ef25503
 
 # Soter
 -app/SoterService/SoterService.apk
