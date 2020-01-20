@@ -42,11 +42,11 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|c9877b6cae0353d5fdea5bc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|1e2631850cc97dfedbde50a9d0d55c8d14881b44
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|271f85f1c6dc0c65dc3aa9a8603f3910fa50e1ea
 
-# ANT+ - from LA.UM.8.2.r1-04300-sdm660.0
+# ANT+ - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
 -lib/libantradio.so|37c36369eeab19d5e6266d9d25ae0de9bb59502d
 -lib64/libantradio.so|43f6105678c082216f1606d8dd43fa1b0b753d7e
-product/lib64/com.qualcomm.qti.ant@1.0.so|452f459f04e5d819bf0325f83eaa14e0337a3c13
-vendor/lib64/com.qualcomm.qti.ant@1.0.so|cd400d59d68aad8e547487de9c3f49cefd4d2fca
+product/lib64/com.qualcomm.qti.ant@1.0.so|f40868ad57012f1a512b14c889bc8380652cc50f
+vendor/lib64/com.qualcomm.qti.ant@1.0.so|181a8ab9b1d40705d3151821b53732c5566a2848
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|aa08f9ec51392ed841f60ad08b7f083312c8c5ee
 
 # Audio
@@ -1842,17 +1842,17 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 
-# Thermal
-vendor/bin/thermal-engine
-vendor/etc/thermal-engine-camera.conf
-vendor/etc/thermal-engine-map.conf
-vendor/etc/thermal-engine-normal.conf
-vendor/etc/thermal-engine.conf
--vendor/lib/libthermalclient.so
-vendor/lib/libthermalfeature.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalfeature.so
-vendor/lib64/libthermalioctl.so
+# Thermal - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/bin/thermal-engine|614a22af6e7c5ceeec419b84ccbff756e59b5344
+vendor/etc/thermal-engine-camera.conf|db9829a655ca0c3013448e6a4aee3fcce9f90ca2
+vendor/etc/thermal-engine-map.conf|19c9ec67a63568470061413e47d420321040ef2a
+vendor/etc/thermal-engine-normal.conf|f44b43de8ec730aed99e289be99c7fc814da5e94
+vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
+-vendor/lib/libthermalclient.so|c3aecc7610e8f5775a6f6af2ff7790bef74380a1
+vendor/lib/libthermalfeature.so|1f1eb616ba26b309a2fda7de40c2163a4acaaa35
+-vendor/lib64/libthermalclient.so|84072e150722cc668320f07a75cb8695ce1a79b0
+vendor/lib64/libthermalfeature.so|829b2fc0aa8c863d4b4b331e0a2c00663e01efe6
+vendor/lib64/libthermalioctl.so|d7055e46d8ba5e83b213c5f38d936f3ea71003c2
 
 # Time services - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
 -vendor/app/TimeService/TimeService.apk|27f9b81621c446baa8c37581d9bfbca2fd67b496
