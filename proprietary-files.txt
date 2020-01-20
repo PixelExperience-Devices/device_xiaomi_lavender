@@ -1801,14 +1801,14 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/lib64/vendor.qti.ims.callinfo@1.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 
-# SSR
-vendor/bin/ssr_diag
-vendor/bin/ssr_setup
-vendor/bin/subsystem_ramdump
-vendor/lib/libSubSystemShutdown.so
-vendor/lib/libsubsystem_control.so
-vendor/lib64/libSubSystemShutdown.so
-vendor/lib64/libsubsystem_control.so
+# SSR - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/bin/ssr_diag|081841c82590a5ce0f504621e965810da131e027
+vendor/bin/ssr_setup|68289baa36e6b283fed0e7eaee2dd9152ebc251d
+vendor/bin/subsystem_ramdump|40d808d1785f3a700ec95f5a1d396745817d7e63
+vendor/lib/libSubSystemShutdown.so|eb19681c74152f8f2d7a96c303eac3b7127f0fc9
+vendor/lib/libsubsystem_control.so|cdb6c041ea7b49d04afdeb44088b44b63ed840c8
+vendor/lib64/libSubSystemShutdown.so|2fa4c60e355ce0e77994f2108706beb9e6cdcbdd
+vendor/lib64/libsubsystem_control.so|82aaf2bd473d2379b859c648a8d825109e81eaed
 
 # Sensor-configs
 vendor/etc/sensors/elliptic.conf
