@@ -1466,7 +1466,6 @@ vendor/lib64/vendor.qti.gnss@1.1.so
 vendor/lib64/vendor.qti.gnss@1.2.so
 vendor/lib64/vendor.qti.gnss@2.0.so
 
-
 # GPU firmware
 vendor/firmware/a512_zap.b00
 vendor/firmware/a512_zap.b01
@@ -1654,7 +1653,6 @@ vendor/bin/pm-service|b0f77edfe04a3cc6284738196c0044e676d5eeb3
 vendor/lib/libperipheral_client.so|836411f7b88afe296b3f3090aab70fc5700ba434
 vendor/lib64/libperipheral_client.so|a0dd574c8af3135adae10ef49065fa765906db7a
 
-
 # Power-off charging daemon
 -sbin/charger:sbin/chargeonlymode;rootfs
 
@@ -1680,7 +1678,6 @@ vendor/lib/libqdi.so
 vendor/lib/libqdp.so
 vendor/lib/libqmi.so
 vendor/lib/libqmiservices.so
-vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_helper.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
@@ -1694,12 +1691,15 @@ vendor/lib64/libqdi.so
 vendor/lib64/libqdp.so
 vendor/lib64/libqmi.so
 vendor/lib64/libqmiservices.so
-vendor/lib64/libqmi_cci.so
 vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
+
+# QMI - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/lib/libqmi_cci.so|d01181c9a9b0db5ee37b35e63dcc5e8e37ac741e
+vendor/lib64/libqmi_cci.so|acd55410197247e693946fdcca9559d5c69dcefe
 
 # Radio - from mata - QP1A.190502.046 
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
