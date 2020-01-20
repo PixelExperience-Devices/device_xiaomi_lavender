@@ -1548,21 +1548,21 @@ vendor/lib64/hw/vulkan.sdm660.so|ad3a5d92c6c13ba0c937dd1b83f371e804a57c4e
 vendor/lib/hw/keystore.sdm660.so
 vendor/lib64/hw/keystore.sdm660.so
 
-# Listen - from LA.UM.8.2.r1-04000-sdm660.0
-vendor/etc/audio.scd
-vendor/lib/hw/sound_trigger.primary.sdm660.so|d58182b47f3a631f429ce863e1eb54c2e5c72311
+# Listen - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/etc/audio.scd|d17ee46b7d136510360389baa8f365cd7669b5dd
+vendor/lib/hw/sound_trigger.primary.sdm660.so|56f0bc4d977965f3f00365fa4ac193e0b4c57e7e
 vendor/lib/libadpcmdec.so|6e9be864a1380e099a2d68237e13a724f3143314
-vendor/lib/libgcs-calwrapper.so|38dbbc9606fdee0ac0df5d13f7654b939a3bd9d9
-vendor/lib/libgcs-ipc.so|74bd21f38a9b48210053bfaf2146f514e0951b9f
+vendor/lib/libgcs-calwrapper.so|739c4485046f8d38fc99d86f9a5570404c191dc0
+vendor/lib/libgcs-ipc.so|1bb6c6d338de04ccb36ba1f64289a89e207aef08
 vendor/lib/libgcs-osal.so|dfae7d1bb15b7bd19fef7427f0a6f6df28d5d30a
-vendor/lib/libgcs.so|01569fa5037f575e59662c08aa5e65fe18a42b6f
-vendor/lib/libsmwrapper.so|d28c31e4dd25de2eb7d1face701b0f6acf1b1d0e
+vendor/lib/libgcs.so|184f5ac256dbf8899b618ced2b2211f770384968
+vendor/lib/libsmwrapper.so|b43188279cce7e7879ea1e9ff2ccc44c22d69215
 vendor/lib/vendor.qti.voiceprint@1.0.so|3ae0d9f501d8d9094fe3f8850632c7b3807234a4
-vendor/lib64/hw/sound_trigger.primary.sdm660.so|20fe6fdd52735b3dd1b3d6c2cd65a6adafe2ace7
-vendor/lib64/libgcs-calwrapper.so|4b78db5bc3ffbc15a847cd7084c960f0fd1c70ed
-vendor/lib64/libgcs-ipc.so|230e8fa8a303229f8f179d88ed222ba2f920f7d9
+vendor/lib64/hw/sound_trigger.primary.sdm660.so|42142bff59c27fb48b03a4f444d76b2a5c2f8227
+vendor/lib64/libgcs-calwrapper.so|025350ec9a6cde467dd8ac9e79764f3cdf9d7932
+vendor/lib64/libgcs-ipc.so|1abbfd18bec09d3224a0ba1b20124c7265d7c0ff
 vendor/lib64/libgcs-osal.so|5eca0a8d8ea32505d5b8d69b3e13bf640b34976a
-vendor/lib64/libgcs.so|f4a179a568d3307f77487bbf0e2c63a31b7adbc6
+vendor/lib64/libgcs.so|a3705d4297d16465c652fdb3a3611767c9eb6668
 vendor/lib64/vendor.qti.voiceprint@1.0.so|9ba1876fdcab38082437b6ff1c0edfa0db056b7a
 
 # Media - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
