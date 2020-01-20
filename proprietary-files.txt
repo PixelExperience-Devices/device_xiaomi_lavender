@@ -1860,9 +1860,10 @@ vendor/lib/libthermalfeature.so
 vendor/lib64/libthermalfeature.so
 vendor/lib64/libthermalioctl.so
 
-# Time services - from LA.UM.8.2.r1-04000-sdm660.0
--vendor/app/TimeService/TimeService.apk|4a37afd1395758d946580af184a738e3c657b1e2
-vendor/bin/time_daemon|1f0ab775a70bd863c0c59f999fcba2b6882d2a31
+# Time services - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+-vendor/app/TimeService/TimeService.apk|27f9b81621c446baa8c37581d9bfbca2fd67b496
+vendor/bin/time_daemon|4379f604fcb41e9b096203b1d888cac478a3aafe
+vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
 -vendor/lib/libtime_genoff.so|e858cc52e829af0a9e4b5a4c39bddef8cece4bd9
 -vendor/lib64/libtime_genoff.so|c8e0bbc9c6b7b5beddba43bc4125a9eaeba7c79f
 
