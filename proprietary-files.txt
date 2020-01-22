@@ -180,9 +180,9 @@ vendor/lib64/vendor.qti.hardware.data.latency@1.0.so|9868d96d363acb9fdfd8cafd207
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|52600ab00087c5ee2be399cdcca9b797534ef6c0
 vendor/lib64/vendor.qti.latency@2.0.so|531cfa663cacf0aee1daaeb3bb8e935cd561cb19
 
-# Consumerir
-vendor/lib/hw/consumerir.sdm660.so
-vendor/lib64/hw/consumerir.sdm660.so
+# Consumerir - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.sdm660.so|9557dc4e5ed630f1fc534334074cce58d4c49c62
+vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.sdm660.so|d1f275a91557dfab52e82906986c5094fe078722
 
 # Camera-actuators
 vendor/lib/libactuator_lavender_imx486_ofilm_i_bu64982.so
