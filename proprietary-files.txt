@@ -1304,32 +1304,31 @@ vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|fbff6357ee46dd6d62f490a942ff567b6ce
 vendor/lib64/libdpmqmihal.so|30a170684219dd589d05ce5b446e73b7501f13e3
 -product/priv-app/dpmserviceapp/dpmserviceapp.apk|9fd873c5330c03c62dfdeb6540b5984588295319
 
-# DRM
-vendor/bin/qseecomd
-vendor/lib/libcppf.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib/libtzdrmgenprov.so
-vendor/lib64/libcpion.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libhdcpsrm.so
-#vendor/lib64/liboemcrypto.so
-vendor/lib64/libqisl.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/librpmb.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libSecureUILib.so
-vendor/lib64/libssd.so
-vendor/lib64/libStDrvInt.so
-vendor/lib64/libtzdrmgenprov.so
+# DRM - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/bin/qseecomd|90d5df44869a1de44cb11d690304e3b41bab8600
+vendor/lib/libcppf.so|04d42e86256394f361560ca3038c055dc1df4b6a
+vendor/lib/libQSEEComAPI.so|1c134972d1629e7ec8e854f0fa43e2886556dbd7
+vendor/lib/libtzdrmgenprov.so|8c525b28433757095f97ac80f9cbdcff7be37835
+vendor/lib64/libcpion.so|ff24ef248bb35fd3cc1081a63f33c2565dc6351f
+vendor/lib64/libdrmfs.so|d5847a27b74955a0ccfb2da499fa42902c5bf1df
+vendor/lib64/libdrmtime.so|9f1337004246fa7e6f726486bcab949fe5e2459f
+vendor/lib64/libGPreqcancel_svc.so|610f0d55e3c3b31a5fdd590dcd6ec8c2cf258d9b
+vendor/lib64/libGPreqcancel.so|76b35e76a85b333f46ab749b7865c26ba0ca7bc4
+vendor/lib64/libhdcpsrm.so|ee8e7c29e2b716a8bb07c3cbb730e34d8af3c64e
+vendor/lib64/libqisl.so|f81d523e3e257e99bd055f6576521519a074e630
+vendor/lib64/libQSEEComAPI.so|1dfc70896af18264af46be4bf797680cdd6b018b
+vendor/lib64/librpmb.so|a6add4226a289242eb2e1ccef23a94d100a94064
+vendor/lib64/libsecureui_svcsock.so|889d4a12c5dee56ed4b10548abbd7b9033cbdad2
+vendor/lib64/libsecureui.so|4a9861e7887b0e03294f86009b7600369d113964
+vendor/lib64/libSecureUILib.so|3a059d1fe3395eaefeb7817ad3af46987b6f4794
+vendor/lib64/libssd.so|a64337d8044607b81adcf7e8c5760cf8cdcf82b4
+vendor/lib64/libStDrvInt.so|a7bd8140e2cd5aa70a7d929e01233e5b71844cd8
+vendor/lib64/libtzdrmgenprov.so|6a6b5edb8c77bb51b65f3acb2fd0dedcc255a521
 
-# DRM
-vendor/bin/hw/android.hardware.drm@1.1-service.widevine
-vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
-vendor/lib64/libwvhidl.so
+# DRM (Widevine) - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec050afab5c64b9f87
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|68767969f86126ada017fc09af151e299db651d5
+vendor/lib64/libwvhidl.so|79641121417371f82af64fdec4795eb9cec1e12f
 
 # ESE-Powermanager
 lib/vendor.qti.esepowermanager@1.0.so
