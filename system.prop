@@ -2,15 +2,10 @@
 # system.prop for sdm660
 #
 #add for screen fliker
-debug.gralloc.gfx_ubwc_disable=1
-debug.gralloc.enable_fb_ubwc=0
 sdm.debug.rotator_disable_ubwc=1
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 ro.colorpick_adjust=true
-
-# system property for maximum number of HFP client connections
-bt.max.hfpclient.connections=1
 
 # System property for cabl
 ro.qualcomm.cabl=2
@@ -22,9 +17,6 @@ ro.vendor.display.ad.sdr_calib_data=/data/vendor/display/ad_calib.cfg
 #Simulate sdcard on /data/media
 #
 persist.fuse_sdcard=true
-
-# cherrypick form d2s  for video call
-persist.vendor.qti.telephony.vt_cam_interface=1
 
 #Enable stm-events
 persist.debug.coresight.config=stm-events
@@ -38,9 +30,6 @@ persist.chg.max_volt_mv=9000
 #system prop for Bluetooth SOC type
 vendor.bluetooth.soc=cherokee
 persist.vendor.btstack.enable.splita2dp=true
-
-# enable IZat OptInApp overlay
-persist.vendor.overlay.izat.optin=rro
 
 #add for color invert
 ro.vendor.df.effect.conflict=1

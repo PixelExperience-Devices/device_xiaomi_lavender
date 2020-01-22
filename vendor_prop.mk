@@ -198,7 +198,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=22,20 \
     telephony.lteOnCdmaDevice=1 \
     rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so \
-    DEVICE_PROVISIONED=1
+    DEVICE_PROVISIONED=1 \
+    persist.vendor.qti.telephony.vt_cam_interface=1
+
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -239,13 +241,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0
+    persist.sys.wfd.virtual=0 \
+    vendor.video.disable.ubwc=1 \
+    vendor.gralloc.enable_fb_ubwc=1
+
 
 # Misc ( Yet not Sorted )
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.sys.job_delay=true \
 persist.sys.mcd_config_file=/system/etc/mcd_default.conf \
-vendor.video.disable.ubwc=1 \
 persist.vendor.qcomsysd.enabled=1 \
 keyguard.no_require_sim=true \
 ro.com.android.dataroaming=false \
