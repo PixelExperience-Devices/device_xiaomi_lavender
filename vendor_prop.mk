@@ -96,8 +96,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.longcheertel.cit \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi,com.longcheertel.cit \
+    camera.aux.packagelist=org.codeaurora.snapcam,com.google.android.GoogleCamera \
+    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.google.android.GoogleCamera \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam \
     persist.camera.privapp.list=org.codeaurora.snapcam \
     persist.vendor.camera.HAL3.enabled=1
