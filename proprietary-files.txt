@@ -1340,41 +1340,41 @@ vendor/lib/vendor.qti.esepowermanager@1.0.so|12f57cdb3ea7f7e7a248f9a3d7de4f8e575
 vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so|b9a03bfc607fb74462346eecacf27a7afda8d114
 vendor/lib64/vendor.qti.esepowermanager@1.0.so|0dc949a16129a9d3d06429723641b6fba11ee1d2
 
-# Fingerprint Firmware
-vendor/firmware/goodixfp.b00
-vendor/firmware/goodixfp.b01
-vendor/firmware/goodixfp.b02
-vendor/firmware/goodixfp.b03
-vendor/firmware/goodixfp.b04
-vendor/firmware/goodixfp.b05
-vendor/firmware/goodixfp.b06
-vendor/firmware/goodixfp.b07
-vendor/firmware/goodixfp.mdt
-vendor/firmware/fpctzappfingerprint.b00
-vendor/firmware/fpctzappfingerprint.b01
-vendor/firmware/fpctzappfingerprint.b02
-vendor/firmware/fpctzappfingerprint.b03
-vendor/firmware/fpctzappfingerprint.b04
-vendor/firmware/fpctzappfingerprint.b05
-vendor/firmware/fpctzappfingerprint.b06
-vendor/firmware/fpctzappfingerprint.b07
-vendor/firmware/fpctzappfingerprint.mdt
+# Fingerprint Firmware - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/firmware/goodixfp.b00|8f813a88f234aa576d36753d545839379f4d845b
+vendor/firmware/goodixfp.b01|ed9b552ee000d07ba1de9c2a166820d9f86e7648
+vendor/firmware/goodixfp.b02|d73142c3c50d7bcf29b01868ad6a590c239229b8
+vendor/firmware/goodixfp.b03|4f771450bf3d84b30667b6699e0dbd073f78ae85
+vendor/firmware/goodixfp.b04|eca5f325a4af552a6eb6d217f55ff2fcfac741a1
+vendor/firmware/goodixfp.b05|b24b016455b071eb424e370dba7ecb0537878de5
+vendor/firmware/goodixfp.b06|b24b016455b071eb424e370dba7ecb0537878de5
+vendor/firmware/goodixfp.b07|777f1f9fd5becc70d936b3e9829d88a2bebe2687
+vendor/firmware/goodixfp.mdt|2f10c64c8b781e90733672d6361fc235eab09a17
+vendor/firmware/fpctzappfingerprint.b00|3e3501e6ff9929f6dd59b3789e7bf119c1de525b
+vendor/firmware/fpctzappfingerprint.b01|57e2bb9757a288d237ce665e52216abd6d389dea
+vendor/firmware/fpctzappfingerprint.b02|0e716713678e4d491acc4e9d6bbb710bb644cf4d
+vendor/firmware/fpctzappfingerprint.b03|85a9fcbd2e9236a9e510119fbaeda834c7bd1189
+vendor/firmware/fpctzappfingerprint.b04|c689bf09ff56a12a60df85cb2a47792ec9df855d
+vendor/firmware/fpctzappfingerprint.b05|9fafa1b43f267f8f1966907ce3320647a669b976
+vendor/firmware/fpctzappfingerprint.b06|9fafa1b43f267f8f1966907ce3320647a669b976
+vendor/firmware/fpctzappfingerprint.b07|27ac9ea6d45412fc39082f236857d03ca55a1b0f
+vendor/firmware/fpctzappfingerprint.mdt|56df2f2c406db1cf7cf6d15a3c2481d7573f3f13
 
-# Fingerprint sensor
--vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk
-vendor/etc/permissions/com.fingerprints.extension.xml
-vendor/framework/com.fingerprints.extension.jar
-vendor/lib/hw/fingerprint.sdm660.so
-vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
-vendor/lib64/com.fingerprints.extension@2.0.so
-vendor/lib64/hw/fingerprint.sdm660.so
-vendor/lib64/hw/fingerprint.fpc.default.so
-vendor/lib64/hw/fingerprint.goodix.default.so
-vendor/lib64/libgf_ca.so
-vendor/lib64/libgf_hal.so
-vendor/lib64/libgoodixhwfingerprint.so
-vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so
-vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+# Fingerprint sensor - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+-vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk|947aa5bdb5db6144f29e17869baa9fbbdadc9fe7
+vendor/etc/permissions/com.fingerprints.extension.xml|de711d8827e1d321b22b60fd75a204e8928f9c6d
+vendor/framework/com.fingerprints.extension.jar|10c37dd77e3ec6f25f478af324e91310961aae08
+vendor/lib/hw/fingerprint.default.so:vendor/lib/hw/fingerprint.sdm660.so|6eac7b40dd482e03ee66797a62537510b042d9a2
+vendor/lib/vendor.qti.hardware.fingerprint@1.0.so|b953f19ff4ce4764b6b236a682af7c6db2425d86
+vendor/lib64/com.fingerprints.extension@2.0.so|c339fab8bca1d15411ac55877bf759d9568b92c9
+vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.sdm660.so|dfbcb6e002cca1331a26c8e921b3aeaa1764f304
+vendor/lib64/hw/fingerprint.fpc.default.so|7af2a9f1c101f485fd3cc81c472284c56b7e5482
+vendor/lib64/hw/fingerprint.goodix.default.so|d39d212a71004ec1b89892400819a89b0803f42a
+vendor/lib64/libgf_ca.so|8c614529ac445b72a9869743e0fb79be0ef32443
+vendor/lib64/libgf_hal.so|6ec940e66c382500a56eac5db42e62c82f4737a0
+vendor/lib64/libgoodixhwfingerprint.so|f51d93cd8985a0d4a1d902b287aa5cebe0319aee
+vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so|47babf9634793366f4f3439ec4dfe601390990a5
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so|0b84054262e01300e72796ee26ed6f9e00bce9b7
 
 # FM - from LA.UM.7.2.r1-06900-sdm660.0
 lib/libfm-hci.so|4d6f17e23c6b1e613ec246b6a5f4685107bb312e
