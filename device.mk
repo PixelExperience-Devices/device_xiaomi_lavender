@@ -82,10 +82,10 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@5.0-impl\
     android.hardware.soundtrigger@2.2-impl \
     audio.a2dp.default \
+    audio_amplifier.sdm660 \
     audio.primary.sdm660 \
     audio.r_submix.default \
     audio.usb.default \
-    libaacwrapper \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
@@ -96,6 +96,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio@2.0-impl
+
+PRODUCT_PACKAGES += \
+    libsndmonitor \
+    libhdmiedid \
+    liba2dpoffload \
+    libhfp
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -508,4 +514,5 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_PACKAGES += \
 	libnl \
+	libaacwrapper \
 	libwfdaac
