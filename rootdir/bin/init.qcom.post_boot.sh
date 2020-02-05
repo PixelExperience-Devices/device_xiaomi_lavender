@@ -3836,6 +3836,12 @@ case "$target" in
                 echo 400 > $memlat/mem_latency/ratio_ceil
             done
 
+            for gold_memlat in $device/*qcom,devfreq-l3/*cpu6*-lat/devfreq/*cpu6*-lat
+            do
+                echo 25000 > $gold_memlat/mem_latency/wb_filter_ratio
+                echo 60 > $gold_memlat/mem_latency/wb_pct_thres
+            done
+
             #Enable mem_latency governor for LLCC, and DDR scaling
             for memlat in $device/*cpu*-lat/devfreq/*cpu*-lat
             do
