@@ -103,6 +103,8 @@
     <backend_names>
         <device name="SND_DEVICE_OUT_HEADPHONES" backend="headphones" interface="INT0_MI2S_RX"/>
 		<device name="SND_DEVICE_OUT_HEADPHONES_HIFI_FILTER" backend="headphones" interface="INT0_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_BT_SCO_WB" backend="bt-sco-wb" interface="SLIMBUS_7_RX"/>
+        <device name="SND_DEVICE_OUT_BT_SCO" backend="bt-sco" interface="SLIMBUS_7_RX"/>
         <device name="SND_DEVICE_OUT_BT_A2DP" backend="bt-a2dp" interface="SLIMBUS_7_RX"/>
         <device name="SND_DEVICE_OUT_LINE" backend="headphones" interface="INT0_MI2S_RX"/>
         <device name="SND_DEVICE_OUT_ANC_HEADSET" backend="headphones" interface="INT0_MI2S_RX"/>
