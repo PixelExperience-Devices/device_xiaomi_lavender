@@ -127,6 +127,11 @@ if [ "$(getprop persist.vendor.usb.config)" == "" -a \
       fi
 fi
 
+# Enable BAM2BAM path for Lagoon
+if [ "$soc_id" == "434" ]; then
+	setprop vendor.usb.qdss.inst.name qdss
+fi
+
 # Start peripheral mode on primary USB controllers for Automotive platforms
 case "$soc_machine" in
     "SA")
