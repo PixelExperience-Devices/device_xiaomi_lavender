@@ -485,7 +485,8 @@ PRODUCT_PACKAGES += \
     libicuuc.vendor \
     libstdc++.vendor \
     libgui_vendor \
-    vndk_package
+    vndk_package \
+    vndk-ext
 
 # Wallpapers
 PRODUCT_PACKAGES += \
