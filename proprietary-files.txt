@@ -103,6 +103,8 @@ vendor/lib/libbtnv.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
+-lib/libbtconfigstore.so
+-lib64/libbtconfigstore.so
 
 # Charger
 vendor/bin/hvdcp_opti
