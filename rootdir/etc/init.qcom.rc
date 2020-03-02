@@ -603,17 +603,10 @@ service qmiproxy /system/bin/qmiproxy
     group radio diag
     disabled
 
-service vendor.sensors /vendor/bin/sscrpcd sensorspd
-    class early_hal
-    user system
-    group system wakelock
-    capabilities BLOCK_SUSPEND
-
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user system
     group system
-    disabled
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
@@ -726,12 +719,6 @@ service qcom-sh /vendor/bin/init.qcom.sh
     user root
     group root system radio
     oneshot
-
-service vendor-sensor-sh /vendor/bin/init.qcom.sensors.sh
-    class core
-    user root
-    oneshot
-
 
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
