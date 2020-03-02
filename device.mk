@@ -151,12 +151,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.sdm660_shim
 
-# CNE
-PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne \
-    services-ext
-
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
