@@ -1661,6 +1661,9 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib/libqmi_cci.so|d01181c9a9b0db5ee37b35e63dcc5e8e37ac741e
 vendor/lib64/libqmi_cci.so|acd55410197247e693946fdcca9559d5c69dcefe
 
+# QMI - from LA.UM.8.2.r1-05100-sdm660.0
+product/lib64/libdiag_system.so|0e1cd9fc75bd6db88fe65ce40310355b3d8192fb
+
 # Radio - from mata - QP1A.190502.046 
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 
