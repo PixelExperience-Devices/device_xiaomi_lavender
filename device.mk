@@ -131,7 +131,6 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0 \
     android.hardware.camera.device@3.4 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.5 \
@@ -147,6 +146,10 @@ PRODUCT_PACKAGES += \
     com.quicinc.cne \
     services-ext
 
+# Configstore
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.1-service
+
 # Codec2 modules
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
@@ -158,31 +161,33 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.graphics.mapper@2.0-impl-2.1 \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    copybit.sdm660 \
     gralloc.sdm660 \
+    memtrack.sdm660 \
     hwcomposer.sdm660 \
     libdisplayconfig \
+    libqdMetaData \
     libqdMetaData.system \
     liboverlay \
-    libtinyxml \
-    memtrack.sdm660
+    libtinyxml
 
 PRODUCT_PACKAGES += \
-    android.hardware.configstore@1.1-service \
-    android.hardware.broadcastradio@1.0-impl
-
+    android.frameworks.displayservice@1.0 \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.mapper@2.0-impl-2.1 \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.composer@2.1-service \
+    android.hardware.memtrack@1.0-impl \
+    android.hardware.memtrack@1.0-service
+	
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
+
+PRODUCT_PACKAGES += \
+    android.hardware.broadcastradio@1.0-impl \
 
 # Exclude TOF sensor from InputManager
 PRODUCT_COPY_FILES += \
