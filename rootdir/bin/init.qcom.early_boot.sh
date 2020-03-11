@@ -356,6 +356,9 @@ case "$target" in
         ;;
     "bengal")
         case "$soc_hwplatform" in
+            441)
+                setprop vendor.media.target.version 2
+                ;;
             *)
                 sku_ver=`cat /sys/devices/platform/soc/5a00000.qcom,vidc/sku_version` 2> /dev/null
                 if [ $sku_ver -eq 1 ]; then
