@@ -3693,7 +3693,7 @@ case "$target" in
 
         # Core control parameters on silver
         echo 0 0 0 0 1 1 > /sys/devices/system/cpu/cpu0/core_ctl/not_preferred
-        echo 6 > /sys/devices/system/cpu/cpu0/core_ctl/min_cpus
+        echo 4 > /sys/devices/system/cpu/cpu0/core_ctl/min_cpus
         echo 60 > /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres
         echo 40 > /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres
         echo 100 > /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms
@@ -3843,7 +3843,7 @@ case "$target" in
         echo 0 > /proc/sys/kernel/sched_boost
 
         # Turn off sleep modes
-        echo 1 > /sys/module/lpm_levels/parameters/sleep_disabled
+        echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
       ;;
     esac
 esac
