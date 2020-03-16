@@ -639,6 +639,6 @@
          one bar higher than they actually are -->
     <bool name="config_inflateSignalStrength">true</bool>
 
-    <!-- Flag indicating whether we should enable smart battery. -->
-    <bool name="config_smart_battery_available">true</bool>
+    <!-- True if the firmware supports p2p MAC randomization -->
+    <bool name="config_wifi_p2p_mac_randomization_supported">true</bool>
 </resources>
