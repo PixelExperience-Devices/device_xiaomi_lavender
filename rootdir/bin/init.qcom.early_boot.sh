@@ -478,7 +478,11 @@ then
                 esac
         done
     fi
-else
+fi
+
+
+drm_driver=/sys/class/drm/card0
+if [ -e "$drm_driver" ]; then
     set_perms /sys/devices/virtual/hdcp/msm_hdcp/min_level_change system.graphics 0660
 fi
 
