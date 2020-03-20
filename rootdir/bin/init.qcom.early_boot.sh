@@ -345,7 +345,7 @@ case "$target" in
                     setprop vendor.media.target.version 1
                 fi
                 ;;
-            434)
+            434|459)
                 sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc1/sku_version` 2> /dev/null
                 setprop vendor.media.target.version 2
                 if [ $sku_ver -eq 1 ]; then
