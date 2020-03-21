@@ -5,7 +5,7 @@
     "branch": "ten"
   },
   {
-    "repository": "faham1997/packages_apps_GoogleCamera_lavender",
+    "repository": "lavender-evergarden/packages_apps_GoogleCamera_lavender",
     "target_path": "packages/apps/GoogleCamera",
     "branch": "ten"
   },
