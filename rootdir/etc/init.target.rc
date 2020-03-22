@@ -210,12 +210,6 @@ service adsprpcd /vendor/bin/adsprpcd audiopd
    user media
    group media
 
-service hbtp /system/vendor/bin/hbtp_daemon
-    class main
-    user system
-    group system
-    disabled
-
 service audiod /system/vendor/bin/audiod
    class late_start
    user system
