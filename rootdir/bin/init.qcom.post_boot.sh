@@ -3689,7 +3689,7 @@ case "$target" in
 
     #Apply settings for lagoon
     case "$soc_id" in
-        "434" )
+        "434" | "459" )
 
         # Core control parameters on silver
         echo 0 0 0 0 1 1 > /sys/devices/system/cpu/cpu0/core_ctl/not_preferred
