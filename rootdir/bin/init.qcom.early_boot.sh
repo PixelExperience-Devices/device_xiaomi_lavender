@@ -367,6 +367,13 @@ case "$target" in
                 ;;
         esac
         ;;
+    "bengal")
+        case "$soc_hwid" in
+            441)
+                setprop vendor.gralloc.disable_ubwc 1
+                ;;
+        esac
+        ;;
     "sdm710" | "msmpeafowl")
         case "$soc_hwplatform" in
             *)
