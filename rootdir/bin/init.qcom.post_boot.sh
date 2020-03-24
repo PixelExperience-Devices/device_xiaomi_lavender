@@ -729,30 +729,33 @@ else
             echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
         fi
 
-        # Set PPR parameters
-        if [ -f /sys/devices/soc0/soc_id ]; then
-            soc_id=`cat /sys/devices/soc0/soc_id`
-        else
-            soc_id=`cat /sys/devices/system/soc/soc0/id`
-        fi
+        if [ "$ProductName" != "bengal_32" ]; then
+            #bengal_32 has appcompaction enabled. So not needed
+            # Set PPR parametersi for other targets
+            if [ -f /sys/devices/soc0/soc_id ]; then
+                soc_id=`cat /sys/devices/soc0/soc_id`
+            else
+                soc_id=`cat /sys/devices/system/soc/soc0/id`
+            fi
 
-        case "$soc_id" in
-          # Do not set PPR parameters for premium targets
-          # sdm845 - 321, 341
-          # msm8998 - 292, 319
-          # msm8996 - 246, 291, 305, 312
-          "321" | "341" | "292" | "319" | "246" | "291" | "305" | "312")
-            ;;
-          *)
-            #Set PPR parameters for all other targets.
-            echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
-            echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-            echo 50 > /sys/module/process_reclaim/parameters/pressure_min
-            echo 70 > /sys/module/process_reclaim/parameters/pressure_max
-            echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
-            echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
-            ;;
-        esac
+            case "$soc_id" in
+              # Do not set PPR parameters for premium targets
+              # sdm845 - 321, 341
+              # msm8998 - 292, 319
+              # msm8996 - 246, 291, 305, 312
+              "321" | "341" | "292" | "319" | "246" | "291" | "305" | "312")
+                ;;
+              *)
+                #Set PPR parameters for all other targets.
+                echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
+                echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+                echo 50 > /sys/module/process_reclaim/parameters/pressure_min
+                echo 70 > /sys/module/process_reclaim/parameters/pressure_max
+                echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
+                echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
+                ;;
+            esac
+        fi
     fi
 
     # Set allocstall_threshold to 0 for all targets.
