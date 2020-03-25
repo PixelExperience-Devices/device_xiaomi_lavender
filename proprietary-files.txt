@@ -1372,18 +1372,6 @@ vendor/lib/vendor.qti.hardware.fm@1.0.so|ff103851777cad17b665e1ea2df37deebdcbee4
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|665bdb1a9d0368a0ed45c384c191e5a84c985c8e
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|b1572c12b2e5701c488d65aa4651b8ff9437f6ee
 
-# Factory
-framework/vendor.qti.data.factory-V1.0-java.jar
-vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
-vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
-vendor/etc/permissions/vendor.qti.hardware.factory.xml
-vendor/lib/hw/vendor.qti.hardware.factory@1.0-impl.so
-vendor/lib/vendor.qti.data.factory@1.0.so
-vendor/lib/vendor.qti.hardware.factory@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.factory@1.0-impl.so
-vendor/lib64/vendor.qti.data.factory@1.0.so
-vendor/lib64/vendor.qti.hardware.factory@1.0.so
-
 # Gatekeeper - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|a189a50515831e6ac9a7e88a165ac979ae6ac077
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
