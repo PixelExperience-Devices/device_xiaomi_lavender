@@ -3820,11 +3820,19 @@ case "$target" in
                 echo 0 > /sys/devices/virtual/npu/msm_npu/pwr
             done
 
-           #Enable mem_latency governor for L3, LLCC, and DDR scaling
+           #Enable mem_latency governor for L3 scaling
             for memlat in $device/*qcom,devfreq-l3/*cpu*-lat/devfreq/*cpu*-lat
             do
                 echo "mem_latency" > $memlat/governor
-                echo 10 > $memlat/polling_interval
+                echo 8 > $memlat/polling_interval
+                echo 400 > $memlat/mem_latency/ratio_ceil
+            done
+
+            #Enable mem_latency governor for LLCC, and DDR scaling
+            for memlat in $device/*cpu*-lat/devfreq/*cpu*-lat
+            do
+                echo "mem_latency" > $memlat/governor
+                echo 8 > $memlat/polling_interval
                 echo 400 > $memlat/mem_latency/ratio_ceil
             done
 
@@ -3832,11 +3840,6 @@ case "$target" in
             for l3cdsp in $device/*qcom,devfreq-l3/*cdsp-l3-lat/devfreq/*cdsp-l3-lat
             do
                 echo "powersave" > $l3cdsp/governor
-            done
-
-            for cpu7l3 in $device/*qcom,devfreq-l3/*cpu7-cpu-l3-lat/devfreq/*cpu7-cpu-l3-lat
-            do
-                echo "powersave" > $memlat/governor
             done
 
             #Gold L3 ratio ceil
@@ -3849,7 +3852,7 @@ case "$target" in
             for latfloor in $device/*cpu*-ddr-latfloor*/devfreq/*cpu-ddr-latfloor*
             do
                 echo "compute" > $latfloor/governor
-                echo 10 > $latfloor/polling_interval
+                echo 8 > $latfloor/polling_interval
             done
 
         done
