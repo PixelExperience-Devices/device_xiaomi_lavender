@@ -230,7 +230,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_virtual_display_dimension=4096
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.enable_gl_backpressure=1 \
+    debug.sf.disable_backpressure=1 \
     debug.sf.early_phase_offset_ns=500000 \
     debug.sf.early_app_phase_offset_ns=500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
@@ -248,7 +248,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Thermal configs path
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.thermal.data.path=/data/vendor/thermal/
-	
+
 # Time
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true
@@ -259,7 +259,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0 \
     vendor.video.disable.ubwc=1 \
     video.disable.ubwc=1
-	
+
 # disable PQ feature by default
 PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.vidc.enc.disable.pq=true
