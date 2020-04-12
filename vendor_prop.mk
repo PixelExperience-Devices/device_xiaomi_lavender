@@ -39,8 +39,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.parser.ip.buffer.size=262144 \
     persist.vendor.audio.hifi.int_codec=true \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
-    ro.af.client_heap_size_kbyte=7168
-
+    ro.af.client_heap_size_kbyte=7168 \
+    vendor.audio.feature.a2dp_offload.enable=false
 
 # Audio dynamic feature flags
 PRODUCT_PROPERTY_OVERRIDES += \

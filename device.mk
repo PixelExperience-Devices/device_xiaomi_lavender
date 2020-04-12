@@ -100,7 +100,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libsndmonitor \
     libhdmiedid \
-    liba2dpoffload \
     libhfp
 
 PRODUCT_COPY_FILES += \
