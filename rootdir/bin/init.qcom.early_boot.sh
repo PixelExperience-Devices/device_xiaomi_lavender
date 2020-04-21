@@ -376,7 +376,12 @@ case "$target" in
                 setprop vendor.fastrpc.disable.cdsprpcd.daemon 1
                 setprop vendor.media.target.version 2
                 setprop vendor.gralloc.disable_ubwc 1
+
+                # 196609 is decimal for 0x30001 to report version 3.1
+                setprop vendor.opengles.version     196609
                 ;;
+            445)
+                setprop vendor.opengles.version     196610
             *)
                 sku_ver=`cat /sys/devices/platform/soc/5a00000.qcom,vidc/sku_version` 2> /dev/null
                 if [ $sku_ver -eq 1 ]; then
