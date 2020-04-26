@@ -23,6 +23,12 @@ ro.boot.fp.                         u:object_r:vendor_fp_prop:s0
 sys.fp.                             u:object_r:vendor_fp_prop:s0
 ro.boot.fpsensor                    u:object_r:vendor_fp_prop:s0
 
+# RIL
+ro.build.software.version               u:object_r:exported_radio_prop:s0
+ro.fota.oem                             u:object_r:exported_radio_prop:s0
+ro.miui.                                u:object_r:exported_radio_prop:s0
+ro.product.mod_device                   u:object_r:exported_radio_prop:s0
+
 # Thermal engine
 persist.sys.thermal.                u:object_r:thermal_engine_prop:s0
 sys.thermal.                        u:object_r:thermal_engine_prop:s0
@@ -34,6 +40,7 @@ vendor.display.lcd_density          u:object_r:vendor_default_prop:s0
 
 # MPCTL
 sys.post_boot.parsed                u:object_r:vendor_mpctl_prop:s0
+
 
 # Dirac
 persist.audio.dirac.                u:object_r:dirac_prop:s0
