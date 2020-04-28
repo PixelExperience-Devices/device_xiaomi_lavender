@@ -27,10 +27,6 @@ ro.vendor.sensors.pug=true
 #set maximum supported adapter voltage
 persist.chg.max_volt_mv=9000
 
-#system prop for Bluetooth SOC type
-vendor.bluetooth.soc=cherokee
-persist.vendor.btstack.enable.splita2dp=true
-
 #add for color invert
 ro.vendor.df.effect.conflict=1
 persist.sys.df.extcolor.proc=0

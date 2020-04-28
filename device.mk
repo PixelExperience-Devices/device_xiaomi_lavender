@@ -93,15 +93,6 @@ PRODUCT_PACKAGES += \
     libvolumelistener \
     tinymix
 
-PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
-    android.hardware.bluetooth.audio@2.0-impl
-
-PRODUCT_PACKAGES += \
-    libsndmonitor \
-    libhdmiedid \
-    libhfp
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_output_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_output_policy.conf \
@@ -122,9 +113,17 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbthost_if
+    libbthost_if \
+    audio.bluetooth.default \
+    android.hardware.bluetooth.audio@2.0-impl \
+    libsndmonitor \
+    libhdmiedid \
+    libhfp \
+    libldacBT_dec \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor
 
 # Sensor HAL conf file
 PRODUCT_COPY_FILES += \
