@@ -25,7 +25,7 @@
 #define LEDS            "/sys/class/leds/"
 
 #define LCD_LED         LEDS "lcd-backlight/"
-#define WHITE_LED       LEDS "white/"
+#define WHITE_LED       LEDS "red/"
 
 #define BLINK           "blink"
 #define BRIGHTNESS      "brightness"
