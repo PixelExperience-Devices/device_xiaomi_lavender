@@ -1,4 +1,5 @@
 type ir_dev_file, file_type;
+type public_adsprpcd_file, file_type;
 type proc_dt2w, fs_type, proc_type;
 type fingerprint_data_file, file_type, data_file_type, core_data_file_type;
 type fingerprint_sysfs, fs_type, sysfs_type;
