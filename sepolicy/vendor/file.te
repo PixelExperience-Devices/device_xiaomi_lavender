@@ -1,4 +1,8 @@
 type ir_dev_file, file_type;
+type proc_dt2w, fs_type, proc_type;
+type fingerprint_data_file, file_type, data_file_type, core_data_file_type;
+type fingerprint_sysfs, fs_type, sysfs_type;
+type sysfs_info, fs_type, sysfs_type;
 
 allow ueventd ir_dev_file:chr_file { create setattr };
 
@@ -6,3 +10,7 @@ allow ueventd ir_dev_file:chr_file { create setattr };
 type fingerprintd_device, file_type, dev_type;
 type persist_fingerprint_file, file_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
+
+
+type sysfs_light, fs_type, sysfs_type;
+type thermal_data_file, file_type, data_file_type;

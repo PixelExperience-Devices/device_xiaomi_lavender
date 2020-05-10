@@ -1,9 +1,19 @@
+sys.fp.goodix	u:object_r:hal_fingerprint_prop:s0
+sys.fp.vendor   u:object_r:hal_fingerprint_prop:s0
+persist.sys.fp.info u:object_r:hal_fingerprint_prop:s0
+persist.vendor.sys.fp.vendor u:object_r:hal_fingerprint_prop:s0
+persist.vendor.sys.pay.fido         u:object_r:mlipay_prop:s0
+persist.vendor.sys.pay.ifaa         u:object_r:mlipay_prop:s0
+persist.vendor.sys.pay.soter        u:object_r:mlipay_prop:s0
+persist.vendor.sys.provision.status u:object_r:mlipay_prop:s0
+
 # Camera
 camera.                             u:object_r:camera_prop:s0
 cameradaemon.SaveMemAtBoot          u:object_r:camera_prop:s0
 cpp.set.clock                       u:object_r:camera_prop:s0
 disable.cpp.power.collapse          u:object_r:camera_prop:s0
 persist.camera.                     u:object_r:camera_prop:s0
+persist.vendor.camera.              u:object_r:vendor_camera_prop:s0
 
 # Fingerprint
 gf.debug.dump_data                  u:object_r:vendor_fp_prop:s0
@@ -13,9 +23,6 @@ ro.boot.fp.                         u:object_r:vendor_fp_prop:s0
 sys.fp.                             u:object_r:vendor_fp_prop:s0
 ro.boot.fpsensor                    u:object_r:vendor_fp_prop:s0
 
-# Mlipay
-persist.vendor.sys.pay.ifaa         u:object_r:ifaa_prop:s0
-
 # Thermal engine
 persist.sys.thermal.                u:object_r:thermal_engine_prop:s0
 sys.thermal.                        u:object_r:thermal_engine_prop:s0
@@ -23,6 +30,7 @@ sys.thermal.                        u:object_r:thermal_engine_prop:s0
 # vendor_default_prop
 fpc_kpi                             u:object_r:vendor_default_prop:s0
 gpu.stats.debug.level               u:object_r:vendor_default_prop:s0
+vendor.display.lcd_density          u:object_r:vendor_default_prop:s0
 
 # MPCTL
 sys.post_boot.parsed                u:object_r:vendor_mpctl_prop:s0
