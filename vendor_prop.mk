@@ -39,8 +39,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.parser.ip.buffer.size=262144 \
     persist.vendor.audio.hifi.int_codec=true \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
-    ro.af.client_heap_size_kbyte=7168 \
-    vendor.audio.feature.a2dp_offload.enable=false
+    ro.af.client_heap_size_kbyte=7168
 
 # Audio dynamic feature flags
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -88,15 +87,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.bluetooth.wipower=false \
     vendor.qcom.bluetooth.soc=cherokee \
+    ro.vendor.bluetooth.wipower=false \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
-    persist.bluetooth.a2dp_offload.disabled=false \
-    persist.vendor.bt.a2dp_offload_cap=sbc-aac-aptx-aptxhd-ldac \
-    persist.vendor.qcom.bluetooth.enable.splita2dp=false \
     persist.bluetooth.bluetooth_audio_hal.disabled=false
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.bluetooth.a2dp_offload.disabled=false \
+    ro.bluetooth.a2dp_offload.supported=true \
+    vendor.audio.feature.a2dp_offload.enable=true \
+    persist.vendor.bt.a2dp.aac_whitelist=false \
+    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
+    ro.bluetooth.library_name=libbluetooth_qti.so \
     vendor.bluetooth.soc=cherokee
 
 # Camera
@@ -248,7 +251,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0 \
     vendor.video.disable.ubwc=1 \
     vendor.gralloc.enable_fb_ubwc=1
-
 
 # Misc ( Yet not Sorted )
 PRODUCT_PROPERTY_OVERRIDES += \
