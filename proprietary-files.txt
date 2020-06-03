@@ -1333,10 +1333,9 @@ vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|68767969f86126ada017fc09af151e299db651d5
 vendor/lib64/libwvhidl.so|79641121417371f82af64fdec4795eb9cec1e12f
 
-# ESE-Powermanager - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+# ESE-Powermanager - from LA.UM.8.2.r1-06200-sdm660.0
 product/lib/vendor.qti.esepowermanager@1.0.so|07b5def050ef3200ed8946bf33be4f60049cd4aa
 product/lib64/vendor.qti.esepowermanager@1.0.so|165a6b6f6fec38055a178d2d5903de5756a44571
-vendor/bin/hw/vendor.qti.esepowermanager@1.0-service|4191e27a3e97009789dfcd2c44fd202d152fa61b
 vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc|58a3866ad5a7613d9392c9adb671eaa7825578a2
 vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so|fd95cf6c9b36324fb5d0e5e8498721b65749ee94
 vendor/lib/vendor.qti.esepowermanager@1.0.so|12f57cdb3ea7f7e7a248f9a3d7de4f8e5755ac79
