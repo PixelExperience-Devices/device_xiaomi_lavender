@@ -265,3 +265,7 @@ ro.vendor.audio.voice.volume.boost=manual
 # disable PQ feature by default
 PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.vidc.enc.disable.pq=true
+
+# Zygote preforking
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.device_config.runtime_native.usap_pool_enabled=true
