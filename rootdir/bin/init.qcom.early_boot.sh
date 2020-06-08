@@ -384,6 +384,10 @@ case "$target" in
                     setprop vendor.media.target.version 3
                 fi
                 ;;
+            471)
+                #scuba APQ
+                setprop vendor.gralloc.disable_ubwc 1
+                ;;
             *)
                 # default case is for bengal
                 setprop vendor.opengles.version     196610
