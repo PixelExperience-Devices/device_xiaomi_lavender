@@ -386,6 +386,7 @@ case "$target" in
                 ;;
             471)
                 #scuba APQ
+                setprop vendor.fastrpc.disable.cdsprpcd.daemon 1
                 setprop vendor.gralloc.disable_ubwc 1
                 ;;
             *)
