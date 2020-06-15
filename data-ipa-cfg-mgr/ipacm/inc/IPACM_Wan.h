@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-2019, The Linux Foundation. All rights reserved.
+Copyright (c) 2013-2020, The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -53,7 +53,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define IPA_V2_NUM_DEFAULT_WAN_FILTER_RULE_IPV4 2
 
 #ifdef FEATURE_IPA_ANDROID
-#define IPA_V2_NUM_DEFAULT_WAN_FILTER_RULE_IPV6 7
+#define IPA_V2_NUM_DEFAULT_WAN_FILTER_RULE_IPV6 4
 #define IPA_V2_NUM_TCP_WAN_FILTER_RULE_IPV6 3
 #define IPA_V2_NUM_MULTICAST_WAN_FILTER_RULE_IPV6 3
 #define IPA_V2_NUM_FRAG_WAN_FILTER_RULE_IPV6 1
@@ -105,6 +105,8 @@ public:
 	static bool wan_up;
 	static bool wan_up_v6;
 	static uint8_t xlat_mux_id;
+	static uint16_t mtu_default_wan;
+	uint16_t mtu_size;
 	/* IPACM interface name */
 	static char wan_up_dev_name[IF_NAME_LEN];
 	static uint32_t curr_wan_ip;
@@ -135,6 +137,26 @@ public:
 #else
 		return wan_up;
 #endif
+	}
+
+	static uint16_t queryMTU(int ipa_if_num_tether, enum ipa_ip_type iptype)
+	{
+		if (iptype == IPA_IP_v4)
+		{
+			if (isWanUP(ipa_if_num_tether))
+			{
+				return mtu_default_wan;
+			}
+		}
+		else if (iptype == IPA_IP_v6)
+		{
+			if (isWanUP_V6(ipa_if_num_tether))
+			{
+				return mtu_default_wan;
+
+			}
+		}
+		return DEFAULT_MTU_SIZE;
 	}
 
 	static bool isWanUP_V6(int ipa_if_num_tether)
@@ -253,9 +275,16 @@ public:
 		return curr_wan_ip;
 	}
 
-	static bool getXlat_Mux_Id()
+	static int getXlat_Mux_Id()
 	{
-		return xlat_mux_id;
+		if (is_xlat)
+		{
+			IPACMDBG_H("xlat_mux_id: %d\n", xlat_mux_id);
+			return xlat_mux_id;
+		} else {
+			IPACMDBG_H("no xlat return invalid mux-id: 0\n");
+			return 0;
+		}
 	}
 
 	static void clearExtProp()
@@ -616,8 +645,6 @@ private:
 
 	int add_dft_filtering_rule(struct ipa_flt_rule_add* rules, int rule_offset, ipa_ip_type iptype);
 
-	int add_tcpv6_filtering_rule(struct ipa_flt_rule_add* rules, int rule_offset);
-
 	int install_wan_filtering_rule(bool is_sw_routing);
 
 	void handle_wlan_SCC_MCC_switch(bool, ipa_ip_type);
@@ -646,6 +673,9 @@ private:
 	int add_tcp_fin_rst_exception_rule();
 
 	int delete_tcp_fin_rst_exception_rule();
+
+	/* Query mtu size */
+	int query_mtu_size();
 };
 
 #endif /* IPACM_WAN_H */

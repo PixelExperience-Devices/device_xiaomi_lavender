@@ -562,15 +562,19 @@ void IPACM_Wlan::event_callback(ipa_cm_event_id event, void *param)
 		{
 			IPACMDBG_H("Received IPA_DOWNSTREAM_ADD event.\n");
 #ifdef FEATURE_IPA_ANDROID
-			/* indicate v4-offload */
-			IPACM_OffloadManager::num_offload_v4_tethered_iface++;
-
-			/* xlat not support for 2st tethered iface sky */
-			if (IPACM_Wan::isXlat() && (data->prefix.iptype == IPA_IP_v4) && (IPACM_OffloadManager::num_offload_v4_tethered_iface > 1))
+			if (IPACM_Wan::isXlat() && (data->prefix.iptype == IPA_IP_v4))
 			{
-				IPACMDBG_H("Not support 2st downstream iface %s for xlat, cur: %d\n", dev_name,
-					IPACM_OffloadManager::num_offload_v4_tethered_iface);
-				return;
+				/* indicate v4-offload */
+				IPACM_OffloadManager::num_offload_v4_tethered_iface++;
+				IPACMDBG_H("in xlat: update num_offload_v4_tethered_iface %d\n", IPACM_OffloadManager::num_offload_v4_tethered_iface);
+
+				/* xlat not support for 2st tethered iface */
+				if (IPACM_OffloadManager::num_offload_v4_tethered_iface > 1)
+				{
+					IPACMDBG_H("Not support 2st downstream iface %s for xlat, cur: %d\n", dev_name,
+						IPACM_OffloadManager::num_offload_v4_tethered_iface);
+					return;
+				}
 			}
 
 			IPACMDBG_H(" support downstream iface %s, cur %d\n", dev_name,
@@ -602,6 +606,7 @@ void IPACM_Wlan::event_callback(ipa_cm_event_id event, void *param)
 							ext_prop = IPACM_Iface::ipacmcfg->GetExtProp(data->prefix.iptype);
 							if (data->prefix.iptype == IPA_IP_v4)
 							{
+								IPACMDBG_H("check getXlat_Mux_Id:%d\n", IPACM_Wan::getXlat_Mux_Id());
 								handle_wan_up_ex(ext_prop, data->prefix.iptype,
 									IPACM_Wan::getXlat_Mux_Id());
 							}
@@ -1950,16 +1955,16 @@ int IPACM_Wlan::handle_down_evt()
 		}
 		/* delete private-ipv4 filter rules */
 #ifdef FEATURE_IPA_ANDROID
-		if(m_filtering.DeleteFilteringHdls(private_fl_rule_hdl, IPA_IP_v4, IPA_MAX_PRIVATE_SUBNET_ENTRIES) == false)
+		if(m_filtering.DeleteFilteringHdls(private_fl_rule_hdl, IPA_IP_v4, IPA_MAX_PRIVATE_SUBNET_ENTRIES + IPA_MAX_MTU_ENTRIES) == false)
 		{
 			IPACMERR("Error deleting private subnet IPv4 flt rules.\n");
 			res = IPACM_FAILURE;
 			goto fail;
 		}
-		IPACM_Iface::ipacmcfg->decreaseFltRuleCount(rx_prop->rx[0].src_pipe, IPA_IP_v4, IPA_MAX_PRIVATE_SUBNET_ENTRIES);
+		IPACM_Iface::ipacmcfg->decreaseFltRuleCount(rx_prop->rx[0].src_pipe, IPA_IP_v4, IPA_MAX_PRIVATE_SUBNET_ENTRIES + IPA_MAX_MTU_ENTRIES);
 #else
-		num_private_subnet_fl_rule = IPACM_Iface::ipacmcfg->ipa_num_private_subnet > IPA_MAX_PRIVATE_SUBNET_ENTRIES?
-			IPA_MAX_PRIVATE_SUBNET_ENTRIES : IPACM_Iface::ipacmcfg->ipa_num_private_subnet;
+		num_private_subnet_fl_rule = IPACM_Iface::ipacmcfg->ipa_num_private_subnet > (IPA_MAX_PRIVATE_SUBNET_ENTRIES + IPA_MAX_MTU_ENTRIES)?
+			(IPA_MAX_PRIVATE_SUBNET_ENTRIES + IPA_MAX_MTU_ENTRIES) : IPACM_Iface::ipacmcfg->ipa_num_private_subnet;
 		if(m_filtering.DeleteFilteringHdls(private_fl_rule_hdl, IPA_IP_v4, num_private_subnet_fl_rule) == false)
 		{
 			IPACMERR("Error deleting private subnet flt rules, aborting...\n");
