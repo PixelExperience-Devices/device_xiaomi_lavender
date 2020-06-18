@@ -4032,6 +4032,7 @@ case "$target" in
 
             # sched_load_boost as -6 is equivalent to target load as 85.
             echo 0 > /proc/sys/kernel/sched_boost
+            echo 1 > /proc/sys/kernel/sched_prefer_spread
             echo -6 > /sys/devices/system/cpu/cpu0/sched_load_boost
             echo -6 > /sys/devices/system/cpu/cpu1/sched_load_boost
             echo -6 > /sys/devices/system/cpu/cpu2/sched_load_boost
