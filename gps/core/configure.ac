@@ -7,7 +7,7 @@ AC_PREREQ(2.61)
 # Initialize the gps loc-hal package version 1.0.0
 AC_INIT([loc-core],1.0.0)
 # Does not strictly follow GNU Coding standards
-AM_INIT_AUTOMAKE([foreign])
+AM_INIT_AUTOMAKE([foreign subdir-objects])
 # Disables auto rebuilding of configure, Makefile.ins
 AM_MAINTAINER_MODE
 # Verifies the --srcdir is correct by checking for the path
@@ -73,6 +73,31 @@ if (test "x${with_glib}" = "xyes"); then
 fi
 
 AM_CONDITIONAL(USE_GLIB, test "x${with_glib}" = "xyes")
+
+AC_ARG_WITH([auto_feature],
+    AC_HELP_STRING([--with-auto_feature=@<:@dir@:>@],
+        [Using Automotive feature]),
+    [],
+    with_auto_feature=no)
+
+if test "x$with_auto_feature" != "xno"; then
+    CPPFLAGS="${CPPFLAGS} -DFEATURE_AUTOMOTIVE"
+fi
+
+AM_CONDITIONAL(USE_FEATURE_AUTOMOTIVE, test "x${with_auto_feature}" = "xyes")
+
+# External AP
+AC_ARG_WITH([external_ap],
+    AC_HELP_STRING([--with-external_ap=@<:@dir@:>@],
+        [Using External Application Processor]),
+    [],
+    with_external_ap=no)
+
+if test "x$with_external_ap" != "xno"; then
+    CPPFLAGS="${CPPFLAGS} -DFEATURE_EXTERNAL_AP"
+fi
+
+AM_CONDITIONAL(USE_EXTERNAL_AP, test "x${with_external_ap}" = "xyes")
 
 AC_CONFIG_FILES([ \
         Makefile \
