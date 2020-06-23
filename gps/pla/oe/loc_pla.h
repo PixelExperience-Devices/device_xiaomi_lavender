@@ -1,4 +1,4 @@
-/* Copyright (c) 2014, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2014, 2020 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -30,16 +30,59 @@
 #define __LOC_PLA__
 
 #ifdef __cplusplus
+#ifndef FEATURE_EXTERNAL_AP
 #include <utils/SystemClock.h>
-#define uptimeMillis android::uptimeMillis
+#endif /* FEATURE_EXTERNAL_AP */
+#include <inttypes.h>
+#include <sys/time.h>
+#include <time.h>
+
+#if defined(__GNUC__) && defined(__GNUC_PREREQ)
+#if __GNUC_PREREQ(6,0)
+    #pragma message "GNU C version is above 6"
+#else
+    #pragma message "GNU C version is less than 6"
+    #define NO_UNORDERED_SET_OR_MAP
+#endif
+#endif
+
+// use set/map instead of unordered_set/unordered_map for
+// older GCC versions
+#ifdef NO_UNORDERED_SET_OR_MAP
+#define unordered_set set
+#define unordered_map map
+#endif
+
+inline int64_t sysTimeMillis(int clock)
+{
+    struct timespec ts;
+    int64_t time_ms = 0;
+    clock_gettime(clock, &ts);
+    time_ms += (ts.tv_sec * 1000000000LL);
+    time_ms += ts.tv_nsec + 500000LL;
+    return time_ms / 1000000LL;
+}
+
+inline int64_t uptimeMillis() {
+    return sysTimeMillis(CLOCK_MONOTONIC);
+}
+inline int64_t elapsedRealtime() {
+    return sysTimeMillis(CLOCK_BOOTTIME);
+}
 
 extern "C" {
 #endif
 
+#ifndef FEATURE_EXTERNAL_AP
 #include <cutils/properties.h>
 #include <cutils/threads.h>
 #include <cutils/sched_policy.h>
+#else
+#define set_sched_policy(a, b)
+#endif /* FEATURE_EXTERNAL_AP */
+#include <pthread.h>
 #include <sys/time.h>
+#include <sys/types.h>
 #include <string.h>
 #include <stdlib.h>
 #ifndef OFF_TARGET
@@ -51,6 +94,11 @@ extern "C" {
 #define strlcpy strncpy
 #endif
 
+#define UID_GPS (1021)
+#define GID_GPS (1021)
+#define UID_LOCCLIENT (4021)
+#define GID_LOCCLIENT (4021)
+
 #define LOC_PATH_GPS_CONF_STR      "/etc/gps.conf"
 #define LOC_PATH_IZAT_CONF_STR     "/etc/izat.conf"
 #define LOC_PATH_FLP_CONF_STR      "/etc/flp.conf"
@@ -59,6 +107,16 @@ extern "C" {
 #define LOC_PATH_APDR_CONF_STR     "/etc/apdr.conf"
 #define LOC_PATH_XTWIFI_CONF_STR   "/etc/xtwifi.conf"
 #define LOC_PATH_QUIPC_CONF_STR    "/etc/quipc.conf"
+
+#ifdef FEATURE_EXTERNAL_AP
+#define PROPERTY_VALUE_MAX 92
+
+inline int property_get(const char* key, char* value, const char* default_value)
+{
+    strlcpy(value, default_value, PROPERTY_VALUE_MAX - 1);
+    return strlen(value);
+}
+#endif /* FEATURE_EXTERNAL_AP */
 
 #ifdef __cplusplus
 }

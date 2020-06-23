@@ -1,4 +1,4 @@
-/* Copyright (c) 2017, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2017, 2019, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -126,6 +126,7 @@ public:
     uint32_t mBdsBpAmpQ;  // x1C
     uint32_t mGalBpAmpI;  // x1D
     uint32_t mGalBpAmpQ;  // x1E
+    uint64_t mTimeUncNs;  // x1F
 };
 
 // parser
@@ -166,6 +167,7 @@ private:
         eBdsBpAmpQ = 28,
         eGalBpAmpI = 29,
         eGalBpAmpQ = 30,
+        eTimeUncNs = 31,
         eMax
     };
     SystemStatusPQWM1 mM1;
@@ -201,6 +203,7 @@ public:
     inline uint32_t   getBdsBpAmpQ()  { return mM1.mBdsBpAmpQ; }
     inline uint32_t   getGalBpAmpI()  { return mM1.mGalBpAmpI; }
     inline uint32_t   getGalBpAmpQ()  { return mM1.mGalBpAmpQ; }
+    inline uint64_t   getTimeUncNs()  { return mM1.mTimeUncNs; }
 
     SystemStatusPQWM1parser(const char *str_in, uint32_t len_in)
         : SystemStatusNmeaBase(str_in, len_in)
@@ -244,6 +247,9 @@ public:
             mM1.mBdsBpAmpQ = atoi(mField[eBdsBpAmpQ].c_str());
             mM1.mGalBpAmpI = atoi(mField[eGalBpAmpI].c_str());
             mM1.mGalBpAmpQ = atoi(mField[eGalBpAmpQ].c_str());
+        }
+        if (mField.size() > eTimeUncNs) {
+            mM1.mTimeUncNs = strtoull(mField[eTimeUncNs].c_str(), nullptr, 10);
         }
     }
 
@@ -376,16 +382,19 @@ public:
     uint32_t  mBdsXtraAge;
     uint32_t  mGalXtraAge;
     uint32_t  mQzssXtraAge;
+    uint32_t  mNavicXtraAge;
     uint32_t  mGpsXtraValid;
     uint32_t  mGloXtraValid;
     uint64_t  mBdsXtraValid;
     uint64_t  mGalXtraValid;
     uint8_t   mQzssXtraValid;
+    uint32_t  mNavicXtraValid;
 };
 
 class SystemStatusPQWP3parser : public SystemStatusNmeaBase
 {
 private:
+    // todo: update for navic once available
     enum
     {
         eTalker = 0,
@@ -412,11 +421,13 @@ public:
     inline uint32_t   getBdsXtraAge() { return mP3.mBdsXtraAge;       }
     inline uint32_t   getGalXtraAge() { return mP3.mGalXtraAge;       }
     inline uint32_t   getQzssXtraAge() { return mP3.mQzssXtraAge;      }
+    inline uint32_t   getNavicXtraAge() { return mP3.mNavicXtraAge;     }
     inline uint32_t   getGpsXtraValid() { return mP3.mGpsXtraValid;     }
     inline uint32_t   getGloXtraValid() { return mP3.mGloXtraValid;     }
     inline uint64_t   getBdsXtraValid() { return mP3.mBdsXtraValid;     }
     inline uint64_t   getGalXtraValid() { return mP3.mGalXtraValid;     }
     inline uint8_t    getQzssXtraValid() { return mP3.mQzssXtraValid;    }
+    inline uint32_t   getNavicXtraValid() { return mP3.mNavicXtraValid;     }
 
     SystemStatusPQWP3parser(const char *str_in, uint32_t len_in)
         : SystemStatusNmeaBase(str_in, len_in)
@@ -425,6 +436,7 @@ public:
             return;
         }
         memset(&mP3, 0, sizeof(mP3));
+        // todo: update for navic once available
         mP3.mXtraValidMask = strtol(mField[eXtraValidMask].c_str(), NULL, 16);
         mP3.mGpsXtraAge = atoi(mField[eGpsXtraAge].c_str());
         mP3.mGloXtraAge = atoi(mField[eGloXtraAge].c_str());
@@ -505,21 +517,25 @@ public:
     uint64_t  mBdsUnknownMask;
     uint64_t  mGalUnknownMask;
     uint8_t   mQzssUnknownMask;
+    uint32_t  mNavicUnknownMask;
     uint32_t  mGpsGoodMask;
     uint32_t  mGloGoodMask;
     uint64_t  mBdsGoodMask;
     uint64_t  mGalGoodMask;
     uint8_t   mQzssGoodMask;
+    uint32_t  mNavicGoodMask;
     uint32_t  mGpsBadMask;
     uint32_t  mGloBadMask;
     uint64_t  mBdsBadMask;
     uint64_t  mGalBadMask;
     uint8_t   mQzssBadMask;
+    uint32_t  mNavicBadMask;
 };
 
 class SystemStatusPQWP5parser : public SystemStatusNmeaBase
 {
 private:
+    // todo: update for navic once available
     enum
     {
         eTalker = 0,
@@ -549,16 +565,19 @@ public:
     inline uint64_t   getBdsUnknownMask() { return mP5.mBdsUnknownMask;   }
     inline uint64_t   getGalUnknownMask() { return mP5.mGalUnknownMask;   }
     inline uint8_t    getQzssUnknownMask() { return mP5.mQzssUnknownMask;  }
+    inline uint32_t   getNavicUnknownMask() { return mP5.mNavicUnknownMask;   }
     inline uint32_t   getGpsGoodMask() { return mP5.mGpsGoodMask;      }
     inline uint32_t   getGloGoodMask() { return mP5.mGloGoodMask;      }
     inline uint64_t   getBdsGoodMask() { return mP5.mBdsGoodMask;      }
     inline uint64_t   getGalGoodMask() { return mP5.mGalGoodMask;      }
     inline uint8_t    getQzssGoodMask() { return mP5.mQzssGoodMask;     }
+    inline uint32_t   getNavicGoodMask() { return mP5.mNavicGoodMask;      }
     inline uint32_t   getGpsBadMask() { return mP5.mGpsBadMask;       }
     inline uint32_t   getGloBadMask() { return mP5.mGloBadMask;       }
     inline uint64_t   getBdsBadMask() { return mP5.mBdsBadMask;       }
     inline uint64_t   getGalBadMask() { return mP5.mGalBadMask;       }
     inline uint8_t    getQzssBadMask() { return mP5.mQzssBadMask;      }
+    inline uint32_t   getNavicBadMask() { return mP5.mNavicBadMask;       }
 
     SystemStatusPQWP5parser(const char *str_in, uint32_t len_in)
         : SystemStatusNmeaBase(str_in, len_in)
@@ -567,6 +586,7 @@ public:
             return;
         }
         memset(&mP5, 0, sizeof(mP5));
+        // todo: update for navic once available
         mP5.mGpsUnknownMask = strtol(mField[eGpsUnknownMask].c_str(), NULL, 16);
         mP5.mGloUnknownMask = strtol(mField[eGloUnknownMask].c_str(), NULL, 16);
         mP5.mBdsUnknownMask = strtol(mField[eBdsUnknownMask].c_str(), NULL, 16);
@@ -640,6 +660,7 @@ private:
     {
         eTalker = 0,
         eUtcTime = 1,
+        eMin = 2 + SV_ALL_NUM_MIN*3,
         eMax = 2 + SV_ALL_NUM*3
     };
     SystemStatusPQWP7 mP7;
@@ -648,11 +669,18 @@ public:
     SystemStatusPQWP7parser(const char *str_in, uint32_t len_in)
         : SystemStatusNmeaBase(str_in, len_in)
     {
-        if (mField.size() < eMax) {
+        uint32_t svLimit = SV_ALL_NUM;
+        if (mField.size() < eMin) {
             LOC_LOGE("PQWP7parser - invalid size=%zu", mField.size());
             return;
         }
-        for (uint32_t i=0; i<SV_ALL_NUM; i++) {
+        if (mField.size() < eMax) {
+            // Try reducing limit, accounting for possibly missing NAVIC support
+            svLimit = SV_ALL_NUM_MIN;
+        }
+
+        memset(mP7.mNav, 0, sizeof(mP7.mNav));
+        for (uint32_t i=0; i<svLimit; i++) {
             mP7.mNav[i].mType   = GnssEphemerisType(atoi(mField[i*3+2].c_str()));
             mP7.mNav[i].mSource = GnssEphemerisSource(atoi(mField[i*3+3].c_str()));
             mP7.mNav[i].mAgeSec = atoi(mField[i*3+4].c_str());
@@ -715,7 +743,8 @@ SystemStatusTimeAndClock::SystemStatusTimeAndClock(const SystemStatusPQWM1& nmea
     mClockFreqBias(nmea.mClockFreqBias),
     mClockFreqBiasUnc(nmea.mClockFreqBiasUnc),
     mLeapSeconds(nmea.mLeapSeconds),
-    mLeapSecUnc(nmea.mLeapSecUnc)
+    mLeapSecUnc(nmea.mLeapSecUnc),
+    mTimeUncNs(nmea.mTimeUncNs)
 {
 }
 
@@ -729,7 +758,8 @@ bool SystemStatusTimeAndClock::equals(const SystemStatusTimeAndClock& peer)
         (mClockFreqBias != peer.mClockFreqBias) ||
         (mClockFreqBiasUnc != peer.mClockFreqBiasUnc) ||
         (mLeapSeconds != peer.mLeapSeconds) ||
-        (mLeapSecUnc != peer.mLeapSecUnc)) {
+        (mLeapSecUnc != peer.mLeapSecUnc) ||
+        (mTimeUncNs != peer.mTimeUncNs)) {
         return false;
     }
     return true;
@@ -737,7 +767,7 @@ bool SystemStatusTimeAndClock::equals(const SystemStatusTimeAndClock& peer)
 
 void SystemStatusTimeAndClock::dump()
 {
-    LOC_LOGV("TimeAndClock: u=%ld:%ld g=%d:%d v=%d ts=%d tu=%d b=%d bu=%d ls=%d lu=%d",
+    LOC_LOGV("TimeAndClock: u=%ld:%ld g=%d:%d v=%d ts=%d tu=%d b=%d bu=%d ls=%d lu=%d un=%" PRIu64,
              mUtcTime.tv_sec, mUtcTime.tv_nsec,
              mGpsWeek,
              mGpsTowMs,
@@ -747,7 +777,8 @@ void SystemStatusTimeAndClock::dump()
              mClockFreqBias,
              mClockFreqBiasUnc,
              mLeapSeconds,
-             mLeapSecUnc);
+             mLeapSecUnc,
+             mTimeUncNs);
     return;
 }
 
@@ -962,11 +993,13 @@ SystemStatusXtra::SystemStatusXtra(const SystemStatusPQWP3& nmea) :
     mBdsXtraAge(nmea.mBdsXtraAge),
     mGalXtraAge(nmea.mGalXtraAge),
     mQzssXtraAge(nmea.mQzssXtraAge),
+    mNavicXtraAge(nmea.mNavicXtraAge),
     mGpsXtraValid(nmea.mGpsXtraValid),
     mGloXtraValid(nmea.mGloXtraValid),
     mBdsXtraValid(nmea.mBdsXtraValid),
     mGalXtraValid(nmea.mGalXtraValid),
-    mQzssXtraValid(nmea.mQzssXtraValid)
+    mQzssXtraValid(nmea.mQzssXtraValid),
+    mNavicXtraValid(nmea.mNavicXtraValid)
 {
 }
 
@@ -978,11 +1011,13 @@ bool SystemStatusXtra::equals(const SystemStatusXtra& peer)
         (mBdsXtraAge != peer.mBdsXtraAge) ||
         (mGalXtraAge != peer.mGalXtraAge) ||
         (mQzssXtraAge != peer.mQzssXtraAge) ||
+        (mNavicXtraAge != peer.mNavicXtraAge) ||
         (mGpsXtraValid != peer.mGpsXtraValid) ||
         (mGloXtraValid != peer.mGloXtraValid) ||
         (mBdsXtraValid != peer.mBdsXtraValid) ||
         (mGalXtraValid != peer.mGalXtraValid) ||
-        (mQzssXtraValid != peer.mQzssXtraValid)) {
+        (mQzssXtraValid != peer.mQzssXtraValid) ||
+        (mNavicXtraValid != peer.mNavicXtraValid)) {
         return false;
     }
     return true;
@@ -1051,16 +1086,19 @@ SystemStatusSvHealth::SystemStatusSvHealth(const SystemStatusPQWP5& nmea) :
     mBdsUnknownMask(nmea.mBdsUnknownMask),
     mGalUnknownMask(nmea.mGalUnknownMask),
     mQzssUnknownMask(nmea.mQzssUnknownMask),
+    mNavicUnknownMask(nmea.mNavicUnknownMask),
     mGpsGoodMask(nmea.mGpsGoodMask),
     mGloGoodMask(nmea.mGloGoodMask),
     mBdsGoodMask(nmea.mBdsGoodMask),
     mGalGoodMask(nmea.mGalGoodMask),
     mQzssGoodMask(nmea.mQzssGoodMask),
+    mNavicGoodMask(nmea.mNavicGoodMask),
     mGpsBadMask(nmea.mGpsBadMask),
     mGloBadMask(nmea.mGloBadMask),
     mBdsBadMask(nmea.mBdsBadMask),
     mGalBadMask(nmea.mGalBadMask),
-    mQzssBadMask(nmea.mQzssBadMask)
+    mQzssBadMask(nmea.mQzssBadMask),
+    mNavicBadMask(nmea.mNavicBadMask)
 {
 }
 
@@ -1308,6 +1346,9 @@ SystemStatus::SystemStatus(const MsgTask* msgTask) :
 template <typename TYPE_REPORT, typename TYPE_ITEM>
 bool SystemStatus::setIteminReport(TYPE_REPORT& report, TYPE_ITEM&& s)
 {
+    if (s.ignore()) {
+        return false;
+    }
     if (!report.empty() && report.back().equals(static_cast<TYPE_ITEM&>(s.collate(report.back())))) {
         // there is no change - just update reported timestamp
         report.back().mUtcReported = s.mUtcReported;
@@ -1682,14 +1723,29 @@ bool SystemStatus::setDefaultGnssEngineStates(void)
 
 @return     true when successfully done
 ******************************************************************************/
-bool SystemStatus::eventConnectionStatus(bool connected, int8_t type)
+bool SystemStatus::eventConnectionStatus(bool connected, int8_t type,
+                                         bool roaming, NetworkHandle networkHandle)
 {
     // send networkinof dataitem to systemstatus observer clients
-    SystemStatusNetworkInfo s(type, "", "", connected);
+    SystemStatusNetworkInfo s(type, "", "", connected, roaming,
+                              (uint64_t) networkHandle);
     mSysStatusObsvr.notify({&s});
 
     return true;
 }
 
+/******************************************************************************
+@brief      API to update power connect state
+
+@param[In]  power connect status
+
+@return     true when successfully done
+******************************************************************************/
+bool SystemStatus::updatePowerConnectState(bool charging)
+{
+    SystemStatusPowerConnectState s(charging);
+    mSysStatusObsvr.notify({&s});
+    return true;
+}
 } // namespace loc_core
 
