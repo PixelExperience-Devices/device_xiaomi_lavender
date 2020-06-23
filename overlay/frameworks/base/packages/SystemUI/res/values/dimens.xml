@@ -19,6 +19,9 @@
     <!-- for 20dp of padding at 2.75px/dp at default density -->
     <dimen name="rounded_corner_content_padding">55px</dimen>
 
+    <!-- the padding on the top of the statusbar (usually 0) -->
+    <dimen name="status_bar_padding_top">1dp</dimen>
+
     <!-- Padding for the system icons on the keyguard (when no multi user switch is showing).
     The icons always have a 4dp padding in the container so we only need 41 extra px of padding
     for the corners -->
