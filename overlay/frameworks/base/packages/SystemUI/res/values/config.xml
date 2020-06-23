@@ -34,5 +34,10 @@
 
     <!-- Doze: does this device support STATE_DOZE?  -->
 	<bool name="doze_display_state_supported">true</bool>
+
+    <!-- For how long the lock screen can be on before the display turns off. -->
+        <integer name="config_lockScreenDisplayTimeout">7000</integer>
+
+
 </resources>
 
