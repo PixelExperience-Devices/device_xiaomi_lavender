@@ -3077,7 +3077,7 @@ case "$target" in
         fi
 
         case "$soc_id" in
-                 "394" )
+                 "394" | "467" | "468" )
 
             # Core control parameters on big
             echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
