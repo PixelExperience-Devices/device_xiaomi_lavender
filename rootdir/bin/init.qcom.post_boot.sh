@@ -737,9 +737,9 @@ else
             echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
         fi
 
-        if [ "$ProductName" != "bengal_32" ]; then
-            #bengal_32 has appcompaction enabled. So not needed
-            # Set PPR parametersi for other targets
+        if [[ "$ProductName" != "bengal"* ]]; then
+            #bengal has appcompaction enabled. So not needed
+            # Set PPR parameters for other targets
             if [ -f /sys/devices/soc0/soc_id ]; then
                 soc_id=`cat /sys/devices/soc0/soc_id`
             else
