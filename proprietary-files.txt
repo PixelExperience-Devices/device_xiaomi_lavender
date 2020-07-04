@@ -53,9 +53,9 @@ vendor/lib64/libcdsprpc.so|d04c40305c6ce6c6cf932a543a18508b2247ece8
 vendor/lib64/libsysmon_cdsp_skel.so|40d3511922c744016c419983b18f97952c23fee5
 
 # Dirac modules - from lavender-user 10 QKQ1.190910.002 20.3.19 release-keys
-vendor/lib/rfsa/adsp/dirac_resource.dar
-vendor/lib/rfsa/adsp/libdirac-capiv2.so
-vendor/lib/rfsa/adsp/nuance.scd
+vendor/lib/rfsa/adsp/dirac_resource.dar|1e5c52f2a41bdbec4f38ebdcb83d4fc73edc0ec9
+vendor/lib/rfsa/adsp/libdirac-capiv2.so|e56031dfaee094d5267e3cc16625cfceaa07cc27
+vendor/lib/rfsa/adsp/nuance.scd|d17ee46b7d136510360389baa8f365cd7669b5dd
 
 # Alarm - from LA.UM.8.2.r1-06700-sdm660.0
 -product/app/PowerOffAlarm/PowerOffAlarm.apk|c214e1f7de878aeebe642857d6283bbeca0c7a3e
@@ -1361,9 +1361,16 @@ vendor/lib/libmm-hdcpmgr.so|1369ce85b3c133c8d4d04167cd894df85212dcfa
 vendor/lib64/libmm-hdcpmgr.so|a80b3cfa28acdb69a5047ab9592c611ab4534799
 
 # DRM (Widevine) - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+vendor/lib64/libcpion.so|87465372180b9df51434f7f51faf033c2da914a5
+vendor/lib64/libcppf.so|58f4deec43f2271919da9f69aa2753ee707735a0
+vendor/lib64/libhdcp1prov.so|25aa30d053c9d520526e15434ce80a2635a8a40c
+vendor/lib64/libhdcp2p2prov.so|de8347cbb242a1e069b42577ce810edad04d2afe
+vendor/lib64/libhdcpsrm.so|a9e378bfe4a66cfc670f35d70d0e182956a1e87b
+vendor/lib64/liboemcrypto.so|db41cb588065ad0d92ac2a59db409420c021413b
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec050afab5c64b9f87
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|68767969f86126ada017fc09af151e299db651d5
 vendor/lib64/libwvhidl.so|79641121417371f82af64fdec4795eb9cec1e12f
+
 
 # ESE - from LA.UM.8.2.r1-06700-sdm660.0
 product/lib/vendor.qti.esepowermanager@1.0.so:vendor/lib/vendor.qti.esepowermanager@1.0.so|84515bbbdf97c2b2d66d84ec2ceafdcb19436446
@@ -1394,7 +1401,7 @@ vendor/firmware/fpctzappfingerprint.b07|27ac9ea6d45412fc39082f236857d03ca55a1b0f
 vendor/firmware/fpctzappfingerprint.mdt|56df2f2c406db1cf7cf6d15a3c2481d7573f3f13
 
 # Fingerprint sensor - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
--vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk|99b2da5f33d82f74e658c55bb86271ef0131a46
+-vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk|30730197faa6573d6a170c538eb69caad5a14a6d
 vendor/etc/permissions/com.fingerprints.extension.xml|de711d8827e1d321b22b60fd75a204e8928f9c6d
 vendor/framework/com.fingerprints.extension.jar|10c37dd77e3ec6f25f478af324e91310961aae08
 vendor/lib/hw/fingerprint.default.so:vendor/lib/hw/fingerprint.sdm660.so|6eac7b40dd482e03ee66797a62537510b042d9a2
@@ -1409,18 +1416,12 @@ vendor/lib64/libgoodixhwfingerprint.so|f51d93cd8985a0d4a1d902b287aa5cebe0319aee
 vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so|47babf9634793366f4f3439ec4dfe601390990a5
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so|0b84054262e01300e72796ee26ed6f9e00bce9b7
 
-# FM - from LA.UM.8.2.r1-06700-sdm660.0
--product/lib/vendor.qti.hardware.fm@1.0.so|8e13cca2be4c4f9812d656e4cb15bd524fdfdf12
--product/lib64/vendor.qti.hardware.fm@1.0.so|027c226838e80a04209e5fb6a8882ce78c3b4222
-lib/fm_helium.so|8abd638bedf7e9d36b168634198fc765c0d7a27b
-lib/libfm-hci.so|3cc2262f0d0c7178e16c96367ce338893b7b9124
-lib64/fm_helium.so|eb2396d938327e586ecdf8842efbc71d58f1bf05
-lib64/libfm-hci.so|c90fd242d6b31cebb5425cc69ae75261e77ed227
-vendor/bin/fm_qsoc_patches|eb6c841aee0f9ad6b8f1b9452963d1d81c669b38
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|49bd05045b461e4a91926d6d1b39e9b80399a7b9
-vendor/lib/vendor.qti.hardware.fm@1.0.so|050028acbd85b6dfd71b0c5f73c0a3198625efa3
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|942c4a88be55eb62fab614a08b64676972de2d89
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|9c1b952043c7722fd27bfd971ecebb2584671862
+# FM - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+lib64/fm_helium.so|bc9f6314528630c060b593cef4a8cec786b22467
+lib64/libfm-hci.so|589e9e290acfa18a49deba33606ed158d5e7f898
+product/lib64/vendor.qti.hardware.fm@1.0.so|fc7ad886f82089edf36509865fadac17a7340f32
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|506efd87250697bdae271f86ea472785a77b84ef
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|073cace3aa8d0ffa025d9df67c45f8a907109339
 
 # Gatekeeper - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|a189a50515831e6ac9a7e88a165ac979ae6ac077
@@ -1550,17 +1551,17 @@ vendor/lib/libhdr_tm.so|0104cdb2789ab1fb54b6b93564300f13ffeefc39
 vendor/lib64/libhdr_tm.so|0744584d9e30a921898695c89e96293901437c08
 
 # Graphics (SDM) - from LA.UM.8.2.r1-06700-sdm660.0
-vendor/lib/libsdm-color.so|325c5b6cff3cf3d7d5d8e479a1c37f7255cbf748
-vendor/lib/libsdm-diag.so|fa211dd848a93242e84d1b7fdc5fcf6cb9c25c2f
-vendor/lib/libsdmextension.so|342a6ecc85a93309c86c01466a612cfbe49c69f5
-vendor/lib/libqseed3.so|344d2ce1fe3670f4b0a832a85bd725c4bdb14329
--vendor/lib/libsdm-disp-vndapis.so|a982cb75f67f688353bc39e8d77cb2e9879e3bbb
+vendor/lib/libsdm-color.so|4491e856ca951100ef85909406546233277745a8
+vendor/lib/libsdm-diag.so|e020c60d80b13e5f77f31aa0842e4e09e578eb20
+vendor/lib/libsdmextension.so|5bad498cb0c6e2fb23b7a1b2b5deb551933318c4
+vendor/lib/libqseed3.so|44f99b99b831227491e320a3098c8defe8df0781
+-vendor/lib/libsdm-disp-vndapis.so|de2a6f9a96d75a5e1da46c9e254a9acb7e91224e
 vendor/lib/libtinyxml2_1.so|89e1b1af10209dbb8d341cd314750cc64fc33852
 vendor/lib64/libqseed3.so|6779aaf96283e244122f4cc76cd3cb750ff14ed5
-vendor/lib64/libsdm-color.so|b5e5ec9f5cdad2094891197fd00f8ccdc8340c06
-vendor/lib64/libsdm-diag.so|db4c495e3e64ea0cbc0d079a2aa16862a9b02192
--vendor/lib64/libsdm-disp-vndapis.so|92fe3602eaaae1847965e8886d2cbef3d0a801f8
-vendor/lib64/libsdmextension.so|f1a7c8f98cfe34375f4e204e0a9283224c86aafe
+vendor/lib64/libsdm-color.so|fef2b577d7aa5e69122f49b45c3f5185e41b3d9d
+vendor/lib64/libsdm-diag.so|3a04410ad9dafd5c348afab5db6445390dae00cb
+-vendor/lib64/libsdm-disp-vndapis.so|5f2dfe8f37dd33f3f87ba9743bd228b0a90e13dd
+vendor/lib64/libsdmextension.so|1578d885acc4cc0a1dc941363c61cb95052c4d32
 vendor/lib64/libtinyxml2_1.so|70942325afdd14eedcf11b3fbbfbc3d98f42f8dc
 
 # Graphics (Vulkan) - from LA.UM.8.2.r1-06700-sdm660.0
@@ -1638,7 +1639,7 @@ vendor/lib/libqti-perfd-client.so|93b4806dd64f7b9a832d2b1999f6fa6413c56a48
 vendor/lib/libqti-perfd.so|48809a47a710f510ab484001bb44cd6cbae932c4
 vendor/lib/libqti-util.so|b9610a3448b53d007965e1572a0d6c65414052ff
 vendor/lib/vendor.qti.hardware.perf@2.0.so|9b4983ba1941496f4ba06b646a0397d635ca8f32
-vendor/lib64/libperfconfig.so|45d5344603d76d4d0fb7f27bdd4ea07ac525656de
+vendor/lib64/libperfconfig.so|45d5344603d76d4d0b7f27bdd4ea07ac525656de
 vendor/lib64/libperfgluelayer.so|b94df6394668449b98a061f2fd4984200cd123ab
 vendor/lib64/libqti-perfd-client.so|7089fa216b06fc78127b51df6cade6518886a463
 vendor/lib64/libqti-perfd.so|cd906582067b67977f332299cfcbc5f95d0957e6
@@ -1694,7 +1695,7 @@ vendor/lib/libqmi_client_qmux.so|a63740aebb11c7a0f4812f33f6bdcc04e219ba69
 vendor/lib/libqmi_common_so.so|04bcd47689be51500fa1f9fb7aa398cdd757cd86
 vendor/lib/libqmi_csi.so|31d5358a596a0909a32c4ee2af18dc6a54e0a5ab
 vendor/lib/libqmi_encdec.so|f85c4684ef54ef595522904a59286e69f2bc975c
-vendor/lib/libqmiservices.so|edb2146e5a07cb1eb914d6ea4ed3050cec9c0559
+vendor/lib/libqmiservices.so|772a909c3bf1095b54311b1cc872b449a1670d06
 vendor/lib64/libdiag.so|be813dcdb29a67456f00c03d28e82f3e39732dc9
 vendor/lib64/libdsi_netctrl.so|92907cfc601a6043b4b8c4ab11f7eb0f0e697e6a
 vendor/lib64/libdsutils.so|b4df58a8b04bc5fc1f40126b7be9e9d1c9451b0f
@@ -1709,7 +1710,7 @@ vendor/lib64/libqmi_client_qmux.so|001eac47492afc51983244f34d43336064711ed8
 vendor/lib64/libqmi_common_so.so|325a41290032b082248db307481811b2319284cc
 vendor/lib64/libqmi_csi.so|ffb588ad44863278814f856e030fa25b293ed125
 vendor/lib64/libqmi_encdec.so|eedf39676bf4447cb2e3f629d1d18dcad846ab85
-vendor/lib64/libqmiservices.so|9e9b8fe80ebb99762186779ce08b3de3a3253e60
+vendor/lib64/libqmiservices.so|60819bb328bcd2948fd0fe0c8caa9dd67680809c
 vendor/lib64/libqrtr.so|c7ca700c1f4759aa673a6c5478ca492487bbea70
 vendor/lib64/libqsocket.so|40816476d857f2ad07490415f6ff7433517ccef8
 
@@ -1722,12 +1723,12 @@ product/etc/permissions/telephony_product_privapp-permissions-qti.xml|68901007ba
 product/etc/permissions/telephonyservice.xml|a39eefcaf85fb8da60044fdbbcfddd95deb031c8
 product/framework/QtiTelephonyServicelibrary.jar|ea30b05eaad3ebee157421b3f31bf8585566b4cd
 product/framework/qcrilhook.jar|23768fda90519d799e682fd058ec85b7b5cd6f89
-product/framework/qti-telephony-common.jar|14e32b1cb0fdc9d7802414e95e41376499b51b11
+product/framework/qti-telephony-common.jar|96154b2576114dd566bbc99a2d9af612de8849df
 product/lib/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so|fff4848e33826eaf20ffc5e70b276fac3075f970
 product/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so|e373dabf09b40e75f75d58aed4a790809869f96d
 vendor/bin/ATFWD-daemon|540d63133a5edb0e4e39fd0ec6bcf34939f58ca6
 vendor/bin/adpl|b83161d768008660c206d2ab2ca2a9ffe0bb7934
-vendor/bin/hw/qcrild|f93d342973cf7241fd56d03dcf3ca8ef5f4e1464
+vendor/bin/hw/qcrild|e9eca53f1fbab162c04ae7b9e1dc4a51b9a8478e
 vendor/bin/netmgrd|8818e9adb56f976447352585bbd44478cd2c4300
 vendor/bin/port-bridge|d54a83d052547901490699a91a70f282a8127aea
 vendor/bin/qti|fb6e4de508ddbabf9d8468247714caf810638b6c
@@ -1772,10 +1773,10 @@ vendor/lib64/libnlnetmgr.so|94f1cb36c11c96de2143b75323065db64b972326
 vendor/lib64/libpdmapper.so|c8c416f71ef80e9e85d4d419c8b5d813bf41cf22
 vendor/lib64/libpdnotifier.so|5a10c6785402a8087abc6d600f565e21a9e47097
 vendor/lib64/libqcmaputils.so|1b698d2c344af50c86dab4ffb1a0a93489c687e8
-vendor/lib64/libqcrilFramework.so|2884db519a27739a703daf2c0a9951ee01b1db19
+vendor/lib64/libqcrilFramework.so|b2c2191775e9a0c098864b1fe9db15cedc926e3a
 vendor/lib64/libqrtr.so|c7ca700c1f4759aa673a6c5478ca492487bbea70
 vendor/lib64/libqsocket.so|40816476d857f2ad07490415f6ff7433517ccef8
-vendor/lib64/libril-qc-hal-qmi.so|ecd2046aaf6f6323f6e6c3b5f39218ea64aedf01
+vendor/lib64/libril-qc-hal-qmi.so|38e6de7d50fa21f686e8565b1fb6fd28cb39ae14
 vendor/lib64/libril-qc-ltedirectdisc.so|c219b0798a063ae231c6510959adb4bbb0255378
 vendor/lib64/libril-qc-qmi-1.so|93ff5e12bcf4e2d3b6af00348648b250822fdd7c
 vendor/lib64/libril-qc-radioconfig.so|ab15c1d1f6f1940de2a96ce1152b30cf4c44ab4f
@@ -1909,7 +1910,7 @@ vendor/etc/sensors/sensor_def_qcomdev.conf
 # Sensors - from LA.UM.8.2.r1-06700-sdm660.0
 product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so|bda110fc8102be6f88bd0e364819d15d9c0c3744
 product/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so|67620ca191213b83e898ee401807eb8385b0020d
-vendor/bin/sensors.qti|c11eb7939bdcf47b51199f4a2c247486d5bbcd89
+vendor/bin/sensors.qti|0dee19d3b3d3b4c1dae65fd8206eb5af17fa3866
 vendor/lib/hw/activity_recognition.sdm660.so|47c588e1bdb357f31721171dc1d6a781c743bd64
 vendor/lib/libsensor1.so|b1b0dcb45432e51fabffe595010f35a017c7a3fd
 vendor/lib/libsensor_reg.so|170c40b9b7d48c922cd3ca1a552a34311ee79799
@@ -1923,7 +1924,7 @@ vendor/lib64/sensors.ssc.so|b53f9d8a5580feb9ca8f9e4efd080f76dc1d1588
 
 
 # Soter - from LA.UM.8.2.r1-06200-sdm660.0
--app/SoterService/SoterService.apk|897999e257f5e59ebe2f9ca08a4f5512602f6c5e
+-app/SoterService/SoterService.apk|c1c40b4931f18dcb3ca8bf100a7b4eab547b85a9
 
 # Soter - from LA.UM.8.2.r1-06700-sdm660.0
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service|37f9501fa45a69ba3a27fd338704d76afc534bcb
