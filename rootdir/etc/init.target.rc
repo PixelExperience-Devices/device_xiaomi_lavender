@@ -52,12 +52,11 @@ on fs
     mkdir /mnt/vendor/persist/data 0700 system system
     mkdir /mnt/vendor/persist/stability 0755 system system
     mkdir /mnt/vendor/persist/bms 0700 root system
-    exec u:r:vendor_toolbox:s0 root audio bluetooth graphics media net_raw system vendor_rfs vendor_rfs_shared -- /vendor/bin/toybox_vendor find /mnt/vendor/persist -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;     
+    exec u:r:vendor_toolbox:s0 root audio bluetooth graphics media net_raw system vendor_rfs vendor_rfs_shared -- /vendor/bin/toybox_vendor find /mnt/vendor/persist -type d -exec /vendor/bin/toybox_vendor setfattr -x security.sehash {} \;
     restorecon_recursive /mnt/vendor/persist
     write /sys/kernel/boot_adsp/boot 1
     chown system system /dev/goodix_fp
     #chmod 0644 /dev/goodix_fp
-
     chmod 0664 /sys/class/thermal/thermal_message/sconfig
     chown system system /sys/class/thermal/thermal_message/sconfig
 
@@ -81,27 +80,39 @@ on post-fs-data
     mkdir /data/tombstones/lpass 0771 system system
     mkdir /data/tombstones/wcnss 0771 system system
     mkdir /data/tombstones/dsps 0771 system system
-    mkdir /data/vendor/hbtp 0750 system system
-    mkdir /data/vendor/mac_addr 0770 system wifi
-
-    mkdir /data/vendor/thermal 0771 root system
-    mkdir /data/vendor/thermal/config 0771 root system
+    mkdir /data/misc/seemp 0700 system system
+    mkdir /data/thermal 0771 root system
+    mkdir /data/thermal/config 0771 root system
 
 #Creat charger logg
     mkdir /data/vendor/charge_logger 0771 system system
 
 on boot
-    chown system system /sys/class/touch/touch_dev/palm_sensor
-    start vendor.rmt_storage
+    start rmt_storage
+    start rfs_access
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-7
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0-7
-    write /dev/cpuset/system-background/cpus 0-3
-
-    chown root system /proc/tp_grip_area
-    #chmod 0771 /data/vendor/charge_logger
-    #chown root root /data/vendor/charge_logger
+    write /dev/cpuset/system-background/cpus 0-7
+    ####Regionalization config and prop files####
+    chmod 0644 /persist/speccfg/spec
+    chmod 0644 /persist/speccfg/devicetype
+    chmod 0644 /persist/speccfg/mbnversion
+    chmod 0644 /persist/speccfg/.not_triggered
+    chmod 0644 /persist/speccfg/vendor_ro.prop
+    chmod 0644 /persist/speccfg/vendor_persist.prop
+    chmod 0644 /persist/speccfg/submask
+    chmod 0644 /persist/speccfg/partition
+    chown system system /persist/speccfg/spec
+    chown system system /persist/speccfg/devicetype
+    chown system system /persist/speccfg/mbnversion
+    chown system system /persist/speccfg/.not_triggered
+    chown system system /persist/speccfg/vendor_ro.prop
+    chown system system /persist/speccfg/vendor_persist.prop
+    chown system system /persist/speccfg/submask
+    chown system system /persist/speccfg/partition
+	chown root system /proc/tp_grip_area
 
 #Create folder dump yuv images while debugging
     mkdir /data/vendor/camera 0770 camera camera
@@ -119,6 +130,7 @@ on boot
     setprop vendor.usb.rmnet.func.name "rmnet_bam"
     setprop vendor.usb.rmnet.inst.name "rmnet"
     setprop vendor.usb.dpl.inst.name "dpl"
+    setprop vendor.usb.qdss.inst.name "qdss"
     write /sys/module/usb_f_qcrndis/parameters/rndis_dl_max_xfer_size 15916
     setprop sys.usb.configfs 1
 
@@ -140,12 +152,12 @@ on property:init.svc.vendor.per_mgr=running
 
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
-
 on property:sys.thermallct.isincall=1
     write /sys/class/power_supply/battery/device/thermalcall 1
 
 on property:sys.thermallct.isincall=0
     write /sys/class/power_supply/battery/device/thermalcall 0
+
 
 # add charge_logger service for dump charge message
 service charge_logger /vendor/bin/charge_logger
@@ -172,11 +184,6 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-send-rule stream 0660 system system
    group root
 
-service time_daemon /system/vendor/bin/time_daemon
-   class late_start
-   user root
-   group root
-
 service adsprpcd_root /vendor/bin/adsprpcd
    class main
    user media
@@ -186,23 +193,6 @@ service adsprpcd /vendor/bin/adsprpcd audiopd
    class main
    user media
    group media
-
-service vendor.mlipay-1-1 /vendor/bin/mlipayd@1.1
-    class main
-    user system
-    group system	
-	
-	
-service vendor.mtdservice-1-2 /vendor/bin/mtd@1.2
-    class main
-    group system drmrpc
-
-	
-service fidoca /vendor/bin/fidoca
-	class main
-	user system
-	group system
-
 
 service audiod /system/vendor/bin/audiod
    class late_start
@@ -218,18 +208,17 @@ service vendor.cdsprpcd /vendor/bin/cdsprpcd
 ## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
 service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
     class main
-    user radio
+    user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
 service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
     class main
-    user radio
+    user system
     socket ims_datad stream 0660 system radio
-    group radio wifi inet log diag
+    group system wifi radio inet log diag
     disabled
-
 
 service energy-awareness /system/vendor/bin/energy-awareness
     class main
@@ -259,12 +248,12 @@ service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
 
 service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    class main
-   user radio
-   group radio vendor_qti_diag inet log
+   user system
+   group radio diag inet log
 
 service vendor.imsrcsservice /system/vendor/bin/imsrcsd
    class main
-   user radio
+   user system
    group radio diag inet log wakelock
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
@@ -301,7 +290,7 @@ on charger
     start qcom-post-boot
     mkdir /data/vendor/charge_logger 0771 system system
     chown system system /sys/class/leds/red/brightness
-	chmod 0666 /sys/class/leds/red/brightness
+    chmod 0666 /sys/class/leds/red/brightness
     start vendor.hvdcp_opti
     setprop sys.usb.configfs 1
     start power_off_alarm
@@ -318,68 +307,67 @@ service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
      user root
      group system wakelock
 
+
+#ad display feature
 on property:persist.sys.display_srgb=1
     write /sys/class/graphics/fb0/msm_fb_srgb 1
 
 on property:persist.sys.display_srgb=2
     write /sys/class/graphics/fb0/msm_fb_srgb 2
-
+ 
 on property:persist.sys.display_ce=4
     write /sys/class/graphics/fb0/msm_fb_ce 1
-
+ 
 on property:persist.sys.display_ce=0
     write /sys/class/graphics/fb0/msm_fb_ce 2
 
 on property:persist.sys.display_cabc=1
     write /sys/class/graphics/fb0/msm_fb_cabc 1
-
+ 
 on property:persist.sys.display_cabc=2
     write /sys/class/graphics/fb0/msm_fb_cabc 2
 
 #on property:persist.sys.display_gamma=1
 #    write /sys/class/graphics/fb0/msm_fb_gamma 1
-
+ 
 #on property:persist.sys.display_gamma=2
 #    write /sys/class/graphics/fb0/msm_fb_gamma 2
-
+ 
 on property:persist.sys.display_cabc_movie=1
     write /sys/class/graphics/fb0/msm_fb_cabc_movie 1
-
+ 
 on property:persist.sys.display_cabc_movie=2
     write /sys/class/graphics/fb0/msm_fb_cabc_movie 2
 
 on property:persist.sys.display_cabc_still=1
     write /sys/class/graphics/fb0/msm_fb_cabc_still 1
-
+ 
 on property:persist.sys.display_cabc_still=2
     write /sys/class/graphics/fb0/msm_fb_cabc_still 2
-
+ 
 on property:sys.hbm_mode=1
     write /sys/class/graphics/fb0/msm_fb_hbm 1
 
 on property:sys.hbm_mode=2
     write /sys/class/graphics/fb0/msm_fb_hbm 2
-
+ 
 on property:sys.hbm_mode=3
     write /sys/class/graphics/fb0/msm_fb_hbm 3
 
 on property:sys.hbm_mode=0
     write /sys/class/graphics/fb0/msm_fb_hbm 0
-
+ 
 service adswitch /vendor/bin/adswitch
-    user root
-    group root
-    disabled
-    oneshot
+     user root
+     group root
+     disabled
+     oneshot
 
 on property:sys.ad.enable=on
     start adswitch
-
+ 
 on property:sys.ad.enable=off
     start adswitch
-
-on property:sys.boot_completed=1
-	start nv_mac
 
 #touch settings
 on property:vendor.tp.grip_area=90
@@ -392,9 +380,10 @@ on property:vendor.tp.grip_area=1
     write /proc/tp_grip_area 1
 on property:vendor.tp.grip_area=180
     write /proc/tp_grip_area 180
-    
-service checknv /vendor/bin/checknv
-     class late_start
-     user root
-     oneshot
-     seclabel u:r:recovery:s0
+
+service checknv /system/bin/checknv
+    class late_start
+    user root
+    oneshot
+    seclabel u:r:recovery:s0
+
