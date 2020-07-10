@@ -766,6 +766,26 @@ else
         fi
     fi
 
+    if [[ "$ProductName" == "bengal"* ]]; then
+        if [ -f /sys/devices/soc0/soc_id ]; then
+            soc_id=`cat /sys/devices/soc0/soc_id`
+        else
+            soc_id=`cat /sys/devices/system/soc/soc0/id`
+        fi
+        case "$soc_id" in
+            # Only for Scuba
+            "441")
+            #Set PPR nomap parameters for scuba target
+            echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
+            echo 50 > /sys/module/process_reclaim/parameters/pressure_min
+            echo 70 > /sys/module/process_reclaim/parameters/pressure_max
+            echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
+            echo 0 > /sys/module/process_reclaim/parameters/per_swap_size
+            echo 7680 > /sys/module/process_reclaim/parameters/tsk_nomap_swap_sz
+            ;;
+        esac
+    fi
+
     # Set allocstall_threshold to 0 for all targets.
     # Set swappiness to 100 for all targets
     echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
