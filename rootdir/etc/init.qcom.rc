@@ -927,14 +927,6 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     writepid /dev/cpuset/foreground/tasks /dev/stune/foreground/tasks
     onrestart restart audioserver
 
-service vendor.contexthub-hal-1-0 /vendor/bin/hw/android.hardware.contexthub@1.0-service
-    override
-    class hal
-    interface android.hardware.contexthub@1.0::IContexthub default
-    user system
-    group system
-    disabled    
-
 #workaround for camera HAL can not read sys property 
 on property:sys.camera.face.unlock=*
     setprop vendor.camera.face.unlock ${sys.camera.face.unlock}
