@@ -1655,6 +1655,7 @@ vendor/lib64/libqti-perfd-client.so|7089fa216b06fc78127b51df6cade6518886a463
 vendor/lib64/libqti-perfd.so|cd906582067b67977f332299cfcbc5f95d0957e6
 vendor/lib64/libqti-util.so|45a80be449435d277f09cc59e4a315fa86072c41
 vendor/lib64/vendor.qti.hardware.perf@2.0.so|b05e762bf5c7e86b0d6c1be4c8ae91e3f706dca7
+vendor/etc/perf/perfconfigstore.xml|b1d147be38c5a11f13cab051360226ef15b432c5
 
 # IOP - from LA.UM.8.2.r1-06700-sdm660.0
 product/lib/vendor.qti.hardware.iop@1.0.so:vendor/lib/vendor.qti.hardware.iop@1.0.so|a560207b369bbb3e3156cd6e1600da02b202e96a
