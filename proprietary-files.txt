@@ -72,10 +72,10 @@ product/lib64/com.qualcomm.qti.ant@1.0.so|1a7bee1627309c8eee55dab22b9f25c2302219
 vendor/lib64/com.qualcomm.qti.ant@1.0.so|5ef111c6ecb35b94233ae694d80161e9f61b7cd6
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|203528c568c1c5ce33b35dcb9ee9eb7ecb1de206
 
-# Audio
-vendor/firmware/dbmd4_va_fw.bin
-vendor/firmware/tfa98xx.cnt
-vendor/firmware/voice_amodel.bin
+# Audio - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
+vendor/firmware/dbmd4_va_fw.bin|ee640f9f4e367d513f5fb7d95c85e226c9f75750
+vendor/firmware/tfa98xx.cnt|f8b5291feaebe7e3d18fda5d8960c313656b4a3a
+vendor/firmware/voice_amodel.bin|f0485f84718886ebcba6f2be0eb92f18240b5115
 
 # Audio - from LA.UM.8.2.r1-06700-sdm660.0
 etc/permissions/audiosphere.xml|3c6d8f14bd99e52a424282fd5d0a5b9b06485dea
@@ -222,7 +222,7 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml|ff91feb5060a6df07e3e4d9bc99ae58bcc
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml|f76c894f3c6d5b6ed35113a088dc3174c900501b
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml|14d136e7fcc682311757d3edc0b9d3eaeba11815
 
-# Consumerir - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+# Consumerir - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
 vendor/lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.sdm660.so|9557dc4e5ed630f1fc534334074cce58d4c49c62
 vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.sdm660.so|d1f275a91557dfab52e82906986c5094fe078722
 
@@ -1370,7 +1370,7 @@ vendor/lib64/libssd.so|d6758bd01b360be7bb68f35f56978a5e9a21d3c3
 vendor/lib/libmm-hdcpmgr.so|1369ce85b3c133c8d4d04167cd894df85212dcfa
 vendor/lib64/libmm-hdcpmgr.so|a80b3cfa28acdb69a5047ab9592c611ab4534799
 
-# DRM (Widevine) - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+# DRM (Widevine) - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
 vendor/lib64/libcpion.so|87465372180b9df51434f7f51faf033c2da914a5
 vendor/lib64/libcppf.so|58f4deec43f2271919da9f69aa2753ee707735a0
 vendor/lib64/libhdcp1prov.so|25aa30d053c9d520526e15434ce80a2635a8a40c
@@ -1390,7 +1390,7 @@ vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc|58a3866ad5a7613d9392c9
 vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so|c03d9380b60a794ababac1c6ec25d4410783bcc9
 vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so|34206c519a4ccd08545921d68db74b22ab3a0a93
 
-# Fingerprint Firmware - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+# Fingerprint Firmware - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
 vendor/firmware/goodixfp.b00|8f813a88f234aa576d36753d545839379f4d845b
 vendor/firmware/goodixfp.b01|ed9b552ee000d07ba1de9c2a166820d9f86e7648
 vendor/firmware/goodixfp.b02|d73142c3c50d7bcf29b01868ad6a590c239229b8
@@ -1410,8 +1410,8 @@ vendor/firmware/fpctzappfingerprint.b06|9fafa1b43f267f8f1966907ce3320647a669b976
 vendor/firmware/fpctzappfingerprint.b07|27ac9ea6d45412fc39082f236857d03ca55a1b0f
 vendor/firmware/fpctzappfingerprint.mdt|56df2f2c406db1cf7cf6d15a3c2481d7573f3f13
 
-# Fingerprint sensor - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
--vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk|30730197faa6573d6a170c538eb69caad5a14a6d
+# Fingerprint sensor - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
+-vendor/app/FingerprintExtensionService/FingerprintExtensionService.apk|947aa5bdb5db6144f29e17869baa9fbbdadc9fe7
 vendor/etc/permissions/com.fingerprints.extension.xml|de711d8827e1d321b22b60fd75a204e8928f9c6d
 vendor/framework/com.fingerprints.extension.jar|10c37dd77e3ec6f25f478af324e91310961aae08
 vendor/lib/hw/fingerprint.default.so:vendor/lib/hw/fingerprint.sdm660.so|6eac7b40dd482e03ee66797a62537510b042d9a2
@@ -1426,20 +1426,20 @@ vendor/lib64/libgoodixhwfingerprint.so|f51d93cd8985a0d4a1d902b287aa5cebe0319aee
 vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so|47babf9634793366f4f3439ec4dfe601390990a5
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so|0b84054262e01300e72796ee26ed6f9e00bce9b7
 
-# FM - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+# FM - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
 lib64/fm_helium.so|bc9f6314528630c060b593cef4a8cec786b22467
 lib64/libfm-hci.so|589e9e290acfa18a49deba33606ed158d5e7f898
 product/lib64/vendor.qti.hardware.fm@1.0.so|fc7ad886f82089edf36509865fadac17a7340f32
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|506efd87250697bdae271f86ea472785a77b84ef
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|073cace3aa8d0ffa025d9df67c45f8a907109339
 
-# Gatekeeper - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+# Gatekeeper - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|a189a50515831e6ac9a7e88a165ac979ae6ac077
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
 vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so|2edd1bfb811307ea81c46bb3dd7cb5af46fc8c42
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|eaf70216b4e53f409c22764b272b79cd60a4b714
 
-# Keymaster  - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+# Keymaster  - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti|22838e26f4a645a351bec32405ccf54b2271e13d
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti|e77067e7dcb04c9a319789776bee3ac4d684e1b5
 vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc|c8999fb1bccbef81e6b362059e9a6ebd023de98f
@@ -1454,7 +1454,7 @@ vendor/lib64/libkeymasterprovision.so|f7e215595c2f7e62a6575b23a109b6b18556fc3b
 vendor/lib64/libkeymasterutils.so|679491d7b415f45469990380e4fd61e4bfbc445e
 vendor/lib64/libqtikeymaster4.so|7534cde33a024aa891185cdc8f93df46f5a08c8c
 
-# Keystore - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+# Keystore - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
 vendor/lib64/libkeystore-engine-wifi-hidl.so|72e71645cba2cb0c3c06d7721f88b132a766fe2d
 vendor/lib64/libkeystore-wifi-hidl.so|ac5f29fe068458cba39525621fe66300174f2360
 vendor/lib64/vendor.qti.hardware.wifi.keystore@1.0.so|d20889da64cf0e5d86311e31e3a503b348aebd46
@@ -1506,15 +1506,15 @@ vendor/lib64/vendor.qti.gnss@3.0-service.so|e799172a7113a35b1f17a8c5999713286c10
 vendor/lib64/vendor.qti.gnss@3.0.so|168e121b29c34b8940438caad9fd52423a1ceba8
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so|b6ff1fa5d685ff3572993cbe8325c36654eea4d8
 
-# GPU firmware
-vendor/firmware/a512_zap.b00
-vendor/firmware/a512_zap.b01
-vendor/firmware/a512_zap.b02
-vendor/firmware/a512_zap.elf
-vendor/firmware/a512_zap.mdt
-vendor/firmware/a530_gpmu.fw2
-vendor/firmware/a530_pfp.fw
-vendor/firmware/a530_pm4.fw
+# GPU firmware - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
+vendor/firmware/a512_zap.b00|85a7fc0008f9a2071d8b3d0cc212b19141633267
+vendor/firmware/a512_zap.b01|e0b7818182fac232182bfb70a4f43ec3e36779b9
+vendor/firmware/a512_zap.b02|33cc074ca840ae59f310a0e217aa7409afb30ac2
+vendor/firmware/a512_zap.elf|5dd4278559e9276f641bb121d7577d1a3ca3fcbb
+vendor/firmware/a512_zap.mdt|cc149dda6e109dd3f1f92e74349665a8c521ff79
+vendor/firmware/a530_gpmu.fw2|706da8d5ee565dcf456341f805ee75a40773f65a
+vendor/firmware/a530_pfp.fw|d027c70fde64241ec13160d09ee1b6c272974a4b
+vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
 
 # Graphics - from LA.UM.8.2.r1-06700-sdm660.0
 vendor/lib/egl/eglSubDriverAndroid.so|c6c5e68ce670aeab637d29cfd3f7dba45e05e76c
@@ -1914,9 +1914,9 @@ vendor/lib/libsubsystem_control.so|fe08da9f6a0e73a97231055c4ca8279a68432476
 vendor/lib64/libSubSystemShutdown.so|c934b2df57be86fdfb9bdf2046f9289af5e7a62c
 vendor/lib64/libsubsystem_control.so|b2e8c7eb9d999137ae99ea38f85d7dac59c6dcc2
 
-# Sensor-configs
-vendor/etc/sensors/elliptic.conf
-vendor/etc/sensors/sensor_def_qcomdev.conf
+# Sensor-configs - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
+vendor/etc/sensors/elliptic.conf|fd6193dd8ec39f85948151a83a14690c228121b9
+vendor/etc/sensors/sensor_def_qcomdev.conf|3ce1145d65ade70300feadf971e69ad6f522a749
 
 # Sensors - from LA.UM.8.2.r1-06700-sdm660.0
 product/lib/vendor.qti.hardware.sensorscalibrate@1.0.so|bda110fc8102be6f88bd0e364819d15d9c0c3744
@@ -1943,13 +1943,13 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc|76447a61ad5529949365eeb
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so|1f27eb012650705a40fac8fec6d0b2dd10a1ec22
 vendor/lib64/vendor.qti.hardware.soter@1.0.so|b08f0d2e92e0adce42127b5f978fa6bb22326ce1
 
-# Thermal - from lavender-user 10 QKQ1.190910.002 20.1.9 release-keys
+# Thermal - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
 vendor/etc/thermal-engine-camera.conf|db9829a655ca0c3013448e6a4aee3fcce9f90ca2
 vendor/etc/thermal-engine-map.conf|19c9ec67a63568470061413e47d420321040ef2a
 vendor/etc/thermal-engine-normal.conf|f44b43de8ec730aed99e289be99c7fc814da5e94
 vendor/etc/thermal-engine.conf|c6c9312b7c7b52926cf7d0fc9bff933d90967100
-vendor/lib/libthermalfeature.so|1f1eb616ba26b309a2fda7de40c2163a4acaaa35
-vendor/lib64/libthermalfeature.so|829b2fc0aa8c863d4b4b331e0a2c00663e01efe6
+vendor/lib/libthermalfeature.so|b2a90496eb99301cc0f065fe97782358858668a3
+vendor/lib64/libthermalfeature.so|1c408911610e5b6a11853aff1900860f9e9a861f
 
 # Thermal - from LA.UM.8.2.r1-06200-sdm660.0
 vendor/bin/thermal-engine|fc23647cf4ccf8f056477ecbb29169c35627b95a
