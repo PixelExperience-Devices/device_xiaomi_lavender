@@ -141,7 +141,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_skip_validate=1 \
     vendor.display.enable_default_color_mode=0 \
     sdm.debug.disable_skip_validate=1 \
-    persist.hwc.enable_vds=1
+    persist.hwc.enable_vds=1 \
+    ro.vendor.display.cabl=0 \
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -156,7 +157,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
     media.stagefright.enable-aac=true \
     media.stagefright.enable-http=true \
-    media.stagefright.enable-player=true
+    media.stagefright.enable-player=true \
     media.stagefright.enable-qcp=true \
     media.stagefright.enable-scan=true \
     persist.mm.enable.prefetch=true \
@@ -206,9 +207,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=1 \
     rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so \
     DEVICE_PROVISIONED=1 \
-    persist.vendor.qti.telephony.vt_cam_interface=1
-
-
+    persist.vendor.qti.telephony.vt_cam_interface=1 \
+    persist.dbg.ims_volte_enable=1 \
+    persist.radio.videopause.mode=1 \
+    persist.data.iwlan.enable=true \
+    persist.radio.VT_HYBRID_ENABLE=1
+   
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sdk.sensors.gestures=false \
@@ -237,9 +241,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ssr.restart_level=ALL_ENABLE
 
-# Time
+# QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true
+    persist.timed.enable=true \
+    persist.vendor.qcomsysd.enabled=1
 
 # Thermal configs path
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -250,18 +255,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0 \
     vendor.video.disable.ubwc=1 \
-    vendor.gralloc.enable_fb_ubwc=1
+    video.disable.ubwc=1
 
 # Misc ( Yet not Sorted )
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.sys.job_delay=true \
-persist.sys.mcd_config_file=/system/etc/mcd_default.conf \
-persist.vendor.qcomsysd.enabled=1 \
-keyguard.no_require_sim=true \
 ro.com.android.dataroaming=false \
 persist.backup.ntpServer=0.pool.ntp.org \
-sys.vendor.shutdown.waittime=500 \
-ro.build.shutdown_timeout=0 \
 vendor.fm.a2dp.conc.disabled=true \
 ro.vendor.audio.soundtrigger=none \
 ro.vendor.audio.soundtrigger.lowpower=false \
