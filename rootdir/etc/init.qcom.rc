@@ -217,14 +217,14 @@ on boot
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
     # Allow access to emmc rawdump block partition and dload sysfs node
-    chown root system /dev/block/bootdevice/by-name/rawdump
-    chmod 0660 /dev/block/bootdevice/by-name/rawdump
-    chown root system /sys/kernel/dload/emmc_dload
-    chmod 0660 /sys/kernel/dload/emmc_dload
-    chown root system /dev/block/bootdevice/by-name/ramdump
-    chmod 0660 /dev/block/bootdevice/by-name/ramdump
-    chown root system /sys/kernel/dload/dload_mode
-    chmod 0660 /sys/kernel/dload/dload_mode
+    #chown root system /dev/block/bootdevice/by-name/rawdump
+    #chmod 0660 /dev/block/bootdevice/by-name/rawdump
+    #chown root system /sys/kernel/dload/emmc_dload
+    #chmod 0660 /sys/kernel/dload/emmc_dload
+    #chown root system /dev/block/bootdevice/by-name/ramdump
+    #chmod 0660 /dev/block/bootdevice/by-name/ramdump
+    #chown root system /sys/kernel/dload/dload_mode
+    #chmod 0660 /sys/kernel/dload/dload_mode
 
     chown system system /sys/class/backlight/panel0-backlight/brightness
     chown system system /sys/class/backlight/panel0-backlight/max_brightness
@@ -500,6 +500,12 @@ on property:persist.vendor.ssr.enable_ramdumps=1
 on property:persist.vendor.ssr.enable_ramdumps=0
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
 
+#on property:persist.vendor.sys.rawdump_copy=1
+#    write /sys/kernel/dload/emmc_dload 1
+
+#on property:persist.vendor.sys.rawdump_copy=0
+#    write /sys/kernel/dload/emmc_dload 0
+
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
     #Reset read ahead for dm-0, dm-1 and dm-2 to 512kb
@@ -517,12 +523,12 @@ on property:vendor.radio.atfwd.start=false
     stop vendor.atfwd
 
 # corefile limit
-on property:persist.debug.trace=1
-    mkdir /data/core 0777 root root
-    write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
+#on property:persist.debug.trace=1
+#    mkdir /data/core 0777 root root
+#    write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
 
-on property:init.svc.wpa_supplicant=stopped
-    stop dhcpcd
+#on property:init.svc.wpa_supplicant=stopped
+#    stop dhcpcd
 
 on property:vendor.bluetooth.dun.status=running
     start vendor.bt-dun
@@ -530,8 +536,8 @@ on property:vendor.bluetooth.dun.status=running
 on property:vendor.bluetooth.dun.status=stopped
     stop vendor.bt-dun
 
-on property:ro.bluetooth.ftm_enabled=true
-    start ftmd
+#on property:ro.bluetooth.ftm_enabled=true
+#    start ftmd
 
 on property:vendor.bluetooth.startbtlogger=true
     start vendor.bt_logger
@@ -550,6 +556,7 @@ service qcom-c_core-sh  /vendor/bin/init.qcom.class_core.sh
 service qcom-c_main-sh /vendor/bin/init.class_main.sh
     class main
     user root
+    group root system
     oneshot
 
 on property:vold.decrypt=trigger_restart_framework
@@ -558,9 +565,8 @@ on property:vold.decrypt=trigger_restart_framework
     restart vendor.audio-hal-2-0
     restart vendor.camera-provider-2-4
 
-on property:persist.env.fastdorm.enabled=true
-    setprop persist.radio.data_no_toggle 1
-
+#on property:persist.env.fastdorm.enabled=true
+#    setprop persist.radio.data_no_toggle 1
 
 service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
     class core
@@ -624,8 +630,8 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
-on property:ro.data.large_tcp_window_size=true
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
+#on property:ro.data.large_tcp_window_size=true
+#    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
 on property:sys.sysctl.tcp_adv_win_scale=*
     write /proc/sys/net/ipv4/tcp_adv_win_scale ${sys.sysctl.tcp_adv_win_scale}
@@ -750,45 +756,6 @@ service wifi_ftmd /system/vendor/bin/wifi_ftmd
 on property:vendor.wifi.ftmd.load=true
     insmod /system/lib/modules/pronto/pronto_wlan.ko con_mode=5
 
-service vendor.cnss_diag /system/vendor/bin/cnss_diag -q -f
-    class late_start
-    user system
-    group system wifi inet net_admin sdcard_rw media_rw diag
-    disabled
-    oneshot
-
-service vendor.tcpdump /vendor/bin/tcpdump -i any -W 2 -C 2 -s 134 -w /data/vendor/wlan_logs/tcpdump.pcap
-    class main
-    user root
-    group root wifi
-    disabled
-    oneshot
-
-service sniffer /vendor/bin/tcpdump -i wlan0 -w /sdcard/wlan_logs/sniffer.pcap
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
-on property:sys.user.0.ce_available=true
-    start vendor.cnss_diag
-    start vendor.tcpdump
-
-service startpktlog /system/bin/iwpriv wlan0 pktlog 1
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
-service stoppktlog /system/bin/iwpriv wlan0 pktlog 0
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
 service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     class late_start
     user system
@@ -838,11 +805,11 @@ service drmdiag /system/vendor/bin/drmdiagapp
      disabled
      oneshot
 
-on property:drmdiag.load=1
-    start drmdiag
+#on property:drmdiag.load=1
+#    start drmdiag
 
-on property:drmdiag.load=0
-    stop drmdiag
+#on property:drmdiag.load=0
+#    stop drmdiag
 
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
@@ -923,12 +890,12 @@ service ims_regmanager /system/vendor/bin/exe-ims-regmanagerprocessnative
     group net_bt_admin inet radio wifi
     disabled
 
-on property:persist.ims.regmanager.mode=1
-    start ims_regmanager
+#on property:persist.ims.regmanager.mode=1
+#    start ims_regmanager
 
-on property:ro.data.large_tcp_window_size=true
-    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
-    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
+#on property:ro.data.large_tcp_window_size=true
+#    # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
+#    write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
 service battery_monitor /system/bin/battery_monitor
     user system
@@ -972,11 +939,11 @@ service hvdcp /system/bin/hvdcp
     user root
     disabled
 
-on property:persist.usb.hvdcp.detect=true
-    start hvdcp
+#on property:persist.usb.hvdcp.detect=true
+#    start hvdcp
 
-on property:persist.usb.hvdcp.detect=false
-    stop hvdcp
+#on property:persist.usb.hvdcp.detect=false
+#    stop hvdcp
 
 service charger_monitor /system/bin/charger_monitor
     user root
@@ -1102,8 +1069,8 @@ service logdumpd /system/bin/logcat -b all -v threadtime -D -w /dev/block/bootde
     disabled
 
 # Logdumpd is enabled only for userdebug non-perf build
-on property:ro.logdumpd.enabled=1
-    start logdumpd
+#on property:ro.logdumpd.enabled=1
+#    start logdumpd
 
 service time_daemon /vendor/bin/time_daemon
     class main
