@@ -13,7 +13,7 @@
     "repository": "vendor_xiaomi_lavender",
     "target_path": "vendor/xiaomi/lavender",
     "branch": "ten",
-    "remote": "pixel-devices-bitbucket"
+    "remote": "pixel-devices-blobs"
   },
   {
     "repository": "packages_apps_PixelLiveWallpaper",
