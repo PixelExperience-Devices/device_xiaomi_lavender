@@ -39,7 +39,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.parser.ip.buffer.size=262144 \
     persist.vendor.audio.hifi.int_codec=true \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
-    ro.af.client_heap_size_kbyte=7168
+    ro.af.client_heap_size_kbyte=7168 \
+	vendor.fm.a2dp.conc.disabled=true
 
 # Audio dynamic feature flags
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -191,6 +192,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.backup.ntpServer=0.pool.ntp.org \
+	persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1 \
@@ -260,16 +263,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0 \
     vendor.video.disable.ubwc=1 \
     video.disable.ubwc=1
-
-# Misc ( Yet not Sorted )
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.com.android.dataroaming=false \
-persist.backup.ntpServer=0.pool.ntp.org \
-vendor.fm.a2dp.conc.disabled=true \
-ro.vendor.audio.soundtrigger=none \
-ro.vendor.audio.soundtrigger.lowpower=false \
-ro.vendor.audio.voice.volume.boost=manual
-
+	
 # disable PQ feature by default
 PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.vidc.enc.disable.pq=true
