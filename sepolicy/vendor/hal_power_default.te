@@ -10,3 +10,12 @@ allow hal_power_default { sysfs_devices_system_cpu sysfs_msm_subsys }:file rw_fi
 allow hal_power_default sysfs_msm_subsys:dir search;
 
 dontaudit hal_power_default cgroup:file read;
+
+r_dir_file(hal_power_default, sysfs_graphics)
+
+allow hal_power_default device_latency:chr_file rw_file_perms;
+allow hal_power_default { sysfs_devfreq sysfs_kgsl }:dir search;
+allow hal_power_default { sysfs_devfreq sysfs_kgsl }:{ file lnk_file } rw_file_perms;
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
+
+set_prop(hal_power_default, vendor_power_prop)
