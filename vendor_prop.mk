@@ -192,8 +192,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.backup.ntpServer=0.pool.ntp.org \
-	persist.sys.fflag.override.settings_network_and_internet_v2=true \
+    persist.vendor.backup.ntpServer=0.pool.ntp.org \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
     persist.dbg.wfc_avail_ovr=1 \
@@ -215,7 +215,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.videopause.mode=1 \
     persist.data.iwlan.enable=true \
     persist.radio.VT_HYBRID_ENABLE=1
-   
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sdk.sensors.gestures=false \
