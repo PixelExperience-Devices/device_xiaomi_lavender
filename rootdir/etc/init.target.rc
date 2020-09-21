@@ -33,13 +33,30 @@ on early-init
     mkdir /dsp 0771 media media
 
 on init
-    write /dev/stune/foreground/schedtune.sched_boost_no_override 1
-    write /dev/stune/top-app/schedtune.sched_boost_no_override 1
-    write /dev/stune/schedtune.colocate 0
-    write /dev/stune/background/schedtune.colocate 0
-    write /dev/stune/system-background/schedtune.colocate 0
-    write /dev/stune/foreground/schedtune.colocate 0
-    write /dev/stune/top-app/schedtune.colocate 1
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 10
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+
+    # Setup permission for Power HAL
+    chown system system /dev/stune/top-app/schedtune.boost
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chown system system /sys/class/kgsl/kgsl-3d0/force_rail_on
+    chown system system /sys/class/kgsl/kgsl-3d0/force_clk_on
+    chown system system /sys/class/kgsl/kgsl-3d0/idle_timer
+    chown system system /sys/class/devfreq/soc:qcom,cpubw/min_freq
+    chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
+    chown system system /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hist_memory
+
+    chmod 0664 /dev/stune/top-app/schedtune.boost
+    chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
+    chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
+    chmod 0664 /sys/class/kgsl/kgsl-3d0/force_rail_on
+    chmod 0664 /sys/class/kgsl/kgsl-3d0/force_clk_on
+    chmod 0664 /sys/class/kgsl/kgsl-3d0/idle_timer
+    chmod 0664 /sys/class/devfreq/soc:qcom,cpubw/min_freq
+    chmod 0664 /sys/class/devfreq/soc:qcom,cpubw/bw_hwmon/hyst_trigger_count
+
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -118,7 +135,7 @@ on boot
 
     # Double Tap to Wake
     chown system system /proc/tp_gesture
-    chmod 0660 /proc/tp_gesture
+    chmod 0664 /proc/tp_gesture
 
 #Load WLAN driver
    insmod /vendor/lib/modules/qca_cld3_wlan.ko
@@ -224,12 +241,6 @@ service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
     socket ims_datad stream 0660 system radio
     group system wifi radio inet log diag
     disabled
-
-service energy-awareness /system/vendor/bin/energy-awareness
-    class main
-    user system
-    group system
-    oneshot
 
 service mdtpd /system/vendor/bin/mdtpd
     class late_start

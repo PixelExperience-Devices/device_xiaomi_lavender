@@ -28,3 +28,5 @@ allow init adsprpcd_file:file mounton;
 
 set_prop(vendor_init, camera_prop)
 set_prop(vendor_init, vendor_camera_prop)
+
+set_prop(vendor_init, vendor_power_prop)
