@@ -55,6 +55,9 @@
 # Shell Script
 /(vendor|system/vendor)/bin/init\.goodix\.sh    u:object_r:init_fingerprint_exec:s0
 
+# Root files
+/persist(/.*)?                                  u:object_r:mnt_vendor_file:s0
+
 # Thermal
 /data/vendor/thermal(/.*)?                      u:object_r:thermal_data_file:s0
 
