@@ -479,6 +479,7 @@ PRODUCT_PACKAGES += \
 # libicuuc: vendor.qti.hardware.qteeconnector@1.0-impl
 # libstdc++: camera.sdm660
 PRODUCT_PACKAGES += \
+    com.android.vndk.current.on_vendor \
     libicuuc.vendor \
     libstdc++.vendor \
     libgui_vendor \
