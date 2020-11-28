@@ -7,9 +7,6 @@
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
 
-# GoogleCamera
-$(call inherit-product-if-exists, packages/apps/GoogleCamera/gcam.mk)
-
 -include $(LOCAL_PATH)/vendor_prop.mk
 
 PRODUCT_CHARACTERISTICS := nosdcard
@@ -161,7 +158,7 @@ PRODUCT_PACKAGES += \
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.1-service
-    
+
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
@@ -188,7 +185,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-service \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
-	
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
