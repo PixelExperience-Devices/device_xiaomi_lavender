@@ -2,23 +2,12 @@
   {
     "repository": "kernel_xiaomi_lavender",
     "target_path": "kernel/xiaomi/lavender",
-    "branch": "ten"
-  },
-  {
-    "repository": "lavender-evergarden/packages_apps_GoogleCamera_lavender",
-    "target_path": "packages/apps/GoogleCamera",
-    "branch": "ten"
+    "branch": "eleven"
   },
   {
     "repository": "vendor_xiaomi_lavender",
     "target_path": "vendor/xiaomi/lavender",
-    "branch": "ten",
+    "branch": "eleven",
     "remote": "pixel-devices-blobs"
-  },
-  {
-    "repository": "packages_apps_PixelLiveWallpaper",
-    "target_path": "packages/apps/PixelLiveWallpaper",
-    "branch": "ten",
-    "remote": "pixel-gitlab"
   }
 ]
