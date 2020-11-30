@@ -495,19 +495,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
-    hostapd_cli \
     libqsap_sdk \
-    libQWiFiSoftApCfg \
     libwifi-hal-qcom \
-    libwpa_client \
-    wificond \
+    wcnss_service \
+    TetheringConfigOverlay \
     WifiOverlay \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    vendor.qti.hardware.wifi.hostapd@1.1.vendor \
-    vendor.qti.hardware.wifi.supplicant@2.0.vendor \
-    wpa_cli
-
+    wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
