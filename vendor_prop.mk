@@ -90,12 +90,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee \
     ro.vendor.bluetooth.wipower=false \
-    persist.vendor.bt.aac_frm_ctl.enabled=true
+    persist.vendor.bt.aac_frm_ctl.enabled=true \
+    persist.vendor.service.bdroid.sibs=false
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.bluetooth.a2dp_offload.disabled=false \
     vendor.bluetooth.soc=cherokee \
-	persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
