@@ -1458,7 +1458,6 @@ framework/com.qti.location.sdk.jar|818412737625293e1ef526a2b90bb0cd2d141fe4
 framework/izat.xt.srv.jar|665e45694ff4dc4c610448be853c1ea1ca0ede4c
 lib64/liblocationservice_jni.so|23eaa609131ed33eda8bca9c6af9fd59586820a0
 lib64/libxt_native.so|e92be15adb1ffb2321a77d8a33ade184ecb45fcb
--priv-app/com.qualcomm.location/com.qualcomm.location.apk|1c3652c114521281f869ea0f4fffc53ecea3cc35
 product/lib64/vendor.qti.gnss@1.0.so|ce99dc24861514d3444bdaca9336c98227e3d951
 product/lib64/vendor.qti.gnss@1.1.so|bb56a726390e44e240f5daa26a34e08e87461734
 product/lib64/vendor.qti.gnss@1.2.so|788ec8d5730ed1201e941abd738dce212074feb3
