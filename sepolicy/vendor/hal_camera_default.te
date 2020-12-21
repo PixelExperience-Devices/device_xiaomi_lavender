@@ -12,4 +12,5 @@ allow hal_camera_default camera_data_file:dir w_dir_perms;
 allow hal_camera_default camera_data_file:file create_file_perms;
 
 set_prop(hal_camera_default, vendor_camera_prop)
+get_prop(hal_camera_default, vendor_video_prop)
 
