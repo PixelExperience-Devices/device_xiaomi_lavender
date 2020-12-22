@@ -90,7 +90,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=cherokee \
     ro.vendor.bluetooth.wipower=false \
-    persist.vendor.bt.aac_frm_ctl.enabled=true \
     persist.vendor.service.bdroid.sibs=false
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
