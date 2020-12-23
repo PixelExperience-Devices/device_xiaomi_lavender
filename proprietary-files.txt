@@ -1866,15 +1866,6 @@ vendor/lib64/vendor.qti.imsrtpservice@2.0.so|45fd8c212f51977663082b496755911c986
 vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so|1673fd7b807dcc317cc73c82c2773d5bbb0302df
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so|780288d1d8d79fa16fbbe9bce6edaa4e1424cdb1
 
-# SSR - from LA.UM.8.2.r1-06700-sdm660.0
-vendor/bin/ssr_diag|e8ce0d08a05e4b737d520fdfc15395f716933ca4
-vendor/bin/ssr_setup|9cf9be4e2fe295a5e9313ffbb461603a9fd33e82
-vendor/bin/subsystem_ramdump|95d767081c102039dc96e2b00781cf43607cf1ea
-vendor/lib/libSubSystemShutdown.so|7714c39dd503f3121f87b877811fa8ac6e8b7247
-vendor/lib/libsubsystem_control.so|fe08da9f6a0e73a97231055c4ca8279a68432476
-vendor/lib64/libSubSystemShutdown.so|c934b2df57be86fdfb9bdf2046f9289af5e7a62c
-vendor/lib64/libsubsystem_control.so|b2e8c7eb9d999137ae99ea38f85d7dac59c6dcc2
-
 # Sensor-configs - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
 vendor/etc/sensors/elliptic.conf|fd6193dd8ec39f85948151a83a14690c228121b9
 vendor/etc/sensors/sensor_def_qcomdev.conf|3ce1145d65ade70300feadf971e69ad6f522a749
