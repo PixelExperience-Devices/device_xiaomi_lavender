@@ -1334,7 +1334,7 @@ product/framework/dpmapi.jar|4696df9793ad676b305d53b5d7ce65ecf74771ad
 product/lib64/com.qualcomm.qti.dpm.api@1.0.so|a70cfc1be3e06cde6318d6969e114429fe1950bb
 product/lib64/libdpmctmgr.so|597790027ff767d64e89c4a83cdafc18ce4179d5
 product/lib64/libdpmfdmgr.so|eb882f1e5983e18eda9718a1451019cecbead5a6
-product/lib64/libdpmframework.so|68a0df93a458adcc946c5beceddabce13c25c547
+product/lib64/libdpmframework.so|893c5040f652cb9ba0327790f7bf9264f6c3a37d
 product/lib64/libdpmtcm.so|b53544d539e1196717cac122402139c8bf341af1
 vendor/bin/dpmQmiMgr|ecfa5d218dc45839998a613dbb1db6a99cc83fb7
 vendor/etc/init/dpmQmiMgr.rc|67569302d3a8828a9118c835e5b69c51b0c8ac68
@@ -1545,7 +1545,7 @@ vendor/lib64/libllvm-glnext.so|78bb8d245478e212412e34c49eb1120e875cd0b9
 vendor/lib64/libllvm-qcom.so|5b9c69743b6563094fb6879135c32e29acaccafa
 vendor/lib64/librs_adreno.so|f76ffe1488c0622698b15884940eb6fd33346a71
 vendor/lib64/librs_adreno_sha1.so|13dc11654b454d5d5ebe5583765811e4fa11ba4a
-vendor/lib64/libRSDriver_adreno.so|b3d5f6b891f6ef0e8f079609d2722f1c29d28c8b
+vendor/lib64/libRSDriver_adreno.so|d1a6c079de14a665fa73cc217c46977ef84c08aa
 
 # Graphics (HDR) - from LA.UM.8.2.r1-06700-sdm660.0
 vendor/lib/libhdr_tm.so|0104cdb2789ab1fb54b6b93564300f13ffeefc39
