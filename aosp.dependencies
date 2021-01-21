@@ -7,7 +7,7 @@
   {
     "repository": "vendor_xiaomi_lavender",
     "target_path": "vendor/xiaomi/lavender",
-    "branch": "eleven-wip",
+    "branch": "eleven",
     "remote": "pixel-devices-blobs"
   }
 ]
