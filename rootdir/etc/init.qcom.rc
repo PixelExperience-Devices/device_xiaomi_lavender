@@ -666,18 +666,6 @@ service loc_launcher /system/vendor/bin/loc_launcher
     user gps
     group gps
 
-service drmdiag /system/vendor/bin/drmdiagapp
-    class late_start
-     user root
-     disabled
-     oneshot
-
-#on property:drmdiag.load=1
-#    start drmdiag
-
-#on property:drmdiag.load=0
-#    stop drmdiag
-
 service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
