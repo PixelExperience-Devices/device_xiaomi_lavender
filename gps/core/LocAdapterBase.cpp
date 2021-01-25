@@ -1,4 +1,4 @@
-/* Copyright (c) 2011-2014, 2016-2020 The Linux Foundation. All rights reserved.
+/* Copyright (c) 2011-2014, 2016-2019 The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -43,20 +43,13 @@ namespace loc_core {
 // the right locApi should get created.
 LocAdapterBase::LocAdapterBase(const LOC_API_ADAPTER_EVENT_MASK_T mask,
                                ContextBase* context, bool isMaster,
-                               LocAdapterProxyBase *adapterProxyBase,
-                               bool waitForDoneInit) :
+                               LocAdapterProxyBase *adapterProxyBase) :
     mIsMaster(isMaster), mEvtMask(mask), mContext(context),
     mLocApi(context->getLocApi()), mLocAdapterProxyBase(adapterProxyBase),
     mMsgTask(context->getMsgTask()),
     mIsEngineCapabilitiesKnown(ContextBase::sIsEngineCapabilitiesKnown)
 {
-    LOC_LOGd("waitForDoneInit: %d", waitForDoneInit);
-    if (!waitForDoneInit) {
-        mLocApi->addAdapter(this);
-        mAdapterAdded = true;
-    } else {
-        mAdapterAdded = false;
-    }
+    mLocApi->addAdapter(this);
 }
 
 uint32_t LocAdapterBase::mSessionIdCounter(1);
@@ -183,10 +176,6 @@ void LocAdapterBase::reportGnssSvIdConfigEvent(const GnssSvIdConfig& /*config*/)
 DEFAULT_IMPL()
 
 void LocAdapterBase::reportGnssSvTypeConfigEvent(const GnssSvTypeConfig& /*config*/)
-DEFAULT_IMPL()
-
-void LocAdapterBase::reportGnssConfigEvent(uint32_t,  /* session id*/
-            const GnssConfig& /*gnssConfig*/)
 DEFAULT_IMPL()
 
 bool LocAdapterBase::

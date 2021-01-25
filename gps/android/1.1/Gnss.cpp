@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2020, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2017-2018, The Linux Foundation. All rights reserved.
  * Not a Contribution
  */
 /*
@@ -29,7 +29,6 @@
 #include <LocationUtil.h>
 
 #include "battery_listener.h"
-#include "loc_misc_utils.h"
 
 typedef const GnssInterface* (getLocationInterface)();
 
@@ -98,8 +97,6 @@ void location_on_battery_status_changed(bool charging) {
 Gnss::Gnss() {
     ENTRY_LOG_CALLFLOW();
     sGnss = this;
-    // initilize gnss interface at first in case needing notify battery status
-    sGnss->getGnssInterface()->initialize();
     // register health client to listen on battery change
     loc_extn_battery_properties_listener_init(location_on_battery_status_changed);
     // clear pending GnssConfig
@@ -144,14 +141,25 @@ GnssAPIClient* Gnss::getApi() {
 const GnssInterface* Gnss::getGnssInterface() {
     static bool getGnssInterfaceFailed = false;
     if (nullptr == mGnssInterface && !getGnssInterfaceFailed) {
-        void * libHandle = nullptr;
-        getLocationInterface* getter = (getLocationInterface*)
-                dlGetSymFromLib(libHandle, "libgnss.so", "getGnssInterface");
+        LOC_LOGD("%s]: loading libgnss.so::getGnssInterface ...", __func__);
+        getLocationInterface* getter = NULL;
+        const char *error = NULL;
+        dlerror();
+        void *handle = dlopen("libgnss.so", RTLD_NOW);
+        if (NULL == handle || (error = dlerror()) != NULL)  {
+            LOC_LOGW("dlopen for libgnss.so failed, error = %s", error);
+        } else {
+            getter = (getLocationInterface*)dlsym(handle, "getGnssInterface");
+            if ((error = dlerror()) != NULL)  {
+                LOC_LOGW("dlsym for libgnss.so::getGnssInterface failed, error = %s", error);
+                getter = NULL;
+            }
+        }
 
-        if (nullptr == getter) {
+        if (NULL == getter) {
             getGnssInterfaceFailed = true;
         } else {
-            mGnssInterface = (GnssInterface*)(*getter)();
+            mGnssInterface = (const GnssInterface*)(*getter)();
         }
     }
     return mGnssInterface;
@@ -295,7 +303,14 @@ Return<bool> Gnss::injectLocation(double latitudeDegrees,
 
 Return<bool> Gnss::injectTime(int64_t timeMs, int64_t timeReferenceMs,
                               int32_t uncertaintyMs) {
-    return true;
+    ENTRY_LOG_CALLFLOW();
+    const GnssInterface* gnssInterface = getGnssInterface();
+    if (nullptr != gnssInterface) {
+        gnssInterface->injectTime(timeMs, timeReferenceMs, uncertaintyMs);
+        return true;
+    } else {
+        return false;
+    }
 }
 
 Return<void> Gnss::deleteAidingData(V1_0::IGnss::GnssAidingData aidingDataFlags)  {
@@ -379,7 +394,7 @@ Return<bool> Gnss::setCallback_1_1(const sp<V1_1::IGnssCallback>& callback) {
         OdcpiRequestCallback cb = [this](const OdcpiRequestInfo& odcpiRequest) {
             odcpiRequestCb(odcpiRequest);
         };
-        gnssInterface->odcpiInit(cb, OdcpiPrioritytype::ODCPI_HANDLER_PRIORITY_LOW);
+        gnssInterface->odcpiInit(cb);
     }
     return setCallback(callback);
 }
@@ -429,9 +444,6 @@ Return<bool> Gnss::injectBestLocation(const GnssLocation& gnssLocation) {
 
 void Gnss::odcpiRequestCb(const OdcpiRequestInfo& request) {
     ENTRY_LOG_CALLFLOW();
-    if (ODCPI_REQUEST_TYPE_STOP == request.type) {
-        return;
-    }
     if (mGnssCbIface_1_1 != nullptr) {
         // For emergency mode, request DBH (Device based hybrid) location
         // Mark Independent from GNSS flag to false.
