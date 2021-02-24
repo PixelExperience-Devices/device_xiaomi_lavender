@@ -1360,7 +1360,6 @@ vendor/lib64/libcppf.so|58f4deec43f2271919da9f69aa2753ee707735a0
 vendor/lib64/libhdcp1prov.so|25aa30d053c9d520526e15434ce80a2635a8a40c
 vendor/lib64/libhdcp2p2prov.so|de8347cbb242a1e069b42577ce810edad04d2afe
 vendor/lib64/libhdcpsrm.so|a9e378bfe4a66cfc670f35d70d0e182956a1e87b
-vendor/lib64/liboemcrypto.so|db41cb588065ad0d92ac2a59db409420c021413b
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec050afab5c64b9f87
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|68767969f86126ada017fc09af151e299db651d5
 vendor/lib64/libwvhidl.so|79641121417371f82af64fdec4795eb9cec1e12f
