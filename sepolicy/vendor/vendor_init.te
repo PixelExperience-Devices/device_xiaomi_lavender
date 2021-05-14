@@ -14,7 +14,7 @@ set_prop(vendor_init, camera_prop)
 allow vendor_init media_rw_data_file:file { getattr relabelfrom };
 
 allow vendor_init rootfs:dir { add_name create setattr write };
-allow vendor_init qcom_ims_prop:property_service set;
+allow vendor_init vendor_qcom_ims_prop:property_service set;
 allow vendor_init thermal_engine_prop:property_service set;
 allow vendor_init vendor_ssr_prop:property_service set;
 allow vendor_init audio_prop:property_service set;
