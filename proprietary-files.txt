@@ -1335,36 +1335,39 @@ vendor/etc/init/dpmQmiMgr.rc|67569302d3a8828a9118c835e5b69c51b0c8ac68
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|ab5d46cbf14ce90ab44aaab4dc1520378c568033
 vendor/lib64/libdpmqmihal.so|24b4b7ece0f0ba468e59d2ddcdaa62733635216b
 
-# DRM - from LA.UM.8.2.r1-06700-sdm660.0
-vendor/bin/qseecomd|a673f923a343a98007410022c1dc9acb5d440889
-vendor/lib64/libGPreqcancel.so|e402b6dd242031af4e67d9d46f1ec72ff0ed35d3
-vendor/lib64/libGPreqcancel_svc.so|bc624c099d38be6c43cfd3906d3aea5e17f62e43
-vendor/lib64/libQSEEComAPI.so|47e23f5502117f43f0a4e4802a3b613ef6ab903d
-vendor/lib64/libSecureUILib.so|721de37d7f030ce475418960500def7e3628f01a
-vendor/lib64/libStDrvInt.so|8de13b46e8f21016c0fffaec34b0a2bacfccec04
-vendor/lib64/libdrmfs.so|bcef4609a8af2fdf4fe5fd9b89e43018932fe95b
-vendor/lib64/libdrmtime.so|620d9e41f915ffc04afc635f4d080eff56543c65
-vendor/lib64/libqisl.so|c4e7f283f3d416b784f2ec0f7000d607e044809b
-vendor/lib64/librpmb.so|0b27e558cc20dffc76fdb578b0d5f38a0ee361c0
-vendor/lib64/libsecureui.so|0001f1d01b0c1805e34d80c74a8a0c28f2f0304d
-vendor/lib64/libsecureui_svcsock.so|e364290497862270cd01d9be84f0141ea92e92f9
-vendor/lib64/libssd.so|d6758bd01b360be7bb68f35f56978a5e9a21d3c3
+# DRM - from from lavender-user V12.0.3.0.QFGEUXM
+vendor/bin/qseecomd|90d5df44869a1de44cb11d690304e3b41bab8600
+vendor/lib64/libGPreqcancel.so|76b35e76a85b333f46ab749b7865c26ba0ca7bc4
+vendor/lib64/libGPreqcancel_svc.so|610f0d55e3c3b31a5fdd590dcd6ec8c2cf258d9b
+vendor/lib64/libQSEEComAPI.so|1dfc70896af18264af46be4bf797680cdd6b018b
+vendor/lib64/libSecureUILib.so|3a059d1fe3395eaefeb7817ad3af46987b6f4794
+vendor/lib64/libStDrvInt.so|a7bd8140e2cd5aa70a7d929e01233e5b71844cd8
+vendor/lib64/libdrmfs.so|d5847a27b74955a0ccfb2da499fa42902c5bf1df
+vendor/lib64/libdrmtime.so|9f1337004246fa7e6f726486bcab949fe5e2459f
+vendor/lib64/libqisl.so|f81d523e3e257e99bd055f6576521519a074e630
+vendor/lib64/librpmb.so|a6add4226a289242eb2e1ccef23a94d100a94064
+vendor/lib64/libsecureui.so|4a9861e7887b0e03294f86009b7600369d113964
+vendor/lib64/libsecureui_svcsock.so|889d4a12c5dee56ed4b10548abbd7b9033cbdad2
+vendor/lib64/libssd.so|a64337d8044607b81adcf7e8c5760cf8cdcf82b4
 
-# DRM (HDCP) - from LA.UM.8.2.r1-06700-sdm660.0
-vendor/lib/libmm-hdcpmgr.so|1369ce85b3c133c8d4d04167cd894df85212dcfa
-vendor/lib64/libmm-hdcpmgr.so|a80b3cfa28acdb69a5047ab9592c611ab4534799
+# DRM (HDCP) - from lavender-user V12.0.3.0.QFGEUXM
+vendor/lib/libmm-hdcpmgr.so|4af112050d0a5a47980103b309a163a4415de7dd
+vendor/lib64/libmm-hdcpmgr.so|152c347caca4826a64737df11e181472553be446
 
-# DRM (Widevine) - from lavender-user 10 QKQ1.190910.002 V11.0.1.0.QFGMIXM release-keys
-vendor/lib64/libcpion.so|87465372180b9df51434f7f51faf033c2da914a5
+# DRM (Widevine) - from lavender-user V12.0.3.0.QFGEUXM
+-vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.2-service.widevine.xml|1b556a6b981dfe8c5d62311b59758d370dd6dd10
+vendor/lib/mediadrm/libwvdrmengine.so|67df573835f13a5de5e7623b9a52ec815c821195
+vendor/lib64/mediadrm/libwvdrmengine.so|914e702d687a3e6def51d2e53f7900062b05b0ef
+vendor/lib64/libcpion.so|ff24ef248bb35fd3cc1081a63f33c2565dc6351f
 vendor/lib64/libcppf.so|58f4deec43f2271919da9f69aa2753ee707735a0
-vendor/lib64/libhdcp1prov.so|25aa30d053c9d520526e15434ce80a2635a8a40c
-vendor/lib64/libhdcp2p2prov.so|de8347cbb242a1e069b42577ce810edad04d2afe
-vendor/lib64/libhdcpsrm.so|a9e378bfe4a66cfc670f35d70d0e182956a1e87b
-vendor/lib/liboemcrypto.so|8ad53c1e62751c731a1837c29985d5dd8fff0de2
-vendor/lib64/liboemcrypto.so|db41cb588065ad0d92ac2a59db409420c021413b
+vendor/lib64/libhdcp1prov.so|de3c41b147b4617dcdf9a216199aa9364fa63731
+vendor/lib64/libhdcp2p2prov.so|7cbe9df99fc2dad1c4b170c5162442e533e19cba
+vendor/lib64/libhdcpsrm.so|ee8e7c29e2b716a8bb07c3cbb730e34d8af3c64e
+vendor/lib/liboemcrypto.so|938a2325da1c4d4210f78276f43e689b66ec5ae4
+vendor/lib64/liboemcrypto.so|cf493ea8b86ef13a55ca4fb675c176405afd42fb
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|1aed116c6cd73ee0c89a5eec050afab5c64b9f87
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|68767969f86126ada017fc09af151e299db651d5
-vendor/lib64/libwvhidl.so|79641121417371f82af64fdec4795eb9cec1e12f
+vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|dee5b7838ac561a2292e89fc0c4ccd1932224215
+vendor/lib64/libwvhidl.so|12f5e6d483a8d20163be3675565641f1eb4f5f50
 
 # ESE - from LA.UM.8.2.r1-06700-sdm660.0
 product/lib/vendor.qti.esepowermanager@1.0.so:vendor/lib/vendor.qti.esepowermanager@1.0.so|84515bbbdf97c2b2d66d84ec2ceafdcb19436446
@@ -1481,7 +1484,7 @@ vendor/firmware/a530_gpmu.fw2|706da8d5ee565dcf456341f805ee75a40773f65a
 vendor/firmware/a530_pfp.fw|d027c70fde64241ec13160d09ee1b6c272974a4b
 vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
 
-# Graphics - from from lavender-user V12.0.3.0.QFGEUXM
+# Graphics - from lavender-user V12.0.3.0.QFGEUXM
 vendor/lib/egl/eglSubDriverAndroid.so|6414deefe8f8454dfd8dfb33006b94789d124dab
 vendor/lib/egl/libEGL_adreno.so|f1a3fbf43ca5978ddaf99ed771b36b091ac0e7c9
 vendor/lib/egl/libGLESv1_CM_adreno.so|e897f460e00982ad9e34672e07110a9ca8edab17
@@ -1521,11 +1524,11 @@ vendor/lib64/libllvm-qcom.so|2643fe03a65fed6187e9e9104c4dff484ad7e095
 vendor/lib64/librs_adreno.so|c84431c31efd21b30d95ebe9ea3dc4792f0de4ac
 vendor/lib64/librs_adreno_sha1.so|41c01066c080565efe6b4469be2e99d511d00533
 
-# Graphics (HDR) - from from lavender-user V12.0.3.0.QFGEUXM
+# Graphics (HDR) - from lavender-user V12.0.3.0.QFGEUXM
 vendor/lib/libhdr_tm.so|8d253c28c1fd976ac009088e36d483c16566f9a5
 vendor/lib64/libhdr_tm.so|1e74de5b505c8f742f1fb0379725ec9f5fd53282
 
-# Graphics (SDM) - from from lavender-user V12.0.3.0.QFGEUXM
+# Graphics (SDM) - from lavender-user V12.0.3.0.QFGEUXM
 vendor/lib/libsdm-diag.so|b1813c5639553537ccda31b2e44b5d4a85eb2adc
 vendor/lib/libqseed3.so|f1c5c5e2db7cf1bf1cd6782af3476ec721c525e7
 -vendor/lib/libsdm-disp-vndapis.so|15a98ef885dbd29935b1107d7a2988ae495abb87
@@ -1535,13 +1538,13 @@ vendor/lib64/libsdm-diag.so|6eb99b83036f917070393fa067eaebc50a5ff307
 -vendor/lib64/libsdm-disp-vndapis.so|ba4978c373f9892d884d07c4cf25dba9d73fda1f
 vendor/lib64/libtinyxml2_1.so|ba981e332895a053a67fc54a8190365a3ad37f2d
 
-# Graphics (SDM) - from from lavender-user V12.0.3.0.QFGEUXM
+# Graphics (SDM) - from lavender-user V12.0.3.0.QFGEUXM
 vendor/lib/libsdm-color.so|2856bf71af603076b23d4c206dacba7c82350387
 vendor/lib/libsdmextension.so|37d5fca198c8e8526d6a4cb95f9c4bdf719e0efd
 vendor/lib64/libsdm-color.so|ed022cfcc1546c11b82991986e0a938464400858
 vendor/lib64/libsdmextension.so|264c00a0920d291700b2948b9337037684986921
 
-# Graphics (Vulkan) - from from lavender-user V12.0.3.0.QFGEUXM
+# Graphics (Vulkan) - from lavender-user V12.0.3.0.QFGEUXM
 vendor/lib/hw/vulkan.sdm660.so|b2b6dfebba117a90653cc7563ee0df9b5f9f004e
 vendor/lib64/hw/vulkan.sdm660.so|334ec6e3b420748df404ae82ab0cd1fa9ef0ef9f
 
