@@ -27,11 +27,6 @@
 #
 #
 
-on early-init
-    mkdir /firmware 0771 system system
-    mkdir /bt_firmware 0771 system system
-    mkdir /dsp 0771 media media
-
 on init
     write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 10
@@ -73,11 +68,6 @@ on fs
     write /sys/kernel/boot_adsp/boot 1
     chown system system /dev/goodix_fp
     #chmod 0644 /dev/goodix_fp
-    chmod 0664 /sys/class/thermal/thermal_message/sconfig
-    chown system system /sys/class/thermal/thermal_message/sconfig
-
-    chmod 0666 /sys/class/thermal/thermal_message/temp_state
-    chown system system /sys/class/thermal/thermal_message/temp_state
 
     mkdir /mnt/vendor/dsp 0770 root root
     copy /vendor/dsp/cdsp/fastrpc_shell_3 /mnt/vendor/dsp/fastrpc_shell_3
@@ -96,12 +86,6 @@ on post-fs-data
     mkdir /data/tombstones/lpass 0771 system system
     mkdir /data/tombstones/wcnss 0771 system system
     mkdir /data/tombstones/dsps 0771 system system
-    mkdir /data/misc/seemp 0700 system system
-    mkdir /data/thermal 0771 root system
-    mkdir /data/thermal/config 0771 root system
-
-#Creat charger logg
-    mkdir /data/vendor/charge_logger 0771 system system
 
 on boot
     start rmt_storage
@@ -167,23 +151,7 @@ on property:init.svc.vendor.per_mgr=running
 
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
-on property:sys.thermallct.isincall=1
-    write /sys/class/power_supply/battery/device/thermalcall 1
 
-on property:sys.thermallct.isincall=0
-    write /sys/class/power_supply/battery/device/thermalcall 0
-
-
-# add charge_logger service for dump charge message
-service charge_logger /vendor/bin/charge_logger
-   class last_start
-   user system
-   group system system wakelock
-   disabled
-   oneshot
-
-on property:sys.boot_completed=1
-    start charge_logger
 
 service vendor.qseecomd /vendor/bin/qseecomd
    class core
@@ -215,22 +183,8 @@ service vendor.cdsprpcd /vendor/bin/cdsprpcd
    group system
    disabled
 
-service mdtpd /system/vendor/bin/mdtpd
-    class late_start
-    user root
-    group system radio drmrpc
-
 service vendor.pd_mapper /system/vendor/bin/pd-mapper
      class core
-
-on property:vold.decrypt=trigger_restart_framework
-   start cnss_diag
-
-service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
-   class main
-   user system
-   group system wifi inet sdcard_rw media_rw diag
-   oneshot
 
 service ppd /system/vendor/bin/mm-pp-dpps
     class late_start
@@ -259,19 +213,11 @@ on property:init.svc.zygote=restarting
 
 on charger
     start qcom-post-boot
-    mkdir /data/vendor/charge_logger 0771 system system
     chown system system /sys/class/leds/red/brightness
     chmod 0666 /sys/class/leds/red/brightness
     start vendor.hvdcp_opti
     setprop sys.usb.configfs 1
     start power_off_alarm
-    start charge_logger
-
-service seempd /system/bin/seempd
-    class late_start
-    user system
-    group system sdcard_rw
-    socket seempdw dgram 0666 system system
 
 service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
      class main
