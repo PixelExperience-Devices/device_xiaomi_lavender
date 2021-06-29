@@ -5,9 +5,33 @@
     "branch": "eleven"
   },
   {
-    "repository": "vendor_xiaomi_lavender",
+    "repository": "lavender-evergarden/vendor_xiaomi_lavender",
     "target_path": "vendor/xiaomi/lavender",
-    "branch": "eleven",
-    "remote": "pixel-devices-blobs"
+    "branch": "eleven-plus-wip"
+  },
+  {
+    "repository": "StatiXOS/android_hardware_qcom_audio",
+    "target_path": "hardware/qcom-caf/sdm660/audio",
+    "branch" : "11-caf-8998"
+  },
+  {
+    "repository": "StatiXOS/android_hardware_qcom_display",
+    "target_path": "hardware/qcom-caf/sdm660/display",
+    "branch" : "11-caf-8998"
+  },
+  {
+    "repository": "StatiXOS/hardware_qcom_media",
+    "target_path": "hardware/qcom-caf/sdm660/media",
+    "branch" : "11-caf-8998"
+  },
+  {
+    "repository": "StatiXOS/android_device_qcom_common",
+    "target_path": "device/qcom/common",
+    "branch" : "11"
+  },
+  {
+    "repository": "ThankYouMario/proprietary_vendor_qcom_common",
+    "target_path": "vendor/qcom/common",
+    "branch" : "ruby"
   }
 ]
