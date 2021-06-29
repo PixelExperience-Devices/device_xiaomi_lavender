@@ -5,7 +5,7 @@
     "branch": "eleven"
   },
   {
-    "repository": "lavender-evergarden/vendor_xiaomi_lavender",
+    "repository": "faham1997/vendor_xiaomi_lavender",
     "target_path": "vendor/xiaomi/lavender",
     "branch": "eleven-plus-wip"
   },
