@@ -428,8 +428,7 @@ PRODUCT_PACKAGES += \
     com.android.vndk.current.on_vendor \
     libicuuc.vendor \
     libstdc++.vendor \
-    libgui_vendor \
-    vndk-ext
+    libgui_vendor
 
 PRODUCT_COPY_FILES += \
     prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM)/lib/libcutils-v29.so \
