@@ -114,7 +114,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.expose.aux=1 \
     persist.vendor.camera.awb.sync=2 \
     persist.radio.VT_CAM_INTERFACE=2  \
-    persist.sys.camera.camera2=true
+    persist.sys.camera.camera2=true \
+    vendor.video.disable.ubwc=1
 
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -247,13 +248,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Time
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.delta_time.enable=true
-
-# WFD
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0 \
-    vendor.video.disable.ubwc=1 \
-    video.disable.ubwc=1
 
 # disable PQ feature by default
 PRODUCT_PROPERTY_OVERRIDES += \
