@@ -16,6 +16,9 @@ TARGET_SCREEN_WIDTH := 1080
 # Display
 TARGET_SCREEN_DENSITY := 420
 
+# Fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
+
 # Kernel
 TARGET_KERNEL_CONFIG := lavender_defconfig
 BOARD_KERNEL_SEPARATED_DTBO := true

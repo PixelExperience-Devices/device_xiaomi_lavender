@@ -1,0 +1,90 @@
+# Copyright (c) 2020, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#
+
+on boot
+    # Camera
+    chmod 0660 /sys/android_camera/sensor
+    chown system system /sys/android_camera/sensor
+
+    # Fingerprint
+    chmod 0660 /sys/devices/soc/soc:fpc1020/hw_reset
+    chmod 0660 /sys/devices/soc/soc:fpc1020/irq
+    chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
+    chmod 0660 /sys/devices/soc/soc:fpc1020/fingerdown_wait
+    chown system system /sys/devices/soc/soc:fpc1020/hw_reset
+    chown system system /sys/devices/soc/soc:fpc1020/irq
+    chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
+    chown system system /sys/devices/soc/soc:fpc1020/fingerdown_wait
+    chmod 0600 /data/misc/fpc/calibration_image.pndat
+
+    # Flash
+    chmod 0660 /sys/class/leds/led:flash_0/brightness
+    chmod 0660 /sys/class/leds/led:flash_1/brightness
+    chmod 0660 /sys/class/leds/led:flash_2/brightness
+    chmod 0660 /sys/class/leds/led:torch_0/brightness
+    chmod 0660 /sys/class/leds/led:torch_1/brightness
+    chmod 0660 /sys/class/leds/led:torch_2/brightness
+    chmod 0660 /sys/class/leds/led:switch_0/brightness
+    chmod 0660 /sys/class/leds/led:switch_1/brightness
+    chmod 0660 /sys/class/leds/flashlight/brightness
+    chown system system /sys/class/leds/led:flash_0/brightness
+    chown system system /sys/class/leds/led:flash_1/brightness
+    chown system system /sys/class/leds/led:flash_2/brightness
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chown system system /sys/class/leds/led:torch_2/brightness
+    chown system system /sys/class/leds/led:switch_0/brightness
+    chown system system /sys/class/leds/led:switch_1/brightness
+    chown system system /sys/class/leds/flashlight/brightness
+
+    # IR
+    chmod 0660 /dev/spidev7.1
+    chown system system /dev/spidev7.1
+
+    # Leds
+    chmod 0640 /sys/class/leds/red/delay_on
+    chmod 0640 /sys/class/leds/red/delay_off
+    chmod 0640 /sys/class/leds/red/breath
+    chown system system /sys/class/leds/red/delay_on
+    chown system system /sys/class/leds/red/delay_off
+    chown system system /sys/class/leds/red/breath
+
+    # Power supply
+    chmod 0660 /sys/class/power_supply/battery/input_suspend
+    chmod 0660 /sys/class/power_supply/battery/charging_enabled
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chown system system /sys/class/power_supply/battery/charging_enabled
+
+    # Thermal
+    chmod 0770 /sys/class/power_supply/battery/device/thermalcall
+    chown system system /sys/class/power_supply/battery/device/thermalcall
+
+# Workaround for camera HAL can not read sys property
+on property:sys.camera.face.unlock=*
+    setprop vendor.camera.face.unlock ${sys.camera.face.unlock}
