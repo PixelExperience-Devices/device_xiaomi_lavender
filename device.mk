@@ -26,6 +26,10 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0.vendor \
     android.hardware.keymaster@4.0-service
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(DEVICE_PATH)/overlay
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
