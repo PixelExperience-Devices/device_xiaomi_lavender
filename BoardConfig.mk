@@ -41,5 +41,9 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 2080305152
 BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
+# Vendor init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_lavender
+TARGET_RECOVERY_DEVICE_MODULES := libinit_lavender
+
 # Inherit the proprietary files
 include vendor/xiaomi/lavender/BoardConfigVendor.mk
