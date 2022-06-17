@@ -1,1 +1,13 @@
 # Device proprietary files - from lavender-user-10-QKQ1.190910.002-V12.5.3.0.QFGMIXM-release-keys
+
+# Keymaster QTI
+vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
+vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
+vendor/lib/libqtikeymaster4.so
+vendor/lib64/libqtikeymaster4.so
+
+# Gatekeeper
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
