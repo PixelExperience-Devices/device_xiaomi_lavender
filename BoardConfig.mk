@@ -9,6 +9,13 @@ include device/xiaomi/sdm660-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/lavender
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2340
+TARGET_SCREEN_WIDTH := 1080
+
+# Display
+TARGET_SCREEN_DENSITY := 420
+
 # Kernel
 TARGET_KERNEL_CONFIG := lavender_defconfig
 BOARD_KERNEL_SEPARATED_DTBO := true
