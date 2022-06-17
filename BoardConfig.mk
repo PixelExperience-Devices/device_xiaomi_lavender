@@ -5,3 +5,6 @@
 #
 
 DEVICE_PATH := device/xiaomi/lavender
+
+# Inherit the proprietary files
+include vendor/xiaomi/lavender/BoardConfigVendor.mk
