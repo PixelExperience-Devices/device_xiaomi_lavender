@@ -14,5 +14,8 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.device.rc
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += device/xiaomi/lavender
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
