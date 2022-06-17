@@ -9,6 +9,12 @@ $(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
 
 DEVICE_PATH := device/xiaomi/lavender
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@4.0-impl \
+    android.hardware.keymaster@4.0.vendor \
+    android.hardware.keymaster@4.0-service
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
