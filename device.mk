@@ -5,3 +5,6 @@
 #
 
 DEVICE_PATH := device/xiaomi/lavender
+
+# Inherit the proprietary files
+$(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)
