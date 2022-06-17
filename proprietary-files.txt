@@ -942,6 +942,39 @@ vendor/lib/libmmcamera_tintless_bg_pca_algo.so|8d0742522e0af649ee05fb85fa1a204ac
 vendor/lib/libmmcamera_tuning.so|28364a5125194034584cb44e053272a9d70fa5b5
 vendor/lib/libmmcamera_tuning_lookup.so|e00c7abb7b72ceff77fbd73d7b38f3fa8fdb31ca
 
+# Fingerprint firmware
+vendor/firmware/fpctzappfingerprint.b00
+vendor/firmware/fpctzappfingerprint.b01
+vendor/firmware/fpctzappfingerprint.b02
+vendor/firmware/fpctzappfingerprint.b03
+vendor/firmware/fpctzappfingerprint.b04
+vendor/firmware/fpctzappfingerprint.b05
+vendor/firmware/fpctzappfingerprint.b06
+vendor/firmware/fpctzappfingerprint.b07
+vendor/firmware/fpctzappfingerprint.mdt
+vendor/firmware/goodixfp.b00
+vendor/firmware/goodixfp.b01
+vendor/firmware/goodixfp.b02
+vendor/firmware/goodixfp.b03
+vendor/firmware/goodixfp.b04
+vendor/firmware/goodixfp.b05
+vendor/firmware/goodixfp.b06
+vendor/firmware/goodixfp.b07
+vendor/firmware/goodixfp.mdt
+
+# Fingerprint sensor
+vendor/bin/qfp-daemon
+vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
+vendor/lib64/hw/fingerprint.fpc.default.so
+vendor/lib64/hw/fingerprint.goodix.default.so
+vendor/lib64/com.fingerprints.extension@2.0.so
+vendor/lib64/libgf_ca.so
+vendor/lib64/libgf_hal.so
+vendor/lib64/libgoodixhwfingerprint.so
+vendor/lib64/libqfp-service.so
+vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so
+vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
+
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
