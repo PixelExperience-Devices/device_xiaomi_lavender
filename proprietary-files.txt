@@ -987,5 +987,17 @@ vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
 vendor/lib/libqtikeymaster4.so
 vendor/lib64/libqtikeymaster4.so
 
+# Sensors
+vendor/bin/sensors.qti
+vendor/etc/sensors/hals.conf|2be83209bb5319b4a3c75338c24852f89ddc1df7
+vendor/etc/sensors/sensor_def_qcomdev.conf
+vendor/lib/hw/activity_recognition.sdm660.so
+vendor/lib/libsensor1.so
+vendor/lib/libsensor_reg.so
+vendor/lib64/hw/activity_recognition.sdm660.so
+vendor/lib64/libsensor1.so
+vendor/lib64/libsensor_reg.so
+vendor/lib64/sensors.elliptic.so
+
 # Wifi
 vendor/bin/cnss-daemon
