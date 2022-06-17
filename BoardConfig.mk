@@ -9,6 +9,10 @@ include device/xiaomi/sdm660-common/BoardConfigCommon.mk
 
 DEVICE_PATH := device/xiaomi/lavender
 
+# Kernel
+TARGET_KERNEL_CONFIG := lavender_defconfig
+BOARD_KERNEL_SEPARATED_DTBO := true
+
 # Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3640619008
 BOARD_VENDORIMAGE_PARTITION_SIZE := 2080305152
