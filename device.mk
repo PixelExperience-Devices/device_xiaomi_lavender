@@ -31,7 +31,8 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
+    $(DEVICE_PATH)/overlay \
+    $(DEVICE_PATH)/overlay-lineage
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -44,6 +45,10 @@ PRODUCT_SOONG_NAMESPACES += device/xiaomi/lavender
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
+
+# Wifi
+PRODUCT_PACKAGES += \
+    LavenderWifiOverlay
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/lavender/lavender-vendor.mk)

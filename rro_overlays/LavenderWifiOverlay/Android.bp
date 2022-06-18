@@ -1,0 +1,6 @@
+runtime_resource_overlay {
+    name: "LavenderWifiOverlay",
+    theme: "LavenderWifiOverlay",
+    sdk_version: "current",
+    product_specific: true
+}
