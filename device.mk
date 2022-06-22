@@ -44,6 +44,9 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay \
     NotchBarKiller
 
+# Powerhint
+EAS_POWERHINT_VARIANT := sdm660
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
