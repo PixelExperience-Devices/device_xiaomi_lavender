@@ -49,6 +49,10 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.device.rc
 
+# Shims
+PRODUCT_PACKAGES += \
+    libcamera_sdm660_shim
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += device/xiaomi/lavender
 
