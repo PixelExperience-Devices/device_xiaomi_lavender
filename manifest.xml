@@ -29,12 +29,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <transport>hwbinder</transport>
         <fqname>@4.0::IKeymasterDevice/default</fqname>
     </hal>
-    <hal format="hidl" override="true">
-        <name>vendor.lineage.livedisplay</name>
-        <transport>hwbinder</transport>
-        <fqname>@2.0::IAdaptiveBacklight/default</fqname>
-        <fqname>@2.0::IPictureAdjustment/default</fqname>
-    </hal>
     <hal format="hidl">
         <name>vendor.goodix.hardware.interfaces.biometrics.fingerprint</name>
         <transport>hwbinder</transport>
