@@ -29,7 +29,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/xiaomi/lavender
-TARGET_KERNEL_CONFIG := lavender_defconfig
+TARGET_KERNEL_CONFIG := lavender-perf_defconfig
 BOARD_KERNEL_SEPARATED_DTBO := true
 
 # Manifest
