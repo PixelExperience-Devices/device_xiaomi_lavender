@@ -44,6 +44,9 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2021-06-01
+
 # Vendor init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_lavender
 TARGET_RECOVERY_DEVICE_MODULES := libinit_lavender
