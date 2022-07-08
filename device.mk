@@ -23,17 +23,10 @@ BOARD_HAVE_IR := true
 # FM
 BOARD_HAVE_QCOM_FM := true
 
-# Gatekeeper HAL
+# Keystore
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0.vendor \
-    android.hardware.gatekeeper@1.0-service
-
-# Keymaster
-PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.0-impl \
-    android.hardware.keymaster@4.0.vendor \
-    android.hardware.keymaster@4.0-service
+    android.hardware.keymaster@4.0.vendor
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
