@@ -23,6 +23,10 @@ PRODUCT_COPY_FILES += \
 # Consumerir
 BOARD_HAVE_IR := true
 
+# Camera
+PRODUCT_PACKAGES += \
+    libstdc++.vendor
+
 # FM
 BOARD_HAVE_QCOM_FM := true
 
