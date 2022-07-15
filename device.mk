@@ -9,9 +9,6 @@ $(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
 
 DEVICE_PATH := device/xiaomi/lavender
 
-# Inherit properties.mk
-$(call inherit-product, $(DEVICE_PATH)/properties.mk)
-
 # PRODUCT_SHIPPING_API_LEVEL indicates the first api level, device has been commercially launched on.
 PRODUCT_SHIPPING_API_LEVEL := 28
 
@@ -45,6 +42,9 @@ PRODUCT_PACKAGES += \
 
 # Powerhint
 EAS_POWERHINT_VARIANT := sdm660
+
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Ramdisk
 PRODUCT_PACKAGES += \
