@@ -14,6 +14,7 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 # Camera - from lavender V10.3.6.0.PFGMIXM
 vendor/lib/hw/camera.sdm660.so|50e671432994ec9085810e5fa9c9c6619262bc19
 vendor/lib/libFaceGrade.so|ab36b265668f77a613719e1b8cedf0b1a0219fa5
+vendor/lib/libMegviiFacepp-0.5.2.so|640676bd292c78197ea963aa7875153fab44a383
 vendor/lib/libSNPE.so|66f23aae6d30b09121f06635c749d6ae47543359
 vendor/lib/libSonyIMX376C3RmscLibrary.so|b3138daf9b93c645b89b67d28c3f6fadfbbfdb42
 vendor/lib/libSonyIMX376KRmscLibrary.so|2f7792d51bf476352590b8643e43762f68cadeef
@@ -29,6 +30,7 @@ vendor/lib/libhal_dbg.so|134c720607683f3968b03a1d96b4b112f1203fdb
 vendor/lib/libjpegdhw.so|f6e0bf7033343b5c379dc579124fab69f66b4b71
 vendor/lib/libjpegdmahw.so|19621cb3ffec3afbb43e2b178d1d0c2b283b725f
 vendor/lib/libjpegehw.so|d269a53cd26f89904d403893bb4a91984cef45fd
+vendor/lib/libmegface.so|5c57bccfd37a84f3990e6982c193b018a20d5d39
 vendor/lib/libmibokeh_660.so|46afb40acdafe11cffba2ab77087d99cf864bf35
 vendor/lib/libmm-qcamera.so|f953ef7ce5a3b30f0fa69d6ffde1149272d58793
 vendor/lib/libmmjpeg.so|152b14e209e381deb1f58a4c734678bd11e6069a
@@ -802,6 +804,7 @@ vendor/etc/camera/lavender_s5kgm1_ofilm_india_i_chromatix.xml|601695796b9fa2998c
 vendor/etc/camera/lavender_s5kgm1_sunny_ii_chromatix.xml|94f8ec61369f60d78dc57df17a660bb82ce24408
 vendor/etc/camera/lavender_s5kgm1_sunny_india_ii_chromatix.xml|6aff2017f91bd00e96a7363b8178cab51fcac0f5
 vendor/etc/camera/lf_facerank_model.bin|457f91e4027b7faef4d0fa889853e4f692e910c9
+vendor/etc/camera/megviifacepp_model|1f0cdc706d3853114ecf7a2c0c7436238fcdf258
 vendor/etc/camera/model_back.dlc|faeefb05aa0c931edf018e66722d4469cd240483
 vendor/etc/camera/model_front.dlc|0624fa01607686a261fc302ad602ebc9a1f62f60
 vendor/etc/camera/sdm_ys_32p_120_21_5_perturb50.bin|1ca031d5f8eb0e6aa3eedf7df8d53223b5054bc5
