@@ -22,6 +22,7 @@ BOARD_HAVE_IR := true
 
 # Camera
 PRODUCT_PACKAGES += \
+    GoogleCameraGo \
     libstdc++.vendor
 
 # FM

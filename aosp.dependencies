@@ -11,6 +11,11 @@
     "branch"      : "thirteen",
     "remote"      : "pixel-devices-blobs"
   },
+  { 
+    "repository"  : "vendor_xiaomi_lavender-extras",
+    "target_path" : "vendor/xiaomi/lavender-extras", 
+    "remote"      : "pixel-devices-blobs"
+  },
   {
     "remote":      "github",
     "repository" : "PixelExperience-Devices/kernel_xiaomi_lavender",
