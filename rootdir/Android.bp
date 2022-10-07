@@ -1,0 +1,20 @@
+//
+// Copyright (C) 2022 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// fstab
+prebuilt_etc {
+    name: "fstab.qcom",
+    src: "etc/fstab.qcom",
+    vendor: true,
+}
+
+// Init configuration files
+prebuilt_etc {
+    name: "init.device.rc",
+    src: "etc/init.device.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
