@@ -1035,5 +1035,12 @@ vendor/bin/thermal-engine
 vendor/lib64/libthermalfeature.so
 vendor/lib64/libthermalioctl.so
 
+# Widevine - from jasmine V11.0.22.0.QDIMIXM
+vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.2-service.widevine.xml|1b556a6b981dfe8c5d62311b59758d370dd6dd10 
+vendor/lib/mediadrm/libwvdrmengine.so|a8bdbbfb3aa222095f1cb7658ec5c46fa41dd560 
+vendor/lib64/mediadrm/libwvdrmengine.so|80280a2292db04a1eb3750df6897dea96f0f62f5 
+vendor/lib64/libcpion.so|ff24ef248bb35fd3cc1081a63f33c2565dc6351f
+vendor/lib64/libhdcpsrm.so|ee8e7c29e2b716a8bb07c3cbb730e34d8af3c64e
+
 # Wifi
 vendor/bin/cnss-daemon
