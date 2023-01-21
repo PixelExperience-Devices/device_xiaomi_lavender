@@ -2,7 +2,6 @@
 ro.crypto.volume.options=aes-256-xts
 
 # Camera
-persist.vendor.camera.preview.ubwc=0
 persist.vendor.camera.isp.clock.optmz=0
 persist.vendor.camera.isp.turbo=1
 persist.vendor.camera.imglib.usefdlite=1
