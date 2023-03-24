@@ -10,11 +10,5 @@
     "target_path" : "vendor/xiaomi/lavender",
     "branch"      : "thirteen",
     "remote"      : "pixel-devices-blobs"
-  },
-  {
-    "remote":      "github",
-    "repository" : "PixelExperience-Devices/kernel_xiaomi_sdm660",
-    "target_path": "kernel/xiaomi/sdm660",
-    "branch"     : "thirteen"
   }
 ]
